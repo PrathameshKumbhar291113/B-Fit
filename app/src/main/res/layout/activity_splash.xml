@@ -26,7 +26,7 @@
         android:gravity="center"
         android:text="B FIT"
         android:textAlignment="center"
-        android:textColor="#ED4C29"
+        android:textColor="@color/orange"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
