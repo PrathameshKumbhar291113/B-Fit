@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed(Runnable {
-            start<HomeActivity>(){
+            start<OnboardActivity>(){
                 finish()
             }
         },2000)
