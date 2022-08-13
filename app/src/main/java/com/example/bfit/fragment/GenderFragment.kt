@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bfit.R
+import com.example.bfit.databinding.FragmentGenderBinding
 
 class GenderFragment : Fragment() {
+    private var _binding: FragmentGenderBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gender, container, false)
+        _binding = FragmentGenderBinding.inflate(inflater,container,false)
+
+        return binding.root
     }
 }

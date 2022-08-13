@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/signinandsignuppage"
-    tools:context=".fragment.LoginFragment">
+    tools:context=".fragment.SignUpFragment">
 
     <TextView
         android:id="@+id/textView5"
@@ -13,10 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="252dp"
         android:layout_marginEnd="50dp"
         android:fontFamily="@font/arsenal_bold"
-        android:text="Welcome,\nSign In to continue"
+        android:text="Welcome,\nSign Up to continue"
         android:textColor="@color/creamish_color"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginEmail_layout"
+        android:id="@+id/signUp_email_layout"
         style="@style/LoginTextInputOuterFieldStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,20 +39,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:ignore="TouchTargetSizeCheck">
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginEmail_editText"
+            android:id="@+id/emailEt"
             style="@style/LoginTextInputInnerFieldStyle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            app:boxStrokeColor="@color/creamish_color"
+            app:hintTextColor="@color/creamish_color" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginPassword_layout"
+        android:id="@+id/signUp_pass_layout"
         style="@style/LoginTextInputOuterFieldStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,11 +66,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEmail_layout"
+        app:layout_constraintTop_toBottomOf="@+id/signUp_email_layout"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/loginPass_editText"
+            android:id="@+id/signUpPass_editText"
             style="@style/LoginTextInputInnerFieldStyle"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -77,19 +78,45 @@
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/signUp_confirmPass_layout"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="10dp"
+        android:textColor="@color/creamish_color"
+        android:textColorHint="@color/creamish_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUp_pass_layout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPass_editText"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signIn_button"
+        android:id="@+id/signUp_button"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:background="@color/orange"
         android:elevation="15dp"
-        android:text="Sign In"
+        android:text="Sign Up"
         android:textColor="@color/creamish_color"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout"
+        app:layout_constraintTop_toBottomOf="@+id/signUp_confirmPass_layout"
         tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
     <TextView
@@ -97,11 +124,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Not Registered Yet , Sign Up !"
+        android:text="Already Registered , Sign In !"
         android:textColor="@color/creamish_color"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signIn_button" />
+        app:layout_constraintTop_toBottomOf="@+id/signUp_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

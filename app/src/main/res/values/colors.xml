@@ -13,4 +13,8 @@
     <color name="light_blue_A200">#FF40C4FF</color>
     <color name="light_blue_A400">#FF00B0FF</color>
     <color name="black_overlay">#66000000</color>
+    <color name="yellow">#FFBE0B</color>
+    <color name="yellow_brownish">#CB997E</color>
+    <color name="creamish_color">#FFECD1</color>
+
 </resources>
