@@ -1,14 +1,12 @@
-package com.example.bfit
+package com.example.bfit.activity
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.bfit.R
 import splitties.activities.start
-import kotlin.concurrent.thread
-import kotlin.coroutines.suspendCoroutine
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
