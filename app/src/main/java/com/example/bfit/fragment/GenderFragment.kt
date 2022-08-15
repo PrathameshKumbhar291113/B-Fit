@@ -18,10 +18,10 @@ class GenderFragment : Fragment() {
     ): View? {
         _binding = FragmentGenderBinding.inflate(inflater,container,false)
 
-        binding.maleImg.load("https://i.imgur.com/gQa7JVP.png"){
+        binding.maleImg.load("https://i.imgur.com/5epNbBi.png"){
             crossfade(true)
         }
-        binding.femaleImg.load("https://i.imgur.com/CRv8Ojf.png"){
+        binding.femaleImg.load("https://i.imgur.com/5epNbBi.png"){
             crossfade(true)
         }
         return binding.root
