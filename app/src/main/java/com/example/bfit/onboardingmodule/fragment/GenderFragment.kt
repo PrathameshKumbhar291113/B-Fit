@@ -24,6 +24,7 @@ class GenderFragment : Fragment() {
         binding.femaleImg.load("https://i.imgur.com/5epNbBi.png"){
             crossfade(true)
         }
+
         return binding.root
     }
 }

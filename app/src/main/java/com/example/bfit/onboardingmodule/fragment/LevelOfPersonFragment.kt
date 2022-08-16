@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bfit.R
 
-class BodyDetailsFragment : Fragment() {
+class LevelOfPersonFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -15,7 +15,7 @@ class BodyDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_body_details, container, false)
+        return inflater.inflate(R.layout.fragment_level_of_person, container, false)
     }
 
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding_graph"
+    app:startDestination="@id/genderFragment">
+
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="com.example.bfit.onboardingmodule.fragment.GenderFragment"
+        android:label="fragment_gender"
+        tools:layout="@layout/fragment_gender" >
+        <action
+            android:id="@+id/action_genderFragment_to_heightWeightFragment"
+            app:destination="@id/heightWeightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bodyDetailsFragment"
+        android:name="com.example.bfit.onboardingmodule.fragment.BodyDetailsFragment"
+        android:label="fragment_body_details"
+        tools:layout="@layout/fragment_body_details" >
+        <action
+            android:id="@+id/action_bodyDetailsFragment_to_levelOfPersonFragment"
+            app:destination="@id/levelOfPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heightWeightFragment"
+        android:name="com.example.bfit.onboardingmodule.fragment.HeightWeightFragment"
+        android:label="fragment_height_weight"
+        tools:layout="@layout/fragment_height_weight" >
+        <action
+            android:id="@+id/action_heightWeightFragment_to_bodyDetailsFragment"
+            app:destination="@id/bodyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/levelOfPersonFragment"
+        android:name="com.example.bfit.onboardingmodule.fragment.LevelOfPersonFragment"
+        android:label="fragment_level_of_person"
+        tools:layout="@layout/fragment_level_of_person" />
+</navigation>

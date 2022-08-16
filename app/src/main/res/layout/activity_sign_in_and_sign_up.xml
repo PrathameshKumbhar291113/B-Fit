@@ -7,7 +7,7 @@
     tools:context=".loginmodule.SignInAndSignUpActivity">
 
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/signIn_SignUp_Frag_Container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
