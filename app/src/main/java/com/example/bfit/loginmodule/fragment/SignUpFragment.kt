@@ -1,4 +1,4 @@
-package com.example.bfit.fragment
+package com.example.bfit.loginmodule.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.droidman.ktoasty.KToasty
 import com.example.bfit.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -13,6 +15,9 @@ class SignUpFragment : Fragment() {
     private var _binding : FragmentSignupBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
+    private val navController by lazy {
+        findNavController()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,8 +26,15 @@ class SignUpFragment : Fragment() {
         _binding = FragmentSignupBinding.inflate(inflater,container,false)
         firebaseAuth = FirebaseAuth.getInstance()
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         binding.alreadyRegisterSignInTextView.setOnClickListener {
             //Go to signIn frag using navigation
+            navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
         }
 
         binding.signUpButton.setOnClickListener {
@@ -36,19 +48,20 @@ class SignUpFragment : Fragment() {
                         firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                             if (it.isSuccessful){
                                 //Go to signIn frag using navigation
+                                 navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
                             }else{
-                                Toast.makeText(requireContext(),"Password Entered Is Incorrect !", Toast.LENGTH_SHORT).show()
+                                KToasty.warning(requireContext(),"Password Entered Is Incorrect !", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }else{
-                        Toast.makeText(requireContext(), "Password does not match", Toast.LENGTH_SHORT).show()
+                        KToasty.warning(requireContext(), "Password does not match", Toast.LENGTH_SHORT).show()
                     }
                 }else{
-                    Toast.makeText(requireContext(), "Only gmail.com & ac.in extension is valid !", Toast.LENGTH_SHORT).show()                }
+                    KToasty.warning(requireContext(), "Only gmail.com & ac.in extension is valid !", Toast.LENGTH_SHORT).show()                }
             }else{
-                Toast.makeText(requireContext(), "Empty Field not allowed !", Toast.LENGTH_SHORT).show()
+                KToasty.warning(requireContext(), "Empty Field not allowed !", Toast.LENGTH_SHORT).show()
             }
         }
-        return binding.root
+
     }
 }

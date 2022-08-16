@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".fragment.GenderFragment">
+    tools:context=".onboardingmodule.fragment.GenderFragment">
 
 
     <TextView
@@ -54,7 +54,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
                 android:padding="10dp"
-                android:scaleType=""
+                android:scaleType="center"
                 app:layout_constraintBottom_toTopOf="@+id/textView6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

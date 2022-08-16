@@ -1,4 +1,4 @@
-package com.example.bfit.fragment
+package com.example.bfit.onboardingmodule.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

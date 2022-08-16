@@ -1,11 +1,11 @@
-package com.example.bfit.activity
+package com.example.bfit.onboardingmodule
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.bfit.R
 import com.example.bfit.databinding.ActivityOnboardBinding
-import com.example.bfit.fragment.GenderFragment
+import com.example.bfit.onboardingmodule.fragment.GenderFragment
 
 class OnboardActivity : AppCompatActivity() {
     lateinit var binding: ActivityOnboardBinding

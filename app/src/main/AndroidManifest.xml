@@ -14,16 +14,16 @@
         android:theme="@style/Theme.BFit"
         tools:targetApi="31">
         <activity
-            android:name=".activity.SignInAndSignUpActivity"
+            android:name=".loginmodule.SignInAndSignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.OnboardActivity"
+            android:name=".onboardingmodule.OnboardActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".mainmodule.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name=".coremodule.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">

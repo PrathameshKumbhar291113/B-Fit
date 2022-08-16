@@ -1,4 +1,4 @@
-package com.example.bfit.activity
+package com.example.bfit.mainmodule
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
