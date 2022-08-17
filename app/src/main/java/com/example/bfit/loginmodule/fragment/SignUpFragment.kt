@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.droidman.ktoasty.KToasty
+import com.droidman.ktoasty.showSuccessToast
 import com.example.bfit.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SignUpFragment : Fragment() {
     private var _binding : FragmentSignupBinding? = null
@@ -47,9 +51,12 @@ class SignUpFragment : Fragment() {
                     if(pass == confirmPass){
                         firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                             if (it.isSuccessful){
-                                KToasty.success(requireContext(), "Successfully SignUp!")
-                                //Go to signIn frag using navigation
-                                navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
+                                requireContext().showSuccessToast("Successfully Signed Up!")
+                                lifecycleScope.launch {
+                                    delay(2000)
+                                    //Go to signIn frag using navigation
+                                    navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
+                                }
                             }else{
                                 KToasty.warning(requireContext(),"Password Entered Is Incorrect !", Toast.LENGTH_SHORT).show()
                             }
@@ -60,7 +67,7 @@ class SignUpFragment : Fragment() {
                 }else{
                     KToasty.warning(requireContext(), "Only gmail.com & ac.in extension is valid !", Toast.LENGTH_SHORT).show()                }
             }else{
-                KToasty.warning(requireContext(), "Empty Field not allowed !", Toast.LENGTH_SHORT).show()
+                KToasty.warning(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
             }
         }
 
