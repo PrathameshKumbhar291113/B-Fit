@@ -77,7 +77,7 @@ dependencies {
     //Material dependency for card view
     implementation 'com.google.android.material:material:1.6.1'
     //K toasty library for custom toast as showErrorToast and showSuccessToast ect.
-    implementation 'com.github.shubhamvashisht:KToasty:1.0'
+    implementation 'com.github.shubhamvashisht:KToasty:1.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
