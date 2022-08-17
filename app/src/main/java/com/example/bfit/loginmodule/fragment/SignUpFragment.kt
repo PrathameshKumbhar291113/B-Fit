@@ -47,8 +47,9 @@ class SignUpFragment : Fragment() {
                     if(pass == confirmPass){
                         firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                             if (it.isSuccessful){
+                                KToasty.success(requireContext(), "Successfully SignUp!")
                                 //Go to signIn frag using navigation
-                                 navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
+                                navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
                             }else{
                                 KToasty.warning(requireContext(),"Password Entered Is Incorrect !", Toast.LENGTH_SHORT).show()
                             }

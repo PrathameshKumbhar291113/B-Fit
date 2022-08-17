@@ -84,11 +84,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signIn_button"
-        android:layout_width="250dp"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
-        android:background="@color/orange"
         android:elevation="25dp"
+        android:background="@drawable/rounded_corner"
         android:text="Sign In"
         android:textColor="@color/creamish_color"
         app:layout_constraintEnd_toEndOf="parent"

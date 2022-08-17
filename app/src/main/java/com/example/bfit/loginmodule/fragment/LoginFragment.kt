@@ -52,7 +52,8 @@ class LoginFragment : Fragment() {
                 if (email.endsWith("gmail.com") || email.endsWith("ac.in")) {
                     firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            //go to OnboardActivity
+                            //go to OnboardActivity\
+                            KToasty.success(requireContext(), "Successfully SignIn!")
                             start<OnboardActivity>()
                         } else {
                             KToasty.warning(requireContext(),"Please check the email or password you have entered!",Toast.LENGTH_SHORT).show()
