@@ -42,6 +42,7 @@ class SignUpFragment : Fragment() {
         }
 
         binding.signUpButton.setOnClickListener {
+            val userName = binding.signUpNameEditText.text.toString()
             val email = binding.signUpEmailEditText.text.toString()
             val pass = binding.signUpPassEditText.text.toString()
             val confirmPass = binding.signUpConfirmPassEditText.text.toString()
@@ -53,9 +54,11 @@ class SignUpFragment : Fragment() {
                             if (it.isSuccessful){
                                 requireContext().showSuccessToast("Successfully Signed Up!")
                                 lifecycleScope.launch {
-                                    delay(2000)
+                                    delay(1000)
                                     //Go to signIn frag using navigation
                                     navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
+                                    navController.popBackStack()
+
                                 }
                             }else{
                                 KToasty.warning(requireContext(),"Password Entered Is Incorrect !", Toast.LENGTH_SHORT).show()
