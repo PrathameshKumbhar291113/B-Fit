@@ -12,10 +12,8 @@ import com.droidman.ktoasty.KToasty
 import com.droidman.ktoasty.showSuccessToast
 import com.example.bfit.coremodule.InputFilters
 import com.example.bfit.databinding.FragmentLoginBinding
-import com.example.bfit.mainmodule.HomeActivity
 import com.example.bfit.onboardingmodule.OnboardActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
@@ -28,12 +26,6 @@ class LoginFragment : Fragment() {
         findNavController()
     }
 
-    override fun onStart() {
-        super.onStart()
-//        if (firebaseAuth.currentUser != null){
-//            start<HomeActivity>()
-//        }
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,7 +35,6 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

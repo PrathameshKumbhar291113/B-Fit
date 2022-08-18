@@ -16,17 +16,18 @@
         <activity
             android:name=".loginmodule.SignInAndSignUpActivity"
             android:screenOrientation="portrait"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".onboardingmodule.OnboardActivity"
             android:screenOrientation="portrait"
-
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".mainmodule.HomeActivity"
             android:screenOrientation="portrait"
-
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="LockedOrientationActivity"/>
         <activity
             android:name=".coremodule.SplashActivity"
             android:exported="true"
