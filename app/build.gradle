@@ -59,6 +59,9 @@ dependencies {
     //Firebase Auth dependency
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.7'
     implementation 'com.google.firebase:firebase-auth:21.0.7'
+    // Import the BoM for the Firebase platform By using the Firebase Android BoM,
+    // your app will always use compatible versions of the Firebase Android libraries.
+    implementation platform('com.google.firebase:firebase-bom:30.3.1')
 
     //implementing library for data binding and view binding
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.13.0'

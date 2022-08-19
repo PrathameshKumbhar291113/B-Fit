@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.droidman.ktoasty.KToasty
 import com.droidman.ktoasty.showSuccessToast
+import com.example.bfit.coremodule.InputFilters
 import com.example.bfit.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
@@ -36,6 +37,7 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.signUpEmailEditText.filters = arrayOf(InputFilters.emailFilter)
         binding.alreadyRegisterSignInTextView.setOnClickListener {
             //Go to signIn frag using navigation
             navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
@@ -43,35 +45,53 @@ class SignUpFragment : Fragment() {
 
         binding.signUpButton.setOnClickListener {
             val userName = binding.signUpNameEditText.text.toString()
-            val userPhoneNum = binding.signUpPhoneNumberEditText.text.toString()
-            val email = binding.signUpEmailEditText.text.toString()
-            val pass = binding.signUpPassEditText.text.toString()
-            val confirmPass = binding.signUpConfirmPassEditText.text.toString()
+            val userPhoneNum = binding.signUpPhoneNumberEditText.text.toString().trim()
+            val email = binding.signUpEmailEditText.text.toString().trim()
+            val pass = binding.signUpPassEditText.text.toString().trim()
+            val confirmPass = binding.signUpConfirmPassEditText.text.toString().trim()
 
-            if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty()){
-                if(email.endsWith("gmail.com") || email.endsWith("ac.in")){
-                    if(pass == confirmPass){
-                        firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
-                            if (it.isSuccessful){
-                                requireContext().showSuccessToast("Successfully Signed Up!")
-                                lifecycleScope.launch {
-                                    delay(1000)
-                                    //Go to signIn frag using navigation
-                                    navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
-                                    navController.popBackStack()
+            if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty() && userName.isNotEmpty() && userPhoneNum.isNotEmpty()) {
+                if (pass.length >= 8) {
+                    if (pass == confirmPass) {
+                        firebaseAuth.createUserWithEmailAndPassword(email, pass)
+                            .addOnCompleteListener {
+                                if (it.isSuccessful) {
+                                    requireContext().showSuccessToast("Successfully Signed Up!")
+                                    lifecycleScope.launch {
+                                        delay(1000)
+                                        //Go to signIn frag using navigation
+                                        navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2())
+                                        navController.popBackStack()
 
+                                    }
+                                } else {
+                                    KToasty.info(
+                                        requireContext(),
+                                        it.exception.toString(),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
-                            }else{
-                                KToasty.warning(requireContext(),"Password Entered Is Incorrect !", Toast.LENGTH_SHORT).show()
                             }
-                        }
-                    }else{
-                        KToasty.warning(requireContext(), "Password does not match", Toast.LENGTH_SHORT).show()
+                    } else {
+                        KToasty.warning(
+                            requireContext(),
+                            "Password does not match !",
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                }else{
-                    KToasty.warning(requireContext(), "Only gmail.com & ac.in extension is valid !", Toast.LENGTH_SHORT).show()                }
+                } else {
+                    KToasty.info(
+                        requireContext(),
+                        "Password must not be less than 8 Characters !",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }else{
-                KToasty.warning(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
+                KToasty.warning(
+                    requireContext(),
+                    "Empty fields are not allowed !",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 

@@ -41,34 +41,36 @@ class LoginFragment : Fragment() {
         binding.loginEmailEditText.filters = arrayOf(InputFilters.emailFilter)
         binding.notRegisteredSignUpTextView.setOnClickListener {
             //Go to signUp Fragment
-            navController.navigate(LoginFragmentDirections.actionLoginFragmentToSignUpFragment())
+            navController.navigate(
+                LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
+            )
 
         }
 
         binding.signInButton.setOnClickListener {
-            val email = binding.loginEmailEditText.text.toString()
-            val pass = binding.loginPassEditText.text.toString()
+            val email = binding.loginEmailEditText.text.toString().trim()
+            val pass = binding.loginPassEditText.text.toString().trim()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
-                if (email.endsWith("gmail.com") || email.endsWith("ac.in")) {
-                    firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                           requireContext().showSuccessToast("Successfully Signed In!")
-                            lifecycleScope.launch {
-                                delay(1000)
-                                //go to OnboardActivity
-                                start<OnboardActivity>(){
-                                    activity?.finish()
+                    if(pass.length >= 8) {
+                        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                requireContext().showSuccessToast("Successfully Signed In!")
+                                lifecycleScope.launch {
+                                    delay(1000)
+                                    //go to OnboardActivity
+                                    start<OnboardActivity>(){
+                                        activity?.finish()
+                                    }
                                 }
+                            } else {
+                                KToasty.info(requireContext(),it.exception.toString(),Toast.LENGTH_SHORT).show()
                             }
-                        } else {
-                            KToasty.warning(requireContext(),"Please check the email or password you have entered!",Toast.LENGTH_SHORT).show()
                         }
+                    }else{
+                        KToasty.info(requireContext(),"Password must not be less than 8 Characters !",Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    KToasty.warning(requireContext(), "Only gmail.com & ac.in extension is valid!", Toast.LENGTH_SHORT).show()
-                }
-            } else {
                 KToasty.warning(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
             }
         }
