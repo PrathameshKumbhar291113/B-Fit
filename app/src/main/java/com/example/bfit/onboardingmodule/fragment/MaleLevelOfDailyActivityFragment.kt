@@ -15,7 +15,7 @@ class MaleLevelOfDailyActivityFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_male_level_of_dailty_activity, container, false)
+        return inflater.inflate(R.layout.fragment_male_level_of_daily_activity, container, false)
     }
 
 }

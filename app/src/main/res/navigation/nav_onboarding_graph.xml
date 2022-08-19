@@ -61,6 +61,6 @@
     <fragment
         android:id="@+id/maleLevelOfDailyActivityFragment"
         android:name="com.example.bfit.onboardingmodule.fragment.MaleLevelOfDailyActivityFragment"
-        android:label="fragment_male_level_of_dailty_activity"
-        tools:layout="@layout/fragment_male_level_of_dailty_activity" />
+        android:label="fragment_male_level_of_daily_activity"
+        tools:layout="@layout/fragment_male_level_of_daily_activity" />
 </navigation>
