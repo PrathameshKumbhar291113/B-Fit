@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/genderFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.GenderFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.GenderFragment"
         android:label="fragment_gender"
         tools:layout="@layout/fragment_gender" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/femaleBodyTypeDetailsFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.FemaleBodyTypeDetailsFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.FemaleBodyTypeDetailsFragment"
         android:label="fragment_female_body_type_details"
         tools:layout="@layout/fragment_female_body_type_details" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/femaleHeightWeightFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.FemaleHeightWeightFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.FemaleHeightWeightFragment"
         android:label="fragment_female_height_weight"
         tools:layout="@layout/fragment_female_height_weight" >
         <action
@@ -37,12 +37,12 @@
     </fragment>
     <fragment
         android:id="@+id/femaleLevelOfDailyActivityFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.FemaleLevelOfDailyActivityFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.FemaleLevelOfDailyActivityFragment"
         android:label="fragment_female_level_of_daily_activity"
         tools:layout="@layout/fragment_female_level_of_daily_activity" />
     <fragment
         android:id="@+id/maleHeightWeightFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.MaleHeightWeightFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.MaleHeightWeightFragment"
         android:label="fragment_male_height_weight"
         tools:layout="@layout/fragment_male_height_weight" >
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/maleBodyTypeDetailsFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.MaleBodyTypeDetailsFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.MaleBodyTypeDetailsFragment"
         android:label="fragment_male_body_type_details"
         tools:layout="@layout/fragment_male_body_type_details" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/maleLevelOfDailyActivityFragment"
-        android:name="com.example.bfit.onboardingmodule.fragment.MaleLevelOfDailyActivityFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.MaleLevelOfDailyActivityFragment"
         android:label="fragment_male_level_of_daily_activity"
         tools:layout="@layout/fragment_male_level_of_daily_activity" />
 </navigation>

@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:648406951404:android:c52ee09de397e545388cc9",
+        "mobilesdk_app_id": "1:648406951404:android:fbc246638d66c7d7388cc9",
         "android_client_info": {
-          "package_name": "com.example.bfit"
+          "package_name": "com.prathameshkumbhar.bfit"
         }
       },
       "oauth_client": [

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.bfit.loginmodule.fragment.LoginFragment"
+        android:name="com.prathameshkumbhar.bfit.loginmodule.fragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -16,10 +16,18 @@
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
+        <argument
+            android:name="email"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="password"
+            app:argType="string"
+            android:defaultValue=""/>
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.bfit.loginmodule.fragment.SignUpFragment"
+        android:name="com.prathameshkumbhar.bfit.loginmodule.fragment.SignUpFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -30,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.bfit.loginmodule.fragment.ForgotPasswordFragment"
+        android:name="com.prathameshkumbhar.bfit.loginmodule.fragment.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
@@ -42,6 +50,7 @@
         <argument
             android:name="email"
             app:argType="string"
-            app:nullable="true" />
+            android:defaultValue=""
+            />
     </fragment>
 </navigation>

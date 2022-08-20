@@ -13,7 +13,7 @@ android {
         viewBinding true
     }
     defaultConfig {
-        applicationId "com.example.bfit"
+        applicationId "com.prathameshkumbhar.bfit"
         minSdk 23
         targetSdk 32
         versionCode 101
