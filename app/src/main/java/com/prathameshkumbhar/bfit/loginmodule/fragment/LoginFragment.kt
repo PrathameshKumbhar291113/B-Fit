@@ -86,7 +86,7 @@ class LoginFragment : Fragment() {
             val email = binding.loginEmailEditText.text.toString().trim()
             //Go to forgot pass fragment
 //            it.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment(email = null))
-            navController.navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment(email))
+            navController.navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment(email= ""))
         }
     }
 }
