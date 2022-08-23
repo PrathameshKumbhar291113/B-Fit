@@ -50,7 +50,7 @@
         <argument
             android:name="email"
             app:argType="string"
-            android:defaultValue=""
+            app:nullable="true"
             />
     </fragment>
 </navigation>
