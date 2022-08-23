@@ -60,7 +60,7 @@ class SignUpFragment : Fragment() {
                                     lifecycleScope.launch {
                                         delay(1000)
                                         //Go to signIn frag using navigation
-                                        navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email , pass ))
+                                        navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email, pass))
                                         navController.popBackStack()
 
                                     }

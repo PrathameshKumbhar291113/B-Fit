@@ -17,7 +17,6 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ForgotPasswordFragment : Fragment() {
-//    Today's task to complete the forgot password fragment + signIn and SignUp fragment validations.
 private var _binding: FragmentForgotPasswordBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
@@ -33,7 +32,6 @@ private var _binding: FragmentForgotPasswordBinding? = null
         // Inflate the layout for this fragment
         _binding = FragmentForgotPasswordBinding.inflate(inflater,container,false)
         firebaseAuth = FirebaseAuth.getInstance()
-
         binding.forgotEmailEditText.setText(args.email)
 
         return binding.root
@@ -63,7 +61,5 @@ private var _binding: FragmentForgotPasswordBinding? = null
                 KToasty.error(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
             }
         }
-
-
     }
 }
