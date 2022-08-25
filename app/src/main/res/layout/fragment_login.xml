@@ -29,15 +29,16 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_250sdp"
+                android:layout_height="0dp"
                 android:src="@drawable/logo"
                 android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:0.80"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread"
-                android:contentDescription="TODO" />
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -52,7 +53,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/loginEmail_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintVertical_chainStyle="spread_inside"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/loginEmail_layout"
@@ -69,7 +71,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toStartOf="@+id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
-                tools:ignore="TouchTargetSizeCheck">
+                app:layout_constraintVertical_chainStyle="spread_inside">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/loginEmail_editText"
@@ -97,7 +99,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/loginEmail_layout"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                app:layout_constraintVertical_chainStyle="spread_inside">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/loginPass_editText"
@@ -122,7 +125,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/signIn_button"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout"
+                app:layout_constraintVertical_chainStyle="spread_inside"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signIn_button"
@@ -137,7 +141,8 @@
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signIn_forgotPass_textView"
-                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck"
+                app:layout_constraintVertical_chainStyle="spread_inside"/>
 
             <TextView
                 android:id="@+id/not_registered_signUp_textView"
@@ -153,7 +158,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/signIn_button" />
+                app:layout_constraintTop_toBottomOf="@+id/signIn_button"
+                app:layout_constraintVertical_chainStyle="spread_inside"/>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
