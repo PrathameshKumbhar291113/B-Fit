@@ -32,7 +32,7 @@ private var _binding: FragmentForgotPasswordBinding? = null
         // Inflate the layout for this fragment
         _binding = FragmentForgotPasswordBinding.inflate(inflater,container,false)
         firebaseAuth = FirebaseAuth.getInstance()
-        binding.forgotEmailEditText.setText(args.email)
+        binding.forgotPasswordEmailEditText.setText(args.email)
 
         return binding.root
     }
@@ -40,25 +40,37 @@ private var _binding: FragmentForgotPasswordBinding? = null
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.forgotEmailEditText.filters = arrayOf(InputFilters.emailFilter)
+        binding.forgotPasswordEmailEditText.filters = arrayOf(InputFilters.emailFilter)
 
         binding.forgotPasswordButton.setOnClickListener {
-            val forgotEmail = binding.forgotEmailEditText.text.toString().trim()
+            val forgotEmail = binding.forgotPasswordEmailEditText.text.toString().trim()
             if(forgotEmail.isNotEmpty()){
                 firebaseAuth.sendPasswordResetEmail(forgotEmail)
                     .addOnCompleteListener{
                         if (it.isSuccessful) {
-                            KToasty.success(requireContext(),"Email sent successfully !", Toast.LENGTH_SHORT).show()
+                            KToasty.success(
+                                requireContext(),
+                                "Email sent successfully, Check the mail box !",
+                                Toast.LENGTH_SHORT
+                            ).show()
                             lifecycleScope.launch{
                                 delay(1000)
                                 navController.popBackStack()
                             }
                         }else{
-                            KToasty.error(requireContext(), it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            KToasty.error(
+                                requireContext(),
+                                it.exception.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
             }else{
-                KToasty.error(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
+                KToasty.error(
+                    requireContext(),
+                    "Empty fields are not allowed !",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }

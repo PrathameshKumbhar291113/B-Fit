@@ -12,32 +12,38 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/signIn_scrollView_constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.01" />
+                app:layout_constraintGuide_percent="0.01"/>
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:src="@drawable/logo"
                 android:scaleType="centerCrop"
-                app:layout_constraintDimensionRatio="1:0.80"
+                android:src="@drawable/logo"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintDimensionRatio="1:0.80"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread_inside"
+                app:layout_constraintVertical_chainStyle="spread"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -52,26 +58,29 @@
                 android:textSize="@dimen/_30ssp"
                 app:layout_constraintBottom_toTopOf="@+id/loginEmail_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                app:layout_constraintVertical_chainStyle="spread_inside"/>
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="spread_inside" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/loginEmail_layout"
                 style="@style/LoginTextInputOuterFieldStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:elevation="20dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:elevation="20dp"
                 android:textColorHint="@color/creamish_color"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/loginPassword_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/textView5"
-                app:layout_constraintVertical_chainStyle="spread_inside">
+                app:layout_constraintVertical_chainStyle="spread">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/loginEmail_editText"
@@ -88,19 +97,19 @@
                 style="@style/LoginTextInputOuterFieldStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:elevation="20dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:elevation="20dp"
                 android:textColorHint="@color/creamish_color"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/signIn_forgotPass_textView"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/loginEmail_layout"
-                app:passwordToggleEnabled="true"
-                app:layout_constraintVertical_chainStyle="spread_inside">
+                app:layout_constraintVertical_chainStyle="spread"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/loginPass_editText"
@@ -116,50 +125,51 @@
                 android:id="@+id/signIn_forgotPass_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_135sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="Forgot password ?"
                 android:textAlignment="textEnd"
-                android:layout_marginStart="@dimen/_135sdp"
                 android:textColor="@color/creamish_color"
                 android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toTopOf="@+id/signIn_button"
+                app:layout_constraintBottom_toTopOf="@id/signIn_button"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintHorizontal_bias="0.478"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout"
-                app:layout_constraintVertical_chainStyle="spread_inside"/>
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signIn_button"
-                android:layout_width="@dimen/_100sdp"
+                android:layout_width="@dimen/_120sdp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_18sdp"
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="25dp"
                 android:text="Sign In"
                 android:textColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/not_registered_signUp_textView"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signIn_forgotPass_textView"
-                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck"
-                app:layout_constraintVertical_chainStyle="spread_inside"/>
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
             <TextView
                 android:id="@+id/not_registered_signUp_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Not Registered Yet, Sign Up !"
-                android:textAlignment="center"
-                android:padding="@dimen/_2sdp"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:layout_marginBottom="@dimen/_30sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="Not Registered Yet, Sign Up !"
+                android:textAlignment="center"
                 android:textColor="@color/creamish_color"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/signIn_button"
-                app:layout_constraintVertical_chainStyle="spread_inside"/>
+                app:layout_constraintTop_toBottomOf="@+id/signIn_button" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"
