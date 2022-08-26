@@ -10,97 +10,100 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="@dimen/_25sdp"
         android:fontFamily="@font/arsenal_bold"
-        android:padding="10dp"
-        android:text="Hi\nSelect Gender!"
-        android:textAlignment="textStart"
+        android:text="What's your gender !"
+        android:textAlignment="center"
         android:textColor="@color/creamish_color"
-        android:textSize="30sp"
+        android:textSize="@dimen/_30ssp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewMale"
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/LoginTextInputOuterFieldStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="4dp"
-        android:background="@color/black"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="20dp"
-        app:cardMaxElevation="20dp"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cardViewFemale"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/maleImg"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="8dp"
-                android:padding="10dp"
-                android:scaleType="center"
-                app:layout_constraintBottom_toTopOf="@+id/textView6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/arsenal_bold"
-                android:text="Male"
-                android:textColor="@color/creamish_color"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.504"
-                app:layout_constraintStart_toStartOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewFemale"
-        android:layout_width="0dp"
-        android:layout_height="400dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="8dp"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="20dp"
-        app:cardMaxElevation="20dp"
-        app:cardPreventCornerOverlap="true"
-        app:layout_constraintBottom_toBottomOf="@+id/cardViewMale"
+        android:fontFamily="@font/arsenal_bold"
+        android:text="Click the image to go ahead..."
+        android:textAlignment="center"
+        android:textColor="@color/creamish_color"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toTopOf="@+id/maleImg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cardViewMale"
-        app:layout_constraintTop_toTopOf="@+id/cardViewMale">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="HardcodedText" />
 
-        <ImageView
-            android:id="@+id/femaleImg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:padding="10dp" />
-    </androidx.cardview.widget.CardView>
+    <ImageView
+        android:id="@+id/maleImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bfitlogo"
+        android:padding="@dimen/_30sdp"
+        app:layout_constraintEnd_toStartOf="@+id/femaleImg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintBottom_toTopOf="@id/male_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView1" />
 
+    <ImageView
+        android:id="@+id/femaleImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:padding="@dimen/_30sdp"
+        android:src="@drawable/bfitlogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/maleImg"
+        app:layout_constraintBottom_toTopOf="@id/female_button"
+        app:layout_constraintTop_toTopOf="@+id/maleImg" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/male_button"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:background="@drawable/rounded_corner_button"
+        android:elevation="@dimen/_25sdp"
+        android:text="MALE"
+        android:textColor="@color/creamish_color"
+        android:layout_marginBottom="@dimen/_35sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/female_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maleImg"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/female_button"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_18sdp"
+        android:background="@drawable/rounded_corner_button"
+        android:elevation="@dimen/_25sdp"
+        android:text="FEMALE"
+        android:textColor="@color/creamish_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginBottom="@dimen/_35sdp"
+        app:layout_constraintStart_toEndOf="@id/male_button"
+        app:layout_constraintTop_toBottomOf="@+id/femaleImg"
+        app:layout_constraintVertical_chainStyle="spread"
+        tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
