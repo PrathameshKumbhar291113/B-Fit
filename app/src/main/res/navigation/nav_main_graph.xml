@@ -4,20 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main_graph"
     app:startDestination="@id/homeFragment">
-
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/nutritionDetailsFragment"
-        android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.NutritionDetailsFragment"
-        android:label="fragment_nutrition_details"
-        tools:layout="@layout/fragment_nutrition_details" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.SettingsFragment"
-        android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
 </navigation>
