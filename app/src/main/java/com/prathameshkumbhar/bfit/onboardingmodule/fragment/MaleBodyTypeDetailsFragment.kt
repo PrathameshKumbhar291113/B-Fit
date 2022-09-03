@@ -5,9 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.prathameshkumbhar.bfit.R
+import androidx.navigation.fragment.findNavController
+import com.prathameshkumbhar.bfit.databinding.FragmentMaleBodyTypeDetailsBinding
 
 class MaleBodyTypeDetailsFragment : Fragment() {
+
+    private var _binding: FragmentMaleBodyTypeDetailsBinding? = null
+    private val binding get() = _binding!!
+    private val navController  by lazy {
+        findNavController()
+    }
 
 
     override fun onCreateView(
@@ -15,7 +22,16 @@ class MaleBodyTypeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_male_body_type_details, container, false)
+        _binding = FragmentMaleBodyTypeDetailsBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController.navigate(
+            MaleBodyTypeDetailsFragmentDirections.actionMaleBodyTypeDetailsFragmentToMaleLevelOfDailyActivityFragment())
+
     }
 
 }

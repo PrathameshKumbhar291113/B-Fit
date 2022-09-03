@@ -6,29 +6,44 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".mainmodule.HomeActivity">
+    <splitties.views.appcompat.Toolbar
+        android:id="@+id/homeActivity_ToolBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        app:title="@string/app_name"
+        app:titleTextColor="@color/creamish_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/homeActivity_fragmentContainer"
+        />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/homeActivity_fragmentContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/homeActivity_ToolBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+        />
 
-    <meow.bottomnavigation.MeowBottomNavigation
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeActivity_fragmentContainer"
         app:mbn_backgroundBottomColor="@color/orange"
         app:mbn_circleColor="@color/creamish_color"
-        app:mbn_countBackgroundColor="@color/black"
+        app:mbn_countBackgroundColor="@color/orange"
+        app:mbn_countTextColor="@color/creamish_color"
         app:mbn_defaultIconColor="@color/creamish_color"
-        app:mbn_selectedIconColor="@color/orange" />
+        app:mbn_rippleColor="@color/creamish_color"
+        app:mbn_selectedIconColor="@color/orange"
+        app:mbn_shadowColor="@color/creamish_color"
+       app:layout_constraintTop_toBottomOf="@id/homeActivity_fragmentContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,6 @@ class OnboardActivity : AppCompatActivity() {
         binding = ActivityOnboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
         replaceFragment(GenderFragment())
-
     }
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
