@@ -5,17 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.prathameshkumbhar.bfit.R
+import com.prathameshkumbhar.bfit.databinding.FragmentMaleLevelOfDailyActivityBinding
+import com.prathameshkumbhar.bfit.mainmodule.HomeActivity
+import splitties.fragments.start
 
 class MaleLevelOfDailyActivityFragment : Fragment() {
-
+    private var _binding: FragmentMaleLevelOfDailyActivityBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_male_level_of_daily_activity, container, false)
+        _binding = FragmentMaleLevelOfDailyActivityBinding.inflate(inflater,container,false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.textView4.setOnClickListener {
+            start<HomeActivity>(){
+                activity?.finish()
+            }
+        }
     }
 
 }

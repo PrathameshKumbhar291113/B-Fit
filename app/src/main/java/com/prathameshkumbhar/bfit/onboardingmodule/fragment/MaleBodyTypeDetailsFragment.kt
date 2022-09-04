@@ -29,8 +29,12 @@ class MaleBodyTypeDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        navController.navigate(
-            MaleBodyTypeDetailsFragmentDirections.actionMaleBodyTypeDetailsFragmentToMaleLevelOfDailyActivityFragment())
+        binding.textView2.setOnClickListener {
+            navController.navigate(
+                MaleBodyTypeDetailsFragmentDirections.actionMaleBodyTypeDetailsFragmentToMaleLevelOfDailyActivityFragment()
+            )
+        }
+
 
     }
 
