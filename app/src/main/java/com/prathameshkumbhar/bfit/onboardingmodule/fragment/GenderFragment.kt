@@ -25,11 +25,11 @@ class GenderFragment : Fragment() {
     ): View? {
         _binding = FragmentGenderBinding.inflate(inflater,container,false)
 
-        binding.maleImg.load("https://i.imgur.com/5epNbBi.png"){
+        binding.maleImg.load("https://i.imgur.com/n03ow2D.jpg"){
             crossfade(true)
         }
 
-        binding.femaleImg.load("https://i.imgur.com/5epNbBi.png"){
+        binding.femaleImg.load("https://i.imgur.com/n03ow2D.jpg"){
             crossfade(true)
         }
 
@@ -38,11 +38,14 @@ class GenderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.maleButton.setOnClickListener{
+
             val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderMale", Context.MODE_PRIVATE)
             var editor: SharedPreferences.Editor = sharePrefGender.edit()
             editor.putString("maleBtn","selectedMale")
             editor.apply()
+
             navController.navigate(
                 GenderFragmentDirections.actionGenderFragmentToMaleHeightWeightFragment()
             )
@@ -53,9 +56,12 @@ class GenderFragment : Fragment() {
             var editor: SharedPreferences.Editor = sharePrefGender.edit()
             editor.putString("femaleBtn","selectedFemale")
             editor.apply()
+
             navController.navigate(
                 GenderFragmentDirections.actionGenderFragmentToFemaleHeightWeightFragment()
             )
+
         }
+
     }
 }

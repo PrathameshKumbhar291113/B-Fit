@@ -25,7 +25,7 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
-    private val navController  by lazy {
+    private val navController by lazy {
         findNavController()
     }
     private val args : LoginFragmentArgs by navArgs()
