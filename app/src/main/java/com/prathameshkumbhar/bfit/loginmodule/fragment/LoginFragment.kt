@@ -57,11 +57,6 @@ class LoginFragment : Fragment() {
             val email = binding.loginEmailEditText.text.toString().trim()
             val pass = binding.loginPassEditText.text.toString().trim()
 
-            val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
-            var editor : SharedPreferences.Editor = sharePrefLogin.edit()
-            editor.putBoolean("flag",true)
-            editor.apply()
-
             if (email.isNotEmpty() && pass.isNotEmpty()) {
                     if(pass.length >= 8) {
                         firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
@@ -71,6 +66,12 @@ class LoginFragment : Fragment() {
                                     delay(1000)
                                     //go to OnboardActivity
                                     start<OnboardActivity>(){
+
+                                        val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
+                                        var editor : SharedPreferences.Editor = sharePrefLogin.edit()
+                                        editor.putBoolean("flag",true)
+                                        editor.apply()
+
                                         activity?.finish()
                                     }
                                 }

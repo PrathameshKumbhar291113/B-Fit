@@ -1,5 +1,7 @@
 package com.prathameshkumbhar.bfit.onboardingmodule.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,8 +28,15 @@ class MaleLevelOfDailyActivityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
+
         binding.textView4.setOnClickListener {
             start<HomeActivity>(){
+
+                var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
+                editor.putBoolean("isOnboardComplete",true)
+                editor.apply()
+
                 activity?.finish()
             }
         }

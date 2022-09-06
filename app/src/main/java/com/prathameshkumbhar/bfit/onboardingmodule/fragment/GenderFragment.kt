@@ -25,11 +25,11 @@ class GenderFragment : Fragment() {
     ): View? {
         _binding = FragmentGenderBinding.inflate(inflater,container,false)
 
-        binding.maleImg.load("https://i.imgur.com/n03ow2D.jpg"){
+        binding.maleImg.load("https://i.imgur.com/fi4BK5A.jpg"){
             crossfade(true)
         }
 
-        binding.femaleImg.load("https://i.imgur.com/n03ow2D.jpg"){
+        binding.femaleImg.load("https://i.imgur.com/eQwx32g.jpg"){
             crossfade(true)
         }
 
@@ -39,11 +39,12 @@ class GenderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+
         binding.maleButton.setOnClickListener{
 
-            val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderMale", Context.MODE_PRIVATE)
             var editor: SharedPreferences.Editor = sharePrefGender.edit()
-            editor.putString("maleBtn","selectedMale")
+            editor.putBoolean("isMaleChecked",true)
             editor.apply()
 
             navController.navigate(
@@ -52,9 +53,9 @@ class GenderFragment : Fragment() {
         }
 
         binding.femaleButton.setOnClickListener{
-            val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderFemale", Context.MODE_PRIVATE)
+
             var editor: SharedPreferences.Editor = sharePrefGender.edit()
-            editor.putString("femaleBtn","selectedFemale")
+            editor.putBoolean("isMaleChecked",false)
             editor.apply()
 
             navController.navigate(

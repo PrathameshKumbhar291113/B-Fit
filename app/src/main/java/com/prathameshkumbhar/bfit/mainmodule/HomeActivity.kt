@@ -1,13 +1,17 @@
 package com.prathameshkumbhar.bfit.mainmodule
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation.Model
 import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.databinding.ActivityHomeBinding
-import com.prathameshkumbhar.bfit.mainmodule.fragment.ExerciseShowCaseFragment
+import com.prathameshkumbhar.bfit.mainmodule.fragment.FemaleExerciseFragment
+import com.prathameshkumbhar.bfit.mainmodule.fragment.MaleExerciseFragment
 import com.prathameshkumbhar.bfit.mainmodule.fragment.NutritionDetailsFragment
+import com.prathameshkumbhar.bfit.mainmodule.fragment.ProfileFragment
 
 
 class HomeActivity : AppCompatActivity() {
@@ -24,16 +28,40 @@ class HomeActivity : AppCompatActivity() {
         toSetFragment.add(Model(2,R.drawable.ic_food_bank))
         toSetFragment.add(Model(3,R.drawable.ic_account))
 
-        toSetFragment.show(1,true)
-        replaceFragment(ExerciseShowCaseFragment())
 
+
+        val sharePrefGender: SharedPreferences = getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+        var checkGenderMale = sharePrefGender.getBoolean("isMaleChecked", true)
+        if (checkGenderMale){
+            toSetFragment.show(1,true)
+            replaceFragment(MaleExerciseFragment())
+        }else{
+            toSetFragment.show(1,true)
+            replaceFragment(FemaleExerciseFragment())
+        }
 
         binding.bottomNavigationView.setOnClickMenuListener { model: Model? ->
 
             when(model!!.id){
-                1 -> replaceFragment(ExerciseShowCaseFragment())
-                2 -> replaceFragment(NutritionDetailsFragment())
-                3 -> replaceFragment(NutritionDetailsFragment())
+                1 -> {
+                    if (checkGenderMale){
+                        toSetFragment.show(1,true)
+                        binding.homeActivityToolBar.title = "Home"
+                        replaceFragment(MaleExerciseFragment())
+                    }else{
+                        toSetFragment.show(1,true)
+                        binding.homeActivityToolBar.title = "Home"
+                        replaceFragment(FemaleExerciseFragment())
+                    }
+                }
+                2 -> {
+                    replaceFragment(NutritionDetailsFragment())
+                    binding.homeActivityToolBar.title = "Nutrition"
+                }
+                3 -> {
+                    replaceFragment(ProfileFragment())
+                    binding.homeActivityToolBar.title = "Profile"
+                }
             }
         }
     }
