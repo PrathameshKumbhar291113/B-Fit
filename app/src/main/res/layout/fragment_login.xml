@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/palate_rich_black"
     tools:context=".loginmodule.fragment.LoginFragment">
 
     <ScrollView
@@ -29,13 +29,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.01"/>
+                app:layout_constraintGuide_percent="0.01" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="centerCrop"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/logo"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
                 app:layout_constraintDimensionRatio="1:0.80"
@@ -43,19 +44,18 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="spread"
+                app:layout_constraintVertical_chainStyle="spread_inside"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView5"
-                style="@style/LoginTextInputOuterFieldStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans_bold"
-                android:text="Sign In"
+                android:text="Log In"
                 android:textAlignment="center"
-                android:textColor="@color/creamish_color"
-                android:textSize="@dimen/_30ssp"
+                android:textColor="@color/palate_flesh_cream"
+                android:textSize="@dimen/_27ssp"
                 app:layout_constraintBottom_toTopOf="@+id/loginEmail_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -66,15 +66,21 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/loginEmail_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:elevation="20dp"
-                android:textColorHint="@color/creamish_color"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                android:textColorHint="@color/palate_flesh_cream"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
+                app:boxStrokeColor="@color/palate_flesh_cream"
+                app:hintTextColor="@color/palate_flesh_cream"
                 app:layout_constraintBottom_toTopOf="@+id/loginPassword_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -84,25 +90,30 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/loginEmail_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_flesh_cream" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/loginPassword_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:elevation="20dp"
-                android:textColorHint="@color/creamish_color"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                android:textColorHint="@color/palate_flesh_cream"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
+                app:boxStrokeColor="@color/palate_flesh_cream"
+                app:hintTextColor="@color/palate_flesh_cream"
                 app:layout_constraintBottom_toTopOf="@+id/signIn_forgotPass_textView"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -113,63 +124,140 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/loginPass_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_flesh_cream" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/signIn_forgotPass_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_135sdp"
+                android:layout_marginStart="@dimen/_133sdp"
                 android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_18sdp"
                 android:padding="@dimen/_2sdp"
-                android:text="Forgot password ?"
+                android:text="Forgot password?"
                 android:textAlignment="textEnd"
-                android:textColor="@color/creamish_color"
+                android:textColor="@color/palate_flesh_cream"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toTopOf="@id/signIn_button"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHorizontal_bias="0.478"
+                app:layout_constraintHorizontal_bias="0.487"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signIn_button"
-                android:layout_width="@dimen/_120sdp"
+                android:layout_width="@dimen/_125sdp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_38sdp"
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="25dp"
-                android:text="Sign In"
-                android:textColor="@color/creamish_color"
-                app:layout_constraintBottom_toTopOf="@+id/not_registered_signUp_textView"
+                android:text="Log In"
+                android:textColor="@color/palate_flesh_cream"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
+                app:layout_constraintBottom_toTopOf="@id/login_or_textView"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signIn_forgotPass_textView"
                 tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
             <TextView
-                android:id="@+id/not_registered_signUp_textView"
+                android:id="@+id/login_or_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
-                android:layout_marginBottom="@dimen/_30sdp"
-                android:padding="@dimen/_2sdp"
-                android:text="Not Registered Yet, Sign Up !"
                 android:textAlignment="center"
-                android:textColor="@color/creamish_color"
+                android:textSize="@dimen/_12ssp"
+                android:text="──────────OR──────────"
+                android:textColor="@color/palate_flesh_cream"
+                app:layout_constraintBottom_toTopOf="@id/google_login"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/signIn_button" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/google_login"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@color/palate_rich_black"
+                android:scaleType="centerInside"
+                android:src="@drawable/googlevector"
+                app:layout_constraintBottom_toTopOf="@id/not_registered_signUp_dailog_textView"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@+id/facebook_login"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/login_or_textView"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/facebook_login"
+                android:layout_width="@dimen/_31sdp"
+                android:layout_height="@dimen/_31sdp"
+                android:background="@color/palate_rich_black"
+                android:scaleType="fitCenter"
+                android:src="@drawable/facebookvector"
+                app:layout_constraintBottom_toBottomOf="@id/google_login"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/twitter_login"
+                app:layout_constraintStart_toEndOf="@id/google_login"
+                app:layout_constraintTop_toTopOf="@id/google_login"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/twitter_login"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                android:background="@color/palate_rich_black"
+                android:scaleType="fitCenter"
+                android:src="@drawable/twittervector"
+                app:layout_constraintBottom_toBottomOf="@id/facebook_login"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintStart_toEndOf="@id/facebook_login"
+                app:layout_constraintTop_toTopOf="@id/facebook_login"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/not_registered_signUp_dailog_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:background="@color/palate_rich_black"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="New User? "
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textAlignment="center"
+                android:textColor="@color/palate_flesh_cream"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/guideline2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/signIn_button" />
+                app:layout_constraintEnd_toStartOf="@id/not_registered_signUp_textView"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/google_login" />
+
+            <TextView
+                android:id="@+id/not_registered_signUp_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Register"
+                android:textColor="@color/palate_amber_orange"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/not_registered_signUp_dailog_textView"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintStart_toEndOf="@id/not_registered_signUp_dailog_textView"
+                app:layout_constraintTop_toTopOf="@id/not_registered_signUp_dailog_textView" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"

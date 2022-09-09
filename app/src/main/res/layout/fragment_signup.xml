@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/palate_rich_black"
     tools:context=".loginmodule.fragment.SignUpFragment">
 
     <ScrollView
@@ -32,10 +32,11 @@
                 android:id="@+id/imageView3"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="centerCrop"
+                android:padding="@dimen/_10sdp"
+                android:scaleType="fitCenter"
                 android:src="@drawable/logo"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
-                app:layout_constraintDimensionRatio="1:0.50"
+                app:layout_constraintDimensionRatio="1:0.80"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -45,11 +46,10 @@
 
             <TextView
                 android:id="@+id/textView5"
-                style="@style/LoginTextInputOuterFieldStyle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arsenal_bold"
-                android:text="Sign Up"
+                android:text="Register"
                 android:textAlignment="center"
                 android:textColor="@color/creamish_color"
                 android:textSize="@dimen/_30ssp"
@@ -63,25 +63,30 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signUp_name_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                app:layout_constraintVertical_chainStyle="packed"
                 android:textColorHint="@color/creamish_color"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_email_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintVertical_chainStyle="packed">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUp_name_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Full Name"
@@ -91,25 +96,30 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signUp_email_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                app:layout_constraintVertical_chainStyle="packed"
                 android:textColorHint="@color/creamish_color"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_phoneNumber_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/signUp_name_layout">
+                app:layout_constraintTop_toBottomOf="@+id/signUp_name_layout"
+                app:layout_constraintVertical_chainStyle="packed">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUp_email_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Email"
@@ -119,25 +129,30 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signUp_phoneNumber_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                app:layout_constraintVertical_chainStyle="packed"
                 android:textColorHint="@color/creamish_color"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_pass_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/signUp_email_layout">
+                app:layout_constraintTop_toBottomOf="@+id/signUp_email_layout"
+                app:layout_constraintVertical_chainStyle="packed">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUp_phoneNumber_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Mobile No."
@@ -147,14 +162,19 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signUp_pass_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                app:layout_constraintVertical_chainStyle="packed"
                 android:textColorHint="@color/creamish_color"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_confirmPass_layout"
@@ -162,11 +182,11 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signUp_phoneNumber_layout"
+                app:layout_constraintVertical_chainStyle="packed"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUpPass_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Password"
@@ -176,14 +196,19 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/signUp_confirmPass_layout"
-                style="@style/LoginTextInputOuterFieldStyle"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_38sdp"
+                android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                app:layout_constraintVertical_chainStyle="packed"
                 android:textColorHint="@color/creamish_color"
+                app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
+                app:boxCornerRadiusBottomStart="@dimen/_50sdp"
+                app:boxCornerRadiusTopEnd="@dimen/_50sdp"
+                app:boxCornerRadiusTopStart="@dimen/_50sdp"
                 app:boxStrokeColor="@color/creamish_color"
                 app:hintTextColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_button"
@@ -191,11 +216,11 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signUp_pass_layout"
+                app:layout_constraintVertical_chainStyle="packed"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUp_confirmPass_editText"
-                    style="@style/LoginTextInputInnerFieldStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password"
@@ -205,37 +230,57 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signUp_button"
-                android:layout_width="@dimen/_120sdp"
+                android:layout_width="@dimen/_125sdp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_18sdp"
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="@dimen/_25sdp"
-                app:layout_constraintVertical_chainStyle="spread"
-                android:text="Sign Up"
+                android:text="Register"
                 android:textColor="@color/creamish_color"
                 app:layout_constraintBottom_toTopOf="@+id/already_register_signIn_textView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.51"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signUp_confirmPass_layout"
+                app:layout_constraintVertical_chainStyle="spread"
                 tools:ignore="SpeakableTextPresentCheck,TextContrastCheck" />
 
             <TextView
-                android:id="@+id/already_register_signIn_textView"
-                android:layout_width="0dp"
+                android:id="@+id/already_register_signIn_dailog_textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:layout_marginBottom="@dimen/_30sdp"
-                android:text="Already Registered, Sign In !"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Already Registered? "
                 android:textAlignment="center"
-                app:layout_constraintVertical_chainStyle="spread"
                 android:textColor="@color/creamish_color"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@id/signUp_scrollView_constraintLayout"
-                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintEnd_toStartOf="@+id/already_register_signIn_textView"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/signUp_button" />
+                app:layout_constraintTop_toBottomOf="@+id/signUp_button"
+                app:layout_constraintVertical_chainStyle="spread" />
 
+            <TextView
+                android:id="@+id/already_register_signIn_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="Log In"
+                android:textColor="@color/palate_amber_orange"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/already_register_signIn_dailog_textView"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/already_register_signIn_dailog_textView"
+                app:layout_constraintTop_toTopOf="@id/already_register_signIn_dailog_textView"
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline2"

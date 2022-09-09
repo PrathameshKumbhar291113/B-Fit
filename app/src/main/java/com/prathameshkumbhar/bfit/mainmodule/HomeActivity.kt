@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
 
         toSetFragment.add(Model(1,R.drawable.ic_home))
         toSetFragment.add(Model(2,R.drawable.ic_food_bank))
-        toSetFragment.add(Model(3,R.drawable.ic_account))
+        toSetFragment.add(Model(3,R.drawable.ic_person_profile))
 
 
 
