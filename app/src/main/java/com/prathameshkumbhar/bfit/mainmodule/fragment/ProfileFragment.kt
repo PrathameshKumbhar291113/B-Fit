@@ -39,6 +39,11 @@ class ProfileFragment : Fragment() {
 
         binding.logoutButton.setOnClickListener {
 
+            //putting value 'false' in the shared preference as the user is route to the splash
+            //activity, they will again route to the login fragment as the value now stored is
+            //false as if the value stored in the logged in is false then the user will have to
+            //log in again
+
             val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
             var editorlog : SharedPreferences.Editor = sharePrefLogin.edit()
             editorlog.putBoolean("flag",false)
@@ -48,7 +53,9 @@ class ProfileFragment : Fragment() {
             firebaseAuth.signOut()
             lifecycleScope.launch(){
                 delay(1000)
-                start<SplashActivity>()
+                start<SplashActivity>(){
+                    activity?.finish()
+                }
             }
         }
     }
