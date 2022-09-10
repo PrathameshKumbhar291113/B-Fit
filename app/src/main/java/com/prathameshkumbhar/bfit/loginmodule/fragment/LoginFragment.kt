@@ -226,6 +226,7 @@ class LoginFragment : Fragment() {
                 lifecycleScope.launch(){
                     delay(2000)
                     start<OnboardActivity>(){
+
                         val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
                         var editor : SharedPreferences.Editor = sharePrefLogin.edit()
                         editor.putBoolean("flag",true)

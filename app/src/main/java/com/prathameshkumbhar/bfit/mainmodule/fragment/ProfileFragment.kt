@@ -49,6 +49,12 @@ class ProfileFragment : Fragment() {
             editorlog.putBoolean("flag",false)
             editorlog.apply()
 
+            //Same goes for the on board activity fragment also
+            val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
+            var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
+            editor.putBoolean("isOnboardComplete",false)
+            editor.apply()
+
             requireContext().showSuccessToast("Successfully Logged Out!")
             firebaseAuth.signOut()
             lifecycleScope.launch(){
