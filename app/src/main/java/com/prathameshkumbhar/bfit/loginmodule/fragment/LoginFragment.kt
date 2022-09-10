@@ -130,14 +130,14 @@ class LoginFragment : Fragment() {
         }
 
         binding.facebookLogin.setOnClickListener {
-
-            LoginManager.getInstance().logInWithReadPermissions(activity!!,callbackManager, listOf("email"))
             signInFacebook()
         }
     }
 
     //Facebook authentication starts here
     private fun signInFacebook() {
+
+        LoginManager.getInstance().logInWithReadPermissions(activity!!,callbackManager, listOf("email"))
 
         LoginManager.getInstance().registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {

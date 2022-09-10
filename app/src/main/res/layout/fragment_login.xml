@@ -208,24 +208,10 @@
                 android:src="@drawable/facebookvector"
                 app:layout_constraintBottom_toBottomOf="@id/google_login"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/twitter_login"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
                 app:layout_constraintStart_toEndOf="@id/google_login"
                 app:layout_constraintTop_toTopOf="@id/google_login"
                 tools:ignore="SpeakableTextPresentCheck" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/twitter_login"
-                android:layout_width="@dimen/_32sdp"
-                android:layout_height="@dimen/_32sdp"
-                android:background="@color/palate_rich_black"
-                android:scaleType="fitCenter"
-                android:src="@drawable/twittervector"
-                app:layout_constraintBottom_toBottomOf="@id/facebook_login"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/guideline2"
-                app:layout_constraintStart_toEndOf="@id/facebook_login"
-                app:layout_constraintTop_toTopOf="@id/facebook_login"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/not_registered_signUp_dailog_textView"
