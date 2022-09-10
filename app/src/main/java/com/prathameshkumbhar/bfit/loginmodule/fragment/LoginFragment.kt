@@ -1,9 +1,12 @@
 package com.prathameshkumbhar.bfit.loginmodule.fragment
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,11 +19,18 @@ import androidx.navigation.fragment.navArgs
 import com.droidman.ktoasty.KToasty
 import com.droidman.ktoasty.showErrorToast
 import com.droidman.ktoasty.showSuccessToast
+import com.facebook.AccessToken
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.prathameshkumbhar.bfit.R
@@ -36,6 +46,7 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var googleLoginClient : GoogleSignInClient
+    private var callbackManager = CallbackManager.Factory.create()
     private val navController by lazy {
         findNavController()
     }
@@ -91,8 +102,6 @@ class LoginFragment : Fragment() {
                                         editor.putBoolean("flag",true)
                                         editor.apply()
 
-
-
                                         activity?.finish()
                                     }
                                 }
@@ -119,8 +128,73 @@ class LoginFragment : Fragment() {
         binding.googleLogin.setOnClickListener {
             signInGoogle()
         }
+
+        binding.facebookLogin.setOnClickListener {
+
+            LoginManager.getInstance().logInWithReadPermissions(activity!!,callbackManager, listOf("email"))
+            signInFacebook()
+        }
     }
 
+    //Facebook authentication starts here
+    private fun signInFacebook() {
+
+        LoginManager.getInstance().registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
+            override fun onSuccess(loginResult: LoginResult) {
+                Log.d(TAG, "facebook:onSuccess:$loginResult")
+                handleFacebookAccessToken(loginResult.accessToken)
+            }
+
+            override fun onCancel() {
+                Log.d(TAG, "facebook:onCancel")
+            }
+
+            override fun onError(error: FacebookException) {
+                Log.d(TAG, "facebook:onError", error)
+            }
+        })
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        // Pass the activity result back to the Facebook SDK
+        callbackManager.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun handleFacebookAccessToken(token: AccessToken) {
+        Log.d(TAG, "handleFacebookAccessToken:$token")
+
+        val credential = FacebookAuthProvider.getCredential(token.token)
+        firebaseAuth.signInWithCredential(credential)
+            .addOnCompleteListener{ task ->
+                if (task.isSuccessful) {
+                    // Sign in success, update UI with the signed-in user's information
+                    Log.d(TAG, "signInWithCredential:success")
+
+                    requireContext().showSuccessToast("Successfully Logged In!")
+
+                    lifecycleScope.launch(){
+                        delay(2000)
+                        start<OnboardActivity>(){
+
+                            val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
+                            var editor : SharedPreferences.Editor = sharePrefLogin.edit()
+                            editor.putBoolean("flag",true)
+                            editor.apply()
+
+                            activity?.finish()
+                        }
+                    }
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+                    requireContext().showErrorToast( "Authentication failed.")
+                }
+            }
+    }
+
+    //Google authentication starts from here
     private fun signInGoogle(){
         val signInClient = googleLoginClient.signInIntent
         launcher.launch(signInClient)

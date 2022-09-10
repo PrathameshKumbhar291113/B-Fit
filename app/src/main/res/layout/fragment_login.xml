@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.01" />
-
+<!--https://b-fit-e7767.firebaseapp.com/__/auth/handler-->
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="0dp"
@@ -39,7 +39,7 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/logo"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
-                app:layout_constraintDimensionRatio="1:0.80"
+                app:layout_constraintDimensionRatio="1:0.70"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
@@ -135,19 +135,20 @@
                 android:id="@+id/signIn_forgotPass_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_133sdp"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_180sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_55sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="Forgot password?"
                 android:textAlignment="textEnd"
                 android:textColor="@color/palate_flesh_cream"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_10ssp"
                 app:layout_constraintBottom_toTopOf="@id/signIn_button"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintHorizontal_bias="0.487"
                 app:layout_constraintStart_toStartOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/loginPassword_layout"
+                tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/signIn_button"
@@ -171,7 +172,7 @@
                 android:id="@+id/login_or_textView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_25sdp"
                 android:textAlignment="center"
                 android:textSize="@dimen/_12ssp"
                 android:text="──────────OR──────────"
@@ -179,7 +180,8 @@
                 app:layout_constraintBottom_toTopOf="@id/google_login"
                 app:layout_constraintEnd_toStartOf="@id/guideline2"
                 app:layout_constraintStart_toEndOf="@id/guideline1"
-                app:layout_constraintTop_toBottomOf="@id/signIn_button" />
+                app:layout_constraintTop_toBottomOf="@id/signIn_button"
+                tools:ignore="HardcodedText" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/google_login"
