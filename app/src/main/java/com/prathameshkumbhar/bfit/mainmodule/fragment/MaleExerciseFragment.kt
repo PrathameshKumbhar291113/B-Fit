@@ -9,7 +9,6 @@ import com.prathameshkumbhar.bfit.R
 
 class MaleExerciseFragment : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -17,5 +16,4 @@ class MaleExerciseFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_male_exercise, container, false)
     }
-
 }
