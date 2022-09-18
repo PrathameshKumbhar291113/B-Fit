@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/palate_rich_black"
+    android:background="@color/palate_titan_white"
     tools:context=".loginmodule.fragment.SignUpFragment">
 
     <ScrollView
@@ -52,7 +52,7 @@
                 android:fontFamily="@font/arsenal_bold"
                 android:text="Register"
                 android:textAlignment="center"
-                android:textColor="@color/creamish_color"
+                android:textColor="@color/palate_big_stone"
                 android:textSize="@dimen/_30ssp"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_name_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
@@ -72,13 +72,13 @@
                 android:layout_marginEnd="@dimen/_38sdp"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                android:textColorHint="@color/creamish_color"
+                android:textColorHint="@color/palate_big_stone"
                 app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_50sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_50sdp"
                 app:boxCornerRadiusTopStart="@dimen/_50sdp"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_email_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -92,7 +92,7 @@
                     android:layout_height="match_parent"
                     android:hint="Full Name"
                     android:inputType="text"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -105,13 +105,13 @@
                 android:layout_marginEnd="@dimen/_38sdp"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                android:textColorHint="@color/creamish_color"
+                android:textColorHint="@color/palate_big_stone"
                 app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_50sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_50sdp"
                 app:boxCornerRadiusTopStart="@dimen/_50sdp"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_phoneNumber_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -125,7 +125,7 @@
                     android:layout_height="match_parent"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -138,13 +138,13 @@
                 android:layout_marginEnd="@dimen/_38sdp"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                android:textColorHint="@color/creamish_color"
+                android:textColorHint="@color/palate_big_stone"
                 app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_50sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_50sdp"
                 app:boxCornerRadiusTopStart="@dimen/_50sdp"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_pass_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -158,7 +158,7 @@
                     android:layout_height="match_parent"
                     android:hint="Mobile No."
                     android:inputType="phone"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -171,13 +171,13 @@
                 android:layout_marginEnd="@dimen/_38sdp"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                android:textColorHint="@color/creamish_color"
+                android:textColorHint="@color/palate_big_stone"
                 app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_50sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_50sdp"
                 app:boxCornerRadiusTopStart="@dimen/_50sdp"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_confirmPass_layout"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -192,7 +192,7 @@
                     android:layout_height="match_parent"
                     android:hint="Password"
                     android:inputType="textPassword"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -205,13 +205,13 @@
                 android:layout_marginEnd="@dimen/_38sdp"
                 android:layout_marginBottom="@dimen/_4sdp"
                 android:elevation="@dimen/_25sdp"
-                android:textColorHint="@color/creamish_color"
+                android:textColorHint="@color/palate_big_stone"
                 app:boxCornerRadiusBottomEnd="@dimen/_50sdp"
                 app:boxCornerRadiusBottomStart="@dimen/_50sdp"
                 app:boxCornerRadiusTopEnd="@dimen/_50sdp"
                 app:boxCornerRadiusTopStart="@dimen/_50sdp"
-                app:boxStrokeColor="@color/creamish_color"
-                app:hintTextColor="@color/creamish_color"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@+id/signUp_button"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -226,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password"
                     android:inputType="textPassword"
-                    android:textColor="@color/creamish_color" />
+                    android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -237,7 +237,7 @@
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="@dimen/_25sdp"
                 android:text="Register"
-                android:textColor="@color/creamish_color"
+                android:textColor="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@+id/already_register_signIn_textView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.51"
@@ -257,7 +257,7 @@
                 android:paddingBottom="@dimen/_5sdp"
                 android:text="Already Registered? "
                 android:textAlignment="center"
-                android:textColor="@color/creamish_color"
+                android:textColor="@color/palate_big_stone"
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintBottom_toBottomOf="@id/signUp_scrollView_constraintLayout"
                 app:layout_constraintEnd_toStartOf="@+id/already_register_signIn_textView"
@@ -272,8 +272,8 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:text="Log In"
-                android:textColor="@color/palate_amber_orange"
+                android:text="Log In."
+                android:textColor="@color/palate_havelock_blue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/already_register_signIn_dailog_textView"

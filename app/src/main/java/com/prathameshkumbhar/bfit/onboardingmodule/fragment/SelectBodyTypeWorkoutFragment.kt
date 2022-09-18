@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.prathameshkumbhar.bfit.databinding.FragmentFemaleBodyTypeDetailsBinding
+import com.prathameshkumbhar.bfit.databinding.FragmentSelectBodyTypeWorkoutBinding
 
-class FemaleBodyTypeDetailsFragment : Fragment() {
-    private var _binding : FragmentFemaleBodyTypeDetailsBinding? = null
+
+class SelectBodyTypeWorkoutFragment : Fragment() {
+    private var _binding : FragmentSelectBodyTypeWorkoutBinding? = null
     private val binding get() = _binding!!
 
-    private val navController by lazy{
+    private val  navController by lazy {
         findNavController()
     }
 
@@ -21,16 +22,19 @@ class FemaleBodyTypeDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentFemaleBodyTypeDetailsBinding.inflate(inflater, container, false)
+        _binding = FragmentSelectBodyTypeWorkoutBinding.inflate(inflater, container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.textView7.setOnClickListener {
+
+        binding.nextTextViewSelectBodyType.setOnClickListener{
             navController.navigate(
-                FemaleBodyTypeDetailsFragmentDirections.actionFemaleBodyTypeDetailsFragmentToFemaleLevelOfDailyActivityFragment()
+                SelectBodyTypeWorkoutFragmentDirections.actionSelectBodyTypeWorkoutFragmentToPersonActivityStatusFragment()
             )
         }
+
     }
+
 }

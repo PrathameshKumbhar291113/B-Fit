@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".mainmodule.HomeActivity">
 
 
@@ -12,10 +11,10 @@
         android:id="@+id/homeActivity_ToolBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/palate_amber_orange"
+        android:background="@color/palate_big_stone"
         app:layout_constraintBottom_toTopOf="@id/homeActivity_fragmentContainer"
         app:title="Home"
-        app:titleTextColor="@color/palate_flesh_cream"
+        app:titleTextColor="@color/palate_titan_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +26,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/homeActivity_ToolBar" />
 
@@ -37,12 +37,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:mbn_backgroundBottomColor="@color/palate_amber_orange"
-        app:mbn_circleColor="@color/palate_flesh_cream"
-        app:mbn_countBackgroundColor="@color/palate_amber_orange"
-        app:mbn_countTextColor="@color/palate_flesh_cream"
-        app:mbn_defaultIconColor="@color/palate_flesh_cream"
-        app:mbn_rippleColor="@color/palate_flesh_cream"
-        app:mbn_selectedIconColor="@color/palate_amber_orange"
-        app:mbn_shadowColor="@color/palate_flesh_cream" />
+        app:mbn_backgroundBottomColor="@color/palate_big_stone"
+        app:mbn_circleColor="@color/palate_titan_white"
+        app:mbn_countTextColor="@color/palate_big_stone"
+        app:mbn_defaultIconColor="@color/palate_titan_white"
+        app:mbn_selectedIconColor="@color/palate_big_stone"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/creamish_color"
+    android:background="@color/palate_titan_white"
     tools:context=".mainmodule.fragment.FemaleExerciseFragment">
 
 
@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Female exercise fragment"
-        android:textColor="@color/orange"
+        android:textColor="@color/palate_big_stone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import coil.load
 import com.prathameshkumbhar.bfit.databinding.FragmentGenderBinding
 
 class GenderFragment : Fragment() {
@@ -25,14 +24,6 @@ class GenderFragment : Fragment() {
     ): View? {
         _binding = FragmentGenderBinding.inflate(inflater,container,false)
 
-        binding.maleImg.load("https://i.imgur.com/fi4BK5A.jpg"){
-            crossfade(true)
-        }
-
-        binding.femaleImg.load("https://i.imgur.com/eQwx32g.jpg"){
-            crossfade(true)
-        }
-
         return binding.root
     }
 
@@ -40,7 +31,6 @@ class GenderFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
-
         binding.maleButton.setOnClickListener{
 
             var editor: SharedPreferences.Editor = sharePrefGender.edit()
@@ -48,7 +38,7 @@ class GenderFragment : Fragment() {
             editor.apply()
 
             navController.navigate(
-                GenderFragmentDirections.actionGenderFragmentToMaleHeightWeightFragment()
+                GenderFragmentDirections.actionGenderFragmentToBmiCalculatorFragment()
             )
         }
 
@@ -59,7 +49,7 @@ class GenderFragment : Fragment() {
             editor.apply()
 
             navController.navigate(
-                GenderFragmentDirections.actionGenderFragmentToFemaleHeightWeightFragment()
+                GenderFragmentDirections.actionGenderFragmentToBmiCalculatorFragment()
             )
 
         }

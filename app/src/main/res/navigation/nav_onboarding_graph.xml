@@ -11,56 +11,30 @@
         android:label="fragment_gender"
         tools:layout="@layout/fragment_gender" >
         <action
-            android:id="@+id/action_genderFragment_to_femaleHeightWeightFragment"
-            app:destination="@id/femaleHeightWeightFragment" />
-        <action
-            android:id="@+id/action_genderFragment_to_maleHeightWeightFragment"
-            app:destination="@id/maleHeightWeightFragment" />
+            android:id="@+id/action_genderFragment_to_bmiCalculatorFragment"
+            app:destination="@id/bmiCalculatorFragment" />
     </fragment>
     <fragment
-        android:id="@+id/femaleBodyTypeDetailsFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.FemaleBodyTypeDetailsFragment"
-        android:label="fragment_female_body_type_details"
-        tools:layout="@layout/fragment_female_body_type_details" >
+        android:id="@+id/bmiCalculatorFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.BmiCalculatorFragment"
+        android:label="fragment_bmi_calculator"
+        tools:layout="@layout/fragment_bmi_calculator" >
         <action
-            android:id="@+id/action_femaleBodyTypeDetailsFragment_to_femaleLevelOfDailyActivityFragment"
-            app:destination="@id/femaleLevelOfDailyActivityFragment" />
+            android:id="@+id/action_bmiCalculatorFragment_to_selectBodyTypeWorkoutFragment"
+            app:destination="@id/selectBodyTypeWorkoutFragment" />
     </fragment>
     <fragment
-        android:id="@+id/femaleHeightWeightFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.FemaleHeightWeightFragment"
-        android:label="fragment_female_height_weight"
-        tools:layout="@layout/fragment_female_height_weight" >
+        android:id="@+id/selectBodyTypeWorkoutFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.SelectBodyTypeWorkoutFragment"
+        android:label="fragment_select_body_type_workout"
+        tools:layout="@layout/fragment_select_body_type_workout" >
         <action
-            android:id="@+id/action_femaleHeightWeightFragment_to_femaleBodyTypeDetailsFragment"
-            app:destination="@id/femaleBodyTypeDetailsFragment" />
+            android:id="@+id/action_selectBodyTypeWorkoutFragment_to_personActivityStatusFragment"
+            app:destination="@id/personActivityStatusFragment" />
     </fragment>
     <fragment
-        android:id="@+id/femaleLevelOfDailyActivityFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.FemaleLevelOfDailyActivityFragment"
-        android:label="fragment_female_level_of_daily_activity"
-        tools:layout="@layout/fragment_female_level_of_daily_activity" />
-    <fragment
-        android:id="@+id/maleHeightWeightFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.MaleHeightWeightFragment"
-        android:label="fragment_male_height_weight"
-        tools:layout="@layout/fragment_male_height_weight" >
-        <action
-            android:id="@+id/action_maleHeightWeightFragment_to_maleBodyTypeDetailsFragment"
-            app:destination="@id/maleBodyTypeDetailsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/maleBodyTypeDetailsFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.MaleBodyTypeDetailsFragment"
-        android:label="fragment_male_body_type_details"
-        tools:layout="@layout/fragment_male_body_type_details" >
-        <action
-            android:id="@+id/action_maleBodyTypeDetailsFragment_to_maleLevelOfDailyActivityFragment"
-            app:destination="@id/maleLevelOfDailyActivityFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/maleLevelOfDailyActivityFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.MaleLevelOfDailyActivityFragment"
-        android:label="fragment_male_level_of_daily_activity"
-        tools:layout="@layout/fragment_male_level_of_daily_activity" />
+        android:id="@+id/personActivityStatusFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.PersonActivityStatusFragment"
+        android:label="fragment_person_activity_status"
+        tools:layout="@layout/fragment_person_activity_status" />
 </navigation>

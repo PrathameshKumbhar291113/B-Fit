@@ -7,19 +7,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.prathameshkumbhar.bfit.databinding.FragmentFemaleLevelOfDailyActivityBinding
+import com.prathameshkumbhar.bfit.databinding.FragmentPersonActivityStatusBinding
 import com.prathameshkumbhar.bfit.mainmodule.HomeActivity
 import splitties.fragments.start
 
-class FemaleLevelOfDailyActivityFragment : Fragment() {
-    private var _binding : FragmentFemaleLevelOfDailyActivityBinding? = null
+class PersonActivityStatusFragment : Fragment() {
+    private var _binding : FragmentPersonActivityStatusBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentFemaleLevelOfDailyActivityBinding.inflate(inflater,container,false)
+        _binding = FragmentPersonActivityStatusBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -28,7 +29,7 @@ class FemaleLevelOfDailyActivityFragment : Fragment() {
 
         val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
 
-        binding.textView8.setOnClickListener {
+        binding.textView11.setOnClickListener {
             start<HomeActivity>(){
 
                 var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
