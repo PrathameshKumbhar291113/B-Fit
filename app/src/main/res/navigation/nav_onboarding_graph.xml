@@ -20,21 +20,30 @@
         android:label="fragment_bmi_calculator"
         tools:layout="@layout/fragment_bmi_calculator" >
         <action
-            android:id="@+id/action_bmiCalculatorFragment_to_selectBodyTypeWorkoutFragment"
-            app:destination="@id/selectBodyTypeWorkoutFragment" />
+            android:id="@+id/action_bmiCalculatorFragment_to_selectBodyPartWorkoutFragment"
+            app:destination="@id/selectBodyPartWorkoutFragment" />
     </fragment>
     <fragment
-        android:id="@+id/selectBodyTypeWorkoutFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.SelectBodyTypeWorkoutFragment"
-        android:label="fragment_select_body_type_workout"
-        tools:layout="@layout/fragment_select_body_type_workout" >
+        android:id="@+id/selectBodyPartWorkoutFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.SelectBodyPartWorkoutFragment"
+        android:label="fragment_select_body_part_workout"
+        tools:layout="@layout/fragment_select_body_part_workout" >
         <action
-            android:id="@+id/action_selectBodyTypeWorkoutFragment_to_personActivityStatusFragment"
+            android:id="@+id/action_selectBodyPartWorkoutFragment_to_personActivityStatusFragment"
             app:destination="@id/personActivityStatusFragment" />
     </fragment>
     <fragment
         android:id="@+id/personActivityStatusFragment"
         android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.PersonActivityStatusFragment"
         android:label="fragment_person_activity_status"
-        tools:layout="@layout/fragment_person_activity_status" />
+        tools:layout="@layout/fragment_person_activity_status" >
+        <action
+            android:id="@+id/action_personActivityStatusFragment_to_selectLevelOfExerciseFragment"
+            app:destination="@id/selectLevelOfExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectLevelOfExerciseFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.SelectLevelOfExerciseFragment"
+        android:label="fragment_select_level_of_exercise"
+        tools:layout="@layout/fragment_select_level_of_exercise" />
 </navigation>

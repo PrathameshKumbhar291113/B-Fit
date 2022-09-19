@@ -113,66 +113,79 @@ class BmiCalculatorFragment : Fragment() {
 
         binding.submitButtonBmi.setOnClickListener {
 
-            var weightForBMI = binding.showWeightText.text.toString().toInt()
-            var heightForBMI = binding.showHeightText.text.toString().toInt()
-
-//            var cmToMeter = heightForBMI * 0.01
-
-            val numerator = weightForBMI.toFloat()
-            val denominator = (heightForBMI.toFloat() * 0.01).pow(2.0)
-            var calBmi = numerator/denominator
-            var bmi = String.format("%.3f",calBmi)
-
-            binding.bmiValueTV.visibility = View.VISIBLE
-            binding.bmiValueTV.text = "$bmi Bmi"
-
-            binding.bmiIndicatorTV.visibility = View.VISIBLE
-            if(bmi< 15.toString()){
-                binding.bmiIndicatorTV.text = "Very Severely Underweight"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#e36414"))
-            }else if(bmi >15.toString() && bmi < 16.toString()){
-                binding.bmiIndicatorTV.text = "Severely Underweight"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#f48c06"))
-            }else if(bmi > 16.toString() && bmi <18.5.toString()){
-                binding.bmiIndicatorTV.text = "Underweight"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#ffba08"))
-            }else if(bmi > 18.5.toString() && bmi < 25.toString()){
-                binding.bmiIndicatorTV.text = "Normal Healthy"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#2fbf71"))
-            }else if(bmi >25.toString() && bmi < 30.toString()){
-                binding.bmiIndicatorTV.text = "Overweight"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#f94144"))
-            }else if (bmi > 30.toString() && bmi < 35.toString()){
-                binding.bmiIndicatorTV.text = "Moderately Obese"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#e5383b"))
-            }else if(bmi > 35.toString() && bmi < 40.toString()){
-                binding.bmiIndicatorTV.text = "Severely Obese"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#d7263d"))
-            }else{
-                binding.bmiIndicatorTV.text = "Very Severely Obese"
-                binding.bmiIndicatorTV.setTextColor(Color.parseColor("#6a040f"))
-            }
-
+            bmiCalculator()
             binding.submitButtonBmi.visibility = View.GONE
-            KToasty.info(requireContext(), "Your BMI has been submitted!").show()
+            KToasty.info(requireContext(), "Bmi has been submitted!").show()
+            toDisableClicks()
 
             lifecycleScope.launch {
                 delay(2500)
                 binding.nextButtonBmi.visibility = View.VISIBLE
             }
-
-            binding.ageAddBtn.isClickable = false
-            binding.ageSubtractBtn.isClickable = false
-            binding.weightAddBtn.isClickable = false
-            binding.weightSubtractBtn.isClickable = false
-            binding.heightSeekbar.isEnabled = false
         }
 
         binding.nextButtonBmi.setOnClickListener {
+
+            val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+            var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
+
+            if (checkGender){
+                binding.heightSeekbar.progress = 166
+            }else{
+                binding.heightSeekbar.progress = 155
+            }
             navController.navigate(
-                BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToSelectBodyTypeWorkoutFragment()
+                BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToSelectBodyPartWorkoutFragment()
             )
         }
+    }
 
+    private fun bmiCalculator(){
+        //Logic for bmi calculator
+        var weightForBMI = binding.showWeightText.text.toString().toInt()
+        var heightForBMI = binding.showHeightText.text.toString().toInt()
+
+        val numerator = weightForBMI.toFloat()
+        val denominator = (heightForBMI.toFloat() * 0.01).pow(2.0)
+        var calBmi = numerator/denominator
+        var bmi = String.format("%.3f",calBmi)
+
+        binding.bmiValueTV.visibility = View.VISIBLE
+        binding.bmiValueTV.text = "$bmi Bmi"
+
+        binding.bmiIndicatorTV.visibility = View.VISIBLE
+        if(bmi< 15.toString()){
+            binding.bmiIndicatorTV.text = "Very Severely Underweight"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#e36414"))
+        }else if(bmi >15.toString() && bmi < 16.toString()){
+            binding.bmiIndicatorTV.text = "Severely Underweight"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#f48c06"))
+        }else if(bmi > 16.toString() && bmi <18.5.toString()){
+            binding.bmiIndicatorTV.text = "Underweight"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#ffba08"))
+        }else if(bmi > 18.5.toString() && bmi < 25.toString()){
+            binding.bmiIndicatorTV.text = "Normal Healthy"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#2fbf71"))
+        }else if(bmi >25.toString() && bmi < 30.toString()){
+            binding.bmiIndicatorTV.text = "Overweight"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#f94144"))
+        }else if (bmi > 30.toString() && bmi < 35.toString()){
+            binding.bmiIndicatorTV.text = "Moderately Obese"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#e5383b"))
+        }else if(bmi > 35.toString() && bmi < 40.toString()){
+            binding.bmiIndicatorTV.text = "Severely Obese"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#d7263d"))
+        }else{
+            binding.bmiIndicatorTV.text = "Very Severely Obese"
+            binding.bmiIndicatorTV.setTextColor(Color.parseColor("#6a040f"))
+        }
+    }
+
+    private fun toDisableClicks() {
+        binding.ageAddBtn.isClickable = false
+        binding.ageSubtractBtn.isClickable = false
+        binding.weightAddBtn.isClickable = false
+        binding.weightSubtractBtn.isClickable = false
+        binding.heightSeekbar.isEnabled = false
     }
 }
