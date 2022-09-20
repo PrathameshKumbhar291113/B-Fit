@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
-    tools:context=".mainmodule.fragment.FemaleExerciseFragment">
-
+    tools:context=".mainmodule.fragment.ShowExerciseFragment">
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Female exercise fragment"
+        android:text="TextView"
         android:textColor="@color/palate_big_stone"
+        android:textSize="@dimen/_25ssp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

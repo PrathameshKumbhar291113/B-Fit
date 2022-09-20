@@ -29,7 +29,7 @@ class PersonActivityStatusFragment : Fragment() {
 
         val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
 
-        binding.textView11.setOnClickListener {
+        binding.personActivityTitleTv.setOnClickListener {
             start<HomeActivity>(){
 
                 var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()

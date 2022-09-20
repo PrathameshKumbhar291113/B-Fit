@@ -77,7 +77,7 @@ class SelectBodyPartWorkoutFragment : Fragment() {
 
         binding.nextButtonSelectBodyPart.setOnClickListener{
             navController.navigate(
-                SelectBodyPartWorkoutFragmentDirections.actionSelectBodyPartWorkoutFragmentToPersonActivityStatusFragment()
+                SelectBodyPartWorkoutFragmentDirections.actionSelectBodyPartWorkoutFragmentToSelectLevelOfExerciseFragment()
             )
         }
 

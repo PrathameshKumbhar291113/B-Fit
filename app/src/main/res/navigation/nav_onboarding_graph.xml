@@ -29,21 +29,21 @@
         android:label="fragment_select_body_part_workout"
         tools:layout="@layout/fragment_select_body_part_workout" >
         <action
-            android:id="@+id/action_selectBodyPartWorkoutFragment_to_personActivityStatusFragment"
-            app:destination="@id/personActivityStatusFragment" />
+            android:id="@+id/action_selectBodyPartWorkoutFragment_to_selectLevelOfExerciseFragment"
+            app:destination="@id/selectLevelOfExerciseFragment" />
     </fragment>
     <fragment
         android:id="@+id/personActivityStatusFragment"
         android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.PersonActivityStatusFragment"
         android:label="fragment_person_activity_status"
-        tools:layout="@layout/fragment_person_activity_status" >
-        <action
-            android:id="@+id/action_personActivityStatusFragment_to_selectLevelOfExerciseFragment"
-            app:destination="@id/selectLevelOfExerciseFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_person_activity_status" />
     <fragment
         android:id="@+id/selectLevelOfExerciseFragment"
         android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.SelectLevelOfExerciseFragment"
         android:label="fragment_select_level_of_exercise"
-        tools:layout="@layout/fragment_select_level_of_exercise" />
+        tools:layout="@layout/fragment_select_level_of_exercise" >
+        <action
+            android:id="@+id/action_selectLevelOfExerciseFragment_to_personActivityStatusFragment"
+            app:destination="@id/personActivityStatusFragment" />
+    </fragment>
 </navigation>
