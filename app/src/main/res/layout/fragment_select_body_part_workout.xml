@@ -16,7 +16,7 @@
         android:textAlignment="center"
         android:textColor="@color/palate_big_stone"
         android:textSize="@dimen/_25ssp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
