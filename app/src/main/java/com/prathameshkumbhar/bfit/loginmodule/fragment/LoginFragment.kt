@@ -86,14 +86,18 @@ class LoginFragment : Fragment() {
         binding.signInButton.setOnClickListener {
             val email = binding.loginEmailEditText.text.toString().trim()
             val pass = binding.loginPassEditText.text.toString().trim()
+            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
+                if (email.matches(emailPattern.toRegex())){
                     if(pass.length >= 8) {
                         firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                             if (it.isSuccessful) {
-                                requireContext().showSuccessToast("Successfully Logged In!")
+                                requireContext().showSuccessToast("Logged In Successfully!")
                                 lifecycleScope.launch {
-                                    delay(1000)
+                                    binding.progressBar.visibility = View.VISIBLE
+                                    disableAllViews()
+                                    delay(2000)
                                     //go to OnboardActivity
                                     start<OnboardActivity>(){
 
@@ -112,7 +116,12 @@ class LoginFragment : Fragment() {
                     }else{
                         KToasty.info(requireContext(),"Password must not be less than 8 Characters !",Toast.LENGTH_SHORT).show()
                     }
-                } else {
+
+                }else{
+                    KToasty.warning(requireContext(), "Invalid Email!", Toast.LENGTH_SHORT).show()
+                }
+
+            } else {
                 KToasty.warning(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
             }
         }
@@ -167,20 +176,22 @@ class LoginFragment : Fragment() {
 
         val credential = FacebookAuthProvider.getCredential(token.token)
         firebaseAuth.signInWithCredential(credential)
-            .addOnCompleteListener{ task ->
+            .addOnCompleteListener { task ->
+                requireContext().showSuccessToast("Logged In Successfully!")
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
 
-                    requireContext().showSuccessToast("Successfully Logged In!")
-
-                    lifecycleScope.launch(){
+                    lifecycleScope.launch() {
+                        binding.progressBar.visibility = View.VISIBLE
+                        disableAllViews()
                         delay(2000)
-                        start<OnboardActivity>(){
+                        start<OnboardActivity>() {
 
-                            val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
-                            var editor : SharedPreferences.Editor = sharePrefLogin.edit()
-                            editor.putBoolean("flag",true)
+                            val sharePrefLogin: SharedPreferences =
+                                context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
+                            var editor: SharedPreferences.Editor = sharePrefLogin.edit()
+                            editor.putBoolean("flag", true)
                             editor.apply()
 
                             activity?.finish()
@@ -189,7 +200,7 @@ class LoginFragment : Fragment() {
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
-                    requireContext().showErrorToast( "Authentication failed.")
+                    requireContext().showErrorToast("Authentication failed.")
                 }
             }
     }
@@ -222,8 +233,9 @@ class LoginFragment : Fragment() {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful){
-                requireContext().showSuccessToast("Successfully Logged In!")
                 lifecycleScope.launch(){
+                    binding.progressBar.visibility = View.VISIBLE
+                    disableAllViews()
                     delay(2000)
                     start<OnboardActivity>(){
 
@@ -239,5 +251,9 @@ class LoginFragment : Fragment() {
                 requireContext().showErrorToast(it.exception.toString())
             }
         }
+    }
+
+    private fun disableAllViews(){
+        binding.scrollView3.visibility = View.GONE
     }
 }

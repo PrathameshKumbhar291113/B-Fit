@@ -118,9 +118,6 @@ dependencies {
     //Implementing meow bottom navigation library for the bottom navigation bar with little effect
     implementation 'com.etebarian:meow-bottom-navigation:1.2.0'
 
-    //Implementing Neumorphism designing library to design the UI
-    implementation 'com.github.fornewid:neumorphism:0.3.2'
-
     //Implementing the facebook authentication
     implementation 'com.facebook.android:facebook-login:latest.release'
 
