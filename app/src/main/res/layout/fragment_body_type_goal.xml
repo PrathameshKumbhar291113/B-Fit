@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/palate_titan_white"
+    tools:context=".onboardingmodule.fragment.BodyTypeGoalFragment">
+
+    <TextView
+        android:id="@+id/goalTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:fontFamily="@font/noto_sans_bold"
+        android:padding="@dimen/_2sdp"
+        android:text="WHAT ARE YOUR GOALS?"
+        android:textAlignment="center"
+        android:textColor="@color/palate_big_stone"
+        android:textSize="@dimen/_25ssp"
+        app:layout_constraintBottom_toTopOf="@id/cardLooseWeight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/goalSubTitleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="As per selected goal, diet will be provided!"
+        android:textColor="@color/palate_big_stone"
+        android:textAlignment="center"
+        android:textSize="@dimen/_12ssp"
+        android:fontFamily="@font/noto_sans"
+        app:layout_constraintTop_toBottomOf="@id/goalTitleTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLooseWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_70sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/goalTitleTv"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardLooseWeightConstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/palate_havelock_blue">
+
+            <TextView
+                android:id="@+id/looseWeightTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="Loose Weight"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintEnd_toStartOf="@id/looseWeightIv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/looseWeightIv"
+                app:srcCompat="@drawable/male"
+                android:scaleType="centerCrop"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/looseWeightTv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,18 @@
         app:layout_constraintVertical_bias="0.13"
         app:layout_constraintVertical_chainStyle="packed" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Must select the level below!"
+        android:textSize="@dimen/_12ssp"
+        android:textAlignment="center"
+        android:textColor="@color/palate_big_stone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseLevel"
+        />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardBeginner"
         android:layout_width="match_parent"
@@ -38,7 +50,7 @@
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="@dimen/_25sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         app:checkedIconGravity="TOP_END"
         app:checkedIconTint="@color/palate_big_stone"
         app:layout_constraintBottom_toTopOf="@id/cardIntermediate"
@@ -118,7 +130,7 @@
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="@dimen/_25sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         app:checkedIconGravity="TOP_END"
         app:checkedIconTint="@color/palate_big_stone"
         app:layout_constraintBottom_toTopOf="@id/cardAdvanced"
@@ -199,7 +211,7 @@
         android:checkable="true"
         android:clickable="true"
         android:focusable="true"
-        app:cardCornerRadius="@dimen/_25sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
         app:checkedIconGravity="TOP_END"
         app:checkedIconTint="@color/palate_big_stone"
         app:layout_constraintBottom_toTopOf="@+id/nextButtonSelectLevelOfExercise"

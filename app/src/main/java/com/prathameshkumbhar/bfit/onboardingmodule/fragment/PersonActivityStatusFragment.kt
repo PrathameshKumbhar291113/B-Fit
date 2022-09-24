@@ -2,6 +2,8 @@ package com.prathameshkumbhar.bfit.onboardingmodule.fragment
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -50,6 +52,13 @@ class PersonActivityStatusFragment : Fragment() {
         binding.cardSedentary.setOnClickListener {
             binding.cardSedentary.isChecked = !binding.cardSedentary.isChecked
 
+            binding.cardSedentary.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+            binding.cardSedentary.strokeWidth = 8
+            binding.cardLightlyActive.strokeWidth = 0
+            binding.cardModeratelyActive.strokeWidth = 0
+            binding.cardAthletic.strokeWidth = 0
+
             binding.cardSedentarySubText.visibility = View.VISIBLE
             binding.cardLightlyActiveSubText.visibility = View.GONE
             binding.cardModeratelyActiveSubText.visibility = View.GONE
@@ -57,14 +66,24 @@ class PersonActivityStatusFragment : Fragment() {
 
             if (!binding.cardSedentary.isChecked){
                 binding.cardSedentarySubText.visibility = View.GONE
+                binding.cardSedentary.strokeWidth = 0
+
             }
 
             binding.cardLightlyActive.isChecked = false
             binding.cardModeratelyActive.isChecked = false
             binding.cardAthletic.isChecked = false
         }
+
         binding.cardLightlyActive.setOnClickListener {
             binding.cardLightlyActive.isChecked = !binding.cardLightlyActive.isChecked
+
+            binding.cardLightlyActive.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+            binding.cardSedentary.strokeWidth = 0
+            binding.cardLightlyActive.strokeWidth = 8
+            binding.cardModeratelyActive.strokeWidth = 0
+            binding.cardAthletic.strokeWidth = 0
 
 
             binding.cardSedentarySubText.visibility = View.GONE
@@ -74,14 +93,23 @@ class PersonActivityStatusFragment : Fragment() {
 
             if (!binding.cardLightlyActive.isChecked){
                 binding.cardLightlyActiveSubText.visibility = View.GONE
+                binding.cardLightlyActive.strokeWidth = 0
             }
 
             binding.cardSedentary.isChecked = false
             binding.cardModeratelyActive.isChecked = false
             binding.cardAthletic.isChecked = false
         }
+
         binding.cardModeratelyActive.setOnClickListener {
             binding.cardModeratelyActive.isChecked = !binding.cardModeratelyActive.isChecked
+
+            binding.cardModeratelyActive.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+            binding.cardSedentary.strokeWidth = 0
+            binding.cardLightlyActive.strokeWidth = 0
+            binding.cardModeratelyActive.strokeWidth = 8
+            binding.cardAthletic.strokeWidth = 0
 
             binding.cardSedentarySubText.visibility = View.GONE
             binding.cardLightlyActiveSubText.visibility = View.GONE
@@ -90,6 +118,7 @@ class PersonActivityStatusFragment : Fragment() {
 
             if (!binding.cardModeratelyActive.isChecked){
                 binding.cardModeratelyActiveSubText.visibility = View.GONE
+                binding.cardModeratelyActive.strokeWidth = 0
             }
 
             binding.cardLightlyActive.isChecked = false
@@ -99,6 +128,13 @@ class PersonActivityStatusFragment : Fragment() {
         binding.cardAthletic.setOnClickListener {
             binding.cardAthletic.isChecked = !binding.cardAthletic.isChecked
 
+            binding.cardAthletic.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+            binding.cardSedentary.strokeWidth = 0
+            binding.cardLightlyActive.strokeWidth = 0
+            binding.cardModeratelyActive.strokeWidth = 0
+            binding.cardAthletic.strokeWidth = 8
+
             binding.cardSedentarySubText.visibility = View.GONE
             binding.cardLightlyActiveSubText.visibility = View.GONE
             binding.cardModeratelyActiveSubText.visibility = View.GONE
@@ -106,6 +142,7 @@ class PersonActivityStatusFragment : Fragment() {
 
             if (!binding.cardAthletic.isChecked){
                 binding.cardAthleticSubText.visibility = View.GONE
+                binding.cardAthletic.strokeWidth = 0
             }
 
             binding.cardLightlyActive.isChecked = false

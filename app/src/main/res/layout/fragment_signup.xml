@@ -7,7 +7,20 @@
     android:background="@color/palate_titan_white"
     tools:context=".loginmodule.fragment.SignUpFragment">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:indeterminateTint="@color/palate_big_stone"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
@@ -237,7 +250,7 @@
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="@dimen/_25sdp"
                 android:text="Register"
-                android:textColor="@color/palate_big_stone"
+                android:textColor="@color/palate_titan_white"
                 app:layout_constraintBottom_toTopOf="@+id/already_register_signIn_textView"
                 app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintHorizontal_bias="0.51"

@@ -45,27 +45,38 @@ private var _binding: FragmentForgotPasswordBinding? = null
 
         binding.forgotPasswordButton.setOnClickListener {
             val forgotEmail = binding.forgotPasswordEmailEditText.text.toString().trim()
+            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
             if(forgotEmail.isNotEmpty()){
-                firebaseAuth.sendPasswordResetEmail(forgotEmail)
-                    .addOnCompleteListener{
-                        if (it.isSuccessful) {
-                            KToasty.success(
-                                requireContext(),
-                                "Email sent successfully, Check the mail box !",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            lifecycleScope.launch{
-                                delay(1000)
-                                navController.popBackStack()
+                if (forgotEmail.matches(emailPattern.toRegex())){
+                    firebaseAuth.sendPasswordResetEmail(forgotEmail)
+                        .addOnCompleteListener{
+                            if (it.isSuccessful) {
+                                KToasty.success(
+                                    requireContext(),
+                                    "Email sent successfully, Check the mail box!",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                lifecycleScope.launch{
+                                    binding.progressBar.visibility = View.VISIBLE
+                                    delay(2000)
+                                    navController.popBackStack()
+                                }
+                            }else{
+                                KToasty.error(
+                                    requireContext(),
+                                    it.exception.toString(),
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
-                        }else{
-                            KToasty.error(
-                                requireContext(),
-                                it.exception.toString(),
-                                Toast.LENGTH_SHORT
-                            ).show()
                         }
-                    }
+
+                }else{
+                    KToasty.warning(
+                        requireContext(),
+                        "Email is invalid!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }else{
                 KToasty.error(
                     requireContext(),

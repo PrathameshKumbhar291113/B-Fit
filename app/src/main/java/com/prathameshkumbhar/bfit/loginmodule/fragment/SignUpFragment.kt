@@ -49,40 +49,50 @@ class SignUpFragment : Fragment() {
             val email = binding.signUpEmailEditText.text.toString().trim()
             val pass = binding.signUpPassEditText.text.toString().trim()
             val confirmPass = binding.signUpConfirmPassEditText.text.toString().trim()
+            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
             if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty() && userName.isNotEmpty() && userPhoneNum.isNotEmpty()) {
-                if (pass.length >= 8) {
-                    if (pass == confirmPass) {
-                        firebaseAuth.createUserWithEmailAndPassword(email, pass)
-                            .addOnCompleteListener {
-                                if (it.isSuccessful) {
-                                    requireContext().showSuccessToast("Successfully Signed Up!")
-                                    lifecycleScope.launch {
-                                        delay(1000)
-                                        //Go to signIn frag using navigation
-                                        navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email, pass))
-                                        navController.popBackStack()
+                if(email.matches(emailPattern.toRegex())){
+                    if (pass.length >= 8) {
+                        if (pass == confirmPass) {
+                            firebaseAuth.createUserWithEmailAndPassword(email, pass)
+                                .addOnCompleteListener {
+                                    if (it.isSuccessful) {
+                                        requireContext().showSuccessToast("Registered Successfully!")
+                                        lifecycleScope.launch {
+                                            binding.progressBar.visibility = View.VISIBLE
+                                            delay(2000)
+                                            //Go to signIn frag using navigation
+                                            navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email, pass))
+                                            navController.popBackStack()
 
+                                        }
+                                    } else {
+                                        KToasty.info(
+                                            requireContext(),
+                                            it.exception.toString(),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     }
-                                } else {
-                                    KToasty.info(
-                                        requireContext(),
-                                        it.exception.toString(),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
                                 }
-                            }
-                    } else {
-                        KToasty.warning(
+                        } else {
+                            KToasty.warning(
+                                requireContext(),
+                                "Password does not match !",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }else {
+                        KToasty.info(
                             requireContext(),
-                            "Password does not match !",
+                            "Password must not be less than 8 Characters !",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
-                } else {
-                    KToasty.info(
+                }else{
+                    KToasty.warning(
                         requireContext(),
-                        "Password must not be less than 8 Characters !",
+                        "Email is invalid!",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

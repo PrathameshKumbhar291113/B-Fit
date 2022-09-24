@@ -175,7 +175,7 @@
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="25dp"
                 android:text="Log In"
-                android:textColor="@color/palate_big_stone"
+                android:textColor="@color/palate_titan_white"
                 app:layout_constraintBottom_toTopOf="@id/login_or_textView"
                 app:layout_constraintEnd_toEndOf="@id/guideline2"
                 app:layout_constraintHorizontal_bias="0.5"
