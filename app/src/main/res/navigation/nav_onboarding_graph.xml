@@ -29,8 +29,8 @@
         android:label="fragment_select_body_part_workout"
         tools:layout="@layout/fragment_select_body_part_workout" >
         <action
-            android:id="@+id/action_selectBodyPartWorkoutFragment_to_selectLevelOfExerciseFragment"
-            app:destination="@id/selectLevelOfExerciseFragment" />
+            android:id="@+id/action_selectBodyPartWorkoutFragment_to_bodyTypeGoalFragment"
+            app:destination="@id/bodyTypeGoalFragment" />
     </fragment>
     <fragment
         android:id="@+id/personActivityStatusFragment"
@@ -45,5 +45,14 @@
         <action
             android:id="@+id/action_selectLevelOfExerciseFragment_to_personActivityStatusFragment"
             app:destination="@id/personActivityStatusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bodyTypeGoalFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.BodyTypeGoalFragment"
+        android:label="fragment_body_type_goal"
+        tools:layout="@layout/fragment_body_type_goal" >
+        <action
+            android:id="@+id/action_bodyTypeGoalFragment_to_selectLevelOfExerciseFragment"
+            app:destination="@id/selectLevelOfExerciseFragment" />
     </fragment>
 </navigation>

@@ -14,11 +14,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "648406951404-bahtbgagg38oknin3lvb41ikis6l9umg.apps.googleusercontent.com",
+          "client_id": "648406951404-etdln1oih1ncopcu9ut3oe8psrth3khi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.prathameshkumbhar.bfit",
-            "certificate_hash": "84a74dd496bb6cb2ac3c397b7a4b31e8f21fb897"
+            "certificate_hash": "8e7d7faa47048d6caf5c7df84a7f0605e653e424"
           }
         },
         {

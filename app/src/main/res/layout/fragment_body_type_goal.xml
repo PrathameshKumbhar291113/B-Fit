@@ -16,7 +16,7 @@
         android:layout_marginEnd="@dimen/_2sdp"
         android:fontFamily="@font/noto_sans_bold"
         android:padding="@dimen/_2sdp"
-        android:text="WHAT ARE YOUR GOALS?"
+        android:text="WHAT IS YOUR GOAL?"
         android:textAlignment="center"
         android:textColor="@color/palate_big_stone"
         android:textSize="@dimen/_25ssp"
@@ -26,11 +26,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textview.MaterialTextView
+    <TextView
         android:id="@+id/goalSubTitleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="As per selected goal, diet will be provided!"
+        android:text="Select any one goal to get diet plan!"
         android:textColor="@color/palate_big_stone"
         android:textAlignment="center"
         android:textSize="@dimen/_12ssp"
@@ -48,11 +48,16 @@
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_20sdp"
         app:cardElevation="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
+        app:checkedIconTint="@color/palate_big_stone"
         app:cardCornerRadius="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_70sdp"
+        android:layout_marginTop="@dimen/_80sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/goalTitleTv"
+        app:layout_constraintBottom_toTopOf="@id/cardBuildMuscle"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,25 +72,144 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/noto_sans_bold"
                 android:text="Loose Weight"
+                android:layout_marginStart="@dimen/_20sdp"
                 android:textColor="@color/palate_big_stone"
                 android:textSize="@dimen/_20ssp"
-                app:layout_constraintEnd_toStartOf="@id/looseWeightIv"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/looseWeightIv"
-                app:srcCompat="@drawable/male"
-                android:scaleType="centerCrop"
                 android:layout_width="@dimen/_90sdp"
                 android:layout_height="@dimen/_90sdp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/_15sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/looseWeightTv"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/male" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardBuildMuscle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:cardElevation="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
+        app:checkedIconTint="@color/palate_big_stone"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardGetToned"
+        app:layout_constraintTop_toBottomOf="@id/cardLooseWeight">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardBuildMuscleConstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/palate_havelock_blue">
+
+            <TextView
+                android:id="@+id/buildMuscleTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="Build Muscle"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buildMuscleIv"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/male" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardGetToned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:cardElevation="5dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:checkable="true"
+        app:checkedIconTint="@color/palate_big_stone"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardBuildMuscle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardGetTonedConstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/palate_havelock_blue">
+
+            <TextView
+                android:id="@+id/getTonedTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="Get Toned"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="@dimen/_20ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/getTonedIv"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="@dimen/_15sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/male" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButtonSelectBodyGoal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_35sdp"
+        android:background="@drawable/rounded_corner_button"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

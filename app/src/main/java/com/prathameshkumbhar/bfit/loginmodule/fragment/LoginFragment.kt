@@ -40,6 +40,7 @@ import com.prathameshkumbhar.bfit.onboardingmodule.OnboardActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
+import timber.log.Timber
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -136,12 +137,69 @@ class LoginFragment : Fragment() {
 
         binding.googleLogin.setOnClickListener {
             signInGoogle()
-        }
+            Timber.e(TAG,"Inside the onset listener of google auth")
+         }
 
         binding.facebookLogin.setOnClickListener {
             signInFacebook()
         }
     }
+
+    //Google authentication starts from here
+    private fun signInGoogle(){
+        val signInClient = googleLoginClient.signInIntent
+        launcher.launch(signInClient)
+        Timber.e(TAG,"in the sign in method")
+    }
+
+    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            activityResult -> if (activityResult.resultCode == Activity.RESULT_OK){
+        val task = GoogleSignIn.getSignedInAccountFromIntent(activityResult.data)
+        handleActivityResult(task)
+        Timber.e(TAG,"in the launcher expression")
+    }
+    }
+
+    private fun handleActivityResult(task: Task<GoogleSignInAccount>) {
+        if (task.isSuccessful){
+            val account : GoogleSignInAccount? = task.result
+            if(account != null){
+                updateUI(account)
+                Timber.e(TAG,"in the handle activity result method")
+            }
+        }else{
+            requireContext().showErrorToast(task.exception.toString())
+        }
+    }
+
+    private fun updateUI(account: GoogleSignInAccount) {
+
+        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+
+        firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
+
+            if (it.isSuccessful){
+                Timber.e(TAG,"in the Update Ui method and inside the it successful if block")
+                requireContext().showSuccessToast("Logged In Successfully!")
+                lifecycleScope.launch(){
+                    binding.progressBar.visibility = View.VISIBLE
+                    disableAllViews()
+                    delay(2000)
+                    start<OnboardActivity>(){
+                        val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
+                        var editor : SharedPreferences.Editor = sharePrefLogin.edit()
+                        editor.putBoolean("flag",true)
+                        editor.apply()
+
+                        activity?.finish()
+                    }
+                }
+            }else{
+                requireContext().showErrorToast(it.exception.toString())
+            }
+        }
+    }
+
 
     //Facebook authentication starts here
     private fun signInFacebook() {
@@ -203,54 +261,6 @@ class LoginFragment : Fragment() {
                     requireContext().showErrorToast("Authentication failed.")
                 }
             }
-    }
-
-    //Google authentication starts from here
-    private fun signInGoogle(){
-        val signInClient = googleLoginClient.signInIntent
-        launcher.launch(signInClient)
-    }
-
-    private val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-        activityResult -> if (activityResult.resultCode == Activity.RESULT_OK){
-            val task = GoogleSignIn.getSignedInAccountFromIntent(activityResult.data)
-            handleActivityResult(task)
-        }
-    }
-
-    private fun handleActivityResult(task: Task<GoogleSignInAccount>) {
-        if (task.isSuccessful){
-            val account : GoogleSignInAccount? = task.result
-            if(account != null){
-                updateUI(account)
-            }
-        }else{
-                requireContext().showErrorToast(task.exception.toString())
-        }
-    }
-
-    private fun updateUI(account: GoogleSignInAccount) {
-        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-        firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
-            if (it.isSuccessful){
-                lifecycleScope.launch(){
-                    binding.progressBar.visibility = View.VISIBLE
-                    disableAllViews()
-                    delay(2000)
-                    start<OnboardActivity>(){
-
-                        val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
-                        var editor : SharedPreferences.Editor = sharePrefLogin.edit()
-                        editor.putBoolean("flag",true)
-                        editor.apply()
-
-                        activity?.finish()
-                    }
-                }
-            }else{
-                requireContext().showErrorToast(it.exception.toString())
-            }
-        }
     }
 
     private fun disableAllViews(){
