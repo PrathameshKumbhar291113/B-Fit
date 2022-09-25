@@ -197,7 +197,8 @@
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signUp_phoneNumber_layout"
                 app:layout_constraintVertical_chainStyle="packed"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUpPass_editText"
@@ -231,7 +232,8 @@
                 app:layout_constraintStart_toStartOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@+id/signUp_pass_layout"
                 app:layout_constraintVertical_chainStyle="packed"
-                app:passwordToggleEnabled="true">
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/signUp_confirmPass_editText"
