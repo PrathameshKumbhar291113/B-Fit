@@ -58,6 +58,7 @@ class SignUpFragment : Fragment() {
                             firebaseAuth.createUserWithEmailAndPassword(email, pass)
                                 .addOnCompleteListener {
                                     if (it.isSuccessful) {
+                                        binding.scrollView4.visibility = View.GONE
                                         requireContext().showSuccessToast("Registered Successfully!")
                                         lifecycleScope.launch {
                                             binding.progressBar.visibility = View.VISIBLE

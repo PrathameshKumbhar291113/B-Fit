@@ -1,5 +1,7 @@
 package com.prathameshkumbhar.bfit.onboardingmodule.fragment
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -27,6 +29,11 @@ class BodyTypeGoalFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentBodyTypeGoalBinding.inflate(inflater, container, false)
 
+        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+        var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
+        if (checkGender){
+            binding.getTonedTv.text = "Keep Fit"
+        }
         return binding.root
     }
 
@@ -34,6 +41,12 @@ class BodyTypeGoalFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.cardLooseWeight.setOnClickListener{
+
+            val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences("cardLooseWeightChecked",Context.MODE_PRIVATE)
+            var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
+            looseWeightEditor.putBoolean("isLooseWeightCardCheck", true)
+            looseWeightEditor.apply()
+
             binding.cardLooseWeight.isChecked = !binding.cardLooseWeight.isChecked
 
             binding.cardLooseWeight.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))

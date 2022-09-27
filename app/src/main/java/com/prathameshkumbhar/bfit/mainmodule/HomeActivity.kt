@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation.Model
 import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.databinding.ActivityHomeBinding
+import com.prathameshkumbhar.bfit.mainmodule.fragment.DietPlanFragment
 import com.prathameshkumbhar.bfit.mainmodule.fragment.NutritionDetailsFragment
 import com.prathameshkumbhar.bfit.mainmodule.fragment.ProfileFragment
 import com.prathameshkumbhar.bfit.mainmodule.fragment.ShowExerciseFragment
@@ -23,7 +24,8 @@ class HomeActivity : AppCompatActivity() {
 
         toSetFragment.add(Model(1,R.drawable.ic_home))
         toSetFragment.add(Model(2,R.drawable.ic_diet))
-        toSetFragment.add(Model(3,R.drawable.ic_person_profile))
+        toSetFragment.add(Model(3,R.drawable.ic_nutrition))
+        toSetFragment.add(Model(4,R.drawable.ic_person_profile))
 
         toSetFragment.show(1,true)
         replaceFragment(ShowExerciseFragment())
@@ -34,14 +36,17 @@ class HomeActivity : AppCompatActivity() {
             when(model!!.id){
                 1 -> {
                     replaceFragment(ShowExerciseFragment())
-
                     binding.homeActivityToolBar.title = "Home"
                 }
                 2 -> {
+                    replaceFragment(DietPlanFragment())
+                    binding.homeActivityToolBar.title = "Diet Plan"
+                }
+                3 -> {
                     replaceFragment(NutritionDetailsFragment())
                     binding.homeActivityToolBar.title = "Nutrition"
                 }
-                3 -> {
+                4 -> {
                     replaceFragment(ProfileFragment())
                     binding.homeActivityToolBar.title = "Profile"
                 }

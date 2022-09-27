@@ -1,9 +1,10 @@
 package com.prathameshkumbhar.bfit.mainmodule.data
 
 data class ExerciseShowCase(
-    val title: String,
-    val subTitle: String? = null,
-    val imageUrl : String
+    var exerciseTitle: String,
+    var exerciseStepsList: List<ExerciseSteps>,
+    var exerciseImageUrl : String,
+    var exerciseRating : String? = null
 )
 
 

@@ -51,6 +51,7 @@ private var _binding: FragmentForgotPasswordBinding? = null
                     firebaseAuth.sendPasswordResetEmail(forgotEmail)
                         .addOnCompleteListener{
                             if (it.isSuccessful) {
+                                binding.scrollView2.visibility = View.GONE
                                 KToasty.success(
                                     requireContext(),
                                     "Email sent successfully, Check the mail box!",

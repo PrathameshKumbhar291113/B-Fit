@@ -27,9 +27,9 @@ class ShowExerciseFragment : Fragment() {
         val sharePrefGender: SharedPreferences = requireContext().getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
         var checkGenderMale = sharePrefGender.getBoolean("isMaleChecked", true)
         if (checkGenderMale){
-            binding.textView2.text = "MALE EXERCISES"
+//            binding.textView2.text = "MALE EXERCISES"
         }else{
-            binding.textView2.text = "FEMALE EXERCISES"
+//            binding.textView2.text = "FEMALE EXERCISES"
         }
     }
 }
