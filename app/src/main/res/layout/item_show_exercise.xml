@@ -17,6 +17,7 @@
             android:id="@+id/exerciseImage"
             android:layout_width="match_parent"
             android:layout_height="160dp"
+            android:src="@drawable/male"
             app:layout_constraintEnd_toEndOf="@id/itemShowExerciseConstraintLayout"
             app:layout_constraintStart_toStartOf="@id/itemShowExerciseConstraintLayout"
             app:layout_constraintTop_toTopOf="@id/itemShowExerciseConstraintLayout"
@@ -30,9 +31,9 @@
             android:text="Hello"
             android:layout_marginTop="@dimen/_13sdp"
             android:fontFamily="@font/noto_sans_bold"
-            android:textSize="@dimen/_20ssp"
+            android:textSize="@dimen/_15ssp"
             android:layout_marginStart="@dimen/_20sdp"
-            android:textColor="@color/palate_titan_white"
+            android:textColor="@color/palate_big_stone"
             app:layout_constraintStart_toStartOf="@id/itemShowExerciseConstraintLayout"
             app:layout_constraintTop_toTopOf="@id/itemShowExerciseConstraintLayout"
             />
@@ -45,12 +46,10 @@
             android:fontFamily="@font/noto_sans_bold"
             android:text="Easy"
             android:layout_marginBottom="@dimen/_8sdp"
-            android:textColor="@color/palate_titan_white"
-            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/palate_big_stone"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintBottom_toBottomOf="@id/itemShowExerciseConstraintLayout"
             app:layout_constraintStart_toStartOf="@id/itemShowExerciseConstraintLayout" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -22,18 +22,21 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/homeActivity_fragmentContainer"
+        android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.ShowExerciseFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeActivity_ToolBar" />
+        app:layout_constraintTop_toBottomOf="@id/homeActivity_ToolBar"
+        tools:layout="@layout/fragment_show_exercise" />
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/palate_titan_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
