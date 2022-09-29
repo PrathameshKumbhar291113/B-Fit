@@ -29,26 +29,26 @@ class HomeActivity : AppCompatActivity() {
 
         toSetFragment.show(1,true)
         replaceFragment(ShowExerciseFragment())
-        binding.homeActivityToolBar.title = "Home"
+        binding.homeActivityToolBar.title = "EXERCISES"
 
         binding.bottomNavigationView.setOnClickMenuListener { model: Model? ->
 
             when(model!!.id){
                 1 -> {
                     replaceFragment(ShowExerciseFragment())
-                    binding.homeActivityToolBar.title = "Home"
+                    binding.homeActivityToolBar.title = "EXERCISES"
                 }
                 2 -> {
                     replaceFragment(DietPlanFragment())
-                    binding.homeActivityToolBar.title = "Diet Plan"
+                    binding.homeActivityToolBar.title = "DIET PLAN"
                 }
                 3 -> {
                     replaceFragment(NutritionDetailsFragment())
-                    binding.homeActivityToolBar.title = "Nutrition"
+                    binding.homeActivityToolBar.title = "NUTRIENTS"
                 }
                 4 -> {
                     replaceFragment(ProfileFragment())
-                    binding.homeActivityToolBar.title = "Profile"
+                    binding.homeActivityToolBar.title = "PROFILE"
                 }
             }
         }

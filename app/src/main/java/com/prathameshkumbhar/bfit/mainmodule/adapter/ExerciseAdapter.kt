@@ -8,9 +8,9 @@ import com.prathameshkumbhar.bfit.databinding.ItemShowExerciseBinding
 import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseShowCase
 
 class ExerciseAdapter (
+    private val onItemClick: (ExerciseShowCase) -> Unit,
     private val exerciseShowCaseList: List<ExerciseShowCase>
-    )
-    : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>(){
+) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         return ExerciseViewHolder(
@@ -29,11 +29,14 @@ class ExerciseAdapter (
         val binding: ItemShowExerciseBinding
     ) : RecyclerView.ViewHolder(binding.root){
         //Inside the inner class
-        fun bind(result: ExerciseShowCase){
-            binding.exerciseImage.load(result.exerciseImageUrl)
+        fun bind(exerciseShowCase: ExerciseShowCase){
+            binding.exerciseImage.load(exerciseShowCase.exerciseImageUrl)
+            binding.exerciseImage.setOnClickListener {
+               onItemClick(exerciseShowCase)
+            }
 
-            binding.exerciseTitleTv.text = result.exerciseTitle.toString()
-            binding.exerciseRatingTv.text = result.exerciseRating.toString()
+            binding.exerciseTitleTv.text = exerciseShowCase.exerciseTitle.toString()
+            binding.exerciseRatingTv.text = exerciseShowCase.exerciseRating.toString()
 
         }
     }
