@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Keep
 @Parcelize
 data class ExerciseDetails (
-    var id: Int? = null,
+    var id: Int,
     var exerciseStepName : String? = null,
     var exerciseImageGif: String? = null,
     var exerciseRepetition : String? = null,

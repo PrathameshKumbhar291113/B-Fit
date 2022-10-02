@@ -12,7 +12,9 @@ class ExerciseAdapter (
     private val exerciseShowCaseList: List<ExerciseShowCase>
 ) : RecyclerView.Adapter<ExerciseAdapter.ExerciseViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup, viewType: Int
+    ): ExerciseViewHolder {
         return ExerciseViewHolder(
             ItemShowExerciseBinding
                 .inflate(LayoutInflater.from(parent.context), parent, false)

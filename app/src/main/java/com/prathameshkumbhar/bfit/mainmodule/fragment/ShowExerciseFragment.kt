@@ -46,12 +46,10 @@ class ShowExerciseFragment : Fragment() {
 
     private fun setupRecyclerView() {
 
-        EXERCISE_SHOWCASE_LIST.forEach { _ ->
             exerciseAdapter = ExerciseAdapter(
                 this::onItemClick,
                 EXERCISE_SHOWCASE_LIST
             )
-        }
         binding.exerciseShowRecyclerView.adapter = exerciseAdapter
 
     }
@@ -63,7 +61,7 @@ class ShowExerciseFragment : Fragment() {
     }
 
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = fragment.parentFragmentManager
+        val fragmentManager = parentFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.homeActivity_fragmentContainer,fragment)
         fragmentTransaction.commit()

@@ -1,36 +1,36 @@
 package com.prathameshkumbhar.bfit.mainmodule.data
 
 val UPPER_BODY = listOf(
-    ExerciseDetails(1,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(2,"Touch Toe",null,"10x2")
+    ExerciseDetails(0,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(0,"Touch Toe",null,"10x2")
 )
 val LOWER_BODY = listOf(
-    ExerciseDetails(3,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(4,"Touch Toe",null,"10x2")
+    ExerciseDetails(1,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(1,"Touch Toe",null,"10x2")
 )
 val ABS = listOf(
-    ExerciseDetails(5,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(6,"Touch Toe",null,"10x2")
+    ExerciseDetails(2,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(2,"Touch Toe",null,"10x2")
 )
 val CHEST = listOf(
-    ExerciseDetails(7,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(8,"Touch Toe",null,"10x2")
+    ExerciseDetails(3,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(3,"Touch Toe",null,"10x2")
 )
 val SHOULDER = listOf(
-    ExerciseDetails(9,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(10,"Touch Toe",null,"10x2")
+    ExerciseDetails(4,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(4,"Touch Toe",null,"10x2")
 )
 val BACK = listOf(
-    ExerciseDetails(11,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(12,"Touch Toe",null,"10x2")
+    ExerciseDetails(5,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(5,"Touch Toe",null,"10x2")
 )
 val BICEPS = listOf(
-    ExerciseDetails(13,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(14,"Touch Toe",null,"10x2")
+    ExerciseDetails(6,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(6,"Touch Toe",null,"10x2")
 )
 val TRICEPS = listOf(
-    ExerciseDetails(15,"Jumping Jacks", null,"10x2"),
-    ExerciseDetails(16,"Touch Toe",null,"10x2")
+    ExerciseDetails(7,"Jumping Jacks", null,"10x2"),
+    ExerciseDetails(7,"Touch Toe",null,"10x2")
 )
 
 // Use this as your master database. This should be added at the top level of file.
