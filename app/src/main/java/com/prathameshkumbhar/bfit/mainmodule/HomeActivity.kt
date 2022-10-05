@@ -14,6 +14,7 @@ import com.prathameshkumbhar.bfit.mainmodule.fragment.ShowExerciseFragment
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding : ActivityHomeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

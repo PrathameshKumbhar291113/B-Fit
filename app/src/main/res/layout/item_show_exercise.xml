@@ -31,7 +31,7 @@
             android:text="Hello"
             android:layout_marginTop="@dimen/_13sdp"
             android:fontFamily="@font/noto_sans_bold"
-            android:textSize="@dimen/_15ssp"
+            android:textSize="@dimen/_18ssp"
             android:layout_marginStart="@dimen/_20sdp"
             android:textColor="@color/palate_big_stone"
             app:layout_constraintStart_toStartOf="@id/itemShowExerciseConstraintLayout"
@@ -43,11 +43,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_20sdp"
-            android:fontFamily="@font/noto_sans_bold"
+            android:fontFamily="@font/noto_sans"
             android:text="Easy"
             android:layout_marginBottom="@dimen/_8sdp"
             android:textColor="@color/palate_big_stone"
-            android:textSize="@dimen/_10ssp"
+            android:textSize="@dimen/_13ssp"
             app:layout_constraintBottom_toBottomOf="@id/itemShowExerciseConstraintLayout"
             app:layout_constraintStart_toStartOf="@id/itemShowExerciseConstraintLayout" />
 

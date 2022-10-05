@@ -18,7 +18,6 @@ class ShowExerciseFragment : Fragment() {
     private lateinit var exerciseAdapter: ExerciseAdapter
     private var _binding : FragmentShowExerciseBinding? = null
     private val binding get() = _binding!!
-    private var exerciseShowCaseList = ArrayList<ExerciseShowCase>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

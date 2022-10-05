@@ -3,7 +3,7 @@ package com.prathameshkumbhar.bfit.mainmodule.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
+import com.bumptech.glide.Glide
 import com.prathameshkumbhar.bfit.databinding.ItemShowExerciseStepsDetailBinding
 import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseDetails
 
@@ -11,7 +11,6 @@ class ExerciseStepsDetailAdapter(
     private val onItemClick: (ExerciseDetails) -> Unit,
     private val exerciseStepsDetailList: List<ExerciseDetails>
 ): RecyclerView.Adapter<ExerciseStepsDetailAdapter.ExerciseStepsDetailViewHolder>() {
-
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -32,13 +31,16 @@ class ExerciseStepsDetailAdapter(
         val binding: ItemShowExerciseStepsDetailBinding
     ) : RecyclerView.ViewHolder(binding.root){
         fun bind(exerciseDetails: ExerciseDetails){
-            binding.exerciseStepDetailImg.load(exerciseDetails.exerciseImageGif)
+
+            Glide.with(binding.exerciseStepDetailImg.context).
+            load(exerciseDetails.exerciseImageGif).
+            into(binding.exerciseStepDetailImg)
+
             binding.exerciseStepDetailImg.setOnClickListener {
                 onItemClick(exerciseDetails)
             }
             binding.exerciseStepTitleTv.text = exerciseDetails.exerciseStepName.toString()
             binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetition.toString()
-
         }
     }
 }

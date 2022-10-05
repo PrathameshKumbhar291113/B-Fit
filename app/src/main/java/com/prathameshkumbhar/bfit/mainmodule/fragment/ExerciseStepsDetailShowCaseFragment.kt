@@ -54,6 +54,7 @@ class ExerciseStepsDetailShowCaseFragment : Fragment() {
             // and then we get the one we need
             exerciseShowCase.id == idReceived
         }!!.exerciseStepsList
+//        Timber.i(stepsList.toString())
         // You recieve exerciseShowcase first which has reference to exerciseSTepslist
 
 //        binding.stepsDetailRv.adapter = exerciseStepsDetailAdapter
@@ -78,7 +79,7 @@ class ExerciseStepsDetailShowCaseFragment : Fragment() {
 
 
     companion object {
-        // Read this pregenerated comment
+        // Read this pre generated comment
         // This function is generated so that you don't have to do fragment transaction yourselvses
         // So to create this fragment we can use this function
         /**
@@ -101,5 +102,4 @@ class ExerciseStepsDetailShowCaseFragment : Fragment() {
         fragmentTransaction.replace(R.id.homeActivity_fragmentContainer,fragment)
         fragmentTransaction.commit()
     }
-
 }
