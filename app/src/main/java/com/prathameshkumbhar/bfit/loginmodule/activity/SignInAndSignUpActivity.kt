@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.loginmodule
+package com.prathameshkumbhar.bfit.loginmodule.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -208,25 +208,11 @@
                 android:src="@drawable/googlevector"
                 app:layout_constraintBottom_toTopOf="@id/not_registered_signUp_dailog_textView"
                 app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@+id/facebook_login"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
                 app:layout_constraintStart_toEndOf="@id/guideline1"
                 app:layout_constraintTop_toBottomOf="@id/login_or_textView"
                 app:layout_constraintVertical_chainStyle="spread_inside"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/facebook_login"
-                android:layout_width="@dimen/_37sdp"
-                android:layout_height="@dimen/_37sdp"
-                android:background="@color/palate_titan_white"
-                android:scaleType="fitCenter"
-                android:src="@drawable/facebookvector"
-                app:layout_constraintBottom_toBottomOf="@id/google_login"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toStartOf="@id/guideline2"
-                app:layout_constraintStart_toEndOf="@id/google_login"
-                app:layout_constraintTop_toTopOf="@id/google_login"
-                tools:ignore="SpeakableTextPresentCheck" />
 
             <TextView
                 android:id="@+id/not_registered_signUp_dailog_textView"
@@ -267,7 +253,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="1.0" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

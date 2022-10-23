@@ -10,5 +10,7 @@ data class ExerciseDetails (
     var id: Int,
     var exerciseStepName : String? = null,
     var exerciseImageGif: String? = null,
-    var exerciseRepetition : String? = null,
+    var exerciseRepetitionBeginner : String? = null,
+    var exerciseRepetitionIntermediate : String? = null,
+    var exerciseRepetitionAdvance : String? = null
 ) : Parcelable

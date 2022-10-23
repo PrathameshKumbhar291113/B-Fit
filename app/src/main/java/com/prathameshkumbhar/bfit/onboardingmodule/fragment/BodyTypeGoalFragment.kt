@@ -42,64 +42,83 @@ class BodyTypeGoalFragment : Fragment() {
 
         binding.cardLooseWeight.setOnClickListener{
 
-            val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences("cardLooseWeightChecked",Context.MODE_PRIVATE)
-            var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
-            looseWeightEditor.putBoolean("isLooseWeightCardCheck", true)
-            looseWeightEditor.apply()
-
-            binding.cardLooseWeight.isChecked = !binding.cardLooseWeight.isChecked
-
             binding.cardLooseWeight.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
 
-            binding.cardLooseWeight.strokeWidth = 8
-            binding.cardBuildMuscle.strokeWidth = 0
-            binding.cardGetToned.strokeWidth = 0
+            binding.cardLooseWeight.isChecked = true
+            if (binding.cardLooseWeight.isChecked){
+                binding.cardLooseWeight.strokeWidth = 8
+            }
 
             binding.cardBuildMuscle.isChecked = false
             binding.cardGetToned.isChecked = false
 
-            if (!binding.cardLooseWeight.isChecked){
-                binding.cardLooseWeight.strokeWidth = 0
-            }
+            binding.cardBuildMuscle.strokeWidth = 0
+            binding.cardGetToned.strokeWidth = 0
+
         }
 
         binding.cardBuildMuscle.setOnClickListener{
-            binding.cardBuildMuscle.isChecked = !binding.cardBuildMuscle.isChecked
 
             binding.cardBuildMuscle.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
 
-            binding.cardLooseWeight.strokeWidth = 0
-            binding.cardBuildMuscle.strokeWidth = 8
-            binding.cardGetToned.strokeWidth = 0
+            binding.cardBuildMuscle.isChecked = true
+            if (binding.cardBuildMuscle.isChecked){
+                binding.cardBuildMuscle.strokeWidth = 8
+            }
 
             binding.cardLooseWeight.isChecked = false
             binding.cardGetToned.isChecked = false
 
-            if (!binding.cardBuildMuscle.isChecked){
-                binding.cardBuildMuscle.strokeWidth = 0
-            }
+            binding.cardLooseWeight.strokeWidth = 0
+            binding.cardGetToned.strokeWidth = 0
+
         }
 
         binding.cardGetToned.setOnClickListener{
-            binding.cardGetToned.isChecked = !binding.cardGetToned.isChecked
 
             binding.cardGetToned.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
 
-            binding.cardLooseWeight.strokeWidth = 0
-            binding.cardBuildMuscle.strokeWidth = 0
-            binding.cardGetToned.strokeWidth = 8
+            binding.cardGetToned.isChecked = true
+            if (binding.cardGetToned.isChecked){
+                binding.cardGetToned.strokeWidth = 8
+            }
 
             binding.cardLooseWeight.isChecked = false
             binding.cardBuildMuscle.isChecked = false
 
-            if (!binding.cardGetToned.isChecked){
-                binding.cardGetToned.strokeWidth = 0
-            }
+
+            binding.cardLooseWeight.strokeWidth = 0
+            binding.cardBuildMuscle.strokeWidth = 0
         }
 
         binding.nextButtonSelectBodyGoal.setOnClickListener {
 
-            if (binding.cardLooseWeight.isChecked || binding.cardBuildMuscle.isChecked || binding.cardGetToned.isChecked){
+            if (binding.cardLooseWeight.isChecked){
+
+                val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences("cardLooseWeightChecked",Context.MODE_PRIVATE)
+                var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
+                looseWeightEditor.putBoolean("isLooseWeightCardCheck", true)
+                looseWeightEditor.apply()
+
+                navController.navigate(
+                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToSelectLevelOfExerciseFragment()
+                )
+            }else if (binding.cardBuildMuscle.isChecked){
+
+                val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences("cardBuildMuscleChecked",Context.MODE_PRIVATE)
+                var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
+                buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", true)
+                buildMuscleEditor.apply()
+
+                navController.navigate(
+                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToSelectLevelOfExerciseFragment()
+                )
+            } else if (binding.cardGetToned.isChecked){
+
+                val sharePrefKeepFit : SharedPreferences = context!!.getSharedPreferences("cardKeepFitChecked",Context.MODE_PRIVATE)
+                var keepFitEditor : SharedPreferences.Editor = sharePrefKeepFit.edit()
+                keepFitEditor.putBoolean("isBuildMuscleCardCheck", true)
+                keepFitEditor.apply()
 
                 navController.navigate(
                     BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToSelectLevelOfExerciseFragment()

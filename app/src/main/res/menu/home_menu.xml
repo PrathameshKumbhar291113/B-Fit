@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/showExerciseFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home"
+        tools:ignore="HardcodedText"/>
+    <item
+        android:id="@+id/dietPlanFragment"
+        android:icon="@drawable/ic_diet"
+        android:title="Diet"
+        tools:ignore="HardcodedText"/>
+    <item
+        android:id="@+id/nutritionDetailsFragment"
+        android:icon="@drawable/ic_nutrition"
+        android:title="Nutrition"
+        tools:ignore="HardcodedText"/>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_person_profile"
+        android:title="Profile"
+        tools:ignore="HardcodedText" />
+</menu>

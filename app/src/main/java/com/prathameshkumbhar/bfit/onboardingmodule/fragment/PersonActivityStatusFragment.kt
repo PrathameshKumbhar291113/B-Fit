@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.prathameshkumbhar.bfit.databinding.FragmentPersonActivityStatusBinding
-import com.prathameshkumbhar.bfit.mainmodule.HomeActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
 import splitties.fragments.start
 
 class PersonActivityStatusFragment : Fragment() {

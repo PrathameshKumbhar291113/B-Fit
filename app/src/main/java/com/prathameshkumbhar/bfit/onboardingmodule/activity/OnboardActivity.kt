@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.onboardingmodule
+package com.prathameshkumbhar.bfit.onboardingmodule.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

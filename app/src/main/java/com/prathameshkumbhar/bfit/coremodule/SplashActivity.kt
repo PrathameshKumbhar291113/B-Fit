@@ -7,9 +7,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.prathameshkumbhar.bfit.databinding.ActivitySplashBinding
-import com.prathameshkumbhar.bfit.loginmodule.SignInAndSignUpActivity
-import com.prathameshkumbhar.bfit.mainmodule.HomeActivity
-import com.prathameshkumbhar.bfit.onboardingmodule.OnboardActivity
+import com.prathameshkumbhar.bfit.loginmodule.activity.SignInAndSignUpActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
+import com.prathameshkumbhar.bfit.onboardingmodule.activity.OnboardActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.activities.start
