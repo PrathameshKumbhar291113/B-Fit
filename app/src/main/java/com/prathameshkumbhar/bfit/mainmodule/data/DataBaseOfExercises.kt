@@ -1,6 +1,6 @@
 package com.prathameshkumbhar.bfit.mainmodule.data
 
-val UPPER_BODY = listOf(
+val FULL_BODY = listOf(
 
         ExerciseDetails(
             0,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","10x2","10x5","10x9"
@@ -8,7 +8,8 @@ val UPPER_BODY = listOf(
         ExerciseDetails(
             0,"INCLINE PUSH-UPS","","10x2","10x5","10x9"
         ),
-        ExerciseDetails(0,"KNEE PUSH-UPS",null,"10x2","10x5","10x9"
+        ExerciseDetails(
+            0,"KNEE PUSH-UPS",null,"10x2","10x5","10x9"
         ),
         ExerciseDetails(
             0,"PUSH-UPS",null,"10x2","10x5","10x9"
@@ -197,7 +198,7 @@ val TRICEPS = listOf(
 val EXERCISE_SHOWCASE_LIST= listOf(
 
     ExerciseShowCase(
-        0,"UPPER BODY","https://i.imgur.com/fi4BK5A.jpg","https://i.imgur.com/fi4BK5A.jpg"," ", " "," ", UPPER_BODY
+        0,"UPPER BODY","https://i.imgur.com/fi4BK5A.jpg","https://i.imgur.com/fi4BK5A.jpg"," ", " "," ", FULL_BODY
     ),
     ExerciseShowCase(
         1,"LOWER BODY","https://i.imgur.com/fi4BK5A.jpg","https://i.imgur.com/fi4BK5A.jpg"," "," "," ", LOWER_BODY

@@ -1,9 +1,14 @@
 package com.prathameshkumbhar.bfit.mainmodule.activity
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
+import com.bumptech.glide.Glide
 import com.prathameshkumbhar.bfit.databinding.ActivityExerciseDetailsBinding
+import com.prathameshkumbhar.bfit.databinding.ExerciseDetailsShowCardBinding
 import com.prathameshkumbhar.bfit.mainmodule.adapter.ExerciseStepsDetailAdapter
 import com.prathameshkumbhar.bfit.mainmodule.data.EXERCISE_SHOWCASE_LIST
 import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseDetails
@@ -44,5 +49,23 @@ class ExerciseDetailsActivity : AppCompatActivity() {
 
     private fun onItemClick(exerciseDetails: ExerciseDetails) {
         //DAILOG BOX WILL APPEAR HERE
+        val dialogBinding: ExerciseDetailsShowCardBinding = ExerciseDetailsShowCardBinding.inflate(layoutInflater)
+
+        val customDialog = Dialog(this)
+
+        customDialog.apply {
+            setContentView(dialogBinding.root)
+            setCancelable(false)
+
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            Glide.with(baseContext).load(exerciseDetails.exerciseImageGif).into(dialogBinding.exerciseStepImageCard)
+            dialogBinding.exerciseStepNameCard.text = exerciseDetails.exerciseStepName.toString()
+
+        }.show()
+
+        dialogBinding.exerciseStepsCloseCard.setOnClickListener {
+            customDialog.dismiss()
+        }
     }
 }

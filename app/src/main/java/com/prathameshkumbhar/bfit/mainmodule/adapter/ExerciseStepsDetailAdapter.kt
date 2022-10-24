@@ -35,15 +35,22 @@ class ExerciseStepsDetailAdapter(
     ) : RecyclerView.ViewHolder(binding.root){
         fun bind(exerciseDetails: ExerciseDetails){
 
-            Glide.with(binding.exerciseStepDetailImg.context).
+            Glide.with(context).
             load(exerciseDetails.exerciseImageGif).
             into(binding.exerciseStepDetailImg)
 
             binding.exerciseStepDetailImg.setOnClickListener {
                 onItemClick(exerciseDetails)
             }
+
             binding.exerciseStepTitleTv.text = exerciseDetails.exerciseStepName.toString()
-            val sharePrefBeginner : SharedPreferences = context!!.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
+
+           repetitionOfExerciseAsPerDifficulty(exerciseDetails)
+        }
+
+        private fun repetitionOfExerciseAsPerDifficulty(exerciseDetails: ExerciseDetails){
+
+            val sharePrefBeginner : SharedPreferences = context.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
             var isBeginnerCardSelected = sharePrefBeginner.getBoolean("isBeginnerCheck", false)
 
             if (isBeginnerCardSelected){
@@ -65,7 +72,6 @@ class ExerciseStepsDetailAdapter(
             if (isAdvanceCardSelected){
                 binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetitionAdvance.toString()
             }
-
         }
     }
 }

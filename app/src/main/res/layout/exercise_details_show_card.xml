@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exerciseCardView"
+    android:backgroundTint="@android:color/transparent"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exerciseConstLayoutCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/palate_titan_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/exerciseStepImageCard"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:foregroundGravity="center"
+            android:src="@color/palate_big_stone"
+            app:layout_constraintEnd_toEndOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintStart_toStartOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintTop_toTopOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintBottom_toTopOf="@id/scrollviewExerciseDetailsCard"/>
+
+        <ScrollView
+            android:id="@+id/scrollviewExerciseDetailsCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:orientation="vertical"
+            android:foregroundGravity="center"
+            android:padding="4dp"
+            app:layout_constraintBottom_toTopOf="@id/exerciseStepsCloseCard"
+            app:layout_constraintEnd_toEndOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintStart_toStartOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintTop_toBottomOf="@id/exerciseStepImageCard">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scrollViewConstLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/exerciseStepNameCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/noto_sans_bold"
+                    android:padding="4dp"
+                    android:text="Hello "
+                    android:gravity="center"
+                    android:textColor="@color/palate_big_stone"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toTopOf="@id/exerciseStepDetailsTextCard"
+                    app:layout_constraintEnd_toEndOf="@id/scrollViewConstLayout"
+                    app:layout_constraintStart_toStartOf="@id/scrollViewConstLayout"
+                    app:layout_constraintTop_toTopOf="@id/scrollViewConstLayout"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/exerciseStepDetailsTextCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/noto_sans"
+                    android:text="This is the exercise detail of the exercise you have chosen.\n1. In the step there you have to do the certain things \n2.Blah blah blah"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/palate_big_stone"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/scrollViewConstLayout"
+                    app:layout_constraintEnd_toEndOf="@id/scrollViewConstLayout"
+                    app:layout_constraintStart_toStartOf="@id/scrollViewConstLayout"
+                    app:layout_constraintTop_toBottomOf="@id/exerciseStepNameCard"
+                    tools:ignore="HardcodedText"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/exerciseStepsCloseCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
+            android:fontFamily="@font/noto_sans_bold"
+            android:padding="5dp"
+            android:text="CLOSE"
+            android:textColor="@color/palate_havelock_blue"
+            android:textSize="18sp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toStartOf="@id/exerciseConstLayoutCard"
+            app:layout_constraintTop_toBottomOf="@id/scrollviewExerciseDetailsCard"
+            tools:ignore="HardcodedText"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
