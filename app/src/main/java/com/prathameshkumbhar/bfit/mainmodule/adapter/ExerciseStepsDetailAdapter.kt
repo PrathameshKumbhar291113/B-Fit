@@ -39,7 +39,7 @@ class ExerciseStepsDetailAdapter(
             load(exerciseDetails.exerciseImageGif).
             into(binding.exerciseStepDetailImg)
 
-            binding.exerciseStepDetailImg.setOnClickListener {
+            binding.exerciseStepsDetailItemCard.setOnClickListener {
                 onItemClick(exerciseDetails)
             }
 
@@ -51,25 +51,20 @@ class ExerciseStepsDetailAdapter(
         private fun repetitionOfExerciseAsPerDifficulty(exerciseDetails: ExerciseDetails){
 
             val sharePrefBeginner : SharedPreferences = context.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
-            var isBeginnerCardSelected = sharePrefBeginner.getBoolean("isBeginnerCheck", false)
-
-            if (isBeginnerCardSelected){
-                binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetitionBeginner.toString()
-            }
-
+            var isBeginnerCardSelected = sharePrefBeginner.getBoolean("isBeginnerCardCheck", false)
 
             val sharePrefIntermediate : SharedPreferences = context.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
             var isIntermediateCardSelected = sharePrefIntermediate.getBoolean("isIntermediateCardCheck", false)
 
-            if (isIntermediateCardSelected){
-                binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetitionIntermediate.toString()
-            }
-
-
             val sharePrefAdvance : SharedPreferences = context.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
             var isAdvanceCardSelected = sharePrefAdvance.getBoolean("isAdvanceCardCheck", false)
 
-            if (isAdvanceCardSelected){
+
+            if (isBeginnerCardSelected){
+                binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetitionBeginner.toString()
+            }else if (isIntermediateCardSelected){
+                binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetitionIntermediate.toString()
+            }else if (isAdvanceCardSelected){
                 binding.exerciseStepRepetitionTv.text = exerciseDetails.exerciseRepetitionAdvance.toString()
             }
         }

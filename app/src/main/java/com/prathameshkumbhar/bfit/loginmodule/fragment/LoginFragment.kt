@@ -88,7 +88,7 @@ class LoginFragment : Fragment() {
                                 lifecycleScope.launch {
                                     binding.progressBar.visibility = View.VISIBLE
                                     disableAllViews()
-                                    delay(2000)
+                                    delay(4000)
                                     //go to OnboardActivity
                                     start<OnboardActivity>(){
 
@@ -171,7 +171,7 @@ class LoginFragment : Fragment() {
                 lifecycleScope.launch(){
                     binding.progressBar.visibility = View.VISIBLE
                     disableAllViews()
-                    delay(2000)
+                    delay(4000)
                     start<OnboardActivity>(){
                         val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
                         var editor : SharedPreferences.Editor = sharePrefLogin.edit()

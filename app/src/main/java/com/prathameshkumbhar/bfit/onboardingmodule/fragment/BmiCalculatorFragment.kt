@@ -25,7 +25,6 @@ class BmiCalculatorFragment : Fragment() {
         findNavController()
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -73,8 +72,6 @@ class BmiCalculatorFragment : Fragment() {
 
         })
 
-
-
         binding.weightAddBtn.setOnClickListener{
             if (binding.showWeightText.text.toString().toInt()<130){
                 binding.showWeightText.text = String.format("%s",binding.showWeightText.text.toString().toInt()+1)
@@ -109,8 +106,6 @@ class BmiCalculatorFragment : Fragment() {
             }
         }
 
-
-
         binding.submitButtonBmi.setOnClickListener {
 
             bmiCalculator()
@@ -135,7 +130,7 @@ class BmiCalculatorFragment : Fragment() {
                 binding.heightSeekbar.progress = 155
             }
             navController.navigate(
-                BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToSelectBodyPartWorkoutFragment()
+                BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToBodyTypeGoalFragment()
             )
         }
     }

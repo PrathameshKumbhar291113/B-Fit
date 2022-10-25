@@ -36,6 +36,14 @@ class SelectLevelOfExerciseFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val sharePrefBeginner : SharedPreferences = context!!.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
+
+        val sharePrefIntermediate : SharedPreferences = context!!.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
+
+        val sharePrefAdvance : SharedPreferences = context!!.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
+
+
+
         //Selecting the beginner card
         binding.cardBeginner.setOnClickListener {
 
@@ -44,12 +52,22 @@ class SelectLevelOfExerciseFragment : Fragment() {
             binding.cardBeginner.isChecked = true
             if(binding.cardBeginner.isChecked){
                 binding.cardBeginner.strokeWidth = 8
+                var beginnerEditor : SharedPreferences.Editor = sharePrefBeginner.edit()
+                beginnerEditor.putBoolean("isBeginnerCardCheck", true)
+                beginnerEditor.apply()
             }
 
             binding.cardIntermediate.isChecked = false
-            binding.cardAdvanced.isChecked = false
-
+            var intermediateEditor : SharedPreferences.Editor = sharePrefIntermediate.edit()
+            intermediateEditor.putBoolean("isIntermediateCardCheck", false)
+            intermediateEditor.apply()
             binding.cardIntermediate.strokeWidth = 0
+
+
+            binding.cardAdvanced.isChecked = false
+            var advanceEditor : SharedPreferences.Editor = sharePrefAdvance.edit()
+            advanceEditor.putBoolean("isAdvanceCardCheck", false)
+            advanceEditor.apply()
             binding.cardAdvanced.strokeWidth = 0
         }
 
@@ -62,12 +80,24 @@ class SelectLevelOfExerciseFragment : Fragment() {
             binding.cardIntermediate.isChecked = true
             if(binding.cardIntermediate.isChecked){
                 binding.cardIntermediate.strokeWidth = 8
+
+
+                var intermediateEditor : SharedPreferences.Editor = sharePrefIntermediate.edit()
+                intermediateEditor.putBoolean("isIntermediateCardCheck", true)
+                intermediateEditor.apply()
             }
 
             binding.cardBeginner.isChecked = false
-            binding.cardAdvanced.isChecked = false
-
+            var beginnerEditor : SharedPreferences.Editor = sharePrefBeginner.edit()
+            beginnerEditor.putBoolean("isBeginnerCardCheck", false)
+            beginnerEditor.apply()
             binding.cardBeginner.strokeWidth = 0
+
+
+            binding.cardAdvanced.isChecked = false
+            var advanceEditor : SharedPreferences.Editor = sharePrefAdvance.edit()
+            advanceEditor.putBoolean("isAdvanceCardCheck", false)
+            advanceEditor.apply()
             binding.cardAdvanced.strokeWidth = 0
         }
 
@@ -79,44 +109,34 @@ class SelectLevelOfExerciseFragment : Fragment() {
             binding.cardAdvanced.isChecked = true
             if(binding.cardAdvanced.isChecked){
                 binding.cardAdvanced.strokeWidth = 8
-            }
 
-            binding.cardIntermediate.isChecked = false
-            binding.cardBeginner.isChecked = false
-
-            binding.cardBeginner.strokeWidth = 0
-            binding.cardIntermediate.strokeWidth = 0
-        }
-
-        binding.nextButtonSelectLevelOfExercise.setOnClickListener {
-            if(binding.cardBeginner.isChecked ){
-
-                val sharePrefBeginner : SharedPreferences = context!!.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
-                var beginnerEditor : SharedPreferences.Editor = sharePrefBeginner.edit()
-                beginnerEditor.putBoolean("isBeginnerCardCheck", true)
-                beginnerEditor.apply()
-
-                navController.navigate(
-                    SelectLevelOfExerciseFragmentDirections.actionSelectLevelOfExerciseFragmentToPersonActivityStatusFragment()
-                )
-
-            }else if (binding.cardIntermediate.isChecked ){
-
-                val sharePrefIntermediate : SharedPreferences = context!!.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
-                var intermediateEditor : SharedPreferences.Editor = sharePrefIntermediate.edit()
-                intermediateEditor.putBoolean("isIntermediateCardCheck", true)
-                intermediateEditor.apply()
-
-                navController.navigate(
-                    SelectLevelOfExerciseFragmentDirections.actionSelectLevelOfExerciseFragmentToPersonActivityStatusFragment()
-                )
-
-            }else if (binding.cardAdvanced.isChecked){
-
-                val sharePrefAdvance : SharedPreferences = context!!.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
                 var advanceEditor : SharedPreferences.Editor = sharePrefAdvance.edit()
                 advanceEditor.putBoolean("isAdvanceCardCheck", true)
                 advanceEditor.apply()
+
+            }
+
+            binding.cardIntermediate.isChecked = false
+            var intermediateEditor : SharedPreferences.Editor = sharePrefIntermediate.edit()
+            intermediateEditor.putBoolean("isIntermediateCardCheck", false)
+            intermediateEditor.apply()
+            binding.cardIntermediate.strokeWidth = 0
+
+
+
+            binding.cardBeginner.isChecked = false
+            var beginnerEditor : SharedPreferences.Editor = sharePrefBeginner.edit()
+            beginnerEditor.putBoolean("isBeginnerCardCheck", false)
+            beginnerEditor.apply()
+            binding.cardBeginner.strokeWidth = 0
+
+
+
+        }
+
+        binding.nextButtonSelectLevelOfExercise.setOnClickListener {
+
+            if(binding.cardBeginner.isChecked || binding.cardIntermediate.isChecked || binding.cardAdvanced.isChecked){
 
                 navController.navigate(
                     SelectLevelOfExerciseFragmentDirections.actionSelectLevelOfExerciseFragmentToPersonActivityStatusFragment()

@@ -26,6 +26,7 @@ class ExerciseDetailsActivity : AppCompatActivity() {
 
         binding = ActivityExerciseDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         args.let {
             idReceived = it.exerciseShowcase.id
         }

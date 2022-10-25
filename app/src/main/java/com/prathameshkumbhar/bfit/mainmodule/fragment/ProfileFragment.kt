@@ -54,6 +54,25 @@ class ProfileFragment : Fragment() {
             var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
             editor.putBoolean("isOnboardComplete",false)
             editor.apply()
+            
+            //Changing the already selected level of exercise to default false
+            val sharePrefBeginner : SharedPreferences = context!!.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
+            var beginnerEditor : SharedPreferences.Editor = sharePrefBeginner.edit()
+            beginnerEditor.putBoolean("isBeginnerCardCheck", false)
+            beginnerEditor.apply()
+
+
+            val sharePrefIntermediate : SharedPreferences = context!!.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
+            var intermediateEditor : SharedPreferences.Editor = sharePrefIntermediate.edit()
+            intermediateEditor.putBoolean("isIntermediateCardCheck", false)
+            intermediateEditor.apply()
+
+
+            val sharePrefAdvance : SharedPreferences = context!!.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
+            var advanceEditor : SharedPreferences.Editor = sharePrefAdvance.edit()
+            advanceEditor.putBoolean("isAdvanceCardCheck", false)
+            advanceEditor.apply()
+
 
             requireContext().showSuccessToast("Successfully Logged Out!")
             firebaseAuth.signOut()

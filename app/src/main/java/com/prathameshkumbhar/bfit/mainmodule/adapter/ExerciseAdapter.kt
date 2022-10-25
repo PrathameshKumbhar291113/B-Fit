@@ -38,7 +38,7 @@ class ExerciseAdapter (
 
             genderImageLoading(exerciseShowCase)
 
-            binding.exerciseImage.setOnClickListener {
+            binding.exerciseShowItemCard.setOnClickListener {
                onItemClick(exerciseShowCase)
             }
 
@@ -62,25 +62,19 @@ class ExerciseAdapter (
         private fun difficultyLevelShowcase(exerciseShowCase: ExerciseShowCase){
 
             val sharePrefBeginner : SharedPreferences = context.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
-            var isBeginnerCardSelected = sharePrefBeginner.getBoolean("isBeginnerCheck", false)
+            var isBeginnerCardSelected = sharePrefBeginner.getBoolean("isBeginnerCardCheck", false)
+
+    val sharePrefIntermediate : SharedPreferences = context.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
+    var isIntermediateCardSelected = sharePrefIntermediate.getBoolean("isIntermediateCardCheck", false)
+
+    val sharePrefAdvance : SharedPreferences = context.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
+    var isAdvanceCardSelected = sharePrefAdvance.getBoolean("isAdvanceCardCheck", false)
 
             if (isBeginnerCardSelected){
                 binding.exerciseRatingTv.text = exerciseShowCase.exerciseRatingBeginner.toString()
-            }
-
-
-            val sharePrefIntermediate : SharedPreferences = context.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
-            var isIntermediateCardSelected = sharePrefIntermediate.getBoolean("isIntermediateCardCheck", false)
-
-            if (isIntermediateCardSelected){
+            }else if (isIntermediateCardSelected){
                 binding.exerciseRatingTv.text = exerciseShowCase.exerciseRatingIntermediate.toString()
-            }
-
-
-            val sharePrefAdvance : SharedPreferences = context.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
-            var isAdvanceCardSelected = sharePrefAdvance.getBoolean("isAdvanceCardCheck", false)
-
-            if (isAdvanceCardSelected){
+            }else if (isAdvanceCardSelected){
                 binding.exerciseRatingTv.text = exerciseShowCase.exerciseRatingAdvance.toString()
             }
         }

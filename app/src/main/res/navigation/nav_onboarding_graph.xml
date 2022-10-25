@@ -20,16 +20,7 @@
         android:label="fragment_bmi_calculator"
         tools:layout="@layout/fragment_bmi_calculator" >
         <action
-            android:id="@+id/action_bmiCalculatorFragment_to_selectBodyPartWorkoutFragment"
-            app:destination="@id/selectBodyPartWorkoutFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/selectBodyPartWorkoutFragment"
-        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.SelectBodyPartWorkoutFragment"
-        android:label="fragment_select_body_part_workout"
-        tools:layout="@layout/fragment_select_body_part_workout" >
-        <action
-            android:id="@+id/action_selectBodyPartWorkoutFragment_to_bodyTypeGoalFragment"
+            android:id="@+id/action_bmiCalculatorFragment_to_bodyTypeGoalFragment"
             app:destination="@id/bodyTypeGoalFragment" />
     </fragment>
     <fragment

@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
     tools:context=".loginmodule.fragment.LoginFragment">
-    <ProgressBar
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/progressBar"
-        android:layout_width="@dimen/_60sdp"
-        android:layout_height="@dimen/_60sdp"
-        android:indeterminateTint="@color/palate_big_stone"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cpb_progressbar_width="10dp"
+        app:cpb_background_progressbar_width="10dp"
+        app:cpb_round_border="true"
+        app:cpb_progressbar_color_direction="top_to_bottom"
+        app:cpb_indeterminate_mode="true"
+        app:cpb_progressbar_color_start="@color/palate_big_stone"
+        app:cpb_progressbar_color_end="@color/palate_havelock_blue"
+        app:cpb_background_progressbar_color="@color/palate_titan_white"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

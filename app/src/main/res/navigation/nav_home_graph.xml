@@ -7,8 +7,8 @@
     <fragment
         android:id="@+id/showExerciseFragment"
         android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.ShowExerciseFragment"
-        android:label="EXERCISE"
-        tools:layout="@layout/fragment_show_exercise" >
+        android:label="B FIT"
+        tools:layout="@layout/fragment_show_exercise">
         <action
             android:id="@+id/action_showExerciseFragment_to_exerciseDetailsActivity"
             app:destination="@id/exerciseDetailsActivity" />

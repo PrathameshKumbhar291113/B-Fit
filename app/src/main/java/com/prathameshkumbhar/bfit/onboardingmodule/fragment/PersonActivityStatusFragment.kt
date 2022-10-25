@@ -9,8 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import com.prathameshkumbhar.bfit.databinding.FragmentPersonActivityStatusBinding
 import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import splitties.fragments.start
 
 class PersonActivityStatusFragment : Fragment() {
@@ -151,13 +155,69 @@ class PersonActivityStatusFragment : Fragment() {
         }
 
         binding.nextButtonSelectActivityStatus.setOnClickListener {
-            start<HomeActivity>(){
 
-                var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
-                editor.putBoolean("isOnboardComplete",true)
-                editor.apply()
+            binding.scrollViewPersonActivityStatusFrag.visibility = View.GONE
+            binding.progressCircular.visibility = View.VISIBLE
+            binding.progressTextBox.visibility = View.VISIBLE
+            binding.progressDetails.visibility = View.VISIBLE
+            binding.progressTitle.visibility = View.VISIBLE
 
-                activity?.finish()
+            binding.progressCircular.apply {
+
+                progress = 0f
+                progressMax = 100f
+                progressBarWidth = 35f
+                backgroundProgressBarWidth = 35f
+                progressBarColorEnd =Color.rgb(77, 126, 221)
+                progressBarColorStart = Color.rgb(20, 33, 61)
+                backgroundProgressBarColor = Color.rgb(248, 247, 255)
+                progressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
+                roundBorder = true
+                setProgressWithAnimation(0f,2000)
+                setProgressWithAnimation(20f,4000)
+                setProgressWithAnimation(40f,8000)
+                setProgressWithAnimation(60f,10000)
+                setProgressWithAnimation(80f,12000)
+                setProgressWithAnimation(100f,15000)
+            }
+
+            binding.progressCircular.onProgressChangeListener = { progress ->
+
+                when(progress.toInt()){
+
+                    0  -> {
+                        binding.progressTextBox.text = "0%"
+                        binding.progressDetails.text = "Initializing Plan."
+                    }
+                    20 -> binding.progressTextBox.text = "20%"
+
+                    30 ->{
+                        binding.progressDetails.text = "Started Working."
+                    }
+                    40 -> binding.progressTextBox.text = "40%"
+                    50 ->{
+                        binding.progressTextBox.text = "50%"
+                        binding.progressDetails.text = "We Are Half Way Done."
+                    }
+                    60 -> binding.progressTextBox.text = "60%"
+                    80 -> {
+                        binding.progressTextBox.text = "80%"
+                        binding.progressDetails.text = "Almost there."
+                    }
+                    100-> {
+                        binding.progressTextBox.text = "100%"
+                        binding.progressDetails.text = "PLan Generated Successfully !"
+                        lifecycleScope.launch {
+                            delay(300)
+                            start<HomeActivity>(){
+                                var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
+                                editor.putBoolean("isOnboardComplete",true)
+                                editor.apply()
+                                activity?.finish()
+                            }
+                        }
+                    }
+                }
             }
         }
     }
