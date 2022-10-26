@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/exerciseStepDetailImg"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:layout_marginStart="10dp"
             android:src="@drawable/male"
             android:layout_marginTop="3dp"

@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.prathameshkumbhar.bfit.databinding.ActivityExerciseDetailsBinding
-import com.prathameshkumbhar.bfit.databinding.ExerciseDetailsShowCardBinding
+import com.prathameshkumbhar.bfit.databinding.DialogExerciseDetailsShowCardBinding
 import com.prathameshkumbhar.bfit.mainmodule.adapter.ExerciseStepsDetailAdapter
 import com.prathameshkumbhar.bfit.mainmodule.data.EXERCISE_SHOWCASE_LIST
 import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseDetails
@@ -50,11 +50,11 @@ class ExerciseDetailsActivity : AppCompatActivity() {
 
     private fun onItemClick(exerciseDetails: ExerciseDetails) {
         //DAILOG BOX WILL APPEAR HERE
-        val dialogBinding: ExerciseDetailsShowCardBinding = ExerciseDetailsShowCardBinding.inflate(layoutInflater)
+        val dialogBinding: DialogExerciseDetailsShowCardBinding = DialogExerciseDetailsShowCardBinding.inflate(layoutInflater)
 
-        val customDialog = Dialog(this)
+        val exerciseStepDetailCustomDialog = Dialog(this)
 
-        customDialog.apply {
+        exerciseStepDetailCustomDialog.apply {
             setContentView(dialogBinding.root)
             setCancelable(false)
 
@@ -66,7 +66,7 @@ class ExerciseDetailsActivity : AppCompatActivity() {
         }.show()
 
         dialogBinding.exerciseStepsCloseCard.setOnClickListener {
-            customDialog.dismiss()
+            exerciseStepDetailCustomDialog.dismiss()
         }
     }
 }

@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.droidman.ktoasty.KToasty
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import com.prathameshkumbhar.bfit.databinding.FragmentPersonActivityStatusBinding
 import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
@@ -27,7 +28,6 @@ class PersonActivityStatusFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentPersonActivityStatusBinding.inflate(inflater, container, false)
-
 
         val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
         var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
@@ -50,175 +50,221 @@ class PersonActivityStatusFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
-
-
         binding.cardSedentary.setOnClickListener {
-            binding.cardSedentary.isChecked = !binding.cardSedentary.isChecked
+            setUpCardSedentary()
 
-            binding.cardSedentary.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
-
-            binding.cardSedentary.strokeWidth = 8
-            binding.cardLightlyActive.strokeWidth = 0
-            binding.cardModeratelyActive.strokeWidth = 0
-            binding.cardAthletic.strokeWidth = 0
-
-            binding.cardSedentarySubText.visibility = View.VISIBLE
-            binding.cardLightlyActiveSubText.visibility = View.GONE
-            binding.cardModeratelyActiveSubText.visibility = View.GONE
-            binding.cardAthleticSubText.visibility = View.GONE
-
-            if (!binding.cardSedentary.isChecked){
-                binding.cardSedentarySubText.visibility = View.GONE
-                binding.cardSedentary.strokeWidth = 0
-
-            }
-
-            binding.cardLightlyActive.isChecked = false
-            binding.cardModeratelyActive.isChecked = false
-            binding.cardAthletic.isChecked = false
         }
 
         binding.cardLightlyActive.setOnClickListener {
-            binding.cardLightlyActive.isChecked = !binding.cardLightlyActive.isChecked
-
-            binding.cardLightlyActive.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
-
-            binding.cardSedentary.strokeWidth = 0
-            binding.cardLightlyActive.strokeWidth = 8
-            binding.cardModeratelyActive.strokeWidth = 0
-            binding.cardAthletic.strokeWidth = 0
-
-
-            binding.cardSedentarySubText.visibility = View.GONE
-            binding.cardLightlyActiveSubText.visibility = View.VISIBLE
-            binding.cardModeratelyActiveSubText.visibility = View.GONE
-            binding.cardAthleticSubText.visibility = View.GONE
-
-            if (!binding.cardLightlyActive.isChecked){
-                binding.cardLightlyActiveSubText.visibility = View.GONE
-                binding.cardLightlyActive.strokeWidth = 0
-            }
-
-            binding.cardSedentary.isChecked = false
-            binding.cardModeratelyActive.isChecked = false
-            binding.cardAthletic.isChecked = false
+            setupCardLightlyActive()
         }
 
         binding.cardModeratelyActive.setOnClickListener {
-            binding.cardModeratelyActive.isChecked = !binding.cardModeratelyActive.isChecked
+            setUpCardModeratelyActive()
 
-            binding.cardModeratelyActive.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
-
-            binding.cardSedentary.strokeWidth = 0
-            binding.cardLightlyActive.strokeWidth = 0
-            binding.cardModeratelyActive.strokeWidth = 8
-            binding.cardAthletic.strokeWidth = 0
-
-            binding.cardSedentarySubText.visibility = View.GONE
-            binding.cardLightlyActiveSubText.visibility = View.GONE
-            binding.cardModeratelyActiveSubText.visibility = View.VISIBLE
-            binding.cardAthleticSubText.visibility = View.GONE
-
-            if (!binding.cardModeratelyActive.isChecked){
-                binding.cardModeratelyActiveSubText.visibility = View.GONE
-                binding.cardModeratelyActive.strokeWidth = 0
-            }
-
-            binding.cardLightlyActive.isChecked = false
-            binding.cardSedentary.isChecked = false
-            binding.cardAthletic.isChecked = false
         }
         binding.cardAthletic.setOnClickListener {
-            binding.cardAthletic.isChecked = !binding.cardAthletic.isChecked
+            setUpCardAthletic()
 
-            binding.cardAthletic.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
-
-            binding.cardSedentary.strokeWidth = 0
-            binding.cardLightlyActive.strokeWidth = 0
-            binding.cardModeratelyActive.strokeWidth = 0
-            binding.cardAthletic.strokeWidth = 8
-
-            binding.cardSedentarySubText.visibility = View.GONE
-            binding.cardLightlyActiveSubText.visibility = View.GONE
-            binding.cardModeratelyActiveSubText.visibility = View.GONE
-            binding.cardAthleticSubText.visibility = View.VISIBLE
-
-            if (!binding.cardAthletic.isChecked){
-                binding.cardAthleticSubText.visibility = View.GONE
-                binding.cardAthletic.strokeWidth = 0
-            }
-
-            binding.cardLightlyActive.isChecked = false
-            binding.cardModeratelyActive.isChecked = false
-            binding.cardSedentary.isChecked = false
         }
 
         binding.nextButtonSelectActivityStatus.setOnClickListener {
 
-            binding.scrollViewPersonActivityStatusFrag.visibility = View.GONE
-            binding.progressCircular.visibility = View.VISIBLE
-            binding.progressTextBox.visibility = View.VISIBLE
-            binding.progressDetails.visibility = View.VISIBLE
-            binding.progressTitle.visibility = View.VISIBLE
-
-            binding.progressCircular.apply {
-
-                progress = 0f
-                progressMax = 100f
-                progressBarWidth = 35f
-                backgroundProgressBarWidth = 35f
-                progressBarColorEnd =Color.rgb(77, 126, 221)
-                progressBarColorStart = Color.rgb(20, 33, 61)
-                backgroundProgressBarColor = Color.rgb(248, 247, 255)
-                progressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
-                roundBorder = true
-                setProgressWithAnimation(0f,2000)
-                setProgressWithAnimation(20f,4000)
-                setProgressWithAnimation(40f,8000)
-                setProgressWithAnimation(60f,10000)
-                setProgressWithAnimation(80f,12000)
-                setProgressWithAnimation(100f,15000)
+            with(binding){
+                if (
+                    cardAthletic.isChecked ||
+                    cardModeratelyActive.isChecked ||
+                    cardLightlyActive.isChecked ||
+                    cardSedentary.isChecked
+                ){
+                    setUpProgressBar()
+                    progressChangeListener()
+                }else{
+                    KToasty.info(requireContext(),"Kindly Select One Of The Above Activity.").show()
+                }
             }
+        }
+    }
 
-            binding.progressCircular.onProgressChangeListener = { progress ->
 
-                when(progress.toInt()){
+    private fun setUpCardSedentary(){
+        binding.cardSedentary.isChecked = !binding.cardSedentary.isChecked
 
-                    0  -> {
-                        binding.progressTextBox.text = "0%"
-                        binding.progressDetails.text = "Initializing Plan."
-                    }
-                    20 -> binding.progressTextBox.text = "20%"
+        binding.cardSedentary.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
 
-                    30 ->{
-                        binding.progressDetails.text = "Started Working."
-                    }
-                    40 -> binding.progressTextBox.text = "40%"
-                    50 ->{
-                        binding.progressTextBox.text = "50%"
-                        binding.progressDetails.text = "We Are Half Way Done."
-                    }
-                    60 -> binding.progressTextBox.text = "60%"
-                    80 -> {
-                        binding.progressTextBox.text = "80%"
-                        binding.progressDetails.text = "Almost there."
-                    }
-                    100-> {
-                        binding.progressTextBox.text = "100%"
-                        binding.progressDetails.text = "PLan Generated Successfully !"
-                        lifecycleScope.launch {
-                            delay(300)
-                            start<HomeActivity>(){
-                                var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
-                                editor.putBoolean("isOnboardComplete",true)
-                                editor.apply()
-                                activity?.finish()
-                            }
+        binding.cardSedentary.strokeWidth = 8
+        binding.cardLightlyActive.strokeWidth = 0
+        binding.cardModeratelyActive.strokeWidth = 0
+        binding.cardAthletic.strokeWidth = 0
+
+        binding.cardSedentarySubText.visibility = View.VISIBLE
+        binding.cardLightlyActiveSubText.visibility = View.GONE
+        binding.cardModeratelyActiveSubText.visibility = View.GONE
+        binding.cardAthleticSubText.visibility = View.GONE
+
+        if (!binding.cardSedentary.isChecked){
+            binding.cardSedentarySubText.visibility = View.GONE
+            binding.cardSedentary.strokeWidth = 0
+
+        }
+
+        binding.cardLightlyActive.isChecked = false
+        binding.cardModeratelyActive.isChecked = false
+        binding.cardAthletic.isChecked = false
+    }
+
+
+    private fun setupCardLightlyActive(){
+        binding.cardLightlyActive.isChecked = !binding.cardLightlyActive.isChecked
+
+        binding.cardLightlyActive.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+        binding.cardSedentary.strokeWidth = 0
+        binding.cardLightlyActive.strokeWidth = 8
+        binding.cardModeratelyActive.strokeWidth = 0
+        binding.cardAthletic.strokeWidth = 0
+
+
+        binding.cardSedentarySubText.visibility = View.GONE
+        binding.cardLightlyActiveSubText.visibility = View.VISIBLE
+        binding.cardModeratelyActiveSubText.visibility = View.GONE
+        binding.cardAthleticSubText.visibility = View.GONE
+
+        if (!binding.cardLightlyActive.isChecked){
+            binding.cardLightlyActiveSubText.visibility = View.GONE
+            binding.cardLightlyActive.strokeWidth = 0
+        }
+
+        binding.cardSedentary.isChecked = false
+        binding.cardModeratelyActive.isChecked = false
+        binding.cardAthletic.isChecked = false
+    }
+
+
+    private fun setUpCardModeratelyActive(){
+
+        binding.cardModeratelyActive.isChecked = !binding.cardModeratelyActive.isChecked
+
+        binding.cardModeratelyActive.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+        binding.cardSedentary.strokeWidth = 0
+        binding.cardLightlyActive.strokeWidth = 0
+        binding.cardModeratelyActive.strokeWidth = 8
+        binding.cardAthletic.strokeWidth = 0
+
+        binding.cardSedentarySubText.visibility = View.GONE
+        binding.cardLightlyActiveSubText.visibility = View.GONE
+        binding.cardModeratelyActiveSubText.visibility = View.VISIBLE
+        binding.cardAthleticSubText.visibility = View.GONE
+
+        if (!binding.cardModeratelyActive.isChecked){
+            binding.cardModeratelyActiveSubText.visibility = View.GONE
+            binding.cardModeratelyActive.strokeWidth = 0
+        }
+
+        binding.cardLightlyActive.isChecked = false
+        binding.cardSedentary.isChecked = false
+        binding.cardAthletic.isChecked = false
+    }
+
+
+    private fun setUpCardAthletic(){
+        binding.cardAthletic.isChecked = !binding.cardAthletic.isChecked
+
+        binding.cardAthletic.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+
+        binding.cardSedentary.strokeWidth = 0
+        binding.cardLightlyActive.strokeWidth = 0
+        binding.cardModeratelyActive.strokeWidth = 0
+        binding.cardAthletic.strokeWidth = 8
+
+        binding.cardSedentarySubText.visibility = View.GONE
+        binding.cardLightlyActiveSubText.visibility = View.GONE
+        binding.cardModeratelyActiveSubText.visibility = View.GONE
+        binding.cardAthleticSubText.visibility = View.VISIBLE
+
+        if (!binding.cardAthletic.isChecked){
+            binding.cardAthleticSubText.visibility = View.GONE
+            binding.cardAthletic.strokeWidth = 0
+        }
+
+        binding.cardLightlyActive.isChecked = false
+        binding.cardModeratelyActive.isChecked = false
+        binding.cardSedentary.isChecked = false
+    }
+
+
+    private fun setUpProgressBar(){
+
+        binding.scrollViewPersonActivityStatusFrag.visibility = View.GONE
+        binding.progressCircular.visibility = View.VISIBLE
+        binding.progressTextBox.visibility = View.VISIBLE
+        binding.progressDetails.visibility = View.VISIBLE
+        binding.progressTitle.visibility = View.VISIBLE
+
+        binding.progressCircular.apply {
+
+            progress = 0f
+            progressMax = 100f
+            progressBarWidth = 35f
+            backgroundProgressBarWidth = 35f
+            progressBarColorEnd =Color.rgb(77, 126, 221)
+            progressBarColorStart = Color.rgb(20, 33, 61)
+            backgroundProgressBarColor = Color.rgb(248, 247, 255)
+            progressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
+            roundBorder = true
+            setProgressWithAnimation(0f,2000)
+            setProgressWithAnimation(20f,4000)
+            setProgressWithAnimation(40f,8000)
+            setProgressWithAnimation(60f,10000)
+            setProgressWithAnimation(80f,12000)
+            setProgressWithAnimation(100f,15000)
+
+        }
+    }
+
+
+    private fun progressChangeListener(){
+        val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
+
+        binding.progressCircular.onProgressChangeListener = { progress ->
+
+            when(progress.toInt()){
+
+                0  -> {
+                    binding.progressTextBox.text = "0%"
+                    binding.progressDetails.text = "Initializing Plan."
+                }
+                20 -> binding.progressTextBox.text = "20%"
+
+                30 ->{
+                    binding.progressDetails.text = "Started Implementation."
+                }
+                40 -> binding.progressTextBox.text = "40%"
+                50 ->{
+                    binding.progressTextBox.text = "50%"
+                    binding.progressDetails.text = "We Are Half Way Done."
+                }
+                60 -> binding.progressTextBox.text = "60%"
+                80 -> {
+                    binding.progressTextBox.text = "80%"
+                    binding.progressDetails.text = "Almost there."
+                }
+                100-> {
+                    binding.progressTextBox.text = "100%"
+                    binding.progressDetails.text = "PLan Generated Successfully !"
+                    lifecycleScope.launch {
+                        delay(300)
+                        start<HomeActivity>(){
+                            var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
+                            editor.putBoolean("isOnboardComplete",true)
+                            editor.apply()
+                            activity?.finish()
                         }
                     }
                 }
             }
         }
     }
+
 }
