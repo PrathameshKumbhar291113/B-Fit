@@ -4,51 +4,39 @@ val FULL_BODY = listOf(
         ExerciseDetails(
             0,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20",null
         ),
-
         ExerciseDetails(
             0,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
         )
@@ -58,102 +46,78 @@ val LOWER_BODY = listOf(
     ExerciseDetails(
         1,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"SQUATS","https://i.imgur.com/yPuPyLh.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"SIDE-LYING LEG LIFT","https://i.imgur.com/XfNBaRl.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"BACKWARD LUNGES","https://i.imgur.com/M4WV8Jy.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"DONKEY KICKS","https://i.imgur.com/jOXtGBG.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"SIDE-LYING LEG LIFT","https://i.imgur.com/XfNBaRl.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"BACKWARD LUNGES","https://i.imgur.com/M4WV8Jy.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"DONKEY KICKS","https://i.imgur.com/jOXtGBG.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         1,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
     )
 
 )
 val ABS = listOf(
-
     ExerciseDetails(
         2,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"CRUNCHES","https://i.imgur.com/wTk6uYm.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"RUSSIAN TWIST","https://i.imgur.com/Sc5RSSg.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"MOUNTAIN CLIMBER","https://i.imgur.com/prWEbzW.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"LEGS IN-OUT","https://i.imgur.com/QmhcXRH.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"LEG RAISES","https://i.imgur.com/8yHlmxu.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"SEATED ABS CIRCLE","https://i.imgur.com/KtNWE4u.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"SIDE PLANK","https://i.imgur.com/UAmSzfu.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"PLANK LOW TO HIGH","https://i.imgur.com/2ic1ws6.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         2,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
     )
@@ -201,173 +165,132 @@ val ARMS = listOf(
     ),
 )
 val CHEST = listOf(
-
     ExerciseDetails(
         4,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"BOX PUSH-UPS","https://i.imgur.com/BrA66xh.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"DECLINE PUSH-UPS","https://i.imgur.com/W3pQIkJ.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         4,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
     )
 
 )
 val BACK = listOf(
-
     ExerciseDetails(
         5,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"SIDE ARM RAISE","https://i.imgur.com/iPhawU0.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"KNEE PUSH-UPS", "https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"BOX PUSH-UPS","https://i.imgur.com/BrA66xh.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"FLOOR TRICEP DIPS", "https://i.imgur.com/kXiX0w1.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"CAT COW POSE","https://i.imgur.com/nmZqxXp.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"SUPERMAN","https://i.imgur.com/DWlaSUJ.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"SWIMMER AND SUPERMAN","https://i.imgur.com/2RTarzq.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"CHILD'S POSE","https://i.imgur.com/MQ5LvAb.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         5,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
     )
 
 )
 val LEGS = listOf(
-
     ExerciseDetails(
         6,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"SINGLE HIP ROTATION", "https://i.imgur.com/RaK7iDO.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"SQUATS","https://i.imgur.com/yPuPyLh.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"SQUAT REACH","https://i.imgur.com/PJktaJ5.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"JUMPING SQUATS","https://i.imgur.com/sksRBDF.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"BACKWARD LUNGES","https://i.imgur.com/M4WV8Jy.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"FORWARD LUNGES","https://i.imgur.com/37RTgnn.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"WALL SIT","https://i.imgur.com/giW68Wa.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"DONKEY KICKS","https://i.imgur.com/jOXtGBG.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"SIDE-LYING LEG LIFT","https://i.imgur.com/XfNBaRl.gif","x10","x15","x20",null
     ),
-
     ExerciseDetails(
         6,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
     )
