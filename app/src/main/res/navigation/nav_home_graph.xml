@@ -18,11 +18,11 @@
         android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.DietPlanFragment"
         android:label="DIET"
         tools:layout="@layout/fragment_diet_plan" />
-    <fragment
-        android:id="@+id/nutritionDetailsFragment"
-        android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.NutritionDetailsFragment"
-        android:label="NUTRITION"
-        tools:layout="@layout/fragment_nutrition_details" />
+<!--    <fragment-->
+<!--        android:id="@+id/nutritionDetailsFragment"-->
+<!--        android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.NutritionDetailsFragment"-->
+<!--        android:label="NUTRITION"-->
+<!--        tools:layout="@layout/fragment_nutrition_details" />-->
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.ProfileFragment"

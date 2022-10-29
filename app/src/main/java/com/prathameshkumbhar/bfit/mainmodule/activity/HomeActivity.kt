@@ -33,9 +33,9 @@ class HomeActivity : AppCompatActivity() {
                 R.id.dietPlanFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
                 }
-                R.id.nutritionDetailsFragment -> {
-                    binding.homeActivityToolBar.navigationIcon = null
-                }
+//                R.id.nutritionDetailsFragment -> {
+//                    binding.homeActivityToolBar.navigationIcon = null
+//                }
                 R.id.profileFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
                 }

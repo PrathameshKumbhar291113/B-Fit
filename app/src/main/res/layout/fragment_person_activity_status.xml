@@ -22,10 +22,24 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/scrollViewConstLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0dp">
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/horizontal_guideline_for_nextBtn"
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.0"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1.0"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
@@ -43,9 +57,9 @@
                 android:textAlignment="center"
                 android:textColor="@color/palate_big_stone"
                 android:textSize="@dimen/_25ssp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toTopOf="@id/scrollViewConstLayout" />
 
             <com.google.android.material.card.MaterialCardView
@@ -63,8 +77,8 @@
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@id/cardLightlyActive"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toBottomOf="@id/personActivityTitleTv"
                 app:layout_constraintVertical_chainStyle="packed">
 
@@ -144,8 +158,8 @@
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@id/cardModeratelyActive"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toBottomOf="@+id/cardSedentary">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -224,8 +238,8 @@
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@id/cardAthletic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toBottomOf="@+id/cardLightlyActive">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -308,8 +322,8 @@
                 app:checkedIconTint="@color/palate_big_stone"
 
                 app:layout_constraintBottom_toTopOf="@id/nextButtonSelectActivityStatus"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toBottomOf="@+id/cardModeratelyActive">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -386,10 +400,12 @@
                 android:background="@drawable/rounded_corner_button"
                 android:text="Next"
                 android:textColor="@color/palate_titan_white"
-                app:layout_constraintBottom_toTopOf="@+id/horizontal_guideline_for_nextBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardAthletic" />
+                app:layout_constraintTop_toBottomOf="@id/cardAthletic"
+                app:layout_goneMarginTop="20dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline7"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
+ />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

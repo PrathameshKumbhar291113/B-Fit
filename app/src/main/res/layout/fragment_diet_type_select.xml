@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
-    tools:context=".onboardingmodule.fragment.SelectLevelOfExerciseFragment">
+    tools:context=".onboardingmodule.fragment.DietTypeSelectFragment">
 
     <ScrollView
-        android:id="@+id/scrollViewSlctWrkoutLvl"
+        android:id="@+id/scrollViewDietType"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
@@ -46,19 +46,19 @@
                 app:layout_constraintGuide_percent="1.0" />
 
             <TextView
-                android:id="@+id/chooseLevel"
+                android:id="@+id/chooseDiet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:layout_marginEnd="@dimen/_5sdp"
                 android:fontFamily="@font/noto_sans_bold"
-                android:text="SELECT WORKOUT LEVEL"
+                android:text="SELECT DIET TYPE"
                 android:textAlignment="center"
                 android:textColor="@color/palate_big_stone"
                 android:textSize="@dimen/_25ssp"
                 android:padding="@dimen/_1sdp"
-                app:layout_constraintBottom_toTopOf="@+id/chooseLevelSubTv"
+                app:layout_constraintBottom_toTopOf="@+id/chooseDietSubTv"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toTopOf="parent"
@@ -66,24 +66,24 @@
                 app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                android:id="@+id/chooseLevelSubTv"
+                android:id="@+id/chooseDietSubTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select the level below!"
+                android:text="Select the diet type below!"
                 android:textAlignment="center"
                 android:textColor="@color/palate_big_stone"
                 android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toTopOf="@+id/cardBeginner"
+                app:layout_constraintBottom_toTopOf="@+id/cardVeg"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@id/chooseLevel" />
+                app:layout_constraintTop_toBottomOf="@id/chooseDiet" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardBeginner"
+                android:id="@+id/cardVeg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_65sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/palate_havelock_blue"
                 android:checkable="true"
@@ -92,69 +92,52 @@
                 app:cardCornerRadius="@dimen/_15sdp"
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
-                app:layout_constraintBottom_toTopOf="@id/cardIntermediate"
+                app:layout_constraintBottom_toTopOf="@id/cardNonVeg"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/chooseLevelSubTv">
+                app:layout_constraintTop_toBottomOf="@+id/chooseDietSubTv">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cardBeginnerConstLayout"
+                    android:id="@+id/cardVegConstLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/palate_havelock_blue">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/beginnerEmoteTv"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginStart="@dimen/_15sdp"
-                        android:text="☝️"
-                        android:textColor="@color/palate_titan_white"
-                        android:textSize="40sp"
+                        android:id="@+id/vegTv"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
                         android:gravity="center"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.45" />
+                        android:text="🥦"
+                        android:textSize="70dp"
+                        app:layout_constraintBottom_toBottomOf="@id/cardVegConstLayout"
+                        app:layout_constraintStart_toStartOf="@id/cardVegConstLayout"
+                        app:layout_constraintTop_toTopOf="@id/cardVegConstLayout" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/beginnerText"
+                        android:id="@+id/vegText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/noto_sans_bold"
-                        android:text="Beginner"
-                        android:layout_marginStart="@dimen/_25sdp"
+                        android:text="Vegetarian"
                         android:textAlignment="center"
+                        android:gravity="center"
                         android:textColor="@color/palate_big_stone"
                         android:textSize="@dimen/_20ssp"
-                        app:layout_constraintBottom_toTopOf="@id/beginnerSubText"
-                        app:layout_constraintStart_toEndOf="@+id/beginnerEmoteTv"
-                        app:layout_constraintTop_toTopOf="@id/cardBeginnerConstLayout" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/beginnerSubText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_18sdp"
-                        android:fontFamily="@font/noto_sans"
-                        android:text="1 - 5 Pull Ups."
-                        android:textColor="@color/palate_titan_white"
-                        android:textSize="@dimen/_12ssp"
-                        app:layout_constraintBottom_toBottomOf="@id/cardBeginnerConstLayout"
-                        app:layout_constraintStart_toStartOf="@+id/beginnerText"
-                        app:layout_constraintTop_toBottomOf="@id/beginnerText" />
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/cardVegConstLayout"
+                        app:layout_constraintStart_toEndOf="@+id/vegTv"
+                        app:layout_constraintTop_toTopOf="@+id/vegTv" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardIntermediate"
+                android:id="@+id/cardNonVeg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/palate_havelock_blue"
                 android:checkable="true"
@@ -163,67 +146,54 @@
                 app:cardCornerRadius="@dimen/_15sdp"
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
-                app:layout_constraintBottom_toTopOf="@id/cardAdvanced"
+                app:layout_constraintBottom_toTopOf="@id/cardMixDiet"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/cardBeginner">
+                app:layout_constraintTop_toBottomOf="@+id/cardVeg">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cardIntermediateConstLayout"
+                    android:id="@+id/cardNonVegConstLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/palate_havelock_blue">
 
+
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/intermediateEmoteTv"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginStart="@dimen/_15sdp"
-                        android:text="👍"
-                        android:textColor="@color/palate_titan_white"
-                        android:textSize="40sp"
+                        android:id="@+id/nonVegTv"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
                         android:gravity="center"
-                        app:layout_constraintVertical_bias="0.45"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:text="🍖"
+                        android:textSize="70dp"
+                        app:layout_constraintBottom_toBottomOf="@id/cardNonVegConstLayout"
+                        app:layout_constraintStart_toStartOf="@id/cardNonVegConstLayout"
+                        app:layout_constraintTop_toTopOf="@id/cardNonVegConstLayout" />
+
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/intermediateText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginStart="@dimen/_25sdp"
                         android:fontFamily="@font/noto_sans_bold"
-                        android:text="Intermediate"
+                        android:text="Non Vegetarian"
+                        android:textAlignment="center"
+                        android:gravity="center"
                         android:textColor="@color/palate_big_stone"
                         android:textSize="@dimen/_20ssp"
-                        app:layout_constraintBottom_toTopOf="@id/intermediateSubText"
-                        app:layout_constraintStart_toEndOf="@+id/intermediateEmoteTv"
-                        app:layout_constraintTop_toTopOf="@id/cardIntermediateConstLayout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/nonVegTv"
+                        app:layout_constraintEnd_toEndOf="@id/cardNonVegConstLayout"
+                        app:layout_constraintStart_toEndOf="@+id/nonVegTv"
+                        app:layout_constraintTop_toTopOf="@+id/nonVegTv" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/intermediateSubText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_18sdp"
-                        android:fontFamily="@font/noto_sans"
-                        android:text="5 - 10 Pull Ups."
-                        android:textColor="@color/palate_titan_white"
-                        android:textSize="@dimen/_12ssp"
-                        app:layout_constraintBottom_toBottomOf="@id/cardIntermediateConstLayout"
-                        app:layout_constraintStart_toStartOf="@+id/intermediateText"
-                        app:layout_constraintTop_toBottomOf="@id/intermediateText" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardAdvanced"
+                android:id="@+id/cardMixDiet"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_35sdp"
+                android:layout_marginTop="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/palate_havelock_blue"
                 android:checkable="true"
@@ -234,72 +204,57 @@
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/cardIntermediate">
+                app:layout_constraintTop_toBottomOf="@+id/cardNonVeg">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cardAdvancedConstLayout"
+                    android:id="@+id/cardMixDietConstLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/palate_havelock_blue">
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/advancedEmoteTv"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginStart="@dimen/_15sdp"
-                        android:text="💪"
-                        android:textColor="@color/palate_titan_white"
-                        android:textSize="40sp"
+                        android:id="@+id/mixedDietTv"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="@dimen/_90sdp"
                         android:gravity="center"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_chainStyle="packed"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.45" />
+                        android:text="🥚"
+                        android:textSize="70dp"
+                        app:layout_constraintBottom_toBottomOf="@id/cardMixDietConstLayout"
+                        app:layout_constraintStart_toStartOf="@id/cardMixDietConstLayout"
+                        app:layout_constraintTop_toTopOf="@id/cardMixDietConstLayout" />
+
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/advancedText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
                         android:fontFamily="@font/noto_sans_bold"
-                        android:layout_marginStart="@dimen/_25sdp"
-                        android:text="Advanced"
+                        android:text="Mixed"
                         android:textColor="@color/palate_big_stone"
                         android:textSize="@dimen/_20ssp"
-                        app:layout_constraintBottom_toTopOf="@+id/advancedSubText"
-                        app:layout_constraintStart_toEndOf="@id/advancedEmoteTv"
-                        app:layout_constraintTop_toTopOf="@id/cardAdvancedConstLayout" />
+                        app:layout_constraintBottom_toBottomOf="@+id/mixedDietTv"
+                        app:layout_constraintEnd_toEndOf="@id/cardMixDietConstLayout"
+                        app:layout_constraintHorizontal_bias="0.514"
+                        app:layout_constraintStart_toEndOf="@+id/mixedDietTv"
+                        app:layout_constraintTop_toTopOf="@+id/mixedDietTv"
+                        app:layout_constraintVertical_bias="0.5" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/advancedSubText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_18sdp"
-                        android:fontFamily="@font/noto_sans"
-
-                        android:text="10 - 20 Pull Ups."
-                        android:textColor="@color/palate_titan_white"
-                        android:textSize="@dimen/_12ssp"
-                        app:layout_constraintBottom_toBottomOf="@id/cardAdvancedConstLayout"
-                        app:layout_constraintStart_toStartOf="@+id/advancedText"
-                        app:layout_constraintTop_toBottomOf="@id/advancedText" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nextButtonSelectLevelOfExercise"
+                android:id="@+id/nextButtonSelectDietType"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_50sdp"
                 android:layout_marginEnd="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_72sdp"
+                android:layout_marginTop="@dimen/_70sdp"
                 android:layout_marginBottom="@dimen/_35sdp"
                 android:background="@drawable/rounded_corner_button"
                 android:text="Next"
                 app:layout_constraintBottom_toTopOf="@id/guideline7"
-                app:layout_constraintTop_toBottomOf="@id/cardAdvanced"
+                app:layout_constraintTop_toBottomOf="@id/cardMixDiet"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"/>
 
@@ -307,7 +262,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

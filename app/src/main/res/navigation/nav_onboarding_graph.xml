@@ -43,7 +43,16 @@
         android:label="fragment_body_type_goal"
         tools:layout="@layout/fragment_body_type_goal" >
         <action
-            android:id="@+id/action_bodyTypeGoalFragment_to_selectLevelOfExerciseFragment"
+            android:id="@+id/action_bodyTypeGoalFragment_to_dietTypeSelectFragment"
+            app:destination="@id/dietTypeSelectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dietTypeSelectFragment"
+        android:name="com.prathameshkumbhar.bfit.onboardingmodule.fragment.DietTypeSelectFragment"
+        android:label="fragment_diet_type_select"
+        tools:layout="@layout/fragment_diet_type_select" >
+        <action
+            android:id="@+id/action_dietTypeSelectFragment_to_selectLevelOfExerciseFragment"
             app:destination="@id/selectLevelOfExerciseFragment" />
     </fragment>
 </navigation>

@@ -8,379 +8,424 @@
     tools:context=".onboardingmodule.fragment.BmiCalculatorFragment">
 
 
-    <TextView
-        android:id="@+id/bmi_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
-        android:fontFamily="@font/noto_sans_bold"
-        android:text="LET'S CHECK YOUR BMI"
-        android:textColor="@color/palate_big_stone"
-        android:textSize="@dimen/_25ssp"
-        app:layout_constraintBottom_toTopOf="@id/bmiLogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/bmiLogo"
+    <ScrollView
+        android:id="@+id/scrollViewBmiCalcFrag"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_120sdp"
-        app:srcCompat="@drawable/bmilogo"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="@dimen/_10sdp"
-         app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bmi_title_tv"
-        app:layout_constraintBottom_toTopOf="@id/heightCardView" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/heightCardView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        app:cardCornerRadius="@dimen/_25sdp"
-        app:cardElevation="5dp"
-        app:layout_constraintTop_toBottomOf="@id/bmiLogo"
-        app:layout_constraintBottom_toTopOf="@id/weightCardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/heightCardConstraintLayout"
+            android:id="@+id/scrollViewConstLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/palate_havelock_blue">
+            android:layout_height="0dp">
 
-            <TextView
-                android:id="@+id/heightTv"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="Height"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_15ssp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/showHeightText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/heightCardConstraintLayout"
-                app:layout_constraintVertical_chainStyle="spread_inside" />
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.0"/>
 
-            <TextView
-                android:id="@+id/showHeightText"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_1sdp"
-                android:text="166"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_30ssp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/heightSeekbar"
-                app:layout_constraintEnd_toStartOf="@id/showCmText"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/heightTv" />
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1.0"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1.0" />
 
             <TextView
-                android:id="@+id/showCmText"
+                android:id="@+id/bmi_title_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_1sdp"
-                android:text="cm"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:text="LET'S CHECK YOUR BMI"
                 android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_18ssp"
-                android:textStyle="bold"
-                app:layout_constraintBaseline_toBaselineOf="@+id/showHeightText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/showHeightText" />
+                android:textSize="@dimen/_25ssp"
+                app:layout_constraintBottom_toTopOf="@id/bmiLogo"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatSeekBar
-                android:id="@+id/heightSeekbar"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bmiLogo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                app:srcCompat="@drawable/bmilogo"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
+                app:layout_constraintTop_toBottomOf="@id/bmi_title_tv"
+                app:layout_constraintBottom_toTopOf="@id/heightCardView" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/heightCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_25sdp"
+                app:cardElevation="5dp"
+                app:layout_constraintTop_toBottomOf="@id/bmiLogo"
+                app:layout_constraintBottom_toTopOf="@id/weightCardView"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/heightCardConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/palate_havelock_blue">
+
+                    <TextView
+                        android:id="@+id/heightTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Height"
+                        android:textAlignment="center"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/showHeightText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/heightCardConstraintLayout"
+                        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+                    <TextView
+                        android:id="@+id/showHeightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:text="166"
+                        android:textAlignment="center"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_30ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/heightSeekbar"
+                        app:layout_constraintEnd_toStartOf="@id/showCmText"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/heightTv" />
+
+                    <TextView
+                        android:id="@+id/showCmText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_1sdp"
+                        android:text="cm"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/showHeightText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/showHeightText" />
+
+                    <androidx.appcompat.widget.AppCompatSeekBar
+                        android:id="@+id/heightSeekbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:layout_marginEnd="@dimen/_25sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:progressTint="@color/palate_big_stone"
+                        android:thumbTint="@color/palate_titan_white"
+                        android:max="220"
+                        app:layout_constraintBottom_toBottomOf="@id/heightCardConstraintLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/showHeightText" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/weightCardView"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_25sdp"
+                app:cardElevation="5dp"
+                app:layout_constraintEnd_toStartOf="@id/ageCardView"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
+                app:layout_constraintTop_toBottomOf="@id/heightCardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weightCardConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/palate_havelock_blue">
+
+                    <TextView
+                        android:id="@+id/weightTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Weight"
+                        android:textAlignment="center"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_15ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/weightCardConstraintLayout" />
+
+                    <TextView
+                        android:id="@+id/showWeightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60"
+                        android:textAlignment="center"
+                        android:layout_marginEnd="@dimen/_1ssp"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_30ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/showKgText"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/weightTv" />
+
+                    <TextView
+                        android:id="@+id/showKgText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kg"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:layout_marginStart="@dimen/_1ssp"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_18ssp"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/showWeightText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/showWeightText" />
+
+                    <ImageButton
+                        android:id="@+id/weightAddBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/palate_havelock_blue"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="@+id/weightSubtractBtn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/weightSubtractBtn"
+                        app:layout_constraintTop_toTopOf="@id/weightSubtractBtn"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/weightSubtractBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@color/palate_havelock_blue"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/ic_subtract"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/weightAddBtn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/showKgText"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ageCardView"
+                android:layout_width="@dimen/_120sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                app:cardCornerRadius="@dimen/_25sdp"
+                app:cardElevation="5dp"
+                app:layout_constraintTop_toBottomOf="@id/heightCardView"
+                app:layout_constraintBottom_toBottomOf="@id/weightCardView"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/weightCardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ageCardConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/palate_havelock_blue">
+
+                    <TextView
+                        android:id="@+id/ageTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:text="Age"
+                        android:textAlignment="center"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_15sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/ageCardConstraintLayout" />
+
+                    <TextView
+                        android:id="@+id/showAgeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:textColor="@color/palate_big_stone"
+                        android:layout_marginEnd="@dimen/_1sdp"
+                        android:textSize="@dimen/_30ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/showYrText"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ageTv" />
+
+                    <TextView
+                        android:id="@+id/showYrText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_1ssp"
+                        android:text="yr"
+                        app:layout_goneMarginStart="@dimen/_1sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/palate_big_stone"
+                        android:textSize="@dimen/_18ssp"
+                        android:textStyle="bold"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/showAgeText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/showAgeText" />
+
+                    <ImageButton
+                        android:id="@+id/ageAddBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/palate_havelock_blue"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/ic_add"
+                        app:layout_constraintBottom_toBottomOf="@+id/ageSubtractBtn"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ageSubtractBtn"
+                        app:layout_constraintTop_toTopOf="@id/ageSubtractBtn"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/ageSubtractBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:background="@color/palate_havelock_blue"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/ic_subtract"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ageAddBtn"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/showYrText"
+                        tools:ignore="SpeakableTextPresentCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bmiValueTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_25sdp"
-                android:layout_marginTop="@dimen/_4sdp"
-                android:layout_marginEnd="@dimen/_25sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:progressTint="@color/palate_big_stone"
-                android:thumbTint="@color/palate_titan_white"
-                android:max="220"
-                app:layout_constraintBottom_toBottomOf="@id/heightCardConstraintLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/showHeightText" />
+                android:textColorHint="@color/palate_big_stone"
+                android:textSize="@dimen/_23ssp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text=""
+                android:gravity="center"
+                android:layout_marginStart="@dimen/_75sdp"
+                android:layout_marginEnd="@dimen/_75sdp"
+                android:background="@drawable/rounded_corner_textbox"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:fontFamily="@font/noto_sans_bold"
+                android:textColor="@color/palate_big_stone"
+                android:layout_marginTop="@dimen/_20sdp"
+                app:layout_constraintTop_toBottomOf="@id/weightCardView"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5"
+                />
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bmiIndicatorTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_25ssp"
+                android:text=""
+                android:textAlignment="center"
+                android:fontFamily="@font/noto_sans_bold"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginStart="@dimen/_23sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                app:layout_constraintTop_toBottomOf="@id/bmiValueTV"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nextButtonBmi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:layout_marginTop="20dp"
+                android:visibility="invisible"
+                android:background="@drawable/rounded_corner_button"
+                android:text="Next"
+                android:textColor="@color/palate_titan_white"
+                app:layout_constraintTop_toBottomOf="@id/bmiIndicatorTV"
+                app:layout_constraintBottom_toTopOf="@id/guideline7"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/submitButtonBmi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_50sdp"
+                android:layout_marginEnd="@dimen/_50sdp"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_corner_button"
+                android:text="Submit"
+                android:textColor="@color/palate_titan_white"
+                app:layout_constraintTop_toBottomOf="@id/bmiIndicatorTV"
+                app:layout_constraintBottom_toTopOf="@id/guideline7"
+                app:layout_constraintEnd_toStartOf="@id/guideline6"
+                app:layout_constraintStart_toEndOf="@id/guideline5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/weightCardView"
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginStart="@dimen/_20sdp"
-        app:cardCornerRadius="@dimen/_25sdp"
-        app:cardElevation="5dp"
-        app:layout_constraintEnd_toStartOf="@id/ageCardView"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/heightCardView">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/weightCardConstraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/palate_havelock_blue">
-
-            <TextView
-                android:id="@+id/weightTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="Weight"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_15ssp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/weightCardConstraintLayout" />
-
-            <TextView
-                android:id="@+id/showWeightText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="60"
-                android:textAlignment="center"
-                android:layout_marginEnd="@dimen/_1ssp"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_30ssp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/showKgText"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/weightTv" />
-
-            <TextView
-                android:id="@+id/showKgText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="kg"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:layout_marginStart="@dimen/_1ssp"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_18ssp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/showWeightText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/showWeightText" />
-
-            <ImageButton
-                android:id="@+id/weightAddBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/palate_havelock_blue"
-                android:padding="@dimen/_3sdp"
-                android:src="@drawable/ic_add"
-                app:layout_constraintBottom_toBottomOf="@+id/weightSubtractBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/weightSubtractBtn"
-                app:layout_constraintTop_toTopOf="@id/weightSubtractBtn"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/weightSubtractBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginBottom="@dimen/_4sdp"
-                android:background="@color/palate_havelock_blue"
-                android:padding="@dimen/_3sdp"
-                android:src="@drawable/ic_subtract"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/weightAddBtn"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/showKgText"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/ageCardView"
-        android:layout_width="@dimen/_120sdp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        app:cardCornerRadius="@dimen/_25sdp"
-        app:cardElevation="5dp"
-        app:layout_constraintTop_toBottomOf="@id/heightCardView"
-        app:layout_constraintBottom_toBottomOf="@id/weightCardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/weightCardView">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ageCardConstraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/palate_havelock_blue">
-
-            <TextView
-                android:id="@+id/ageTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:text="Age"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_15sdp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ageCardConstraintLayout" />
-
-            <TextView
-                android:id="@+id/showAgeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="25"
-                android:textColor="@color/palate_big_stone"
-                android:layout_marginEnd="@dimen/_1sdp"
-                android:textSize="@dimen/_30ssp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/showYrText"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ageTv" />
-
-            <TextView
-                android:id="@+id/showYrText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_1ssp"
-                android:text="yr"
-                app:layout_goneMarginStart="@dimen/_1sdp"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_18ssp"
-                android:textStyle="bold"
-                app:layout_constraintBaseline_toBaselineOf="@+id/showAgeText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/showAgeText" />
-
-            <ImageButton
-                android:id="@+id/ageAddBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/palate_havelock_blue"
-                android:padding="@dimen/_3sdp"
-                android:src="@drawable/ic_add"
-                app:layout_constraintBottom_toBottomOf="@+id/ageSubtractBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/ageSubtractBtn"
-                app:layout_constraintTop_toTopOf="@id/ageSubtractBtn"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/ageSubtractBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginBottom="@dimen/_4sdp"
-                android:background="@color/palate_havelock_blue"
-                android:padding="@dimen/_3sdp"
-                android:src="@drawable/ic_subtract"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/ageAddBtn"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/showYrText"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/bmiValueTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColorHint="@color/palate_big_stone"
-        android:textSize="@dimen/_23ssp"
-        android:paddingStart="@dimen/_5sdp"
-        android:paddingEnd="@dimen/_5sdp"
-        android:paddingTop="@dimen/_2sdp"
-        android:paddingBottom="@dimen/_2sdp"
-        android:text=""
-        android:gravity="center"
-        android:layout_marginStart="@dimen/_75sdp"
-        android:layout_marginEnd="@dimen/_75sdp"
-        android:background="@drawable/rounded_corner_textbox"
-        android:visibility="gone"
-        android:textStyle="bold"
-        android:fontFamily="@font/noto_sans_bold"
-        android:textColor="@color/palate_big_stone"
-        android:layout_marginTop="@dimen/_20sdp"
-        app:layout_constraintTop_toBottomOf="@id/weightCardView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/bmiIndicatorTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/_25ssp"
-        android:text=""
-        android:textAlignment="center"
-        android:fontFamily="@font/noto_sans_bold"
-        android:visibility="gone"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:layout_marginStart="@dimen/_23sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:paddingStart="@dimen/_5sdp"
-        android:paddingEnd="@dimen/_5sdp"
-        app:layout_constraintTop_toBottomOf="@id/bmiValueTV"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/nextButtonBmi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_50sdp"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:layout_marginBottom="@dimen/_35sdp"
-        android:visibility="gone"
-        android:background="@drawable/rounded_corner_button"
-        android:text="Next"
-        android:textColor="@color/palate_titan_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/submitButtonBmi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_50sdp"
-        android:layout_marginEnd="@dimen/_50sdp"
-        android:layout_marginBottom="@dimen/_35sdp"
-        android:background="@drawable/rounded_corner_button"
-        android:text="Submit"
-        android:textColor="@color/palate_titan_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

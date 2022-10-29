@@ -101,7 +101,7 @@ class BodyTypeGoalFragment : Fragment() {
                 looseWeightEditor.apply()
 
                 navController.navigate(
-                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToSelectLevelOfExerciseFragment()
+                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
                 )
             }else if (binding.cardBuildMuscle.isChecked){
 
@@ -111,7 +111,7 @@ class BodyTypeGoalFragment : Fragment() {
                 buildMuscleEditor.apply()
 
                 navController.navigate(
-                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToSelectLevelOfExerciseFragment()
+                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
                 )
             } else if (binding.cardGetToned.isChecked){
 
@@ -121,7 +121,7 @@ class BodyTypeGoalFragment : Fragment() {
                 keepFitEditor.apply()
 
                 navController.navigate(
-                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToSelectLevelOfExerciseFragment()
+                    BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
                 )
             }else{
                 KToasty.info(requireContext() ,"Kindly select the goal to get the plan!").show()

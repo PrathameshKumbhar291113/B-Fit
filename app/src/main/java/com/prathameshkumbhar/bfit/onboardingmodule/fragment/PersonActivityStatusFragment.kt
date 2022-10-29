@@ -227,31 +227,23 @@ class PersonActivityStatusFragment : Fragment() {
     private fun progressChangeListener(){
         val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
 
+
         binding.progressCircular.onProgressChangeListener = { progress ->
+
+            binding.progressTextBox.text = "${progress.toInt()}%"
 
             when(progress.toInt()){
 
                 0  -> {
-                    binding.progressTextBox.text = "0%"
                     binding.progressDetails.text = "Initializing Plan."
                 }
-                20 -> binding.progressTextBox.text = "20%"
-
-                30 ->{
-                    binding.progressDetails.text = "Started Implementation."
-                }
-                40 -> binding.progressTextBox.text = "40%"
                 50 ->{
-                    binding.progressTextBox.text = "50%"
-                    binding.progressDetails.text = "We Are Half Way Done."
+                    binding.progressDetails.text = "Half Way Done."
                 }
-                60 -> binding.progressTextBox.text = "60%"
-                80 -> {
-                    binding.progressTextBox.text = "80%"
+                70 -> {
                     binding.progressDetails.text = "Almost there."
                 }
                 100-> {
-                    binding.progressTextBox.text = "100%"
                     binding.progressDetails.text = "PLan Generated Successfully !"
                     lifecycleScope.launch {
                         delay(300)
@@ -264,6 +256,7 @@ class PersonActivityStatusFragment : Fragment() {
                     }
                 }
             }
+
         }
     }
 
