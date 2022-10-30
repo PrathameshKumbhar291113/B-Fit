@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
-    tools:context=".mainmodule.fragment.DietPlanFragment">
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".mainmodule.fragment.DietPlanFragment"
+    tools:ignore="SpeakableTextPresentCheck">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Diet Plan"
-        android:textColor="@color/palate_big_stone"
-        android:textSize="@dimen/_25ssp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dietPlanRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

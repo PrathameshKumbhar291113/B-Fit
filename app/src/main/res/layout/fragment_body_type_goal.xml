@@ -121,6 +121,7 @@
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
                         android:text="🥗"
+                        android:textColor="@color/palate_titan_white"
                         android:gravity="center"
                         android:textSize="70dp"
                         app:layout_constraintEnd_toEndOf="@id/cardLooseWeightConstLayout"
@@ -146,7 +147,7 @@
                 android:layout_marginTop="@dimen/_30sdp"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintBottom_toTopOf="@id/cardGetToned"
+                app:layout_constraintBottom_toTopOf="@id/cardBalance"
                 app:layout_constraintTop_toBottomOf="@id/cardLooseWeight">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -172,6 +173,7 @@
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
                         android:text="🍳"
+                        android:textColor="@color/palate_titan_white"
                         android:gravity="center"
                         android:textSize="70dp"
                         app:layout_constraintEnd_toEndOf="@id/cardBuildMuscleConstLayout"
@@ -183,7 +185,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardGetToned"
+                android:id="@+id/cardBalance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_20sdp"
@@ -201,17 +203,17 @@
                 app:layout_constraintTop_toBottomOf="@id/cardBuildMuscle">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cardGetTonedConstLayout"
+                    android:id="@+id/cardBalanceConstLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/palate_havelock_blue">
 
                     <TextView
-                        android:id="@+id/getTonedTv"
+                        android:id="@+id/balanceTv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/noto_sans_bold"
-                        android:text="Get Toned"
+                        android:text="Balanced"
                         android:layout_marginStart="@dimen/_20sdp"
                         android:textColor="@color/palate_big_stone"
                         android:textSize="@dimen/_20ssp"
@@ -223,11 +225,12 @@
                         android:layout_width="@dimen/_90sdp"
                         android:layout_height="@dimen/_90sdp"
                         android:text="🍎"
+                        android:textColor="@color/palate_titan_white"
                         android:gravity="center"
                         android:textSize="70dp"
-                        app:layout_constraintEnd_toEndOf="@id/cardGetTonedConstLayout"
-                        app:layout_constraintTop_toTopOf="@id/cardGetTonedConstLayout"
-                        app:layout_constraintBottom_toBottomOf="@id/cardGetTonedConstLayout"
+                        app:layout_constraintEnd_toEndOf="@id/cardBalanceConstLayout"
+                        app:layout_constraintTop_toTopOf="@id/cardBalanceConstLayout"
+                        app:layout_constraintBottom_toBottomOf="@id/cardBalanceConstLayout"
                         />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -244,7 +247,7 @@
                 android:background="@drawable/rounded_corner_button"
                 android:text="Next"
                 app:layout_constraintBottom_toTopOf="@id/guideline7"
-                app:layout_constraintTop_toBottomOf="@id/cardGetToned"
+                app:layout_constraintTop_toBottomOf="@id/cardBalance"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5" />
 

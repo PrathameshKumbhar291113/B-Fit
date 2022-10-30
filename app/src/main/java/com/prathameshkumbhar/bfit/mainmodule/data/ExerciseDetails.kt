@@ -13,5 +13,5 @@ data class ExerciseDetails (
     var exerciseRepetitionBeginner : String? = null,
     var exerciseRepetitionIntermediate : String? = null,
     var exerciseRepetitionAdvance : String? = null,
-    var exerciseStepsDetailInfo : String? = null
+    var exerciseStepsDetailTips : String? = null
 ) : Parcelable

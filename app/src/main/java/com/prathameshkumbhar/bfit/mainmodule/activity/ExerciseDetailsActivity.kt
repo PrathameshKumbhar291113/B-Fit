@@ -62,6 +62,7 @@ class ExerciseDetailsActivity : AppCompatActivity() {
 
             Glide.with(baseContext).load(exerciseDetails.exerciseImageGif).into(dialogBinding.exerciseStepImageCard)
             dialogBinding.exerciseStepNameCard.text = exerciseDetails.exerciseStepName.toString()
+            dialogBinding.exerciseStepDetailsTextCard.text = exerciseDetails.exerciseStepsDetailTips.toString()
 
         }.show()
 

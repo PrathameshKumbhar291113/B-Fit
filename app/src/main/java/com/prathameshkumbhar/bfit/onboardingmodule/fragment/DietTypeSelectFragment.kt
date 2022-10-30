@@ -95,8 +95,10 @@ class DietTypeSelectFragment : Fragment() {
 
             if (binding.cardVeg.isChecked){
 
-                val sharePrefVegDiet : SharedPreferences = context!!.getSharedPreferences("cardVegChecked",
-                    Context.MODE_PRIVATE)
+                val sharePrefVegDiet : SharedPreferences = context!!.getSharedPreferences(
+                    "cardVegChecked",
+                    Context.MODE_PRIVATE
+                )
                 var vegDietEditor : SharedPreferences.Editor = sharePrefVegDiet.edit()
                 vegDietEditor.putBoolean("isVegCardCheck", true)
                 vegDietEditor.apply()
@@ -106,8 +108,10 @@ class DietTypeSelectFragment : Fragment() {
                 )
             }else if (binding.cardNonVeg.isChecked){
 
-                val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences("cardCardNonVegChecked",
-                    Context.MODE_PRIVATE)
+                val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences(
+                    "cardCardNonVegChecked",
+                    Context.MODE_PRIVATE
+                )
                 var nonVegEditor : SharedPreferences.Editor = sharePrefCardNonVeg.edit()
                 nonVegEditor.putBoolean("isCardNonVegCardCheck", true)
                 nonVegEditor.apply()
@@ -117,10 +121,12 @@ class DietTypeSelectFragment : Fragment() {
                 )
             } else if (binding.cardMixDiet.isChecked){
 
-                val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences("cardMixedDietChecked",
-                    Context.MODE_PRIVATE)
+                val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences(
+                    "cardMixedDietChecked",
+                    Context.MODE_PRIVATE
+                )
                 var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
-                mixedDietEditor.putBoolean("isBuildMuscleCardCheck", true)
+                mixedDietEditor.putBoolean("isMixDietCardCheck", true)
                 mixedDietEditor.apply()
 
                 navController.navigate(

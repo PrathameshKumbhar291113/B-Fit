@@ -26,12 +26,12 @@ class ShowExerciseFragment : Fragment() {
     ): View? {
         _binding = FragmentShowExerciseBinding.inflate(inflater, container, false)
 
-        setupRecyclerView()
+        setUpRecyclerView()
 
         return binding.root
     }
 
-    private fun setupRecyclerView() {
+    private fun setUpRecyclerView() {
 
             exerciseAdapter = ExerciseAdapter(
                 context!!,

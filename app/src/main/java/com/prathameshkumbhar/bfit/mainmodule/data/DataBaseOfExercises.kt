@@ -2,58 +2,58 @@ package com.prathameshkumbhar.bfit.mainmodule.data
 
 val FULL_BODY = listOf(
         ExerciseDetails(
-            0,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+            0,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
         ),
         ExerciseDetails(
-            0,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+            0,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
         ),
         ExerciseDetails(
-            0,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+            0,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
         ),
         ExerciseDetails(
-            0,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+            0,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
         ),
         ExerciseDetails(
-            0,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
+            0,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
         ),
         ExerciseDetails(
-            0,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20",null
+            0,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
         ),
         ExerciseDetails(
-            0,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20",null
+            0,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
         ),
         ExerciseDetails(
-            0,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20",null
+            0,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20","• Engage your core and gluteal muscles when you do the exercise.\n• Make sure your hips don’t sag down or point upward.\n• Lengthen your spine to keep your back straight."
         ),
         ExerciseDetails(
-            0,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
+            0,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
         ),
         ExerciseDetails(
-            0,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20",null
+            0,"KNEE PUSH-UPS","https://i.imgur.com/8Z6KhKA.gif","x10","x15","x20","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
         ),
         ExerciseDetails(
-            0,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20",null
+            0,"PUSH-UPS","https://i.imgur.com/pErmJaJ.gif","x10","x15","x20","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
         ),
         ExerciseDetails(
-            0,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20",null
+            0,"WIDE ARM PUSH-UPS","https://i.imgur.com/Bs7WqQz.gif","x10","x15","x20","• Engage your core and gluteal muscles when you do the exercise.\n• Make sure your hips don’t sag down or point upward.\n• Lengthen your spine to keep your back straight."
         ),
         ExerciseDetails(
-            0,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20",null
+            0,"COBRA STRETCH","https://i.imgur.com/X6n2wKh.gif","x10","x15","x20","null"
         )
 
     )
 val LOWER_BODY = listOf(
     ExerciseDetails(
-        1,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+        1,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        1,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+        1,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        1,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+        1,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        1,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+        1,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         1,"SQUATS","https://i.imgur.com/yPuPyLh.gif","x10","x15","x20",null
@@ -83,16 +83,16 @@ val LOWER_BODY = listOf(
 )
 val ABS = listOf(
     ExerciseDetails(
-        2,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+        2,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        2,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+        2,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        2,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+        2,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        2,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+        2,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         2,"CRUNCHES","https://i.imgur.com/wTk6uYm.gif","x10","x15","x20",null
@@ -125,16 +125,16 @@ val ABS = listOf(
 val ARMS = listOf(
 
     ExerciseDetails(
-        3,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+        3,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        3,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+        3,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        3,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+        3,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        3,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+        3,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         3,"ARMS STRETCH", "https://i.imgur.com/gbkN6Vn.gif","x10","x15","x20",null
@@ -166,16 +166,16 @@ val ARMS = listOf(
 )
 val CHEST = listOf(
     ExerciseDetails(
-        4,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+        4,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        4,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+        4,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        4,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+        4,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        4,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+        4,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         4,"INCLINE PUSH-UPS","https://i.imgur.com/tAcxrh9.gif","x10","x15","x20",null
@@ -208,16 +208,16 @@ val CHEST = listOf(
 )
 val BACK = listOf(
     ExerciseDetails(
-        5,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+        5,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        5,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+        5,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        5,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+        5,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        5,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+        5,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         5,"SIDE ARM RAISE","https://i.imgur.com/iPhawU0.gif","x10","x15","x20",null
@@ -253,16 +253,16 @@ val BACK = listOf(
 )
 val LEGS = listOf(
     ExerciseDetails(
-        6,"TOE TOUCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20",null
+        6,"TOE TOUCH STRETCH","https://i.imgur.com/jmnnXpV.gif","x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        6,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20",null
+        6,"SPOT JOG","https://i.imgur.com/S7uPLje.gif","x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        6,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20",null
+        6,"HIGH KNEES","https://i.imgur.com/J1uUi1g.gif","x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        6,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20",null
+        6,"JUMPING JACKS", "https://i.imgur.com/YJVzYoE.gif","x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         6,"SINGLE HIP ROTATION", "https://i.imgur.com/RaK7iDO.gif","x10","x15","x20",null

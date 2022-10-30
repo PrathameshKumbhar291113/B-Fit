@@ -29,11 +29,11 @@ class BodyTypeGoalFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentBodyTypeGoalBinding.inflate(inflater, container, false)
 
-        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
-        var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
-        if (checkGender){
-            binding.getTonedTv.text = "Keep Fit"
-        }
+//        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+//        var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
+//        if (checkGender){
+//            binding.getTonedTv.text = "Keep Fit"
+//        }
         return binding.root
     }
 
@@ -50,10 +50,10 @@ class BodyTypeGoalFragment : Fragment() {
             }
 
             binding.cardBuildMuscle.isChecked = false
-            binding.cardGetToned.isChecked = false
+            binding.cardBalance.isChecked = false
 
             binding.cardBuildMuscle.strokeWidth = 0
-            binding.cardGetToned.strokeWidth = 0
+            binding.cardBalance.strokeWidth = 0
 
         }
 
@@ -67,20 +67,20 @@ class BodyTypeGoalFragment : Fragment() {
             }
 
             binding.cardLooseWeight.isChecked = false
-            binding.cardGetToned.isChecked = false
+            binding.cardBalance.isChecked = false
 
             binding.cardLooseWeight.strokeWidth = 0
-            binding.cardGetToned.strokeWidth = 0
+            binding.cardBalance.strokeWidth = 0
 
         }
 
-        binding.cardGetToned.setOnClickListener{
+        binding.cardBalance.setOnClickListener{
 
-            binding.cardGetToned.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
+            binding.cardBalance.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#14213D")))
 
-            binding.cardGetToned.isChecked = true
-            if (binding.cardGetToned.isChecked){
-                binding.cardGetToned.strokeWidth = 8
+            binding.cardBalance.isChecked = true
+            if (binding.cardBalance.isChecked){
+                binding.cardBalance.strokeWidth = 8
             }
 
             binding.cardLooseWeight.isChecked = false
@@ -95,7 +95,10 @@ class BodyTypeGoalFragment : Fragment() {
 
             if (binding.cardLooseWeight.isChecked){
 
-                val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences("cardLooseWeightChecked",Context.MODE_PRIVATE)
+                val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences(
+                    "cardLooseWeightChecked",
+                    Context.MODE_PRIVATE
+                )
                 var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
                 looseWeightEditor.putBoolean("isLooseWeightCardCheck", true)
                 looseWeightEditor.apply()
@@ -105,7 +108,10 @@ class BodyTypeGoalFragment : Fragment() {
                 )
             }else if (binding.cardBuildMuscle.isChecked){
 
-                val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences("cardBuildMuscleChecked",Context.MODE_PRIVATE)
+                val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences(
+                    "cardBuildMuscleChecked",
+                    Context.MODE_PRIVATE
+                )
                 var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
                 buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", true)
                 buildMuscleEditor.apply()
@@ -113,12 +119,15 @@ class BodyTypeGoalFragment : Fragment() {
                 navController.navigate(
                     BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
                 )
-            } else if (binding.cardGetToned.isChecked){
+            } else if (binding.cardBalance.isChecked){
 
-                val sharePrefKeepFit : SharedPreferences = context!!.getSharedPreferences("cardKeepFitChecked",Context.MODE_PRIVATE)
-                var keepFitEditor : SharedPreferences.Editor = sharePrefKeepFit.edit()
-                keepFitEditor.putBoolean("isBuildMuscleCardCheck", true)
-                keepFitEditor.apply()
+                val sharePrefBalance : SharedPreferences = context!!.getSharedPreferences(
+                    "cardBalanceChecked",
+                    Context.MODE_PRIVATE
+                )
+                var balanceEditor : SharedPreferences.Editor = sharePrefBalance.edit()
+                balanceEditor.putBoolean("isBalanceCardCheck", true)
+                balanceEditor.apply()
 
                 navController.navigate(
                     BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()

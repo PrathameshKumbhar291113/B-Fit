@@ -237,6 +237,9 @@ class PersonActivityStatusFragment : Fragment() {
                 0  -> {
                     binding.progressDetails.text = "Initializing Plan."
                 }
+                20-> {
+                    binding.progressDetails.text = "Implementing Diet."
+                }
                 50 ->{
                     binding.progressDetails.text = "Half Way Done."
                 }
