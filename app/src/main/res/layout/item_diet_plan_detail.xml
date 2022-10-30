@@ -23,7 +23,7 @@
             android:clipToOutline="true"
             android:background="@drawable/round_corner_image"
             app:layout_constraintDimensionRatio="3:2"
-            android:src=""
+            android:src="@drawable/male"
             app:layout_constraintBottom_toTopOf="@id/timeTv"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
