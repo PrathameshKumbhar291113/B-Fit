@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "648406951404",
+    "firebase_url": "https://b-fit-e7767-default-rtdb.firebaseio.com",
     "project_id": "b-fit-e7767",
     "storage_bucket": "b-fit-e7767.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "648406951404-etdln1oih1ncopcu9ut3oe8psrth3khi.apps.googleusercontent.com",
+          "client_id": "648406951404-ldktveqh4mpl4kasv6dpjb71076i39fk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.prathameshkumbhar.bfit",
-            "certificate_hash": "8e7d7faa47048d6caf5c7df84a7f0605e653e424"
+            "certificate_hash": "bbad4493dfba99760dfe339caebea713b73c3ac9"
           }
         },
         {

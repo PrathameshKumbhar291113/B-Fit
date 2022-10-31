@@ -95,39 +95,21 @@ class BodyTypeGoalFragment : Fragment() {
 
             if (binding.cardLooseWeight.isChecked){
 
-                val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences(
-                    "cardLooseWeightChecked",
-                    Context.MODE_PRIVATE
-                )
-                var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
-                looseWeightEditor.putBoolean("isLooseWeightCardCheck", true)
-                looseWeightEditor.apply()
+                isLooseWtCardCheck()
 
                 navController.navigate(
                     BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
                 )
             }else if (binding.cardBuildMuscle.isChecked){
 
-                val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences(
-                    "cardBuildMuscleChecked",
-                    Context.MODE_PRIVATE
-                )
-                var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
-                buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", true)
-                buildMuscleEditor.apply()
+                isBuildMuscleCardCheck()
 
                 navController.navigate(
                     BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
                 )
             } else if (binding.cardBalance.isChecked){
 
-                val sharePrefBalance : SharedPreferences = context!!.getSharedPreferences(
-                    "cardBalanceChecked",
-                    Context.MODE_PRIVATE
-                )
-                var balanceEditor : SharedPreferences.Editor = sharePrefBalance.edit()
-                balanceEditor.putBoolean("isBalanceCardCheck", true)
-                balanceEditor.apply()
+                isBalanceCardCheck()
 
                 navController.navigate(
                     BodyTypeGoalFragmentDirections.actionBodyTypeGoalFragmentToDietTypeSelectFragment()
@@ -139,5 +121,93 @@ class BodyTypeGoalFragment : Fragment() {
 
         }
     }
+
+    private fun isLooseWtCardCheck(){
+        val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences(
+            "cardLooseWeightChecked",
+            Context.MODE_PRIVATE
+        )
+        var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
+        looseWeightEditor.putBoolean("isLooseWeightCardCheck", true)
+        looseWeightEditor.apply()
+
+
+        val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences(
+            "cardBuildMuscleChecked",
+            Context.MODE_PRIVATE
+        )
+        var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
+        buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", false)
+        buildMuscleEditor.apply()
+
+
+        val sharePrefBalance : SharedPreferences = context!!.getSharedPreferences(
+            "cardBalanceChecked",
+            Context.MODE_PRIVATE
+        )
+        var balanceEditor : SharedPreferences.Editor = sharePrefBalance.edit()
+        balanceEditor.putBoolean("isBalanceCardCheck", false)
+        balanceEditor.apply()
+
+    }
+
+    private fun isBuildMuscleCardCheck(){
+        val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences(
+            "cardLooseWeightChecked",
+            Context.MODE_PRIVATE
+        )
+        var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
+        looseWeightEditor.putBoolean("isLooseWeightCardCheck", false)
+        looseWeightEditor.apply()
+
+
+        val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences(
+            "cardBuildMuscleChecked",
+            Context.MODE_PRIVATE
+        )
+        var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
+        buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", true)
+        buildMuscleEditor.apply()
+
+
+        val sharePrefBalance : SharedPreferences = context!!.getSharedPreferences(
+            "cardBalanceChecked",
+            Context.MODE_PRIVATE
+        )
+        var balanceEditor : SharedPreferences.Editor = sharePrefBalance.edit()
+        balanceEditor.putBoolean("isBalanceCardCheck", false)
+        balanceEditor.apply()
+
+    }
+
+    private fun isBalanceCardCheck(){
+        val sharePrefLooseWeight : SharedPreferences = context!!.getSharedPreferences(
+            "cardLooseWeightChecked",
+            Context.MODE_PRIVATE
+        )
+        var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
+        looseWeightEditor.putBoolean("isLooseWeightCardCheck", false)
+        looseWeightEditor.apply()
+
+
+        val sharePrefBuildMuscle : SharedPreferences = context!!.getSharedPreferences(
+            "cardBuildMuscleChecked",
+            Context.MODE_PRIVATE
+        )
+        var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
+        buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", false)
+        buildMuscleEditor.apply()
+
+
+        val sharePrefBalance : SharedPreferences = context!!.getSharedPreferences(
+            "cardBalanceChecked",
+            Context.MODE_PRIVATE
+        )
+        var balanceEditor : SharedPreferences.Editor = sharePrefBalance.edit()
+        balanceEditor.putBoolean("isBalanceCardCheck", true)
+        balanceEditor.apply()
+
+    }
+
 
 }

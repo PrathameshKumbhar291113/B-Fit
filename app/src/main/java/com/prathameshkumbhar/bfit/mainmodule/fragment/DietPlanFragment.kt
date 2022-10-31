@@ -72,10 +72,10 @@ class DietPlanFragment : Fragment() {
 
 
         val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences(
-            "cardCardNonVegChecked",
+            "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
-        var isNonVegCardCheck = sharePrefCardNonVeg.getBoolean("isCardNonVegCardCheck", false)
+        var isNonVegCardCheck = sharePrefCardNonVeg.getBoolean("isNonVegCardCheck", false)
 
 
         val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences(
@@ -129,6 +129,7 @@ class DietPlanFragment : Fragment() {
         }
 
         return finalDietListToPassInAdapter
+
     }
 
 

@@ -95,39 +95,21 @@ class DietTypeSelectFragment : Fragment() {
 
             if (binding.cardVeg.isChecked){
 
-                val sharePrefVegDiet : SharedPreferences = context!!.getSharedPreferences(
-                    "cardVegChecked",
-                    Context.MODE_PRIVATE
-                )
-                var vegDietEditor : SharedPreferences.Editor = sharePrefVegDiet.edit()
-                vegDietEditor.putBoolean("isVegCardCheck", true)
-                vegDietEditor.apply()
+                isVegCardCheck()
 
                 navController.navigate(
                     DietTypeSelectFragmentDirections.actionDietTypeSelectFragmentToSelectLevelOfExerciseFragment()
                 )
             }else if (binding.cardNonVeg.isChecked){
 
-                val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences(
-                    "cardCardNonVegChecked",
-                    Context.MODE_PRIVATE
-                )
-                var nonVegEditor : SharedPreferences.Editor = sharePrefCardNonVeg.edit()
-                nonVegEditor.putBoolean("isCardNonVegCardCheck", true)
-                nonVegEditor.apply()
+                isNonVegCardCheck()
 
                 navController.navigate(
                     DietTypeSelectFragmentDirections.actionDietTypeSelectFragmentToSelectLevelOfExerciseFragment()
                 )
             } else if (binding.cardMixDiet.isChecked){
 
-                val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences(
-                    "cardMixedDietChecked",
-                    Context.MODE_PRIVATE
-                )
-                var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
-                mixedDietEditor.putBoolean("isMixDietCardCheck", true)
-                mixedDietEditor.apply()
+                isMixCardCheck()
 
                 navController.navigate(
                     DietTypeSelectFragmentDirections.actionDietTypeSelectFragmentToSelectLevelOfExerciseFragment()
@@ -139,4 +121,92 @@ class DietTypeSelectFragment : Fragment() {
 
         }
     }
+
+    private fun isVegCardCheck(){
+        val sharePrefVegDiet : SharedPreferences = context!!.getSharedPreferences(
+            "cardVegChecked",
+            Context.MODE_PRIVATE
+        )
+        var vegDietEditor : SharedPreferences.Editor = sharePrefVegDiet.edit()
+        vegDietEditor.putBoolean("isVegCardCheck", true)
+        vegDietEditor.apply()
+
+
+        val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences(
+            "cardNonVegChecked",
+            Context.MODE_PRIVATE
+        )
+        var nonVegEditor : SharedPreferences.Editor = sharePrefCardNonVeg.edit()
+        nonVegEditor.putBoolean("isNonVegCardCheck", false)
+        nonVegEditor.apply()
+
+
+        val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences(
+            "cardMixedDietChecked",
+            Context.MODE_PRIVATE
+        )
+        var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
+        mixedDietEditor.putBoolean("isMixDietCardCheck", false)
+        mixedDietEditor.apply()
+    }
+
+    private fun isNonVegCardCheck(){
+        val sharePrefVegDiet : SharedPreferences = context!!.getSharedPreferences(
+            "cardVegChecked",
+            Context.MODE_PRIVATE
+        )
+        var vegDietEditor : SharedPreferences.Editor = sharePrefVegDiet.edit()
+        vegDietEditor.putBoolean("isVegCardCheck", false)
+        vegDietEditor.apply()
+
+
+        val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences(
+            "cardNonVegChecked",
+            Context.MODE_PRIVATE
+        )
+        var nonVegEditor : SharedPreferences.Editor = sharePrefCardNonVeg.edit()
+        nonVegEditor.putBoolean("isNonVegCardCheck", true)
+        nonVegEditor.apply()
+
+
+        val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences(
+            "cardMixedDietChecked",
+            Context.MODE_PRIVATE
+        )
+        var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
+        mixedDietEditor.putBoolean("isMixDietCardCheck", false)
+        mixedDietEditor.apply()
+
+    }
+
+    private fun isMixCardCheck(){
+
+        val sharePrefVegDiet : SharedPreferences = context!!.getSharedPreferences(
+            "cardVegChecked",
+            Context.MODE_PRIVATE
+        )
+        var vegDietEditor : SharedPreferences.Editor = sharePrefVegDiet.edit()
+        vegDietEditor.putBoolean("isVegCardCheck", false)
+        vegDietEditor.apply()
+
+
+        val sharePrefCardNonVeg : SharedPreferences = context!!.getSharedPreferences(
+            "cardNonVegChecked",
+            Context.MODE_PRIVATE
+        )
+        var nonVegEditor : SharedPreferences.Editor = sharePrefCardNonVeg.edit()
+        nonVegEditor.putBoolean("isNonVegCardCheck", false)
+        nonVegEditor.apply()
+
+
+        val sharePrefMixedDiet : SharedPreferences = context!!.getSharedPreferences(
+            "cardMixedDietChecked",
+            Context.MODE_PRIVATE
+        )
+        var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
+        mixedDietEditor.putBoolean("isMixDietCardCheck", true)
+        mixedDietEditor.apply()
+
+    }
+
 }
