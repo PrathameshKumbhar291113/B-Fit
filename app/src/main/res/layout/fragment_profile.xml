@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
-    android:orientation="vertical"
     tools:context=".mainmodule.fragment.ProfileFragment">
 
 
@@ -13,49 +12,347 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".00" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="1.0" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1.0" />
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/userProfileImg"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_height="170dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginTop="5dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bfitlogo" />
+                android:src="@drawable/bfitlogo"
+                app:layout_constraintBottom_toTopOf="@id/userNameShowTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
-                    android:id="@+id/userNameShowTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_5sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:text="Prathamesh Kumbhar"
-                    android:layout_gravity="center"
-                    android:textAlignment="center"
-                    android:fontFamily="@font/noto_sans_bold"
-                    android:textStyle="bold"
-                    android:textColor="@color/palate_big_stone"
-                    android:textSize="@dimen/_20ssp"/>
+                android:id="@+id/userNameShowTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:padding="@dimen/_2sdp"
+                android:text="Prathamesh Kumbhar"
+                android:textAlignment="center"
+                android:textColor="@color/palate_havelock_blue"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/spacer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userProfileImg" />
+
+            <Space
+                android:id="@+id/spacer"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_margin="5dp"
+                app:layout_constraintBottom_toTopOf="@id/userDetailsTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/userNameShowTv"
+                app:layout_constraintVertical_chainStyle="spread_inside" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userDetailsTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:padding="@dimen/_2sdp"
+                android:text="User Record"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/userDetailsCard"
+                app:layout_constraintEnd_toEndOf="@+id/userDetailsCard"
+                app:layout_constraintStart_toStartOf="@+id/userDetailsCard"
+                app:layout_constraintTop_toBottomOf="@id/spacer" />
+
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/userDetailsCard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="@color/palate_titan_white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/workOutDetailsTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/userDetailsTv">
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
 
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/userDetailsImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_user_details_img"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/userdetails"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/userDetailsNextArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next_arrow"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/userdetails"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/userdetails"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/noto_sans"
+                        android:gravity="center_vertical"
+                        android:text="User Info"
+                        android:textColor="@color/palate_havelock_blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/userDetailsNextArrow"
+                        app:layout_constraintStart_toEndOf="@id/userDetailsImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
+            <TextView
+                android:id="@+id/workOutDetailsTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/noto_sans"
+                android:padding="@dimen/_2sdp"
+                android:text="Wokout Record"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/workoutDetailsCard"
+                app:layout_constraintEnd_toEndOf="@+id/workoutDetailsCard"
+                app:layout_constraintStart_toStartOf="@+id/workoutDetailsCard"
+                app:layout_constraintTop_toBottomOf="@id/userDetailsCard" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/workoutDetailsCard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="@color/palate_titan_white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/creditsTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/workOutDetailsTv">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/workoutDetailsImg"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_workout"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/workoutDetails"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/workoutDetailsNextArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next_arrow"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/workoutDetails"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/workoutDetails"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/noto_sans"
+                        android:gravity="center_vertical"
+                        android:text="Workout Info"
+                        android:textColor="@color/palate_havelock_blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/workoutDetailsNextArrow"
+                        app:layout_constraintStart_toEndOf="@id/workoutDetailsImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/creditsTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/noto_sans"
+                android:padding="@dimen/_2sdp"
+                android:text="Credits"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/creditsCard"
+                app:layout_constraintEnd_toEndOf="@id/creditsCard"
+                app:layout_constraintStart_toStartOf="@id/creditsCard"
+                app:layout_constraintTop_toBottomOf="@id/workoutDetailsCard" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/creditsCard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="@color/palate_titan_white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/logoutButton"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/creditsTv">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/creditsImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_credit"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/credits_details"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/creditsNextArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next_arrow"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/credits_details"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/credits_details"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/noto_sans"
+                        android:gravity="center_vertical"
+                        android:text="Credits Info"
+                        android:textColor="@color/palate_havelock_blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/creditsNextArrow"
+                        app:layout_constraintStart_toEndOf="@id/creditsImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/versionDetailsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/noto_sans"
+                android:padding="@dimen/_2sdp"
+                android:text="Version: "
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/logoutButton"
+                app:layout_constraintEnd_toStartOf="@+id/versionNumTv"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="@id/creditsCard"
+                app:layout_constraintTop_toBottomOf="@id/creditsCard" />
+
+            <TextView
+                android:id="@+id/versionNumTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/noto_sans_bold"
+                android:padding="@dimen/_2sdp"
+                android:text="1.0.0"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_havelock_blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/logoutButton"
+                app:layout_constraintEnd_toEndOf="@id/creditsCard"
+                app:layout_constraintStart_toEndOf="@id/versionDetailsTv"
+                app:layout_constraintTop_toBottomOf="@id/creditsCard" />
 
 
             <androidx.appcompat.widget.AppCompatButton
@@ -66,10 +363,15 @@
                 android:background="@drawable/rounded_corner_button"
                 android:elevation="25dp"
                 android:text="SIGN OUT"
+                android:layout_marginBottom="20dp"
                 android:textAlignment="center"
                 android:textColor="@color/palate_big_stone"
+                app:layout_constraintBottom_toTopOf="@id/guideline8"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/versionDetailsTv"
                 tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "648406951404-qov4erasb0t6bjfs9cjenbd85gg3bnhq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prathameshkumbhar.bfit",
+            "certificate_hash": "0200bd781aad17029de8381af0fd6d1a62a61699"
+          }
+        },
+        {
           "client_id": "648406951404-knbj6khbps7bju226plaienv8n9btf3b.apps.googleusercontent.com",
           "client_type": 3
         }
