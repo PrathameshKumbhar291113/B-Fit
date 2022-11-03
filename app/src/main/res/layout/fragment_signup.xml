@@ -87,7 +87,7 @@
                 android:id="@+id/signUp_name_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -112,6 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Full Name"
+                    android:padding="1dp"
                     android:inputType="text"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +121,7 @@
                 android:id="@+id/signUp_email_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -145,6 +146,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Email"
+                    android:padding="1dp"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -153,7 +155,7 @@
                 android:id="@+id/signUp_phoneNumber_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -178,6 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Mobile No."
+                    android:padding="1dp"
                     android:inputType="phone"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -186,7 +189,7 @@
                 android:id="@+id/signUp_pass_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -213,6 +216,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Password"
+                    android:padding="1dp"
                     android:inputType="textPassword"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -221,7 +225,7 @@
                 android:id="@+id/signUp_confirmPass_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -248,6 +252,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Confirm Password"
+                    android:padding="1dp"
                     android:inputType="textPassword"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>

@@ -91,7 +91,7 @@
                 android:id="@+id/loginEmail_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -116,6 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Email"
+                    android:padding="1dp"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -124,7 +125,7 @@
                 android:id="@+id/loginPassword_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="@dimen/_38sdp"
                 android:layout_marginTop="@dimen/_4sdp"
                 android:layout_marginEnd="@dimen/_38sdp"
@@ -152,6 +153,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="Password"
+                    android:padding="3dp"
                     android:inputType="textPassword"
                     android:textColor="@color/palate_big_stone" />
             </com.google.android.material.textfield.TextInputLayout>

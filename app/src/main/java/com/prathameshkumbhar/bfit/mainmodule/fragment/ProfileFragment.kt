@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.droidman.ktoasty.showSuccessToast
 import com.google.firebase.auth.FirebaseAuth
+import com.prathameshkumbhar.bfit.BuildConfig
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
 import kotlinx.coroutines.delay
@@ -35,6 +36,9 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val versionCode: String = BuildConfig.VERSION_NAME
+        binding.versionNumTv.text = versionCode
 
         binding.logoutButton.setOnClickListener {
 
