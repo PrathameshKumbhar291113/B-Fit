@@ -11,10 +11,12 @@ import androidx.navigation.fragment.findNavController
 import com.droidman.ktoasty.KToasty
 import com.droidman.ktoasty.showSuccessToast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.prathameshkumbhar.bfit.coremodule.InputFilters
 import com.prathameshkumbhar.bfit.databinding.FragmentSignupBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 class SignUpFragment : Fragment() {
     private var _binding : FragmentSignupBinding? = null
@@ -44,7 +46,7 @@ class SignUpFragment : Fragment() {
         }
 
         binding.signUpButton.setOnClickListener {
-            val userName = binding.signUpNameEditText.text.toString()
+            var userName = binding.signUpNameEditText.text.toString()
             val userPhoneNum = binding.signUpPhoneNumberEditText.text.toString().trim()
             val email = binding.signUpEmailEditText.text.toString().trim()
             val pass = binding.signUpPassEditText.text.toString().trim()
@@ -55,9 +57,14 @@ class SignUpFragment : Fragment() {
                 if(email.matches(emailPattern.toRegex())){
                     if (pass.length >= 8) {
                         if (pass == confirmPass) {
+
                             firebaseAuth.createUserWithEmailAndPassword(email, pass)
                                 .addOnCompleteListener {
                                     if (it.isSuccessful) {
+
+                                        //Setting the user name when doing sign up
+                                        setUserName(userName)
+
                                         binding.scrollView4.visibility = View.GONE
                                         requireContext().showSuccessToast("Registered Successfully!")
                                         lifecycleScope.launch {
@@ -66,7 +73,6 @@ class SignUpFragment : Fragment() {
                                             //Go to signIn frag using navigation
                                             navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email, pass))
                                             navController.popBackStack()
-
                                         }
                                     } else {
                                         KToasty.info(
@@ -75,7 +81,8 @@ class SignUpFragment : Fragment() {
                                             Toast.LENGTH_SHORT
                                         ).show()
                                     }
-                                }
+                            }
+
                         } else {
                             KToasty.warning(
                                 requireContext(),
@@ -106,5 +113,17 @@ class SignUpFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun setUserName(name : String){
+        var profileUpdate = userProfileChangeRequest {
+            displayName = name
+        }
+        firebaseAuth.currentUser!!.updateProfile(profileUpdate)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Timber.d("Successfully updated the profile")
+                }
+            }
     }
 }

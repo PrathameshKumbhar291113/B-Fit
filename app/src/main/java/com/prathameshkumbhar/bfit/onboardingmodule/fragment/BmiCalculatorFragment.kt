@@ -15,6 +15,7 @@ import com.droidman.ktoasty.KToasty
 import com.prathameshkumbhar.bfit.databinding.FragmentBmiCalculatorBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import kotlin.math.pow
 
 class BmiCalculatorFragment : Fragment() {
@@ -43,12 +44,12 @@ class BmiCalculatorFragment : Fragment() {
 
         if (checkGender){
             binding.heightSeekbar.min = 87
-            binding.heightSeekbar.progress = 165
+            binding.heightSeekbar.progress = maleDefaultHeight
             binding.showHeightText.text = maleDefaultHeight.toString()
             binding.showWeightText.text = maleDefaultWeight.toString()
         }else{
             binding.heightSeekbar.min = 85
-            binding.heightSeekbar.progress = 152
+            binding.heightSeekbar.progress = femaleDefaultHeight
             binding.showHeightText.text = femaleDefaultHeight.toString()
             binding.showWeightText.text = femaleDefaultWeight.toString()
         }
@@ -60,7 +61,7 @@ class BmiCalculatorFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.heightSeekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean){
                 binding.showHeightText.text = progress.toString()
             }
 
@@ -72,6 +73,12 @@ class BmiCalculatorFragment : Fragment() {
 
         })
 
+        //Saving the height in var to further store it in shared preference
+        var saveHeight : Int = binding.showHeightText.text.toString().toInt()
+        storeHeight(saveHeight)
+
+
+        //Weight Button
         binding.weightAddBtn.setOnClickListener{
             if (binding.showWeightText.text.toString().toInt()<130){
                 binding.showWeightText.text = String.format("%s",binding.showWeightText.text.toString().toInt()+1)
@@ -86,29 +93,39 @@ class BmiCalculatorFragment : Fragment() {
             }else{
                 KToasty.warning(requireContext(),"Minimum weight is 12 Kg!").show()
             }
-
         }
 
-        binding.ageAddBtn.setOnClickListener {
-            if (binding.showAgeText.text.toString().toInt()<100){
+        //Saving the weight in var to further store it in shared preference
+        var saveWeight : Int = binding.showWeightText.text.toString().toInt()
+        storeWeight(saveWeight)
 
+
+
+        //Age Button
+        binding.ageAddBtn.setOnClickListener {
+            if (binding.showAgeText.text.toString().toInt()<80){
+                binding.showAgeText.text = String.format("%s",binding.showAgeText.text.toString().toInt()+1)
             }else{
-                KToasty.warning(requireContext(),"Maximum Age is 100 Yr").show()
+                KToasty.warning(requireContext(),"Maximum Age is 80 Yr").show()
             }
-            binding.showAgeText.text = String.format("%s",binding.showAgeText.text.toString().toInt()+1)
         }
 
         binding.ageSubtractBtn.setOnClickListener {
-            if(binding.showAgeText.text.toString().toInt()>2){
+            if(binding.showAgeText.text.toString().toInt()>10){
                 binding.showAgeText.text = String.format("%s",binding.showAgeText.text.toString().toInt()-1)
             }else{
-                KToasty.warning(requireContext(),"Minimum Age is 2 Yr!").show()
+                KToasty.warning(requireContext(),"Minimum Age is 10 Yr!").show()
             }
         }
 
-        binding.submitButtonBmi.setOnClickListener {
 
-            bmiCalculator()
+
+        binding.submitButtonBmi.setOnClickListener {
+            //Saving the age in var to further store it in shared preference
+            var saveAge : Int = binding.showAgeText.text.toString().toInt()
+            storeAge(saveAge)
+
+            bmiCalculator(saveWeight.toString(),saveHeight.toString())
             binding.submitButtonBmi.visibility = View.GONE
             KToasty.info(requireContext(), "Bmi has been submitted!").show()
             toDisableClicks()
@@ -119,34 +136,43 @@ class BmiCalculatorFragment : Fragment() {
             }
         }
 
+
+
+
         binding.nextButtonBmi.setOnClickListener {
 
             val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
             var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
 
+
+            var maleDefaultHeight = 166
+            var femaleDefaultHeight = 155
+
+
             if (checkGender){
-                binding.heightSeekbar.progress = 166
+                binding.heightSeekbar.progress = maleDefaultHeight
             }else{
-                binding.heightSeekbar.progress = 155
+                binding.heightSeekbar.progress = femaleDefaultHeight
             }
+
             navController.navigate(
                 BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToBodyTypeGoalFragment()
             )
         }
     }
 
-    private fun bmiCalculator(){
+    private fun bmiCalculator(weightForBMI : String , heightForBMI : String){
         //Logic for bmi calculator
-        var weightForBMI = binding.showWeightText.text.toString().toInt()
-        var heightForBMI = binding.showHeightText.text.toString().toInt()
-
         val numerator = weightForBMI.toFloat()
         val denominator = (heightForBMI.toFloat() * 0.01).pow(2.0)
         var calBmi = numerator/denominator
         var bmi = String.format("%.3f",calBmi)
 
         binding.bmiValueTV.visibility = View.VISIBLE
-        binding.bmiValueTV.text = "$bmi Bmi"
+        binding.bmiValueTV.text = "$bmi BMI"
+
+        //Passing the value of bmi to store in shared preference further.
+        storeBmi(bmi)
 
         binding.bmiIndicatorTV.visibility = View.VISIBLE
         if(bmi< 15.toString()){
@@ -174,6 +200,43 @@ class BmiCalculatorFragment : Fragment() {
             binding.bmiIndicatorTV.text = "Very Severely Obese"
             binding.bmiIndicatorTV.setTextColor(Color.parseColor("#6a040f"))
         }
+    }
+
+    private fun storeWeight(weight : Int) {
+
+        val sharePrefSaveWeight : SharedPreferences = context!!.getSharedPreferences("SaveWt", Context.MODE_PRIVATE)
+        var wtEditor : SharedPreferences.Editor = sharePrefSaveWeight.edit()
+        wtEditor.putInt("weight",weight)
+        wtEditor.apply()
+
+    }
+
+    private fun storeHeight(height : Int) {
+
+        val sharePrefSaveHeight : SharedPreferences = context!!.getSharedPreferences("SaveHt",Context.MODE_PRIVATE)
+        var htEditor : SharedPreferences.Editor = sharePrefSaveHeight.edit()
+        htEditor.putInt("height",height)
+        htEditor.apply()
+
+    }
+
+    private fun storeAge(age : Int) {
+
+        val sharePrefSaveAge : SharedPreferences = context!!.getSharedPreferences("SaveAge",Context.MODE_PRIVATE)
+        var ageEditor : SharedPreferences.Editor = sharePrefSaveAge.edit()
+        ageEditor.putInt("age",age)
+        Timber.e("$age")
+        ageEditor.apply()
+
+    }
+
+    private fun storeBmi(bmi: String) {
+
+        val sharePrefSaveBmi : SharedPreferences = context!!.getSharedPreferences("SaveBmi",Context.MODE_PRIVATE)
+        var bmiEditor : SharedPreferences.Editor = sharePrefSaveBmi.edit()
+        bmiEditor.putString("bmi",bmi)
+        bmiEditor.apply()
+
     }
 
     private fun toDisableClicks() {

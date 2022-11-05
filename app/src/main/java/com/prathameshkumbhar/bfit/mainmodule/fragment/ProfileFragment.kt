@@ -8,14 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import coil.load
 import com.droidman.ktoasty.showSuccessToast
 import com.google.firebase.auth.FirebaseAuth
 import com.prathameshkumbhar.bfit.BuildConfig
+import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
+import timber.log.Timber
 
 
 class ProfileFragment : Fragment() {
@@ -28,8 +31,9 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater,container,false)
-
         firebaseAuth = FirebaseAuth.getInstance()
+
+        settingUserProfileImg()
 
         return binding.root
     }
@@ -49,6 +53,7 @@ class ProfileFragment : Fragment() {
             resetLevelOfExercise()
             resetBodyTypeGoal()
             resetDietType()
+            resetUserAge()
 
 
             requireContext().showSuccessToast("Successfully Logged Out!")
@@ -160,5 +165,56 @@ class ProfileFragment : Fragment() {
         var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
         mixedDietEditor.putBoolean("isMixDietCardCheck", false)
         mixedDietEditor.apply()
+    }
+
+    private fun resetUserAge(){
+
+        val sharePrefSaveAge : SharedPreferences = context!!.getSharedPreferences("SaveAge",Context.MODE_APPEND)
+        var ageEditor : SharedPreferences.Editor = sharePrefSaveAge.edit()
+        ageEditor.clear()
+        ageEditor.apply()
+
+    }
+
+    private fun settingUserProfileImg(){
+
+        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+        var checkGenderMale = sharePrefGender.getBoolean("isMaleChecked", false)
+
+        var maleUserImgList = ArrayList<Int>()
+        maleUserImgList.add(R.drawable.usermale1)
+        maleUserImgList.add(R.drawable.usermale2)
+
+        var femaleUserImgList = ArrayList<Int>()
+        femaleUserImgList.add(R.drawable.userfemale1)
+        femaleUserImgList.add(R.drawable.userfemale2)
+
+        // we can pass the image as per the age if the age is <= 24 then set image male1 and if
+        // age is > 24 then pass male 2 image. Same goes for female.
+
+        val sharePrefSaveAge : SharedPreferences = context!!.getSharedPreferences("SaveAge",Context.MODE_PRIVATE)
+        var userAge = sharePrefSaveAge.getInt("age",0)
+        Timber.e("$userAge is the age of user")
+
+
+        if (checkGenderMale){
+            binding.userNameShowTv.text = firebaseAuth.currentUser!!.displayName.toString()
+
+            if (userAge <=24){
+                binding.userProfileImg.load(maleUserImgList[0])
+            }else{
+                binding.userProfileImg.load(maleUserImgList[1])
+            }
+
+        }else{
+            binding.userNameShowTv.text = firebaseAuth.currentUser!!.displayName.toString()
+
+            if (userAge <=24){
+                binding.userProfileImg.load(femaleUserImgList[0])
+            }else{
+                binding.userProfileImg.load(femaleUserImgList[1])
+            }
+
+        }
     }
 }
