@@ -22,6 +22,7 @@
         app:navigationContentDescription=""
         android:layout_height="wrap_content"
         android:background="@color/palate_big_stone"
+        app:titleTextColor="@color/palate_titan_white"
         app:title="Privacy Policy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
