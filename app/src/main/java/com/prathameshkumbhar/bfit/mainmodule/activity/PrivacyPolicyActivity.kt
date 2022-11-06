@@ -20,7 +20,7 @@ class PrivacyPolicyActivity : AppCompatActivity() {
         }
 
         binding.privacyPolicyWebView.webViewClient = WebViewClient()
-        binding.privacyPolicyWebView.loadUrl("https://sites.google.com/pvppcoe.ac.in/b-fit/home")
+        binding.privacyPolicyWebView.loadUrl("https://sites.google.com/view/bfitfitness/privacy-policy")
 
         //Terms and condition in future use. - https://pages.flycricket.io/b-fit/terms.html
 
