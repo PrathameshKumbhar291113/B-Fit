@@ -15,6 +15,7 @@ import com.prathameshkumbhar.bfit.BuildConfig
 import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
+import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
@@ -43,6 +44,11 @@ class ProfileFragment : Fragment() {
 
         val versionCode: String = BuildConfig.VERSION_NAME
         binding.versionNumTv.text = versionCode
+
+        //Navigating to Privacy Policy Activity
+        binding.privacyPolicyNextArrow.setOnClickListener {
+            start<PrivacyPolicyActivity>()
+        }
 
         binding.logoutButton.setOnClickListener {
 
@@ -76,7 +82,7 @@ class ProfileFragment : Fragment() {
 
         val sharePrefLogin : SharedPreferences = context!!.getSharedPreferences("login", Context.MODE_PRIVATE)
         var editorlog : SharedPreferences.Editor = sharePrefLogin.edit()
-        editorlog.putBoolean("flag",false)
+        editorlog.clear()
         editorlog.apply()
 
     }
@@ -85,7 +91,7 @@ class ProfileFragment : Fragment() {
         //Same goes for the on board activity fragment also
         val sharePrefOnboarded : SharedPreferences = context!!.getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)
         var editor: SharedPreferences.Editor = sharePrefOnboarded.edit()
-        editor.putBoolean("isOnboardComplete",false)
+        editor.clear()
         editor.apply()
 
     }
@@ -94,19 +100,19 @@ class ProfileFragment : Fragment() {
         //Changing the already selected level of exercise to default false
         val sharePrefBeginner : SharedPreferences = context!!.getSharedPreferences("cardBeginner", Context.MODE_PRIVATE)
         var beginnerEditor : SharedPreferences.Editor = sharePrefBeginner.edit()
-        beginnerEditor.putBoolean("isBeginnerCardCheck", false)
+        beginnerEditor.clear()
         beginnerEditor.apply()
 
 
         val sharePrefIntermediate : SharedPreferences = context!!.getSharedPreferences("cardIntermediate", Context.MODE_PRIVATE)
         var intermediateEditor : SharedPreferences.Editor = sharePrefIntermediate.edit()
-        intermediateEditor.putBoolean("isIntermediateCardCheck", false)
+        intermediateEditor.clear()
         intermediateEditor.apply()
 
 
         val sharePrefAdvance : SharedPreferences = context!!.getSharedPreferences("cardAdvance", Context.MODE_PRIVATE)
         var advanceEditor : SharedPreferences.Editor = sharePrefAdvance.edit()
-        advanceEditor.putBoolean("isAdvanceCardCheck", false)
+        advanceEditor.clear()
         advanceEditor.apply()
 
     }
@@ -117,7 +123,7 @@ class ProfileFragment : Fragment() {
             Context.MODE_PRIVATE
         )
         var looseWeightEditor : SharedPreferences.Editor = sharePrefLooseWeight.edit()
-        looseWeightEditor.putBoolean("isLooseWeightCardCheck", false)
+        looseWeightEditor.clear()
         looseWeightEditor.apply()
 
 
@@ -126,7 +132,7 @@ class ProfileFragment : Fragment() {
             Context.MODE_PRIVATE
         )
         var buildMuscleEditor : SharedPreferences.Editor = sharePrefBuildMuscle.edit()
-        buildMuscleEditor.putBoolean("isBuildMuscleCardCheck", false)
+        buildMuscleEditor.clear()
         buildMuscleEditor.apply()
 
 
@@ -135,7 +141,7 @@ class ProfileFragment : Fragment() {
             Context.MODE_PRIVATE
         )
         var balanceEditor : SharedPreferences.Editor = sharePrefBalance.edit()
-        balanceEditor.putBoolean("isBalanceCardCheck", false)
+        balanceEditor.clear()
         balanceEditor.apply()
     }
 
@@ -145,7 +151,7 @@ class ProfileFragment : Fragment() {
             Context.MODE_PRIVATE
         )
         var vegDietEditor : SharedPreferences.Editor = sharePrefVegDiet.edit()
-        vegDietEditor.putBoolean("isVegCardCheck", false)
+        vegDietEditor.clear()
         vegDietEditor.apply()
 
 
@@ -154,7 +160,7 @@ class ProfileFragment : Fragment() {
             Context.MODE_PRIVATE
         )
         var nonVegEditor : SharedPreferences.Editor = sharePrefCardNonVeg.edit()
-        nonVegEditor.putBoolean("isNonVegCardCheck", false)
+        nonVegEditor.clear()
         nonVegEditor.apply()
 
 
@@ -163,7 +169,7 @@ class ProfileFragment : Fragment() {
             Context.MODE_PRIVATE
         )
         var mixedDietEditor : SharedPreferences.Editor = sharePrefMixedDiet.edit()
-        mixedDietEditor.putBoolean("isMixDietCardCheck", false)
+        mixedDietEditor.clear()
         mixedDietEditor.apply()
     }
 
@@ -218,3 +224,6 @@ class ProfileFragment : Fragment() {
         }
     }
 }
+
+//Privacy policy Url
+//https://sites.google.com/pvppcoe.ac.in/b-fit/home

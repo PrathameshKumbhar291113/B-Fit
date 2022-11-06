@@ -5,12 +5,12 @@
     <item
         android:id="@+id/showExerciseFragment"
         android:icon="@drawable/ic_workout"
-        android:title="EXERCISE"
+        android:title="Workout"
         tools:ignore="HardcodedText" />
     <item
         android:id="@+id/dietPlanFragment"
         android:icon="@drawable/ic_diet"
-        android:title="DIET"
+        android:title="Diet"
         tools:ignore="HardcodedText" />
 <!--    <item-->
 <!--        android:id="@+id/nutritionDetailsFragment"-->
@@ -20,6 +20,6 @@
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_person_profile"
-        android:title="PROFILE"
+        android:title="Profile"
         tools:ignore="HardcodedText" />
 </menu>

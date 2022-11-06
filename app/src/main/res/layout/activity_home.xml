@@ -36,12 +36,14 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:itemRippleColor="@color/palate_titan_white"
         android:background="@color/palate_big_stone"
         app:itemIconTint="@color/palate_titan_white"
+        app:menu="@menu/home_menu"
+        app:labelVisibilityMode="selected"
+        app:itemTextColor="@color/palate_titan_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:menu="@menu/home_menu"
-        app:itemTextColor="@color/palate_titan_white"
         app:layout_constraintTop_toBottomOf="@id/homeActivity_fragmentContainer"
         app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
