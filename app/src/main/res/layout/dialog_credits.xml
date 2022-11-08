@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/workoutRecConstLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/palate_titan_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,37 +38,22 @@
             app:layout_constraintGuide_percent="1.0" />
 
         <TextView
-            android:id="@+id/creditsRecTv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/noto_sans_bold"
-            android:text="Credits"
-            android:textAlignment="center"
-            android:textColor="@color/palate_big_stone"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toStartOf="@id/guideline18"
-            app:layout_constraintStart_toEndOf="@id/guideline17"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <TextView
             android:id="@+id/credits_detailsTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/noto_sans"
-            android:text="Diet Plan"
+            android:fontFamily="@font/poppins"
+            android:text="Diet Plan Credits"
             android:textAlignment="viewStart"
             android:textColor="@color/palate_big_stone"
             android:textSize="25sp"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             app:layout_constraintBottom_toTopOf="@id/credits_details_valueTv"
             app:layout_constraintEnd_toStartOf="@id/guideline18"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/guideline17"
-            app:layout_constraintTop_toBottomOf="@id/creditsRecTv"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -77,9 +62,10 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:src="@drawable/ufcgym"
-            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintBottom_toBottomOf="@id/credits_details_valueTv"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@id/credits_details_valueTv"
+            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/credits_details_valueTv"
             app:layout_constraintVertical_bias="0.0" />
@@ -89,44 +75,91 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/noto_sans"
+            android:fontFamily="@font/poppins"
             android:text="The diet is provided by the certified  Dietitian and Trainer.\nWe thank Mr. Ajay Kamble owner of UFC Gym for the above contribution.\nAdd. : \nContact : "
             android:textAlignment="textStart"
             android:textColor="@color/palate_big_stone"
             android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@id/credits_img"
-            app:layout_constraintBottom_toTopOf="@id/creditsThankYouBtn"
+            app:layout_constraintBottom_toTopOf="@id/credits_logo_detailsTv"
             app:layout_constraintEnd_toStartOf="@id/guideline18"
+            app:layout_constraintStart_toEndOf="@id/credits_img"
             app:layout_constraintTop_toBottomOf="@id/credits_detailsTv"
             app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/credits_logo_detailsTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins"
+            android:text="Logo Design Credits"
+            android:textAlignment="viewStart"
+            android:textColor="@color/palate_big_stone"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toTopOf="@id/credits_logo_details_valueTv"
+            app:layout_constraintEnd_toStartOf="@id/guideline18"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@id/credits_details_valueTv"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/credits_logo_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/finalbfitlogo"
+            app:layout_constraintBottom_toBottomOf="@id/credits_logo_details_valueTv"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/credits_logo_details_valueTv"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/guideline17"
+            app:layout_constraintTop_toTopOf="@id/credits_logo_details_valueTv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/credits_logo_details_valueTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins"
+            android:text="The diet is provided by the certified  Dietitian and Trainer.\nWe thank Mr. Ajay Kamble owner of UFC Gym for the above contribution.\nAdd. : \nContact : "
+            android:textAlignment="textStart"
+            android:textColor="@color/palate_big_stone"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/creditsThankYouBtn"
+            app:layout_constraintEnd_toStartOf="@id/guideline18"
+            app:layout_constraintStart_toEndOf="@id/credits_logo_img"
+            app:layout_constraintTop_toBottomOf="@id/credits_logo_detailsTv"
+            app:layout_constraintVertical_chainStyle="packed" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/creditsThankYouBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_semibold"
             android:text="Thank You"
-            android:textSize="18sp"
-            android:fontFamily="@font/noto_sans"
             android:textColor="@color/palate_havelock_blue"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/credits_logo_details_valueTv"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.87"
-            app:layout_constraintTop_toBottomOf="@id/credits_details_valueTv"
             app:layout_constraintStart_toStartOf="parent" />
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/guideline17"
-            app:layout_constraintEnd_toStartOf="@id/guideline18"
-            app:layout_constraintTop_toBottomOf="@id/creditsThankYouBtn"
+            android:text="igdfiuFE;UIH;UIIUEUIEUIBFE;FEUWBL;IFEU;LFEUBL;FEUIBFEIUBEFLUFEIUFFEGFIGFLIEFLIUFEIUGFEIUGFEIFEUGLEFIGFELUFUHfloeiuhgfeufu"
             android:textColor="@color/palate_titan_white"
             android:textSize="10sp"
-            android:text="igdfiuFE;UIH;UIIUEUIEUIBFE;FEUWBL;IFEU;LFEUBL;FEUIBFEIUBEFLUFEIUFFEGFIGFLIEFLIUFEIUGFEIUGFEIFEUGLEFIGFELUFUHfloeiuhgfeufu"
-            />
-
+            app:layout_constraintEnd_toStartOf="@id/guideline18"
+            app:layout_constraintStart_toEndOf="@id/guideline17"
+            app:layout_constraintTop_toBottomOf="@id/creditsThankYouBtn" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

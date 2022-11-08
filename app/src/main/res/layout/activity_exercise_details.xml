@@ -8,12 +8,13 @@
     android:layout_height="match_parent"
     tools:context=".mainmodule.activity.ExerciseDetailsActivity">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/activityExerciseDetailsToolBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/palate_big_stone"
         app:titleTextColor="@color/palate_titan_white"
+        app:titleCentered="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

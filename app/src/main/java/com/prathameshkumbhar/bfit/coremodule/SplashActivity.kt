@@ -7,7 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
-import com.prathameshkumbhar.bfit.BuildConfig
+import com.google.firebase.messaging.FirebaseMessaging
 import com.prathameshkumbhar.bfit.databinding.ActivitySplashBinding
 import com.prathameshkumbhar.bfit.loginmodule.activity.SignInAndSignUpActivity
 import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
@@ -29,7 +29,7 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.versionNumTv.text = BuildConfig.VERSION_NAME
+        FirebaseMessaging.getInstance().subscribeToTopic("Notification")
 
         val sharePrefSplash : SharedPreferences = getSharedPreferences("login", MODE_PRIVATE)
         val sharePrefOnboarded : SharedPreferences = getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)

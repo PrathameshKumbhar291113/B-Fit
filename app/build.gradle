@@ -78,6 +78,7 @@ dependencies {
     //Implementing the firebase performance check to the application
     implementation 'com.google.firebase:firebase-perf-ktx'
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.8'
 
     //implementing library for data binding and view binding
     kapt 'com.squareup.moshi:moshi-kotlin-codegen:1.13.0'
