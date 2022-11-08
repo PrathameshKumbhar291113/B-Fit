@@ -73,11 +73,6 @@ class BmiCalculatorFragment : Fragment() {
 
         })
 
-        //Saving the height in var to further store it in shared preference
-        var saveHeight : Int = binding.showHeightText.text.toString().toInt()
-        storeHeight(saveHeight)
-
-
         //Weight Button
         binding.weightAddBtn.setOnClickListener{
             if (binding.showWeightText.text.toString().toInt()<130){
@@ -94,12 +89,6 @@ class BmiCalculatorFragment : Fragment() {
                 KToasty.warning(requireContext(),"Minimum weight is 12 Kg!").show()
             }
         }
-
-        //Saving the weight in var to further store it in shared preference
-        var saveWeight : Int = binding.showWeightText.text.toString().toInt()
-        storeWeight(saveWeight)
-
-
 
         //Age Button
         binding.ageAddBtn.setOnClickListener {
@@ -118,12 +107,18 @@ class BmiCalculatorFragment : Fragment() {
             }
         }
 
-
-
         binding.submitButtonBmi.setOnClickListener {
             //Saving the age in var to further store it in shared preference
             var saveAge : Int = binding.showAgeText.text.toString().toInt()
             storeAge(saveAge)
+
+            //Saving the weight in var to further store it in shared preference
+            var saveWeight : Int = binding.showWeightText.text.toString().toInt()
+            storeWeight(saveWeight)
+
+            //Saving the height in var to further store it in shared preference
+            var saveHeight : Int = binding.showHeightText.text.toString().toInt()
+            storeHeight(saveHeight)
 
             bmiCalculator(saveWeight.toString(),saveHeight.toString())
             binding.submitButtonBmi.visibility = View.GONE
@@ -136,24 +131,12 @@ class BmiCalculatorFragment : Fragment() {
             }
         }
 
-
-
-
         binding.nextButtonBmi.setOnClickListener {
 
             val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
-            var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
+            var checkGenderMale = sharePrefGender.getBoolean("isMaleChecked", false)
 
-
-            var maleDefaultHeight = 166
-            var femaleDefaultHeight = 155
-
-
-            if (checkGender){
-                binding.heightSeekbar.progress = maleDefaultHeight
-            }else{
-                binding.heightSeekbar.progress = femaleDefaultHeight
-            }
+//            binding.heightSeekbar.progress = 166
 
             navController.navigate(
                 BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToBodyTypeGoalFragment()

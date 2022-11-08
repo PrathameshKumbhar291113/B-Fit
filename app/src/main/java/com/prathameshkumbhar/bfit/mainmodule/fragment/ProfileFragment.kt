@@ -1,7 +1,11 @@
 package com.prathameshkumbhar.bfit.mainmodule.fragment
 
+import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.prathameshkumbhar.bfit.BuildConfig
 import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
+import com.prathameshkumbhar.bfit.databinding.DialogCreditsBinding
+import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
 import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
 import kotlinx.coroutines.delay
@@ -46,9 +52,28 @@ class ProfileFragment : Fragment() {
         binding.versionNumTv.text = versionCode
 
         //Navigating to Privacy Policy Activity
-        binding.privacyPolicyNextArrow.setOnClickListener {
+        binding.privacyPolicyCard.setOnClickListener {
             start<PrivacyPolicyActivity>()
         }
+
+        binding.userDetailsCard.setOnClickListener {
+            userRecDialogBox()
+        }
+        binding.creditsCard.setOnClickListener {
+            creditsDialogBox()
+        }
+
+        binding.communityCard.setOnClickListener {
+
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT,"Hey!\nYou know, I have started my training with B Fit application and you won't believe I have started seeing the results already.\n\nThe diet plan they provide is really effective and the best part about it is that its fully natural and no need to consume extra supplements!\nYou have to try this one out!\n\nDownload the app: https://play.google.com/store/apps/details?id=${requireContext().packageName}")
+
+            startActivity(Intent.createChooser(intent,"Choose one"))
+
+        }
+
 
         binding.logoutButton.setOnClickListener {
 
@@ -59,7 +84,7 @@ class ProfileFragment : Fragment() {
             resetLevelOfExercise()
             resetBodyTypeGoal()
             resetDietType()
-            resetUserAge()
+            resetUserDetails()
 
 
             requireContext().showSuccessToast("Successfully Logged Out!")
@@ -70,6 +95,66 @@ class ProfileFragment : Fragment() {
                     activity?.finish()
                 }
             }
+        }
+    }
+
+    private fun userRecDialogBox(){
+
+        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
+        var checkGenderMale = sharePrefGender.getBoolean("isMaleChecked", false)
+
+        val sharePrefSaveAge : SharedPreferences = context!!.getSharedPreferences("SaveAge",Context.MODE_PRIVATE)
+        var userAge = sharePrefSaveAge.getInt("age",0)
+
+        val sharePrefSaveHeight : SharedPreferences = context!!.getSharedPreferences("SaveHt",Context.MODE_PRIVATE)
+        var userHt =sharePrefSaveHeight.getInt("height",0)
+
+        val sharePrefSaveWeight : SharedPreferences = context!!.getSharedPreferences("SaveWt", Context.MODE_PRIVATE)
+        var userWt = sharePrefSaveWeight.getInt("weight",0)
+
+        val sharePrefSaveBmi : SharedPreferences = context!!.getSharedPreferences("SaveBmi",Context.MODE_PRIVATE)
+        var userBmi = sharePrefSaveBmi.getString("bmi","")
+
+
+        val dialogBinding : DialogUserRecordBinding = DialogUserRecordBinding.inflate(layoutInflater)
+
+        val userRecCustomDialog = Dialog(requireContext())
+        userRecCustomDialog.apply {
+            setContentView(dialogBinding.root)
+            setCancelable(true)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+
+
+            if(checkGenderMale){
+                dialogBinding.genderValueTv.text = "Male"
+            }else{
+                dialogBinding.genderValueTv.text = "Female"
+            }
+            dialogBinding.ageValueTv.text = userAge.toString()
+            dialogBinding.heightValueTv.text = userHt.toString()
+            dialogBinding.weightValueTv.text = userWt.toString()
+            dialogBinding.bmiValueTv.text = userBmi.toString()
+
+        }.show()
+
+        dialogBinding.userRecCloseBtn.setOnClickListener {
+            userRecCustomDialog.dismiss()
+        }
+    }
+
+    private fun creditsDialogBox(){
+        val dialogBinding : DialogCreditsBinding = DialogCreditsBinding.inflate(layoutInflater)
+
+        val creditsCustomDialog = Dialog(requireContext())
+        creditsCustomDialog.apply {
+            setContentView(dialogBinding.root)
+            setCancelable(true)
+            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        }.show()
+
+        dialogBinding.creditsThankYouBtn.setOnClickListener {
+            creditsCustomDialog.dismiss()
         }
     }
 
@@ -173,12 +258,27 @@ class ProfileFragment : Fragment() {
         mixedDietEditor.apply()
     }
 
-    private fun resetUserAge(){
+    private fun resetUserDetails(){
 
-        val sharePrefSaveAge : SharedPreferences = context!!.getSharedPreferences("SaveAge",Context.MODE_APPEND)
+        val sharePrefSaveAge : SharedPreferences = context!!.getSharedPreferences("SaveAge",Context.MODE_PRIVATE)
         var ageEditor : SharedPreferences.Editor = sharePrefSaveAge.edit()
         ageEditor.clear()
         ageEditor.apply()
+
+        val sharePrefSaveBmi : SharedPreferences = context!!.getSharedPreferences("SaveBmi",Context.MODE_PRIVATE)
+        var bmiEditor : SharedPreferences.Editor = sharePrefSaveBmi.edit()
+        bmiEditor.clear()
+        bmiEditor.apply()
+
+        val sharePrefSaveHeight : SharedPreferences = context!!.getSharedPreferences("SaveHt",Context.MODE_PRIVATE)
+        var htEditor : SharedPreferences.Editor = sharePrefSaveHeight.edit()
+        htEditor.clear()
+        htEditor.apply()
+
+        val sharePrefSaveWeight : SharedPreferences = context!!.getSharedPreferences("SaveWt", Context.MODE_PRIVATE)
+        var wtEditor : SharedPreferences.Editor = sharePrefSaveWeight.edit()
+        wtEditor.clear()
+        wtEditor.apply()
 
     }
 

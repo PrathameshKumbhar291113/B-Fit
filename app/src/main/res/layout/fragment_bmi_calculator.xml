@@ -148,7 +148,7 @@
                         android:layout_marginTop="@dimen/_4sdp"
                         android:layout_marginEnd="@dimen/_25sdp"
                         android:layout_marginBottom="@dimen/_10sdp"
-                        android:progressTint="@color/palate_big_stone"
+                        android:progressTint="@color/palate_titan_white"
                         android:thumbTint="@color/palate_titan_white"
                         android:max="220"
                         app:layout_constraintBottom_toBottomOf="@id/heightCardConstraintLayout"

@@ -115,7 +115,7 @@
                 android:layout_marginEnd="25dp"
                 app:cardBackgroundColor="@color/palate_titan_white"
                 app:cardCornerRadius="8dp"
-                app:layout_constraintBottom_toTopOf="@id/workOutDetailsTv"
+                app:layout_constraintBottom_toTopOf="@id/creditsTv"
                 app:layout_constraintEnd_toStartOf="@id/guideline4"
                 app:layout_constraintStart_toEndOf="@id/guideline3"
                 app:layout_constraintTop_toBottomOf="@id/userDetailsTv">
@@ -165,82 +165,6 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/workOutDetailsTv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/noto_sans"
-                android:padding="@dimen/_2sdp"
-                android:text="Wokout Record"
-                android:textAlignment="textStart"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/workoutDetailsCard"
-                app:layout_constraintEnd_toEndOf="@+id/workoutDetailsCard"
-                app:layout_constraintStart_toStartOf="@+id/workoutDetailsCard"
-                app:layout_constraintTop_toBottomOf="@id/userDetailsCard" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/workoutDetailsCard"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginEnd="25dp"
-                app:cardBackgroundColor="@color/palate_titan_white"
-                app:cardCornerRadius="8dp"
-                app:layout_constraintBottom_toTopOf="@id/creditsTv"
-                app:layout_constraintEnd_toStartOf="@id/guideline4"
-                app:layout_constraintStart_toEndOf="@id/guideline3"
-                app:layout_constraintTop_toBottomOf="@id/workOutDetailsTv">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp">
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/workoutDetailsImg"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_workout"
-                        android:tint="@color/palate_havelock_blue"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/workoutDetails"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/workoutDetailsNextArrow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_next_arrow"
-                        android:tint="@color/palate_havelock_blue"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/workoutDetails"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/workoutDetails"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="6dp"
-                        android:fontFamily="@font/noto_sans"
-                        android:gravity="center_vertical"
-                        android:text="Workout Info"
-                        android:textColor="@color/palate_havelock_blue"
-                        android:textSize="18sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/workoutDetailsNextArrow"
-                        app:layout_constraintStart_toEndOf="@id/workoutDetailsImg"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <TextView
                 android:id="@+id/creditsTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -256,7 +180,7 @@
                 app:layout_constraintBottom_toTopOf="@id/creditsCard"
                 app:layout_constraintEnd_toEndOf="@id/creditsCard"
                 app:layout_constraintStart_toStartOf="@id/creditsCard"
-                app:layout_constraintTop_toBottomOf="@id/workoutDetailsCard" />
+                app:layout_constraintTop_toBottomOf="@id/userDetailsCard" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/creditsCard"
