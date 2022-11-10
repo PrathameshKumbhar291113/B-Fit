@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <gradient
+                android:angle="90"
+                android:startColor="@color/palate_havelock_blue"
+                android:endColor="@color/palate_big_stone"
+                android:type="linear" />
+
+            <corners
+                android:bottomLeftRadius="25dp"
+                android:bottomRightRadius="25dp"/>
+        </shape>
+    </item>
+</selector>

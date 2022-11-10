@@ -44,6 +44,17 @@
                 app:layout_constraintGuide_percent="1.0" />
 
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/user_profile_background"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/spacer"
+
+                />
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/userProfileImg"
                 android:layout_width="0dp"
@@ -64,12 +75,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="18dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:padding="@dimen/_2sdp"
                 android:text="Prathamesh Kumbhar"
                 android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
+                android:textColor="@color/palate_titan_white"
                 android:textSize="25dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/spacer"
