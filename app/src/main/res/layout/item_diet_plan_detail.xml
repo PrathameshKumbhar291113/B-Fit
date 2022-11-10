@@ -14,13 +14,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <androidx.appcompat.widget.AppCompatImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/foodImg"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="10dp"
             android:clipToOutline="true"
-            android:background="@drawable/round_corner_image"
+            app:shapeAppearanceOverlay="@style/roundedCorners"
             app:layout_constraintDimensionRatio="3:2"
             app:layout_constraintBottom_toTopOf="@id/timeTv"
             app:layout_constraintStart_toStartOf="parent"
