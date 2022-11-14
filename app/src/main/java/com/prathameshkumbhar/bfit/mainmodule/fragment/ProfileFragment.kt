@@ -25,6 +25,7 @@ import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
 import com.prathameshkumbhar.bfit.mainmodule.activity.CreditActivity
 import com.prathameshkumbhar.bfit.mainmodule.activity.PersonalGuidanceActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
@@ -54,17 +55,8 @@ class ProfileFragment : Fragment() {
         val versionCode: String = BuildConfig.VERSION_NAME
         binding.versionNumTv.text = versionCode
 
-        //Navigating to Privacy Policy Activity
-
-        binding.personalDietCard.setOnClickListener {
-            start<PersonalGuidanceActivity>()
-        }
-
         binding.userDetailsCard.setOnClickListener {
             userRecDialogBox()
-        }
-        binding.creditsCard.setOnClickListener {
-            start<CreditActivity>()
         }
 
         binding.contactCard.setOnClickListener {
@@ -79,17 +71,25 @@ class ProfileFragment : Fragment() {
                     "Need Help Regarding Issue Discussed Below",
                     "Start writing the query from here:\n")
             }
-
         }
 
         binding.communityCard.setOnClickListener {
-
             shareApplicationWithCommunity()
-
         }
 
+        //Navigating to the credit activity.
+        binding.creditsCard.setOnClickListener {
+            start<CreditActivity>()
+        }
+
+        //Navigating to the personal diet activity.
         binding.personalDietCard.setOnClickListener {
             start<PersonalGuidanceActivity>()
+        }
+
+        //Navigating to Privacy Policy Activity
+        binding.privacyPolicyCard.setOnClickListener {
+            start<PrivacyPolicyActivity>()
         }
 
         binding.rateUsCard.setOnClickListener {
