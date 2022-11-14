@@ -9,8 +9,8 @@ import kotlinx.parcelize.Parcelize
 data class ExerciseShowCase(
     var id: Int,
     var exerciseTitle: String? = null,
-    var exerciseImageUrlMale: String? = null,
-    var exerciseImageUrlFemale : String? = null,
+    var exerciseImageUrlMale: Int? = null,
+    var exerciseImageUrlFemale : Int? = null,
     var exerciseRatingBeginner: String? = null,
     var exerciseRatingIntermediate: String? = null,
     var exerciseRatingAdvance: String? = null,

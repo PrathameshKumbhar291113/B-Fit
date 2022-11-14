@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/palate_titan_white"
+    tools:context=".mainmodule.activity.PersonalGuidanceActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/personalGuidanceToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@color/palate_titan_white"
+        android:background="@color/palate_big_stone"
+        app:title="Dietician Appointment"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:layout_constraintBottom_toTopOf="@id/personalGuideSV"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/personalGuideSV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personalGuidanceToolBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/personalGuideTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text="To get personal guidance from expert.\nFillout the details below and register for appointment!"
+                android:textAlignment="center"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/usernameTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Enter your name below."
+                android:textAlignment="textStart"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalGuideTitle" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userName_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:elevation="5dp"
+                android:textColorHint="@color/palate_big_stone"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
+                app:layout_constraintEnd_toEndOf="@+id/usernameTitle"
+                app:layout_constraintStart_toStartOf="@+id/usernameTitle"
+                app:layout_constraintTop_toBottomOf="@id/usernameTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userName_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Name"
+                    android:inputType="text"
+                    android:padding="1dp"
+                    android:textColor="@color/palate_big_stone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userMobTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Enter your mobile no. below."
+                android:textAlignment="textStart"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userName_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userMob_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:elevation="5dp"
+                android:textColorHint="@color/palate_big_stone"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
+                app:layout_constraintEnd_toEndOf="@+id/userMobTitle"
+                app:layout_constraintStart_toStartOf="@+id/userMobTitle"
+                app:layout_constraintTop_toBottomOf="@id/userMobTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userMob_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Mobile Number"
+                    android:inputType="phone"
+                    android:padding="1dp"
+                    android:textColor="@color/palate_big_stone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userStateTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Your residential state:"
+                android:textAlignment="textStart"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userMob_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userState_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:elevation="5dp"
+                android:textColorHint="@color/palate_big_stone"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
+                app:layout_constraintEnd_toEndOf="@+id/userStateTitle"
+                app:layout_constraintStart_toStartOf="@+id/userStateTitle"
+                app:layout_constraintTop_toBottomOf="@id/userStateTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userState_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="State"
+                    android:inputType="textPostalAddress"
+                    android:padding="1dp"
+                    android:textColor="@color/palate_big_stone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userTownTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Your residential city:"
+                android:textAlignment="textStart"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userState_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userTown_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:elevation="5dp"
+                android:textColorHint="@color/palate_big_stone"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
+                app:layout_constraintEnd_toEndOf="@+id/userTownTitle"
+                app:layout_constraintStart_toStartOf="@+id/userTownTitle"
+                app:layout_constraintTop_toBottomOf="@id/userTownTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userTown_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="City"
+                    android:inputType="textPostalAddress"
+                    android:padding="1dp"
+                    android:textColor="@color/palate_big_stone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userQueryTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="Enter the query below."
+                android:textAlignment="textStart"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userTown_layout" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userQuery_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:elevation="5dp"
+                android:textColorHint="@color/palate_big_stone"
+                app:boxCornerRadiusBottomEnd="5dp"
+                app:boxCornerRadiusBottomStart="5dp"
+                app:boxCornerRadiusTopEnd="5dp"
+                app:boxCornerRadiusTopStart="5dp"
+                app:boxStrokeColor="@color/palate_big_stone"
+                app:hintTextColor="@color/palate_big_stone"
+                app:layout_constraintEnd_toEndOf="@+id/userQueryTitle"
+                app:layout_constraintStart_toStartOf="@+id/userQueryTitle"
+                app:layout_constraintTop_toBottomOf="@id/userQueryTitle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userQuery_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Query"
+                    android:gravity="top"
+                    android:inputType="textLongMessage"
+                    android:padding="6dp"
+                    android:textColor="@color/palate_big_stone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/guideLine"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Our team will contact you within 2 working days when email receieved !"
+                android:fontFamily="@font/poppins"
+                android:textSize="16sp"
+                android:textColor="@color/palate_big_stone"
+                android:layout_marginTop="4dp"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/userQuery_layout"
+                app:layout_constraintEnd_toEndOf="@id/userQuery_layout"
+                app:layout_constraintTop_toBottomOf="@id/userQuery_layout"
+                app:layout_constraintBottom_toTopOf="@id/getAppointmentBtn"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/getAppointmentBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/rounded_corner_button"
+                android:elevation="25dp"
+                android:text="Get Appointment"
+                android:textAlignment="center"
+                android:textColor="@color/palate_titan_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideLine"
+                tools:ignore="SpeakableTextPresentCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

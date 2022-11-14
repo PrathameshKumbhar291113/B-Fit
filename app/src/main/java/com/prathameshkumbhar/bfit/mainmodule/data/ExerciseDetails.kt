@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
 data class ExerciseDetails (
     var id: Int,
     var exerciseStepName : String? = null,
-    var exerciseImageGif: String? = null,
+    var exerciseImageGif: Int? = null,
     var exerciseRepetitionBeginner : String? = null,
     var exerciseRepetitionIntermediate : String? = null,
     var exerciseRepetitionAdvance : String? = null,

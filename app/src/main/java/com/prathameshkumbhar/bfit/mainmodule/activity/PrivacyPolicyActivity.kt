@@ -28,11 +28,4 @@ class PrivacyPolicyActivity : AppCompatActivity() {
         binding.privacyPolicyWebView.settings.setSupportZoom(true)
     }
 
-    override fun onBackPressed() {
-        if (binding.privacyPolicyWebView.canGoBack())
-            binding.privacyPolicyWebView.goBack()
-        else
-            super.onBackPressed()
-    }
-
 }

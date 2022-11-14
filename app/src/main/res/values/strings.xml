@@ -6,6 +6,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+    <string name="dietician_details">Confident and Optimistic are two words which suits best to our contributor Dt. Ritu.\nShe has completed Master\'s in Nutrition and Health.\nOver more than 3 - 4 years of experience, she has achieved several milestones in her journey by her hardwork and dedication.\n\nTo get an appointment tap on \'Personal Guidance\' section.  </string>
+    <string name="co_founder_details">Many thanks to Ms. Shreya Kurry who contributed for developing B Fit Fitness Website, whether it be coding, testing or coming up with ideas and many more.\n\nSoon the website will be hosted.</string>
+    <string name="logo_details">Many thanks to Mr. Ritesh Shete who contributed for designing B Fit Fitness Application Logo.</string>
+    <string name="poster_details">Many thanks to Ms. Sudarshni Nadar who contributed for designing B Fit Fitness Application Posters.</string>
+
     <string name="facebook_app_id">2198284820346360</string>
     <string name="fb_login_protocol_scheme">fb2198284820346360</string>
     <string name="facebook_client_token">ad651a2d5da5fa7d289413d00ff1c2a2</string>

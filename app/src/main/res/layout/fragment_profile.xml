@@ -20,7 +20,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline3"
@@ -45,6 +45,7 @@
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/user_profile_bg_gradient"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:background="@drawable/user_profile_background"
@@ -160,7 +161,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/userdetails"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:fontFamily="@font/poppins"
                         android:gravity="center_vertical"
@@ -200,9 +201,9 @@
                 android:layout_marginEnd="25dp"
                 app:cardBackgroundColor="@color/palate_titan_white"
                 app:cardCornerRadius="8dp"
-                app:layout_constraintBottom_toTopOf="@id/communityTv"
                 app:layout_constraintEnd_toStartOf="@id/guideline4"
                 app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintBottom_toTopOf="@id/contactTv"
                 app:layout_constraintTop_toBottomOf="@id/creditsTv">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -236,7 +237,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/credits_details"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:fontFamily="@font/poppins"
                         android:gravity="center_vertical"
@@ -249,6 +250,159 @@
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/contactTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="@dimen/_2sdp"
+                android:text="Contact Us"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/contactCard"
+                app:layout_constraintEnd_toEndOf="@id/contactCard"
+                app:layout_constraintStart_toStartOf="@id/contactCard"
+                app:layout_constraintTop_toBottomOf="@id/personalDietCard" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/contactCard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="@color/palate_titan_white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/communityTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/contactTv">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/contactImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_contact"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/contact_details"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/contactNextArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next_arrow"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/contact_details"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/contact_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:text="Contact Us"
+                        android:textColor="@color/palate_havelock_blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/contactNextArrow"
+                        app:layout_constraintStart_toEndOf="@id/contactImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/personalDietTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="@dimen/_2sdp"
+                android:text="Personal Guidance"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/personalDietCard"
+                app:layout_constraintEnd_toEndOf="@id/personalDietCard"
+                app:layout_constraintStart_toStartOf="@id/personalDietCard"
+                app:layout_constraintTop_toBottomOf="@id/creditsCard" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/personalDietCard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="@color/palate_titan_white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/contactTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/personalDietTv">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/personalDietImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_personal_diet"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/personalDiet_details"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/personalDietNextArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next_arrow"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/personalDiet_details"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/personalDiet_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:text="Personal Diet"
+                        android:textColor="@color/palate_havelock_blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/personalDietNextArrow"
+                        app:layout_constraintStart_toEndOf="@id/personalDietImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <TextView
                 android:id="@+id/communityTv"
@@ -266,7 +420,7 @@
                 app:layout_constraintBottom_toTopOf="@id/communityCard"
                 app:layout_constraintEnd_toEndOf="@id/communityCard"
                 app:layout_constraintStart_toStartOf="@id/communityCard"
-                app:layout_constraintTop_toBottomOf="@id/creditsCard" />
+                app:layout_constraintTop_toBottomOf="@id/contactCard" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/communityCard"
@@ -314,7 +468,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/community_details"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:fontFamily="@font/poppins"
                         android:gravity="center_vertical"

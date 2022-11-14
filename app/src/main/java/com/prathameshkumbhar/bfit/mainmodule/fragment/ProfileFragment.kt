@@ -13,15 +13,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import coil.load
+import com.droidman.ktoasty.KToasty
 import com.droidman.ktoasty.showSuccessToast
 import com.google.firebase.auth.FirebaseAuth
 import com.prathameshkumbhar.bfit.BuildConfig
 import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
-import com.prathameshkumbhar.bfit.databinding.DialogCreditsBinding
 import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
-import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.CreditActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.PersonalGuidanceActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
@@ -52,25 +53,41 @@ class ProfileFragment : Fragment() {
         binding.versionNumTv.text = versionCode
 
         //Navigating to Privacy Policy Activity
-        binding.privacyPolicyCard.setOnClickListener {
-            start<PrivacyPolicyActivity>()
+
+        binding.personalDietCard.setOnClickListener {
+            start<PersonalGuidanceActivity>()
         }
 
         binding.userDetailsCard.setOnClickListener {
             userRecDialogBox()
         }
         binding.creditsCard.setOnClickListener {
-            creditsDialogBox()
+            start<CreditActivity>()
+        }
+
+        binding.contactCard.setOnClickListener {
+
+            KToasty.success(context!!,"Our team will connect to you within 2 working days.").show()
+
+            lifecycleScope.launch {
+                delay(2000)
+                contactUsSendEmail(
+                    context!!,
+                    listOf("bfit.company1311@gmail.com"),
+                    "Need Help Regarding Issue Discussed Below",
+                    "Start writing the query from here:\n")
+            }
+
         }
 
         binding.communityCard.setOnClickListener {
 
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT,"Hey!\nYou know, I have started my training with B Fit application and you won't believe I have started seeing the results already.\n\nThe diet plan they provide is really effective and the best part about it is that its fully natural and no need to consume extra supplements!\nYou have to try this one out!\n\nDownload the app: https://play.google.com/store/apps/details?id=${requireContext().packageName}")
+            shareApplicationWithCommunity()
 
-            startActivity(Intent.createChooser(intent,"Choose one"))
+        }
+
+        binding.personalDietCard.setOnClickListener {
+            start<PersonalGuidanceActivity>()
 
         }
 
@@ -96,6 +113,33 @@ class ProfileFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun shareApplicationWithCommunity() {
+
+        val intent = Intent()
+        intent.action = Intent.ACTION_SEND
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT,"Hey!\nYou know, I have started my training with B Fit application and you won't believe I have started seeing the results already.\n\nThe diet plan they provide is really effective and the best part about it is that its fully natural and no need to consume extra supplements!\nYou have to try this one out!\n\nDownload the app: https://play.google.com/store/apps/details?id=${requireContext().packageName}")
+
+        startActivity(Intent.createChooser(intent,"Choose one"))
+    }
+
+    private fun contactUsSendEmail(
+        context: Context,
+        emailReceiver: List<String>,
+        emailSubject: String,
+        emailMessage: String
+    ) {
+
+        val email = Intent(Intent.ACTION_SEND)
+        email.type = "plain/text"
+        email.putExtra(Intent.EXTRA_EMAIL , emailReceiver.toTypedArray())
+        email.putExtra(Intent.EXTRA_SUBJECT , emailSubject)
+        email.putExtra(Intent.EXTRA_TEXT , emailMessage)
+
+        context.startActivity(Intent.createChooser(email,"Select any one."))
+
     }
 
     private fun userRecDialogBox(){
@@ -140,21 +184,6 @@ class ProfileFragment : Fragment() {
 
         dialogBinding.userRecCloseBtn.setOnClickListener {
             userRecCustomDialog.dismiss()
-        }
-    }
-
-    private fun creditsDialogBox(){
-        val dialogBinding : DialogCreditsBinding = DialogCreditsBinding.inflate(layoutInflater)
-
-        val creditsCustomDialog = Dialog(requireContext())
-        creditsCustomDialog.apply {
-            setContentView(dialogBinding.root)
-            setCancelable(true)
-            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        }.show()
-
-        dialogBinding.creditsThankYouBtn.setOnClickListener {
-            creditsCustomDialog.dismiss()
         }
     }
 

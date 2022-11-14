@@ -52,9 +52,10 @@ class SignUpFragment : Fragment() {
             val pass = binding.signUpPassEditText.text.toString().trim()
             val confirmPass = binding.signUpConfirmPassEditText.text.toString().trim()
             val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+            val phoneNumPattern = "^[5-9]{1}[0-9]{9}\$"
 
             if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty() && userName.isNotEmpty() && userPhoneNum.isNotEmpty()) {
-                if(email.matches(emailPattern.toRegex())){
+                if(email.matches(emailPattern.toRegex()) && userPhoneNum.matches(phoneNumPattern.toRegex())){
                     if (pass.length >= 8) {
                         if (pass == confirmPass) {
 
@@ -100,7 +101,7 @@ class SignUpFragment : Fragment() {
                 }else{
                     KToasty.warning(
                         requireContext(),
-                        "Email is invalid!",
+                        "Email / Phone Number is Invalid ! ",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

@@ -132,12 +132,6 @@ class BmiCalculatorFragment : Fragment() {
         }
 
         binding.nextButtonBmi.setOnClickListener {
-
-            val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
-            var checkGenderMale = sharePrefGender.getBoolean("isMaleChecked", false)
-
-//            binding.heightSeekbar.progress = 166
-
             navController.navigate(
                 BmiCalculatorFragmentDirections.actionBmiCalculatorFragmentToBodyTypeGoalFragment()
             )

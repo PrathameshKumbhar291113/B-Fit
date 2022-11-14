@@ -34,7 +34,7 @@ class DietPlanAdapter(
     ): RecyclerView.ViewHolder(binding.root){
 
         fun bind(dietPlanDetails : DietPlanDetails){
-            binding.foodImg.load(dietPlanDetails.dietImg.toString())
+            binding.foodImg.load(dietPlanDetails.dietImg)
             binding.timeTv.text = dietPlanDetails.timeTitle.toString()
             binding.descTv.text = dietPlanDetails.dietDesc.toString()
         }

@@ -1,159 +1,188 @@
 package com.prathameshkumbhar.bfit.mainmodule.data
 
+import com.prathameshkumbhar.bfit.R
+
 //Final List of the diet.
 
 var DIET_PLAN_LOOSE_WT_VEG_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/VIOjOVF.jpg","• 1 Glass Lukewarm Lemon Water/\n• 1 Glass Amla Juice"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + Walnut (1 piece) + Dates (2 pieces)\n• 1 Glass Jeera Water /\n• 1 Glass Coriander Water"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/pxyEnPY.jpg","• 1 Plate Idli. /\n• 1 Plate Oats."
+        1,"Breakfast",R.drawable.diet_poha,"• Poha with veggies (1 Plate). /\n• Besan Cheela / Poli with veggies (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/ojPqrU4.jpg","• 2 Roti (oil free).\n• Sprouts Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Any 1 fruit (Orange, Kiwi, Apple). /\n• Fruit Salad (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/YKk9BFe.jpg","• 1 Cup Green Tea. /\n• 1 Apple."
+        1,"Lunch",R.drawable.diet_chana_curry,"• Roti (2 Pieces) + Chana Curry + Green Vegetables (1 Bowl) + Veg Salad (1 Bowl).\n• Rice (1 Bowl)  + Dal (Moong) + Green Vegetables + Carrot Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/JFf2UyI.jpg","• 1 Bhakri (Nachni / Bajri / Jwari).\n• Green Vegetable (Spinach/Broccoli) etc."
+        1,"Evening",R.drawable.diet_makhanaroasted,"• Makhana Roasted. /\n• Roasted Chana."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_khichdi,"• Rice Dal Vegetable Khichdi (2 Bowl) + Salad/\n• Oats Cheela / Poli (2 Pieces) + Curd / Green Chutney (4 Table Spoon)."
     )
 )
 var DIET_PLAN_LOOSE_WT_NON_VEG_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/VIOjOVF.jpg","• 1 Glass Lukewarm Lemon Water /\n• 1 Glass Amla Juice"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + Walnut (1 piece) + Dates (2 pieces)\n• 1 Glass Jeera Water /\n• 1 Glass Coriander Water"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/DKO9F8b.jpg","• 1 Brown Bread Egg Sandwich. /\n• 3 Boiled Egg (Whites)"
+        1,"Breakfast",R.drawable.diet_omelette,"• Egg omelette with veggies (2 Eggs) /\n• Egg Burgi + Roti (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/lRPEsTh.jpg","• 2 Roti (oil free).\n• Chicken Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Any 1 fruit (Orange, Kiwi, Apple). /\n• Fruit Salad (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/YKk9BFe.jpg","• 1 Cup Green Tea. /\n• 1 Apple."
+        1,"Lunch",R.drawable.diet_chickencurry,"• Roti (2 Pieces) + Chicken / Fish Curry + Green Vegetables (1 Bowl) + Veg Salad (1 Bowl).\n• Rice (1 Bowl)  + Egg Curry + Green Vegetables + Carrot Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/f1mZHS8.jpg","• 1 Bhakri (Nachni / Bajri / Jwari).\n• Fish / Egg Sabzi."
+        1,"Evening",R.drawable.diet_makhanaroasted,"• Makhana Roasted. /\n• Roasted Chana."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_chicken_biryani,"• Chicken / Egg Biryani + Raita/\n• Roti (2 Pieces) + Green Vegetables + Boiled egg white (2 Pieces)."
     )
 )
 var DIET_PLAN_LOOSE_WT_MIXED_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/VIOjOVF.jpg","• 1 Glass Lukewarm Lemon Water /\n• 1 Glass Amla Juice"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + Walnut (1 piece) + Dates (2 pieces)\n• 1 Glass Jeera Water /\n• 1 Glass Coriander Water"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/pxyEnPY.jpg","• 1 Brown Bread Egg Sandwich. /\n• 1 Plate Oats."
+        1,"Breakfast",R.drawable.diet_omelette,"• Egg omelette with veggies (2 Eggs) /\n• Poha with veggies (1 Plate)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/lRPEsTh.jpg","• 2 Roti (oil free).\n• Sprouts / Chicken Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Any 1 fruit (Orange, Kiwi, Apple). /\n• Fruit Salad (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/YKk9BFe.jpg","• 1 Cup Green Tea. /\n• 1 Apple."
+        1,"Lunch",R.drawable.diet_chickencurry,"• Roti (2 Pieces) + Chicken / Fish Curry + Green Vegetables (1 Bowl) + Veg Salad (1 Bowl).\n• Rice (1 Bowl)  + Dal (Moong) + Green Vegetables + Carrot Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/JFf2UyI.jpg","• 1 Bhakri (Nachni / Bajri / Jwari).\n• Green Vegetable (Spinach/Broccoli) etc. / Egg Sabzi"
+        1,"Evening",R.drawable.diet_makhanaroasted,"• Makhana Roasted. /\n• Roasted Chana."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_khichdi,"• Chicken / Egg Biryani + Raita/\n• Rice Dal Vegetable Khichdi (2 Bowl) ."
     )
 )
 
 var DIET_PLAN_BUILD_MUSCLE_VEG_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/c8M0Gx5.jpg","• 1 Glass Milk & Dry Fruits"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + 1 Glass Skimmed Milk /\n• Soaked Almonds + Banana (2 Pieces)"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/9zi3pOf.jpg","• 2 Roti (oil free).\n• Sprouts Sabzi."
+        1,"Breakfast",R.drawable.diet_aalu_paratha,"• Paneer (80 - 100 gm) + Besan Cheela / Poli /\n• Aalu Paratha (3 Pieces) + Curd (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/dq2GaYG.jpg","• 2 Bhakri (Nachni / Bajri / Jwari).\n• Soybean Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Fruit Juice (1 Glass) + Cheese Slice (2 Pieces) . /\n• Fruit Salad (1 Bowl) + Cheese Slice (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/whk4oJx.jpg","• Fruit Salad /\n• 1 Sandwich (Without Potato)."
+        1,"Lunch",R.drawable.diet_brown_rice_pulao,"• Besan + Wheat Flour Roti + Dal (1 Bowl) + Green Vegetables + Curd (1 Bowl). /\n• Brown Rice Pulao + Paneer (80 gm) / Curd (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/ENEWDtd.jpg","• 2  Roti (oil free).\n• Paneer Sabzi."
+        1,"Evening",R.drawable.diet_chana_salad,"• Bhel with Peanuts (1 Bowl). /\n• Chana Salad (1 Bowl)."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_paneer_paratha,"• Paneer Paratha (2 Pieces) + Curd (1 Bowl)./\n• Moong + Chana Mix Cheela / Poli (3 Pieces) + Paneer (80gm) + Green Chutney."
     )
 )
 var DIET_PLAN_BUILD_MUSCLE_NON_VEG_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/c8M0Gx5.jpg","• 1 Glass Milk & Dry Fruits"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + 1 Glass Skimmed Milk / \n• Soaked Almonds + Walnut (1 Piece) + Boiled Egg White (2 Pieces)"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/e30cgYL.jpg","• 2 Roti (oil free).\n• 1 Omelette."
+        1,"Breakfast",R.drawable.diet_chicken_sandwich,"• Chicken Sandwich with Brown Bread) /\n• Egg White  (4 Pieces) + Roti (2 Pieces) + Green Vegetables."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/lRPEsTh.jpg","• 2 Bhakri (Nachni / Bajri / Jwari).\n• Chicken Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Fruit Juice (1 Glass) + Cheese Slice (2 Pieces). /\n• Fruit Salad (1 Bowl) + Cheese Slice (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/VxTYd50.jpg","• 1 Brown Bread Egg Sandwich / 1 Chicken Roll. \n• 3 Boiled Egg (Whites)"
+        1,"Lunch",R.drawable.diet_chickencurry,"• Bhakri / Roti (2 Pieces) + Chicken Curry (4 Pieces) + Mix Veg (1 Bowl) + Veg Salad (1 Bowl). /\n• Brown Rice + Mushroom Saute (1 Bowl) + Fish Curry (1 Bowl) + Chickpea Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/f1mZHS8.jpg","• 2 Roti (oil free).\n• Egg Sabzi / Fish Sabzi."
+        1,"Evening",R.drawable.diet_chana_salad,"• Bhel with Peanuts (1 Bowl). /\n• Chana Salad (1 Bowl)."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_chicken_breasts,"• Chicken Breasts (100 gm) + Salad /\n• Egg Boiled (3 - 4 Pieces) + Roti (2 Pieces) + Green Vegetables."
     )
 )
 var DIET_PLAN_BUILD_MUSCLE_MIXED_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/c8M0Gx5.jpg","• 1 Glass Milk & Dry Fruits"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + 1 Glass Skimmed Milk / \n• Soaked Almonds + Walnut (1 Piece) + Boiled Egg White (2 Pieces)"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/9zi3pOf.jpg","• 2 Roti (oil free).\n• Sprouts Sabzi / Egg Sabzi ."
+        1,"Breakfast",R.drawable.diet_chicken_sandwich,"• Chicken Sandwich with Brown Bread) /\n•  Aalu Paratha (3 Pieces) + Curd (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/lRPEsTh.jpg","• 2 Bhakri (Nachni / Bajri / Jwari).\n• Soybean Sabzi / Chicken Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Fruit Juice (1 Glass) + Cheese Slice (2 Pieces). /\n• Fruit Salad (1 Bowl) + Cheese Slice (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/whk4oJx.jpg","• Fruit Salad\n• 3 Boiled Egg (Whites)"
+        1,"Lunch",R.drawable.diet_chickencurry,"• Bhakri / Roti (2 Pieces) + Chicken Curry (4 Pieces) + Mix Veg (1 Bowl) + Veg Salad (1 Bowl). /\n• Brown Rice Pulao + Paneer (80 gm) / Curd (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/ENEWDtd.jpg","• 2 Roti (oil free).\n• Paneer Sabzi / Fish Sabzi."
+        1,"Evening",R.drawable.diet_chana_salad,"• Bhel with Peanuts (1 Bowl). /\n• Chana Salad (1 Bowl)."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_paneer_paratha,"• Chicken Breasts (100 gm) + Salad /\n• Paneer Paratha (2 Pieces) + Curd (1 Bowl) ."
     )
 )
 
 var DIET_PLAN_BALANCED_VEG_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/VIOjOVF.jpg","•  1 Glass Lukewarm Lemon Water /\n•  1 Glass Amla Juice"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + Walnut (1 piece) + Dates (2 pieces)\n• 1 Glass Jeera Water /\n• 1 Glass Coriander Water"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/ENEWDtd.jpg","• 2 Roti (oil free).\n• Paneer Sabzi."
+        1,"Breakfast",R.drawable.diet_poha,"• Poha with veggies (1 Plate). /\n• Besan Cheela / Poli with veggies (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/ojPqrU4.jpg","• 2 Roti (oil free).\n• Sprouts Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Any 1 fruit (Orange, Kiwi, Apple). /\n• Fruit Salad (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/whk4oJx.jpg","• Fruit Salad. /\n• 2 Apple."
+        1,"Lunch",R.drawable.diet_chana_curry,"• Roti (2 Pieces) + Chana Curry + Green Vegetables (1 Bowl) + Veg Salad (1 Bowl).\n• Rice (1 Bowl)  + Dal (Moong) + Green Vegetables + Carrot Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/dq2GaYG.jpg","• 1 Bhakri (Nachni / Bajri / Jwari).\n• Green Vegetable (Spinach/Broccoli) etc. / Soybean Sabzi."
+        1,"Evening",R.drawable.diet_makhanaroasted,"• Makhana Roasted. /\n• Roasted Chana."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_khichdi,"• Rice Dal Vegetable Khichdi (2 Bowl) + Salad/\n• Oats Cheela / Poli (2 Pieces) + Curd / Green Chutney (4 Table Spoon)."
     )
 )
 var DIET_PLAN_BALANCED_NON_VEG_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/VIOjOVF.jpg","• 1 Glass Lukewarm Lemon Water /\n• 1 Glass Amla Juice"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + Walnut (1 piece) + Dates (2 pieces)\n• 1 Glass Jeera Water /\n• 1 Glass Coriander Water"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/e30cgYL.jpg","• 2 Roti (oil free).\n• 1 Omelette."
+        1,"Breakfast",R.drawable.diet_omelette,"• Egg omelette with veggies (2 Eggs) /\n• Egg Burgi + Roti (2 Pieces)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/lRPEsTh.jpg","• 2 Roti (oil free).\n• Chicken Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Any 1 fruit (Orange, Kiwi, Apple). /\n• Fruit Salad (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/DKO9F8b.jpg","• 1 Brown Bread Egg Sandwich. /\n• 1 Chicken Roll."
+        1,"Lunch",R.drawable.diet_chickencurry,"• Roti (2 Pieces) + Chicken / Fish Curry + Green Vegetables (1 Bowl) + Veg Salad (1 Bowl).\n• Rice (1 Bowl)  + Egg Curry + Green Vegetables + Carrot Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/f1mZHS8.jpg","• 1 Bhakri (Nachni / Bajri / Jwari).\n• Egg Sabzi / Fish Sabzi."
+        1,"Evening",R.drawable.diet_makhanaroasted,"• Makhana Roasted. /\n• Roasted Chana."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_chicken_biryani,"• Chicken / Egg Biryani + Raita/\n• Roti (2 Pieces) + Green Vegetables + Boiled egg white (2 Pieces)."
     )
 )
 var DIET_PLAN_BALANCED_MIXED_LIST = listOf(
     DietPlanDetails(
-        1,"Early Morning - 6:00 A.M.","https://i.imgur.com/VIOjOVF.jpg","• 1 Glass Lukewarm Lemon Water /\n• 1 Glass Amla Juice"
+        1,"Early Morning", R.drawable.diet_soaked_almonds,"• Soaked Almonds (6 pieces) + Walnut (1 piece) + Dates (2 pieces)\n• 1 Glass Jeera Water /\n• 1 Glass Coriander Water"
     ),
     DietPlanDetails(
-        1,"Breakfast - 9:00 A.M.","https://i.imgur.com/e30cgYL.jpg","• 2 Roti (oil free).\n• Paneer Sabzi / 1 Omelette."
+        1,"Breakfast",R.drawable.diet_omelette,"• Egg omelette with veggies (2 Eggs) /\n• Poha with veggies (1 Plate)."
     ),
     DietPlanDetails(
-        1,"Lunch - 1:00 P.M.","https://i.imgur.com/lRPEsTh.jpg","• 2 Roti (oil free).\n• Sprouts Sabzi / Chicken Sabzi + Veg Salad.\n• 1 Bowl Rice & Dal."
+        1,"Mid Morning",R.drawable.diet_fruitsalad,"• Any 1 fruit (Orange, Kiwi, Apple). /\n• Fruit Salad (1 Bowl)."
     ),
     DietPlanDetails(
-        1,"Evening - 5:00 P.M.","https://i.imgur.com/whk4oJx.jpg","• Fruit Salad. /\n• 1 Brown Bread Egg Sandwich."
+        1,"Lunch",R.drawable.diet_chickencurry,"• Roti (2 Pieces) + Chicken / Fish Curry + Green Vegetables (1 Bowl) + Veg Salad (1 Bowl).\n• Rice (1 Bowl)  + Dal (Moong) + Green Vegetables + Carrot Salad."
     ),
     DietPlanDetails(
-        1,"Dinner - 9:00 P.M.","https://i.imgur.com/dq2GaYG.jpg","• 1 Bhakri (Nachni / Bajri / Jwari).\n• Soybean curry / Fish Sabzi."
+        1,"Evening",R.drawable.diet_makhanaroasted,"• Makhana Roasted. /\n• Roasted Chana."
+    ),
+    DietPlanDetails(
+        1,"Dinner",R.drawable.diet_chicken_biryani,"• Chicken / Egg Biryani + Raita/\n• Rice Dal Vegetable Khichdi (2 Bowl) ."
     )
 )
