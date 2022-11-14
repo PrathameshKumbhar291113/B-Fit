@@ -32,14 +32,12 @@ class PersonalGuidanceActivity : AppCompatActivity() {
             if (userName.isNotEmpty() && userMob.isNotEmpty() && userState.isNotEmpty() && userTown.isNotEmpty() && userQuery.isNotEmpty() ){
                 if(userMob.matches(phoneNumPattern.toRegex())){
 
-
                     lifecycleScope.launch{
                         delay(1500)
                     }
 
                     appointmentSendEmail(this, listOf("bfit.dietician1311@gmail.com"),"Appointment from dietician.","I need appointment regarding diet,Below are my details:\n Name: $userName\n Mobile Num: $userMob\nLocation: $userState / $userTown \nQuery: $userQuery")
                     flag = true
-
 
                 }else{
                     KToasty.warning(this,"Phone number is invalid!").show()
@@ -74,20 +72,24 @@ class PersonalGuidanceActivity : AppCompatActivity() {
         super.onRestart()
 
         lifecycleScope.launch {
-            if (flag){
-                KToasty.success(baseContext,"Our team will connect to you within 2 working days on successful email received.").show()
 
-                binding.userNameEditText.text = null
-                binding.userMobEditText.text = null
-                binding.userStateEditText.text = null
-                binding.userTownEditText.text = null
-                binding.userQueryEditText.text = null
+            try {
+                if (flag){
+                    KToasty.success(baseContext,"Our team will connect to you within 2 working days on successful email received.").show()
 
-                delay(3000)
+                    binding.userNameEditText.text = null
+                    binding.userMobEditText.text = null
+                    binding.userStateEditText.text = null
+                    binding.userTownEditText.text = null
+                    binding.userQueryEditText.text = null
 
-                finish()
+                    delay(3000)
+
+                    finish()
+                }
+            }catch (e: Exception){
+                KToasty.error(baseContext,"Unable to get an appointment.").show()
             }
-
         }
 
     }

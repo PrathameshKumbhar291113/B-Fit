@@ -1,11 +1,13 @@
 package com.prathameshkumbhar.bfit.mainmodule.fragment
 
 import android.app.Dialog
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -88,6 +90,19 @@ class ProfileFragment : Fragment() {
 
         binding.personalDietCard.setOnClickListener {
             start<PersonalGuidanceActivity>()
+        }
+
+        binding.rateUsCard.setOnClickListener {
+
+            try {
+                val marketUri: Uri = Uri.parse("market://details?id=" + context!!.packageName)
+                val marketIntent = Intent(Intent.ACTION_VIEW, marketUri)
+                startActivity(marketIntent)
+            } catch (e: ActivityNotFoundException) {
+                val marketUri: Uri = Uri.parse("https://play.google.com/store/apps/details?id=" + context!!.packageName)
+                val marketIntent = Intent(Intent.ACTION_VIEW, marketUri)
+                startActivity(marketIntent)
+            }
 
         }
 
@@ -116,13 +131,17 @@ class ProfileFragment : Fragment() {
     }
 
     private fun shareApplicationWithCommunity() {
+        try {
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT,
+                "Hey!\nYou know, I have started my training with B Fit application and you won't believe I have started seeing the results already. \nThe workout plans provided in the application is soo easy to go as newbie.\n\nThe diet plan they provide is really effective and the best part about it is that its fully natural and no need to consume extra supplements!\nYou have to try this one out!\n\nDownload the app: https://play.google.com/store/apps/details?id=${requireContext().packageName}")
 
-        val intent = Intent()
-        intent.action = Intent.ACTION_SEND
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT,"Hey!\nYou know, I have started my training with B Fit application and you won't believe I have started seeing the results already.\n\nThe diet plan they provide is really effective and the best part about it is that its fully natural and no need to consume extra supplements!\nYou have to try this one out!\n\nDownload the app: https://play.google.com/store/apps/details?id=${requireContext().packageName}")
-
-        startActivity(Intent.createChooser(intent,"Choose one"))
+            startActivity(Intent.createChooser(intent,"Share with"))
+        }catch (e: Exception){
+            KToasty.error(context!!,"Unable to share the app.").show()
+        }
     }
 
     private fun contactUsSendEmail(
@@ -131,14 +150,17 @@ class ProfileFragment : Fragment() {
         emailSubject: String,
         emailMessage: String
     ) {
+        try {
+            val email = Intent(Intent.ACTION_SEND)
+            email.type = "plain/text"
+            email.putExtra(Intent.EXTRA_EMAIL , emailReceiver.toTypedArray())
+            email.putExtra(Intent.EXTRA_SUBJECT , emailSubject)
+            email.putExtra(Intent.EXTRA_TEXT , emailMessage)
 
-        val email = Intent(Intent.ACTION_SEND)
-        email.type = "plain/text"
-        email.putExtra(Intent.EXTRA_EMAIL , emailReceiver.toTypedArray())
-        email.putExtra(Intent.EXTRA_SUBJECT , emailSubject)
-        email.putExtra(Intent.EXTRA_TEXT , emailMessage)
-
-        context.startActivity(Intent.createChooser(email,"Select any one."))
+            context.startActivity(Intent.createChooser(email,"Select any one."))
+        }catch (e: Exception){
+            KToasty.error(context,"Unable to reach us.").show()
+        }
 
     }
 

@@ -203,7 +203,7 @@
                 app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline4"
                 app:layout_constraintStart_toEndOf="@id/guideline3"
-                app:layout_constraintBottom_toTopOf="@id/contactTv"
+                app:layout_constraintBottom_toTopOf="@id/personalDietTv"
                 app:layout_constraintTop_toBottomOf="@id/creditsTv">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -483,6 +483,85 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/rateUsTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:padding="@dimen/_2sdp"
+                android:text="Rate Us"
+                android:textAlignment="textStart"
+                android:textColor="@color/palate_big_stone"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/rateUsCard"
+                app:layout_constraintEnd_toEndOf="@id/rateUsCard"
+                app:layout_constraintStart_toStartOf="@id/rateUsCard"
+                app:layout_constraintTop_toBottomOf="@id/communityCard" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rateUsCard"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                app:cardBackgroundColor="@color/palate_titan_white"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintBottom_toTopOf="@id/versionDetailsTv"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toEndOf="@id/guideline3"
+                app:layout_constraintTop_toBottomOf="@id/privacyPolicyTv"
+                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/rateUsImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_rate_us"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rateUs_details"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/rateUsNextArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_next_arrow"
+                        android:tint="@color/palate_havelock_blue"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/rateUs_details"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/rateUs_details"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="center_vertical"
+                        android:text="Rate Us"
+                        android:textColor="@color/palate_havelock_blue"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rateUsNextArrow"
+                        app:layout_constraintStart_toEndOf="@id/rateUsImg"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
                 android:id="@+id/privacyPolicyTv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -498,7 +577,7 @@
                 app:layout_constraintBottom_toTopOf="@id/privacyPolicyCard"
                 app:layout_constraintEnd_toEndOf="@id/privacyPolicyCard"
                 app:layout_constraintStart_toStartOf="@id/privacyPolicyCard"
-                app:layout_constraintTop_toBottomOf="@id/communityCard" />
+                app:layout_constraintTop_toBottomOf="@id/rateUsCard" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/privacyPolicyCard"
@@ -546,7 +625,7 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/privacyPolicy_details"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:fontFamily="@font/poppins"
                         android:gravity="center_vertical"

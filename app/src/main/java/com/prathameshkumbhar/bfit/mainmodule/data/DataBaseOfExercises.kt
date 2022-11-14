@@ -105,7 +105,7 @@ val ABS = listOf(
         2,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        2,"CRUNCHES",R.drawable.step_detail_crunches,"x10","x15","x20","• Lie down on your back.\n• Plant your feet on the floor, hip-width apart.\n •Bend your knees and place your arms across your chest.\n• Contract your abs and inhale."
+        2,"CRUNCHES",R.drawable.step_detail_crunches,"x10","x15","x20","• Lie down on your back.\n• Plant your feet on the floor, hip-width apart.\n• Bend your knees and place your arms across your chest.\n• Contract your abs and inhale."
     ),
     ExerciseDetails(
         2,"RUSSIAN TWIST",R.drawable.step_detail_russiantwists,"x10","x15","x20","• Exhale with each twist and inhale to return to the center.\n• Engage your abdominal and back muscles throughout the exercise.\n• Don’t come out with a lumbar curve, keep your back straight."
@@ -156,7 +156,7 @@ val ARMS = listOf(
         3,"PUNCHES",R.drawable.step_detail_punches,"x10","x15","x20","• Fill a standard bucket up about ¾ full of rice\n• Submerge both your hands in the bucket\n• Grab a handful of rice from within the bucket and twist your hands at the wrists"
     ),
     ExerciseDetails(
-        3,"BURPEES", R.drawable.step_detail_burpees,"x10","x15","x20","• Keep your core tight.\n• Relax on the way down\n• Don't do a full push up."
+        3,"BURPEES", R.drawable.step_detail_burpees,"x10","x15","x20","• Stand with feet shoulder-width apart, arms down by your sides.\n• Brace midline, then bump your butt back and bend your knees to lower into a squat.\n• Relax on the way down\n• Don't do a full push up."
     ),
     ExerciseDetails(
         3,"TRICEPS DIPS",R.drawable.step_detail_tricepsdips,"x10","x15","x20","• First of all, set yourself on Dips Bar.\n• Lift your body weight and fold your legs.\n• Lift your body with hands and your triceps should be tight so more focus will be on triceps."
@@ -265,7 +265,7 @@ val BACK = listOf(
         5,"SWIMMER AND SUPERMAN",R.drawable.step_detail_swimmerandsuperman,"x10","x15","x20","• Lie faced down with arms and legs outstretched.\n• Your neck should be in a neutral position.\n• Keep arms and legs straight but not locked."
     ),
     ExerciseDetails(
-        5,"CHILD'S POSE",R.drawable.step_detail_childpose,"x10","x15","x20","• Only stretch as far as you feel comfortable.\n• People who have knee problems should not perform this stretch."
+        5,"CHILD'S POSE",R.drawable.step_detail_childpose,"x10","x15","x20","• Child’s pose is a restorative pose, so choose your arm placement based on what feels right for you.\n• Child's pose is one of the most basic yoga poses and most individuals can successfully perform the pose\n• People who have knee problems should not perform this stretch."
     ),
 )
 val LEGS = listOf(
