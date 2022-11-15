@@ -25,6 +25,7 @@
         android:id="@+id/creditScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:scrollbars="none"
         android:background="@color/palate_titan_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

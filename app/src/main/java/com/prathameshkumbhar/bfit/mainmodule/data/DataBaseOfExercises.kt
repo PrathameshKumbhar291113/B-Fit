@@ -2,158 +2,158 @@ package com.prathameshkumbhar.bfit.mainmodule.data
 import com.prathameshkumbhar.bfit.R
 
 val FULL_BODY = listOf(
+    ExerciseDetails(
+            0,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+    ),
         ExerciseDetails(
-            0,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+            0,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
         ),
         ExerciseDetails(
-            0,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+            0,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
         ),
         ExerciseDetails(
-            0,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+            0,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x15","x15","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
         ),
         ExerciseDetails(
-            0,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+            0,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
         ),
         ExerciseDetails(
-            0,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+            0,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x15","x15","x15","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
         ),
         ExerciseDetails(
-            0,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
+            0,"KNEE PUSH-UPS",R.drawable.step_detail_kneepushup,"x10","x10","x10","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
         ),
         ExerciseDetails(
-            0,"KNEE PUSH-UPS",R.drawable.step_detail_kneepushup,"x10","x15","x20","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
+            0,"PUSH-UPS",R.drawable.step_detail_pushup,"x8","x8","x8","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
         ),
         ExerciseDetails(
-            0,"PUSH-UPS",R.drawable.step_detail_pushup,"x10","x15","x20","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
+            0,"WIDE ARM PUSH-UPS",R.drawable.step_detail_widearmpushup,"x8","x8","x8","• Engage your core and gluteal muscles when you do the exercise.\n• Make sure your hips don’t sag down or point upward.\n• Lengthen your spine to keep your back straight."
         ),
         ExerciseDetails(
-            0,"WIDE ARM PUSH-UPS",R.drawable.step_detail_widearmpushup,"x10","x15","x20","• Engage your core and gluteal muscles when you do the exercise.\n• Make sure your hips don’t sag down or point upward.\n• Lengthen your spine to keep your back straight."
+            0,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x15","x15","x15","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
         ),
         ExerciseDetails(
-            0,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
+            0,"KNEE PUSH-UPS",R.drawable.step_detail_kneepushup,"x10","x10","x10","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
         ),
         ExerciseDetails(
-            0,"KNEE PUSH-UPS",R.drawable.step_detail_kneepushup,"x10","x15","x20","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
+            0,"PUSH-UPS",R.drawable.step_detail_pushup,"x8","x8","x8","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
         ),
         ExerciseDetails(
-            0,"PUSH-UPS",R.drawable.step_detail_pushup,"x10","x15","x20","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
+            0,"WIDE ARM PUSH-UPS",R.drawable.step_detail_widearmpushup,"x8","x8","x8","• Engage your core and gluteal muscles when you do the exercise.\n• Make sure your hips don’t sag down or point upward.\n• Lengthen your spine to keep your back straight."
         ),
         ExerciseDetails(
-            0,"WIDE ARM PUSH-UPS",R.drawable.step_detail_widearmpushup,"x10","x15","x20","• Engage your core and gluteal muscles when you do the exercise.\n• Make sure your hips don’t sag down or point upward.\n• Lengthen your spine to keep your back straight."
-        ),
-        ExerciseDetails(
-            0,"COBRA STRETCH",R.drawable.step_detail_cobrastretch,"x10","x15","x20","• Lie down on your stomach & make sure your toes are pointed straight out.\n• Tuck your hands and elbows against your body. \n• Bend your elbows to pull your arms up against your body."
+            0,"COBRA STRETCH",R.drawable.step_detail_cobrastretch,"00:20","00:20","00:20","• Lie down on your stomach & make sure your toes are pointed straight out.\n• Tuck your hands and elbows against your body. \n• Bend your elbows to pull your arms up against your body."
         )
 
     )
 val LOWER_BODY = listOf(
     ExerciseDetails(
-        1,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+        1,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        1,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+        1,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        1,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+        1,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        1,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+        1,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x15","x15","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        1,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+        1,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
-        1,"SQUATS",R.drawable.step_detail_squats,"x10","x15","x20","• Stand firmly on the ground.\n• The distance between your feet should be slightly wider than that of the shoulders.\n• Keep the feet parallel.\n• Go down. Do not put tension on your knees."
+        1,"SQUATS",R.drawable.step_detail_squats,"x15","x15","x15","• Stand firmly on the ground.\n• The distance between your feet should be slightly wider than that of the shoulders.\n• Keep the feet parallel.\n• Go down. Do not put tension on your knees."
     ),
     ExerciseDetails(
-        1,"SIDE-LYING LEG LIFT",R.drawable.step_detail_sideleglift,"x10","x15","x20","• Lie on your left side on a yoga mat.\n• Place a little towel or the palm of your right hand beneath your head to keep your head and neck in a neutral position.\n• Keep your head and neck in a neutral position & vice-versa."
+        1,"SIDE-LYING LEG LIFT",R.drawable.step_detail_sideleglift,"x10","x10","x10","• Lie on your left side on a yoga mat.\n• Place a little towel or the palm of your right hand beneath your head to keep your head and neck in a neutral position.\n• Keep your head and neck in a neutral position & vice-versa."
     ),
     ExerciseDetails(
-        1,"BACKWARD LUNGES",R.drawable.step_detail_backwardlunges,"x10","x15","x20","• Stand upright with your feet shoulder width apart.\n• Lunge backward with your right leg as far as you can comfortably while dropping your hips downward.\n• Repeat with the left leg."
+        1,"BACKWARD LUNGES",R.drawable.step_detail_backwardlunges,"x15","x15","x15","• Stand upright with your feet shoulder width apart.\n• Lunge backward with your right leg as far as you can comfortably while dropping your hips downward.\n• Repeat with the left leg."
     ),
     ExerciseDetails(
-        1,"DONKEY KICKS",R.drawable.step_detail_donkeykicks,"x10","x15","x20","• Kneel down on all fours, so your shoulders are directly over your hands, and your hips are over your knees.\n• Your arms should be straight, and hands about shoulder-width apart, fingers pointing forward.\n• Repeat it continuously."
+        1,"DONKEY KICKS",R.drawable.step_detail_donkeykicks,"x10","x10","x10","• Kneel down on all fours, so your shoulders are directly over your hands, and your hips are over your knees.\n• Your arms should be straight, and hands about shoulder-width apart, fingers pointing forward.\n• Repeat it continuously."
     ),
     ExerciseDetails(
-        1,"SIDE-LYING LEG LIFT",R.drawable.step_detail_sideleglift,"x10","x15","x20","• Lie on your left side on a yoga mat.\n• Place a little towel or the palm of your right hand beneath your head to keep your head and neck in a neutral position.\n• Keep your head and neck in a neutral position & vice-versa."
+        1,"SIDE-LYING LEG LIFT",R.drawable.step_detail_sideleglift,"x10","x10","x10","• Lie on your left side on a yoga mat.\n• Place a little towel or the palm of your right hand beneath your head to keep your head and neck in a neutral position.\n• Keep your head and neck in a neutral position & vice-versa."
     ),
     ExerciseDetails(
-        1,"BACKWARD LUNGES",R.drawable.step_detail_backwardlunges,"x10","x15","x20","• Stand upright with your feet shoulder width apart.\n• Lunge backward with your right leg as far as you can comfortably while dropping your hips downward.\n• Repeat with the left leg."
+        1,"BACKWARD LUNGES",R.drawable.step_detail_backwardlunges,"x15","x15","x15","• Stand upright with your feet shoulder width apart.\n• Lunge backward with your right leg as far as you can comfortably while dropping your hips downward.\n• Repeat with the left leg."
     ),
     ExerciseDetails(
-        1,"DONKEY KICKS",R.drawable.step_detail_donkeykicks,"x10","x15","x20","• Kneel down on all fours, so your shoulders are directly over your hands, and your hips are over your knees.\n• Your arms should be straight, and hands about shoulder-width apart, fingers pointing forward.\n• Repeat it continuously."
+        1,"DONKEY KICKS",R.drawable.step_detail_donkeykicks,"x10","x10","x10","• Kneel down on all fours, so your shoulders are directly over your hands, and your hips are over your knees.\n• Your arms should be straight, and hands about shoulder-width apart, fingers pointing forward.\n• Repeat it continuously."
     ),
     ExerciseDetails(
-        1,"COBRA STRETCH",R.drawable.step_detail_cobrastretch,"x10","x15","x20","• Lie down on your stomach & make sure your toes are pointed straight out.\n• Tuck your hands and elbows against your body. \n• Bend your elbows to pull your arms up against your body."
+        1,"COBRA STRETCH",R.drawable.step_detail_cobrastretch,"00:20","00:20","00:20","• Lie down on your stomach & make sure your toes are pointed straight out.\n• Tuck your hands and elbows against your body. \n• Bend your elbows to pull your arms up against your body."
     )
 
 )
 val ABS = listOf(
     ExerciseDetails(
-        2,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+        2,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        2,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+        2,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        2,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+        2,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        2,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+        2,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x15","x15","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        2,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+        2,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
-        2,"CRUNCHES",R.drawable.step_detail_crunches,"x10","x15","x20","• Lie down on your back.\n• Plant your feet on the floor, hip-width apart.\n• Bend your knees and place your arms across your chest.\n• Contract your abs and inhale."
+        2,"ABDOMINAL CRUNCHES",R.drawable.step_detail_crunches,"x15","x20","x25","• Lie down on your back.\n• Plant your feet on the floor, hip-width apart.\n• Bend your knees and place your arms across your chest.\n• Contract your abs and inhale."
     ),
     ExerciseDetails(
-        2,"RUSSIAN TWIST",R.drawable.step_detail_russiantwists,"x10","x15","x20","• Exhale with each twist and inhale to return to the center.\n• Engage your abdominal and back muscles throughout the exercise.\n• Don’t come out with a lumbar curve, keep your back straight."
+        2,"RUSSIAN TWIST",R.drawable.step_detail_russiantwists,"x20","x30","x40","• Exhale with each twist and inhale to return to the center.\n• Engage your abdominal and back muscles throughout the exercise.\n• Don’t come out with a lumbar curve, keep your back straight."
     ),
     ExerciseDetails(
-        2,"MOUNTAIN CLIMBER",R.drawable.step_detail_mountainclimber,"x10","x15","x20","• Start in a High Plank\n• Alternate Drawing Each Leg Up to Your Chest\n• Keep a Steady Pace."
+        2,"MOUNTAIN CLIMBER",R.drawable.step_detail_mountainclimber,"x16","x32","x48","• Start in a High Plank\n• Alternate Drawing Each Leg Up to Your Chest\n• Keep a Steady Pace."
     ),
     ExerciseDetails(
-        2,"LEGS IN-OUT",R.drawable.step_detail_legsinoutexercise,"x10","x15","x20","• Keep back straight and tall while performing movement.\n• Keep knees together through out the duration of the exercise.\n• Maintain control of the entire movement."
+        2,"LEGS IN-OUT",R.drawable.step_detail_legsinoutexercise,"x15","x20","x25","• Keep back straight and tall while performing movement.\n• Keep knees together through out the duration of the exercise.\n• Maintain control of the entire movement."
     ),
     ExerciseDetails(
-        2,"LEG RAISES",R.drawable.step_detail_legraises,"x10","x15","x20","• Lie on your back comfortably keeping your legs straight.\n• Your arms should be by your sides.\n• Engage your core and lift your legs a few inches off the ground."
+        2,"LEG RAISES",R.drawable.step_detail_legraises,"x16","x32","x48","• Lie on your back comfortably keeping your legs straight.\n• Your arms should be by your sides.\n• Engage your core and lift your legs a few inches off the ground."
     ),
     ExerciseDetails(
-        2,"SEATED ABS CIRCLE",R.drawable.step_detail_seatedabscircle,"x10","x15","x20","• Lie on your back with your legs bent and feet flat on the floor.\n• Place your hands on your temples and not behind your head.\n• Engage your abs."
+        2,"SEATED ABS CIRCLE",R.drawable.step_detail_seatedabscircle,"x15","x20","x25","• Lie on your back with your legs bent and feet flat on the floor.\n• Place your hands on your temples and not behind your head.\n• Engage your abs."
     ),
     ExerciseDetails(
-        2,"SIDE PLANK",R.drawable.step_detail_sideplank,"x10","x15","x20","• Do not let your mid-section sag. Always stay perfectly straight.\n• Do the side plank in front of the mirror to ensure you keep your technique tight.\n• Try to hold your plank for a full minute."
+        2,"SIDE PLANK",R.drawable.step_detail_sideplank,"00:20","00:30","00:40","• Do not let your mid-section sag. Always stay perfectly straight.\n• Do the side plank in front of the mirror to ensure you keep your technique tight.\n• Try to hold your plank for a full minute."
     ),
     ExerciseDetails(
-        2,"PLANK LOW TO HIGH",R.drawable.step_detail_planklowtohigh,"x10","x15","x20","• Lie face down on the ground with your legs extended with your feet hip-width apart\n• Your elbows are bent, directly beneath your shoulders and your palms flat on the floor."
+        2,"PLANK LOW TO HIGH",R.drawable.step_detail_planklowtohigh,"00:20","00:30","00:40","• Lie face down on the ground with your legs extended with your feet hip-width apart\n• Your elbows are bent, directly beneath your shoulders and your palms flat on the floor."
     ),
     ExerciseDetails(
-        2,"COBRA STRETCH",R.drawable.step_detail_cobrastretch,"x10","x15","x20","• Lie down on your stomach & make sure your toes are pointed straight out.\n• Tuck your hands and elbows against your body. \n• Bend your elbows to pull your arms up against your body."
+        2,"COBRA STRETCH",R.drawable.step_detail_cobrastretch,"00:20","00:30","00:30","• Lie down on your stomach & make sure your toes are pointed straight out.\n• Tuck your hands and elbows against your body. \n• Bend your elbows to pull your arms up against your body."
     )
 )
 val ARMS = listOf(
 
     ExerciseDetails(
-        3,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+        3,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20", "• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        3,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+        3,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        3,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+        3,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        3,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+        3,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x15","x15","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        3,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+        3,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
-        3,"SIDE ARMS RAISES",R.drawable.step_detail_sidearmsraises,"x10","x15","x20","• Raise both arms, to the side of the body to shoulder level.\n• Keep shoulder blades retracted and depressed throughout the exercise.\n• Hold.\n• Return arms slowly back to the side of the body and repeat."
+        3,"SIDE ARMS RAISES",R.drawable.step_detail_sidearmsraises,"00:30","00:40","00:40","• Raise both arms, to the side of the body to shoulder level.\n• Keep shoulder blades retracted and depressed throughout the exercise.\n• Hold.\n• Return arms slowly back to the side of the body and repeat."
     ),
     ExerciseDetails(
-        3,"PUNCHES",R.drawable.step_detail_punches,"x10","x15","x20","• Fill a standard bucket up about ¾ full of rice\n• Submerge both your hands in the bucket\n• Grab a handful of rice from within the bucket and twist your hands at the wrists"
+        3,"PUNCHES",R.drawable.step_detail_punches,"00:30","00:40","00:40","• Fill a standard bucket up about ¾ full of rice\n• Submerge both your hands in the bucket\n• Grab a handful of rice from within the bucket and twist your hands at the wrists"
     ),
     ExerciseDetails(
         3,"BURPEES", R.drawable.step_detail_burpees,"x10","x15","x20","• Stand with feet shoulder-width apart, arms down by your sides.\n• Brace midline, then bump your butt back and bend your knees to lower into a squat.\n• Relax on the way down\n• Don't do a full push up."
@@ -171,7 +171,7 @@ val ARMS = listOf(
         3,"PUSH-UPS",R.drawable.step_detail_pushup,"x10","x15","x20","• Make sure that your neck is aligned with the spine and your shoulders are not shrugged.\n• Do not lock your elbows while coming up. It’s always good to have a slight bend throughout the course of exercise. "
     ),
     ExerciseDetails(
-        3,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
+        3,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x15","x20","x25","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
     ),
     ExerciseDetails(
         3,"KNEE PUSH-UPS",R.drawable.step_detail_kneepushup,"x10","x15","x20","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
@@ -185,19 +185,19 @@ val ARMS = listOf(
 )
 val CHEST = listOf(
     ExerciseDetails(
-        4,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+        4,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        4,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+        4,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        4,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+        4,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        4,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+        4,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x15","x15","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        4,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+        4,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
         4,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
@@ -225,23 +225,24 @@ val CHEST = listOf(
     ),
 )
 val BACK = listOf(
+
     ExerciseDetails(
-        5,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+        5,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        5,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+        5,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        5,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+        5,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        5,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+        5,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x20","x25","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        5,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+        5,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
-        5,"SIDE ARM RAISE",R.drawable.step_detail_sidearmsraises,"x10","x15","x20","• Raise both arms, to the side of the body to shoulder level.\n• Keep shoulder blades retracted and depressed throughout the exercise.\n• Hold.\n• Return arms slowly back to the side of the body and repeat."
+        5,"SIDE ARM RAISE",R.drawable.step_detail_sidearmsraises,"00:30","00:40","00:50","• Raise both arms, to the side of the body to shoulder level.\n• Keep shoulder blades retracted and depressed throughout the exercise.\n• Hold.\n• Return arms slowly back to the side of the body and repeat."
     ),
     ExerciseDetails(
         5,"KNEE PUSH-UPS", R.drawable.step_detail_kneepushup,"x10","x15","x20","• Keep your back straight throughout the move.\n• Tighten your abs and butt to work your core during push-ups.\n• Focus on keeping your muscles active even when you’re lowering to the floor."
@@ -253,7 +254,7 @@ val BACK = listOf(
         5,"FLOOR TRICEPS DIPS", R.drawable.step_detail_floortricepsdips,"x10","x15","x20","• Position your hands shoulder width apart on the floor with your back facing down.\n• Straighten your arms and Lift your hips off the floor, like a crab\n• Slowly bend at your elbows, and lower your upper body towards the floor until your arms are at about a 90-degree angle."
     ),
     ExerciseDetails(
-        5,"CAT COW POSE",R.drawable.step_detail_catcowpose,"x10","x15","x20","• Kneel on the ground and keep your spine parallel to the floor.\n• If your knees hurt, do not forget to place soft padding under your knees.\n• Place your hands in alignment with your shoulders."
+        5,"CAT COW POSE",R.drawable.step_detail_catcowpose,"00:20","00:20","00:20","• Kneel on the ground and keep your spine parallel to the floor.\n• If your knees hurt, do not forget to place soft padding under your knees.\n• Place your hands in alignment with your shoulders."
     ),
     ExerciseDetails(
         5,"INCLINE PUSH-UPS",R.drawable.step_detail_inclinepushups,"x10","x15","x20","• The key to incline push-ups is to make sure that your body is in a straight line while you’re in plank position.\n• Consider nonslip pads or rubber or foam tiles if you’re using equipment at home."
@@ -265,27 +266,27 @@ val BACK = listOf(
         5,"SWIMMER AND SUPERMAN",R.drawable.step_detail_swimmerandsuperman,"x10","x15","x20","• Lie faced down with arms and legs outstretched.\n• Your neck should be in a neutral position.\n• Keep arms and legs straight but not locked."
     ),
     ExerciseDetails(
-        5,"CHILD'S POSE",R.drawable.step_detail_childpose,"x10","x15","x20","• Child’s pose is a restorative pose, so choose your arm placement based on what feels right for you.\n• Child's pose is one of the most basic yoga poses and most individuals can successfully perform the pose\n• People who have knee problems should not perform this stretch."
+        5,"CHILD'S POSE",R.drawable.step_detail_childpose,"00:30","00:40","00:50","• Child’s pose is a restorative pose, so choose your arm placement based on what feels right for you.\n• Child's pose is one of the most basic yoga poses and most individuals can successfully perform the pose\n• People who have knee problems should not perform this stretch."
     ),
 )
 val LEGS = listOf(
     ExerciseDetails(
-        6,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"x10","x15","x20","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
+        6,"ARMS STRETCH", R.drawable.step_detail_armstretch,"00:20","00:20","00:20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
     ),
     ExerciseDetails(
-        6,"SPOT JOG",R.drawable.step_detail_spotjog,"x10","x15","x20","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
+        6,"TOE TOUCH STRETCH",R.drawable.step_detail_touchtoe,"00:40","00:40","00:40","• Stand in a natural position together with your feet hip-width apart.\n• Hold-Relax stretch (5s/10s). \n• Perform a stretching routine every day for seven days."
     ),
     ExerciseDetails(
-        6,"HIGH KNEES",R.drawable.step_detail_highknees,"x10","x15","x20","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
+        6,"SPOT JOG",R.drawable.step_detail_spotjog,"00:40","00:40","00:40","• Keep your body upright, without tensing up, while running and look straight ahead instead of bending down.\n• Keep your arms relaxed, and allow for a smooth movement."
     ),
     ExerciseDetails(
-        6,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"x10","x15","x20","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
+        6,"HIGH KNEES",R.drawable.step_detail_highknees,"x15","x15","x15","• High Knees are a cardio-intensive exercise performed at a fast pace.\n• While doing high knees, be sure your back is straight, arms are swaying, and eyes are focused straight ahead."
     ),
     ExerciseDetails(
-        6,"ARMS STRETCH", R.drawable.step_detail_armstretch,"x10","x15","x20","• Use a yoga mat to give your body support.\n• Keep your feet tucked behind you.\n• To stretch deeper, try to press your chest and shoulders towards the ground."
+        6,"JUMPING JACKS", R.drawable.step_detail_jumpingjacks,"00:40","00:40","00:40","• Make sure you're standing on an even surface, opt for a softer surface like a workout mat rather than cement.\n• To make jumping jacks more challenging, try cross-legged jacks or squat jacks."
     ),
     ExerciseDetails(
-        6,"SINGLE HIP ROTATION", R.drawable.step_detail_singlehiprotation,"x10","x15","x20","• Contract your core muscle and hold a stabilizing contraction throughout this exercise.\n• Raise one of your legs up bending at the knee so that your thigh is parallel to the floor, make sure to keep your hips level."
+        6,"SINGLE HIP ROTATION", R.drawable.step_detail_singlehiprotation,"00:30","00:30","00:30","• Contract your core muscle and hold a stabilizing contraction throughout this exercise.\n• Raise one of your legs up bending at the knee so that your thigh is parallel to the floor, make sure to keep your hips level."
     ),
     ExerciseDetails(
         6,"SQUATS",R.drawable.step_detail_squats,"x10","x15","x20","• Stand firmly on the ground.\n• The distance between your feet should be slightly wider than that of the shoulders.\n• Keep the feet parallel.\n• Go down. Do not put tension on your knees."
@@ -303,7 +304,7 @@ val LEGS = listOf(
         6,"FORWARD LUNGES",R.drawable.step_detail_forwardlunge,"x10","x15","x20","• Stand tall with feet hip-width apart & Engage your core.\n•  Press into right heel to drive back up to starting position.\n• Repeat on the other side."
     ),
     ExerciseDetails(
-        6,"WALL SIT",R.drawable.step_detail_wallsit,"x10","x15","x20","• Make sure your back is flat against the wall.\n• Slide your back down the wall while keeping your core engaged and bending your legs until.\n• HOLD your position, while contracting your ab muscles."
+        6,"WALL SIT",R.drawable.step_detail_wallsit,"00:30","00:40","00:50","• Make sure your back is flat against the wall.\n• Slide your back down the wall while keeping your core engaged and bending your legs until.\n• HOLD your position, while contracting your ab muscles."
     ),
     ExerciseDetails(
         6,"DONKEY KICKS",R.drawable.step_detail_donkeykicks,"x10","x15","x20","• Kneel down on all fours, so your shoulders are directly over your hands, and your hips are over your knees.\n• Your arms should be straight, and hands about shoulder-width apart, fingers pointing forward.\n• Repeat it continuously."
