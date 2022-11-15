@@ -19,6 +19,10 @@ class PersonalGuidanceActivity : AppCompatActivity() {
         binding = ActivityPersonalGuidanceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.personalGuidanceToolBar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
 
         binding.getAppointmentBtn.setOnClickListener {
 
