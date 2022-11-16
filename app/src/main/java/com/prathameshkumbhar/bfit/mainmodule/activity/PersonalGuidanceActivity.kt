@@ -92,7 +92,7 @@ class PersonalGuidanceActivity : AppCompatActivity() {
                     finish()
                 }
             }catch (e: Exception){
-                KToasty.error(baseContext,"Unable to get an appointment.").show()
+                e.stackTrace
             }
         }
 
