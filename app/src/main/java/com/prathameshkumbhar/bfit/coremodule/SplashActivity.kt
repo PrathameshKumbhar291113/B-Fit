@@ -29,7 +29,9 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        FirebaseMessaging.getInstance().subscribeToTopic("Notification")
+        FirebaseMessaging.getInstance().subscribeToTopic("Notification").addOnSuccessListener {
+
+        }
 
         val sharePrefSplash : SharedPreferences = getSharedPreferences("login", MODE_PRIVATE)
         val sharePrefOnboarded : SharedPreferences = getSharedPreferences("onBoardCheck", Context.MODE_PRIVATE)

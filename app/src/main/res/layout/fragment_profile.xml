@@ -63,7 +63,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/finalbfitlogo"
+                android:src="@drawable/userfemale1"
                 app:layout_constraintBottom_toTopOf="@id/userNameShowTv"
                 app:layout_constraintEnd_toStartOf="@id/guideline4"
                 app:layout_constraintStart_toEndOf="@id/guideline3"
