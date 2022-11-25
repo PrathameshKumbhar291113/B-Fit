@@ -197,6 +197,8 @@ class PersonActivityStatusFragment : Fragment() {
     private fun setUpProgressBar(){
 
         binding.scrollViewPersonActivityStatusFrag.visibility = View.GONE
+        binding.personActivityTitleTv.visibility = View.GONE
+        binding.nextButtonSelectActivityStatus.visibility = View.GONE
         binding.progressCircular.visibility = View.VISIBLE
         binding.progressTextBox.visibility = View.VISIBLE
         binding.progressDetails.visibility = View.VISIBLE

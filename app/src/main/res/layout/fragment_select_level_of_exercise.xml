@@ -7,97 +7,106 @@
     android:background="@color/palate_titan_white"
     tools:context=".onboardingmodule.fragment.SelectLevelOfExerciseFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+
+    <TextView
+        android:id="@+id/chooseLevel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="1dp"
+        android:text="SELECT WORKOUT LEVEL"
+        android:textAlignment="center"
+        android:textColor="@color/palate_big_stone"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/chooseLevelSubTv"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toEndOf="@id/guideline7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/chooseLevelSubTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Select the level below!"
+        android:textAlignment="center"
+        android:textColor="@color/palate_big_stone"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollViewSlctWrkoutLvl"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toEndOf="@id/guideline7"
+        app:layout_constraintTop_toBottomOf="@id/chooseLevel" />
+
     <ScrollView
         android:id="@+id/scrollViewSlctWrkoutLvl"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:scrollbars="none"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nextButtonSelectLevelOfExercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/chooseLevelSubTv"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/scrollViewConstLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.0"/>
+                app:layout_constraintGuide_percent="0.0" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent="1.0"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
                 app:layout_constraintGuide_percent="1.0" />
-
-            <TextView
-                android:id="@+id/chooseLevel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text="SELECT WORKOUT LEVEL"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_25ssp"
-                android:padding="@dimen/_1sdp"
-                app:layout_constraintBottom_toTopOf="@+id/chooseLevelSubTv"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintVertical_chainStyle="packed" />
-
-            <TextView
-                android:id="@+id/chooseLevelSubTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select the level below!"
-                android:textAlignment="center"
-                android:fontFamily="@font/poppins"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintBottom_toTopOf="@+id/cardBeginner"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@id/chooseLevel" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBeginner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_70sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="20dp"
                 android:background="@color/palate_havelock_blue"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:rippleColor="@color/palate_titan_white"
-                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardCornerRadius="15dp"
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@id/cardIntermediate"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/chooseLevelSubTv">
+                app:layout_constraintTop_toTopOf="@+id/scrollViewConstLayout"
+                app:layout_constraintVertical_chainStyle="spread_inside"
+                app:rippleColor="@color/palate_titan_white">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cardBeginnerConstLayout"
@@ -107,13 +116,13 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/beginnerEmoteTv"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center"
                         android:text="☝️"
                         android:textColor="@color/palate_titan_white"
                         android:textSize="40sp"
-                        android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
@@ -124,13 +133,13 @@
                         android:id="@+id/beginnerText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Beginner"
-                        android:layout_marginStart="@dimen/_25sdp"
                         android:textAlignment="center"
                         android:textColor="@color/palate_big_stone"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@id/beginnerSubText"
                         app:layout_constraintStart_toEndOf="@+id/beginnerEmoteTv"
                         app:layout_constraintTop_toTopOf="@id/cardBeginnerConstLayout" />
@@ -139,11 +148,11 @@
                         android:id="@+id/beginnerSubText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_18sdp"
+                        android:layout_marginBottom="18dp"
                         android:fontFamily="@font/poppins"
                         android:text="1 - 5 Pull Ups."
                         android:textColor="@color/palate_titan_white"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="@id/cardBeginnerConstLayout"
                         app:layout_constraintStart_toStartOf="@+id/beginnerText"
                         app:layout_constraintTop_toBottomOf="@id/beginnerText" />
@@ -153,23 +162,23 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardIntermediate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_35sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="20dp"
                 android:background="@color/palate_havelock_blue"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:rippleColor="@color/palate_titan_white"
-                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardCornerRadius="15dp"
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintBottom_toTopOf="@id/cardAdvanced"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/cardBeginner">
+                app:layout_constraintTop_toBottomOf="@+id/cardBeginner"
+                app:rippleColor="@color/palate_titan_white">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cardIntermediateConstLayout"
@@ -179,29 +188,29 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/intermediateEmoteTv"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center"
                         android:text="👍"
                         android:textColor="@color/palate_titan_white"
                         android:textSize="40sp"
-                        android:gravity="center"
-                        app:layout_constraintVertical_bias="0.45"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.45" />
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/intermediateText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:layout_marginStart="@dimen/_25sdp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Intermediate"
                         android:textColor="@color/palate_big_stone"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@id/intermediateSubText"
                         app:layout_constraintStart_toEndOf="@+id/intermediateEmoteTv"
                         app:layout_constraintTop_toTopOf="@id/cardIntermediateConstLayout" />
@@ -210,11 +219,11 @@
                         android:id="@+id/intermediateSubText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_18sdp"
+                        android:layout_marginBottom="18dp"
                         android:fontFamily="@font/poppins"
                         android:text="5 - 10 Pull Ups."
                         android:textColor="@color/palate_titan_white"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="@id/cardIntermediateConstLayout"
                         app:layout_constraintStart_toStartOf="@+id/intermediateText"
                         app:layout_constraintTop_toBottomOf="@id/intermediateText" />
@@ -224,21 +233,23 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardAdvanced"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginTop="@dimen/_35sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="60dp"
                 android:background="@color/palate_havelock_blue"
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
-                app:rippleColor="@color/palate_titan_white"
-                app:cardCornerRadius="@dimen/_15sdp"
+                app:cardCornerRadius="15dp"
                 app:checkedIconGravity="TOP_END"
                 app:checkedIconTint="@color/palate_big_stone"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/cardIntermediate">
+                app:layout_constraintTop_toBottomOf="@+id/cardIntermediate"
+                app:layout_constraintBottom_toBottomOf="@id/scrollViewConstLayout"
+                app:rippleColor="@color/palate_titan_white">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cardAdvancedConstLayout"
@@ -248,13 +259,13 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/advancedEmoteTv"
-                        android:layout_width="@dimen/_50sdp"
-                        android:layout_height="@dimen/_50sdp"
-                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="15dp"
+                        android:gravity="center"
                         android:text="💪"
                         android:textColor="@color/palate_titan_white"
                         android:textSize="40sp"
-                        android:gravity="center"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
@@ -265,12 +276,12 @@
                         android:id="@+id/advancedText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginTop="10dp"
                         android:fontFamily="@font/poppins_semibold"
-                        android:layout_marginStart="@dimen/_25sdp"
                         android:text="Advanced"
                         android:textColor="@color/palate_big_stone"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toTopOf="@+id/advancedSubText"
                         app:layout_constraintStart_toEndOf="@id/advancedEmoteTv"
                         app:layout_constraintTop_toTopOf="@id/cardAdvancedConstLayout" />
@@ -279,12 +290,11 @@
                         android:id="@+id/advancedSubText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/_18sdp"
+                        android:layout_marginBottom="18dp"
                         android:fontFamily="@font/poppins"
-
                         android:text="10 - 20 Pull Ups."
                         android:textColor="@color/palate_titan_white"
-                        android:textSize="@dimen/_12ssp"
+                        android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="@id/cardAdvancedConstLayout"
                         app:layout_constraintStart_toStartOf="@+id/advancedText"
                         app:layout_constraintTop_toBottomOf="@id/advancedText" />
@@ -292,27 +302,21 @@
             </com.google.android.material.card.MaterialCardView>
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nextButtonSelectLevelOfExercise"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_50sdp"
-                android:layout_marginEnd="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_82sdp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/rounded_corner_button"
-                android:text="Next"
-                android:textColor="@color/palate_titan_white"
-                app:layout_constraintBottom_toTopOf="@id/guideline7"
-                app:layout_constraintTop_toBottomOf="@id/cardAdvanced"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toEndOf="@id/guideline5"/>
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButtonSelectLevelOfExercise"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_corner_button"
+        android:text="Next"
+        android:textColor="@color/palate_titan_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toEndOf="@id/guideline7"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewSlctWrkoutLvl" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

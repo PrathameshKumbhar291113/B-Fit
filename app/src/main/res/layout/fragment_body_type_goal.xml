@@ -7,22 +7,70 @@
     android:background="@color/palate_titan_white"
     tools:context=".onboardingmodule.fragment.BodyTypeGoalFragment">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+
+    <TextView
+        android:id="@+id/goalTitleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="2dp"
+        android:text="WHAT IS YOUR GOAL?"
+        android:textAlignment="center"
+        android:textColor="@color/palate_big_stone"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@id/goalSubTitleTv"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toEndOf="@id/guideline7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/goalSubTitleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Select any one goal to get diet plan!"
+        android:textColor="@color/palate_big_stone"
+        android:textAlignment="center"
+        android:textSize="13sp"
+        android:fontFamily="@font/poppins"
+        app:layout_constraintTop_toBottomOf="@id/goalTitleTv"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toEndOf="@id/guideline7"
+        app:layout_constraintBottom_toTopOf="@id/scrollViewBodyTypeGoal"
+        />
+
+
     <ScrollView
         android:id="@+id/scrollViewBodyTypeGoal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:scrollbars="none"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/nextButtonSelectBodyGoal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/goalSubTitleTv">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/scrollViewConstLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            android:layout_gravity="center">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline5"
@@ -38,65 +86,24 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="1.0"/>
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline7"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_percent="1.0" />
-
-
-            <TextView
-                android:id="@+id/goalTitleTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_2sdp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="@dimen/_2sdp"
-                android:fontFamily="@font/poppins_semibold"
-                android:padding="@dimen/_2sdp"
-                android:text="WHAT IS YOUR GOAL?"
-                android:textAlignment="center"
-                android:textColor="@color/palate_big_stone"
-                android:textSize="@dimen/_25ssp"
-                app:layout_constraintBottom_toTopOf="@id/goalSubTitleTv"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/goalSubTitleTv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select any one goal to get diet plan!"
-                android:textColor="@color/palate_big_stone"
-                android:textAlignment="center"
-                android:textSize="@dimen/_12ssp"
-                android:fontFamily="@font/poppins"
-                app:layout_constraintTop_toBottomOf="@id/goalTitleTv"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintBottom_toTopOf="@id/cardLooseWeight"
-                />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardLooseWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_70sdp"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 app:cardElevation="5dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:checkable="true"
                 app:rippleColor="@color/palate_titan_white"
                 app:checkedIconTint="@color/palate_big_stone"
-                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
-                app:layout_constraintTop_toBottomOf="@id/goalSubTitleTv"
+                app:layout_constraintTop_toTopOf="@id/scrollViewConstLayout"
                 app:layout_constraintBottom_toTopOf="@id/cardBuildMuscle"
                 >
 
@@ -112,15 +119,15 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Loose Weight"
-                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginStart="20dp"
                         android:textColor="@color/palate_big_stone"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:text="🥗"
                         android:textColor="@color/palate_titan_white"
                         android:gravity="center"
@@ -135,18 +142,18 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBuildMuscle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="60dp"
                 app:cardElevation="5dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:checkable="true"
                 app:rippleColor="@color/palate_titan_white"
                 app:checkedIconTint="@color/palate_big_stone"
-                app:cardCornerRadius="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_30sdp"
+                app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintBottom_toTopOf="@id/cardBalance"
@@ -164,16 +171,16 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Build Muscle"
-                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginStart="20dp"
                         android:textColor="@color/palate_big_stone"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:text="🍳"
                         android:textColor="@color/palate_titan_white"
                         android:gravity="center"
@@ -188,19 +195,20 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardBalance"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="60dp"
                 app:cardElevation="5dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:checkable="true"
                 app:rippleColor="@color/palate_titan_white"
                 app:checkedIconTint="@color/palate_big_stone"
-                app:cardCornerRadius="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_30sdp"
-                app:layout_constraintBottom_toTopOf="@id/nextButtonSelectBodyGoal"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/scrollViewConstLayout"
                 app:layout_constraintEnd_toStartOf="@id/guideline6"
                 app:layout_constraintStart_toEndOf="@id/guideline5"
                 app:layout_constraintTop_toBottomOf="@id/cardBuildMuscle">
@@ -217,16 +225,16 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_semibold"
                         android:text="Balanced"
-                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginStart="20dp"
                         android:textColor="@color/palate_big_stone"
-                        android:textSize="@dimen/_20ssp"
+                        android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="@dimen/_90sdp"
-                        android:layout_height="@dimen/_90sdp"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
                         android:text="🍎"
                         android:textColor="@color/palate_titan_white"
                         android:gravity="center"
@@ -238,24 +246,21 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nextButtonSelectBodyGoal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_50sdp"
-                android:layout_marginEnd="@dimen/_50sdp"
-                android:layout_marginTop="@dimen/_70sdp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/rounded_corner_button"
-                android:textColor="@color/palate_titan_white"
-                android:text="Next"
-                app:layout_constraintBottom_toTopOf="@id/guideline7"
-                app:layout_constraintTop_toBottomOf="@id/cardBalance"
-                app:layout_constraintEnd_toStartOf="@id/guideline6"
-                app:layout_constraintStart_toEndOf="@id/guideline5" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButtonSelectBodyGoal"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_corner_button"
+        android:textColor="@color/palate_titan_white"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scrollViewBodyTypeGoal"
+        app:layout_constraintEnd_toStartOf="@id/guideline8"
+        app:layout_constraintStart_toEndOf="@id/guideline7" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

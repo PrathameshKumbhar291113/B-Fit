@@ -118,14 +118,6 @@ dependencies {
     //K toasty library for custom toast as showErrorToast and showSuccessToast ect.
     implementation 'com.github.shubhamvashisht:KToasty:1.2'
 
-    //SDP library - An android lib that provides a new size unit : sdp (scalable dp).
-    // This size unit scales with the screen size. It can help Android developers with
-    // supporting multiple screens.
-    implementation 'com.intuit.sdp:sdp-android:1.1.0'
-
-    //Implementing the library to make the text responsive
-    implementation 'com.intuit.ssp:ssp-android:1.1.0'
-
     //Implementing a circular progressbar dependency
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
 

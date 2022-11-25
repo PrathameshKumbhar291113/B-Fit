@@ -82,6 +82,7 @@
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/round_corner_bottom_nav.xml" value="0.2005" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/round_corner_image.xml" value="0.183" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/rounded_corner_button.xml" value="0.2005" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/rounded_corner_textbox.xml" value="0.12" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/user_profile_background.xml" value="0.2095" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/user_profile_background_female.xml" value="0.2095" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/font/arsenal_bold.xml" value="0.23557075673364686" />
@@ -96,17 +97,17 @@
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/dialog_exercise_details_show_card.xml" value="0.176" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/dialog_user_record.xml" value="0.136" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/dialog_workout_record.xml" value="0.2099187687045746" />
-        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_bmi_calculator.xml" value="0.176" />
-        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_body_type_goal.xml" value="0.152" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_bmi_calculator.xml" value="0.25677083333333334" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_body_type_goal.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_diet_plan.xml" value="0.1" />
-        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_diet_type_select.xml" value="0.2" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_diet_type_select.xml" value="0.176" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_forgot_password.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_gender.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_login.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_nutrition_details.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_person_activity_status.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
-        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_select_level_of_exercise.xml" value="0.152" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_select_level_of_exercise.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_show_exercise.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/fragment_signup.xml" value="0.21077383497221033" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/item_diet_plan_detail.xml" value="0.2" />
