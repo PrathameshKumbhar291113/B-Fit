@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="45dp"
             android:layout_marginBottom="10dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins"
             android:padding="5dp"
             android:text="CLOSE"
             android:textColor="@color/palate_havelock_blue"

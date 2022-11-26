@@ -38,8 +38,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/signUp_scrollView_constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center">
+            android:layout_height="0dp">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline1"

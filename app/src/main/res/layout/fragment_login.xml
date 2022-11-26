@@ -40,8 +40,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/signIn_scrollView_constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center">
+            android:layout_height="0dp">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline1"
@@ -205,8 +204,8 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/google_login"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@color/palate_titan_white"
                 android:scaleType="centerInside"

@@ -31,6 +31,10 @@ class ExerciseDetailsActivity : AppCompatActivity() {
             idReceived = it.exerciseShowcase.id
         }
         setUpRecyclerView()
+
+        binding.activityExerciseDetailsToolBar.setNavigationOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun setUpRecyclerView(){

@@ -10,13 +10,30 @@
     tools:context=".mainmodule.fragment.DietPlanFragment"
     tools:ignore="SpeakableTextPresentCheck">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dietPlanIndicatorTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Loose Weight - Veg"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:padding="4dp"
+        android:background="@color/palate_titan_white"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/palate_big_stone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/dietPlanRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dietPlanRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/dietPlanIndicatorTv"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
