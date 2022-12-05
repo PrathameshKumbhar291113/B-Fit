@@ -176,7 +176,7 @@
                 android:layout_marginStart="38dp"
                 android:layout_marginTop="18dp"
                 android:layout_marginEnd="38dp"
-                android:background="@drawable/rounded_corner_button"
+                android:background="@drawable/round_corner_button"
                 android:elevation="25dp"
                 android:text="Log In"
                 android:textColor="@color/palate_titan_white"

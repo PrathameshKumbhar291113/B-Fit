@@ -11,7 +11,17 @@ plugins {
 
 android {
     signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Prathamesh\\Documents\\bfitkey.jks')
+            storePassword 'Pratham@13'
+            keyAlias 'fit'
+            keyPassword 'Pratham@13'
+        }
         release {
+            keyAlias 'fit'
+            keyPassword 'Pratham@13'
+            storePassword 'Pratham@13'
+            storeFile file('C:\\Users\\Prathamesh\\Documents\\bfitkey.jks')
         }
     }
     compileSdk 32
@@ -34,11 +44,13 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
+            debuggable false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled true
             shrinkResources true
+            debuggable true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -114,9 +126,6 @@ dependencies {
 
     //Material dependency for card view
     implementation 'com.google.android.material:material:1.6.1'
-
-    //K toasty library for custom toast as showErrorToast and showSuccessToast ect.
-    implementation 'com.github.shubhamvashisht:KToasty:1.2'
 
     //Implementing a circular progressbar dependency
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'

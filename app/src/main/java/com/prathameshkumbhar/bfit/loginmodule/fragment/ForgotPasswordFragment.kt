@@ -4,19 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.droidman.ktoasty.KToasty
 import com.google.firebase.auth.FirebaseAuth
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.InputFilters
 import com.prathameshkumbhar.bfit.databinding.FragmentForgotPasswordBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class ForgotPasswordFragment : Fragment() {
+class ForgotPasswordFragment : BaseFragment() {
 private var _binding: FragmentForgotPasswordBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
@@ -44,47 +42,40 @@ private var _binding: FragmentForgotPasswordBinding? = null
         binding.forgotPasswordEmailEditText.filters = arrayOf(InputFilters.emailFilter)
 
         binding.forgotPasswordButton.setOnClickListener {
-            val forgotEmail = binding.forgotPasswordEmailEditText.text.toString().trim()
-            val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
-            if(forgotEmail.isNotEmpty()){
-                if (forgotEmail.matches(emailPattern.toRegex())){
-                    firebaseAuth.sendPasswordResetEmail(forgotEmail)
-                        .addOnCompleteListener{
-                            if (it.isSuccessful) {
-                                binding.scrollView2.visibility = View.GONE
-                                KToasty.success(
-                                    requireContext(),
-                                    "Email sent successfully, Check the mail box!",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                lifecycleScope.launch{
-                                    binding.progressBar.visibility = View.VISIBLE
-                                    delay(2000)
-                                    navController.popBackStack()
-                                }
-                            }else{
-                                KToasty.error(
-                                    requireContext(),
-                                    it.exception.toString(),
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        }
+            if (checkForInternet(requireContext())){
+                val forgotEmail = binding.forgotPasswordEmailEditText.text.toString().trim()
+                val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+                if(forgotEmail.isNotEmpty()){
+                    if (forgotEmail.matches(emailPattern.toRegex())){
+                        firebaseAuth.sendPasswordResetEmail(forgotEmail)
+                            .addOnCompleteListener{
+                                if (it.isSuccessful) {
+                                    binding.scrollView2.visibility = View.GONE
+                                    successToast("Email sent successfully, Check the mail box!")
+                                    lifecycleScope.launch{
+                                        binding.progressBar.visibility = View.VISIBLE
+                                        delay(2000)
+                                        navController.popBackStack()
+                                    }
+                                }else{
+                                    errorToast("${it.exception?.message}")
 
+                                }
+                            }
+
+                    }else{
+                        warningToast("Email is invalid !")
+                    }
                 }else{
-                    KToasty.warning(
-                        requireContext(),
-                        "Email is invalid!",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    warningToast("Empty fields are not allowed !")
                 }
+
             }else{
-                KToasty.error(
-                    requireContext(),
-                    "Empty fields are not allowed !",
-                    Toast.LENGTH_SHORT
-                ).show()
+
+                errorToast("Not connected to Internet. Please connect to internet service to reset the password !")
+
             }
+
         }
     }
 }

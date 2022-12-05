@@ -8,12 +8,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.droidman.ktoasty.KToasty
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.databinding.FragmentDietTypeSelectBinding
 
-class DietTypeSelectFragment : Fragment() {
+class DietTypeSelectFragment : BaseFragment() {
 
     private var _binding : FragmentDietTypeSelectBinding? = null
     private val binding get() = _binding!!
@@ -28,12 +27,6 @@ class DietTypeSelectFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentDietTypeSelectBinding.inflate(inflater, container, false)
-
-//        val sharePrefGender: SharedPreferences = context!!.getSharedPreferences("genderCheck", Context.MODE_PRIVATE)
-//        var checkGender = sharePrefGender.getBoolean("isMaleChecked",false)
-//        if (checkGender){
-////            binding.getTonedTv.text = "Keep Fit"
-//        }
         return binding.root
     }
 
@@ -115,7 +108,7 @@ class DietTypeSelectFragment : Fragment() {
                     DietTypeSelectFragmentDirections.actionDietTypeSelectFragmentToSelectLevelOfExerciseFragment()
                 )
             }else{
-                KToasty.info(requireContext() ,"Kindly select the diet type!").show()
+                infoToast("Kindly select the diet type !")
 
             }
 

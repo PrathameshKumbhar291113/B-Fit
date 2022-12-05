@@ -4,21 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.droidman.ktoasty.KToasty
-import com.droidman.ktoasty.showSuccessToast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.InputFilters
 import com.prathameshkumbhar.bfit.databinding.FragmentSignupBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class SignUpFragment : Fragment() {
+class SignUpFragment : BaseFragment() {
     private var _binding : FragmentSignupBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
@@ -41,8 +38,13 @@ class SignUpFragment : Fragment() {
 
         binding.signUpEmailEditText.filters = arrayOf(InputFilters.emailFilter)
         binding.alreadyRegisterSignInTextView.setOnClickListener {
+            if (checkForInternet(requireContext())){
+                navController.popBackStack()
+            }else{
+                errorToast("Not connected to Internet. Please connect to internet service to proceed further !")
+            }
             //Go to signIn frag using navigation
-            navController.popBackStack()
+
         }
 
         binding.signUpButton.setOnClickListener {
@@ -54,63 +56,46 @@ class SignUpFragment : Fragment() {
             val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
             val phoneNumPattern = "^[5-9]{1}[0-9]{9}\$"
 
-            if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty() && userName.isNotEmpty() && userPhoneNum.isNotEmpty()) {
-                if(email.matches(emailPattern.toRegex()) && userPhoneNum.matches(phoneNumPattern.toRegex())){
-                    if (pass.length >= 8) {
-                        if (pass == confirmPass) {
+            if (checkForInternet(requireContext())){
+                if(email.isNotEmpty() && pass.isNotEmpty() && confirmPass.isNotEmpty() && userName.isNotEmpty() && userPhoneNum.isNotEmpty()) {
+                    if(email.matches(emailPattern.toRegex()) && userPhoneNum.matches(phoneNumPattern.toRegex())){
+                        if (pass.length >= 8) {
+                            if (pass == confirmPass) {
 
-                            firebaseAuth.createUserWithEmailAndPassword(email, pass)
-                                .addOnCompleteListener {
-                                    if (it.isSuccessful) {
+                                firebaseAuth.createUserWithEmailAndPassword(email, pass)
+                                    .addOnCompleteListener {
+                                        if (it.isSuccessful) {
+                                            //Setting the user name when doing sign up
+                                            setUserName(userName)
+                                            binding.scrollView4.visibility = View.GONE
+                                            successToast("Registered Successfully !")
 
-                                        //Setting the user name when doing sign up
-                                        setUserName(userName)
-
-                                        binding.scrollView4.visibility = View.GONE
-                                        requireContext().showSuccessToast("Registered Successfully!")
-                                        lifecycleScope.launch {
-                                            binding.progressBar.visibility = View.VISIBLE
-                                            delay(2000)
-                                            //Go to signIn frag using navigation
-                                            navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email, pass))
-                                            navController.popBackStack()
+                                            lifecycleScope.launch {
+                                                binding.progressBar.visibility = View.VISIBLE
+                                                delay(2000)
+                                                //Go to signIn frag using navigation
+                                                navController.navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment2(email, pass))
+                                                navController.popBackStack()
+                                            }
+                                        } else {
+                                            errorToast("${it.exception?.message}")
                                         }
-                                    } else {
-                                        KToasty.info(
-                                            requireContext(),
-                                            it.exception.toString(),
-                                            Toast.LENGTH_SHORT
-                                        ).show()
                                     }
+                            } else {
+                                warningToast("Password does not match !")
                             }
-
-                        } else {
-                            KToasty.warning(
-                                requireContext(),
-                                "Password does not match !",
-                                Toast.LENGTH_SHORT
-                            ).show()
+                        }else {
+                            infoToast("Password must not be less than 8 Characters !")
                         }
-                    }else {
-                        KToasty.info(
-                            requireContext(),
-                            "Password must not be less than 8 Characters !",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    }else{
+                        warningToast("Email / Phone Number is Invalid !")
                     }
-                }else{
-                    KToasty.warning(
-                        requireContext(),
-                        "Email / Phone Number is Invalid ! ",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                }
+                else{
+                    warningToast("Empty fields are not allowed !")
                 }
             }else{
-                KToasty.warning(
-                    requireContext(),
-                    "Empty fields are not allowed !",
-                    Toast.LENGTH_SHORT
-                ).show()
+                errorToast("Not connected to Internet. Please connect to internet service to proceed further !")
             }
         }
 

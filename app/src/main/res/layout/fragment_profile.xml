@@ -828,7 +828,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/rounded_corner_button"
+                android:background="@drawable/round_corner_button"
                 android:elevation="25dp"
                 android:text="LOG OUT"
                 android:textAlignment="center"

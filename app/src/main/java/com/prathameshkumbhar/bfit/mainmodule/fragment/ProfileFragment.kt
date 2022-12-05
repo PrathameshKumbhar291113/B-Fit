@@ -12,27 +12,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import coil.load
-import com.droidman.ktoasty.KToasty
-import com.droidman.ktoasty.showSuccessToast
 import com.google.firebase.auth.FirebaseAuth
 import com.prathameshkumbhar.bfit.BuildConfig
 import com.prathameshkumbhar.bfit.R
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
-import com.prathameshkumbhar.bfit.mainmodule.activity.CreditActivity
-import com.prathameshkumbhar.bfit.mainmodule.activity.PersonalGuidanceActivity
-import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
 import timber.log.Timber
 
 
-class ProfileFragment : Fragment() {
+class ProfileFragment : BaseFragment() {
     private var _binding : FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth : FirebaseAuth
@@ -61,7 +57,8 @@ class ProfileFragment : Fragment() {
 
         binding.contactCard.setOnClickListener {
 
-            KToasty.success(context!!,"Our team will connect to you within 2 working days.").show()
+            successToast("Our team will connect to you within 2 working days, Thank You")
+
 
             lifecycleScope.launch {
                 delay(2000)
@@ -92,6 +89,16 @@ class ProfileFragment : Fragment() {
             start<PrivacyPolicyActivity>()
         }
 
+        //Navigating to ChangeDietPlanActivity
+        binding.dietChange.setOnClickListener {
+            start<ChangeDietPlanActivity>()
+        }
+
+        //Navigating to ChangeWorkoutPlanActivity
+        binding.workoutChange.setOnClickListener {
+            start<ChangeWorkoutPlanActivity>()
+        }
+
         binding.rateUsCard.setOnClickListener {
 
             try {
@@ -118,8 +125,7 @@ class ProfileFragment : Fragment() {
             resetDietType()
             resetUserDetails()
 
-
-            requireContext().showSuccessToast("Successfully Logged Out!")
+            successToast("Successfully Logged Out !")
             firebaseAuth.signOut()
             lifecycleScope.launch(){
                 delay(1000)
@@ -140,7 +146,7 @@ class ProfileFragment : Fragment() {
 
             startActivity(Intent.createChooser(intent,"Share with"))
         }catch (e: Exception){
-            KToasty.error(context!!,"Unable to share the app.").show()
+            errorToast("Unable to share the app.")
         }
     }
 
@@ -159,7 +165,7 @@ class ProfileFragment : Fragment() {
 
             context.startActivity(Intent.createChooser(email,"Select any one."))
         }catch (e: Exception){
-            KToasty.error(context,"Unable to reach us.").show()
+            errorToast("Unable to reach us.")
         }
 
     }

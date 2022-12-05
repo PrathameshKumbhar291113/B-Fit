@@ -8,12 +8,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.droidman.ktoasty.KToasty
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.databinding.FragmentSelectLevelOfExerciseBinding
 
-class SelectLevelOfExerciseFragment : Fragment() {
+class SelectLevelOfExerciseFragment : BaseFragment() {
     private var _binding : FragmentSelectLevelOfExerciseBinding? = null
     private val binding get() = _binding!!
 
@@ -143,7 +142,7 @@ class SelectLevelOfExerciseFragment : Fragment() {
                 )
 
             }else{
-                KToasty.info(requireContext(),"Kindly select your level!").show()
+                infoToast("Kindly select your level !")
             }
 
         }

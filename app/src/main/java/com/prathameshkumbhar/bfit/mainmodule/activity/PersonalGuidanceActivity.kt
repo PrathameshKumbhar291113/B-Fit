@@ -3,14 +3,13 @@ package com.prathameshkumbhar.bfit.mainmodule.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.droidman.ktoasty.KToasty
+import com.prathameshkumbhar.bfit.coremodule.BaseActivity
 import com.prathameshkumbhar.bfit.databinding.ActivityPersonalGuidanceBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class PersonalGuidanceActivity : AppCompatActivity() {
+class PersonalGuidanceActivity : BaseActivity() {
     lateinit var binding: ActivityPersonalGuidanceBinding
     var flag = false
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +21,6 @@ class PersonalGuidanceActivity : AppCompatActivity() {
         binding.personalGuidanceToolBar.setNavigationOnClickListener {
             onBackPressed()
         }
-
 
         binding.getAppointmentBtn.setOnClickListener {
 
@@ -44,11 +42,11 @@ class PersonalGuidanceActivity : AppCompatActivity() {
                     flag = true
 
                 }else{
-                    KToasty.warning(this,"Phone number is invalid!").show()
+                    warningToast("Phone number is invalid!")
                 }
 
             }else{
-                KToasty.warning(this,"Empty Fields are not allowed!").show()
+                warningToast("Empty Fields are not allowed!")
             }
         }
 
@@ -79,7 +77,6 @@ class PersonalGuidanceActivity : AppCompatActivity() {
 
             try {
                 if (flag){
-                    KToasty.success(baseContext,"Our team will connect to you within 2 working days on successful email received.").show()
 
                     binding.userNameEditText.text = null
                     binding.userMobEditText.text = null

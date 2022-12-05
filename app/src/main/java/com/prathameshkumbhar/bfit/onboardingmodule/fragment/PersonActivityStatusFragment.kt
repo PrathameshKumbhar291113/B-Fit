@@ -8,17 +8,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.droidman.ktoasty.KToasty
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.databinding.FragmentPersonActivityStatusBinding
 import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
 
-class PersonActivityStatusFragment : Fragment() {
+class PersonActivityStatusFragment : BaseFragment() {
     private var _binding : FragmentPersonActivityStatusBinding? = null
     private val binding get() = _binding!!
 
@@ -80,7 +79,7 @@ class PersonActivityStatusFragment : Fragment() {
                     setUpProgressBar()
                     progressChangeListener()
                 }else{
-                    KToasty.info(requireContext(),"Kindly Select One Of The Above Activity.").show()
+                    infoToast("Kindly select one of the above activity.")
                 }
             }
         }

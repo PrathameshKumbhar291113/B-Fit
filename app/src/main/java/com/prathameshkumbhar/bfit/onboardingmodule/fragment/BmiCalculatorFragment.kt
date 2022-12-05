@@ -8,17 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.droidman.ktoasty.KToasty
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.databinding.FragmentBmiCalculatorBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import kotlin.math.pow
 
-class BmiCalculatorFragment : Fragment() {
+class BmiCalculatorFragment : BaseFragment() {
     private var _binding : FragmentBmiCalculatorBinding? = null
     private val binding get() = _binding!!
 
@@ -78,7 +77,7 @@ class BmiCalculatorFragment : Fragment() {
             if (binding.showWeightText.text.toString().toInt()<130){
                 binding.showWeightText.text = String.format("%s",binding.showWeightText.text.toString().toInt()+1)
             }else{
-                KToasty.warning(requireContext(),"Maximum weight is 130 Kg!").show()
+                warningToast("Maximum weight is 130 Kg !")
             }
         }
 
@@ -86,7 +85,7 @@ class BmiCalculatorFragment : Fragment() {
             if(binding.showWeightText.text.toString().toInt()>12){
                 binding.showWeightText.text = String.format("%s",binding.showWeightText.text.toString().toInt()-1)
             }else{
-                KToasty.warning(requireContext(),"Minimum weight is 12 Kg!").show()
+                warningToast("Minimum weight is 12 Kg !")
             }
         }
 
@@ -95,7 +94,7 @@ class BmiCalculatorFragment : Fragment() {
             if (binding.showAgeText.text.toString().toInt()<80){
                 binding.showAgeText.text = String.format("%s",binding.showAgeText.text.toString().toInt()+1)
             }else{
-                KToasty.warning(requireContext(),"Maximum Age is 80 Yr").show()
+                warningToast("Maximum Age is 80 Yr !")
             }
         }
 
@@ -103,7 +102,7 @@ class BmiCalculatorFragment : Fragment() {
             if(binding.showAgeText.text.toString().toInt()>10){
                 binding.showAgeText.text = String.format("%s",binding.showAgeText.text.toString().toInt()-1)
             }else{
-                KToasty.warning(requireContext(),"Minimum Age is 10 Yr!").show()
+                warningToast("Minimum Age is 10 Yr !")
             }
         }
 
@@ -122,7 +121,8 @@ class BmiCalculatorFragment : Fragment() {
 
             bmiCalculator(saveWeight.toString(),saveHeight.toString())
             binding.submitButtonBmi.visibility = View.GONE
-            KToasty.info(requireContext(), "Bmi has been submitted!").show()
+//            KToasty.info(requireContext(), "Bmi has been submitted!").show  ()
+            infoToast("Bmi has been submitted !")
             toDisableClicks()
 
             lifecycleScope.launch {

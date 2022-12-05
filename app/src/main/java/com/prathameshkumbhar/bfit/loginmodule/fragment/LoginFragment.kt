@@ -4,22 +4,14 @@ import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.SharedPreferences
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.droidman.ktoasty.KToasty
-import com.droidman.ktoasty.showErrorToast
-import com.droidman.ktoasty.showSuccessToast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -28,6 +20,7 @@ import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.prathameshkumbhar.bfit.R
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.InputFilters
 import com.prathameshkumbhar.bfit.databinding.FragmentLoginBinding
 import com.prathameshkumbhar.bfit.onboardingmodule.activity.OnboardActivity
@@ -36,7 +29,7 @@ import kotlinx.coroutines.launch
 import splitties.fragments.start
 import timber.log.Timber
 
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth: FirebaseAuth
@@ -68,25 +61,23 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
-
             binding.loginEmailEditText.filters = arrayOf(InputFilters.emailFilter)
 
             //Sign up button
             binding.notRegisteredSignUpTextView.setOnClickListener {
 
                 if(checkForInternet(requireContext())) {
-                    KToasty.success(requireContext(), "Connected to Internet !").show()
+//                    successToast("Connected to Internet !")
                     //Go to signUp Fragment
                     navController.navigate(
                         LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
                     )
                 }else{
-                    KToasty.error(requireContext(),"Not connected to Internet. Please connect to internet service to proceed further !").show()
+                    errorToast("Not connected to Internet. Please connect to internet service to proceed further !")
                 }
             }
 
+        //Sign in Button
             binding.signInButton.setOnClickListener {
 
                 val email = binding.loginEmailEditText.text.toString().trim()
@@ -94,14 +85,14 @@ class LoginFragment : Fragment() {
                 val emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
 
                 if(checkForInternet(requireContext())){
-                    KToasty.success(requireContext(),"Connected to Internet !").show()
-
                     if (email.isNotEmpty() && pass.isNotEmpty()) {
                         if (email.matches(emailPattern.toRegex())){
                             if(pass.length >= 8) {
                                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                                     if (it.isSuccessful) {
-                                        requireContext().showSuccessToast("Logged In Successfully!")
+
+                                        successToast("Logged In Successfully!")
+
                                         lifecycleScope.launch {
                                             binding.progressBar.visibility = View.VISIBLE
                                             disableAllViews()
@@ -118,49 +109,49 @@ class LoginFragment : Fragment() {
                                             }
                                         }
                                     } else {
-                                        KToasty.info(requireContext(),it.exception.toString(),Toast.LENGTH_SHORT).show()
+                                        errorToast("${it.exception?.message}")
                                     }
                                 }
                             }else{
-                                KToasty.info(requireContext(),"Password must not be less than 8 Characters !",Toast.LENGTH_SHORT).show()
+                                infoToast("Password must not be less than 8 Characters !")
                             }
 
                         }else{
-                            KToasty.warning(requireContext(), "Invalid Email!", Toast.LENGTH_SHORT).show()
+                            warningToast("Invalid Email!")
                         }
 
                     } else {
-                        KToasty.warning(requireContext(), "Empty fields are not allowed !", Toast.LENGTH_SHORT).show()
+                        warningToast("Empty fields are not allowed !")
                     }
 
                 }else{
-                    KToasty.error(requireContext(),"Not connected to Internet. Please connect to internet service to proceed further !").show()
+                    errorToast("Not connected to Internet. Please connect to internet service to proceed further !")
                 }
             }
 
+        //forgot password button
             binding.signInForgotPassTextView.setOnClickListener {
 
                 if(checkForInternet(requireContext())){
-                    KToasty.success(requireContext(),"Connected to Internet !").show()
                     val email = binding.loginEmailEditText.text.toString().trim()
                     //Go to forgot pass fragment
                     navController.navigate(
                         LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment(email)
                     )
                 }else{
-                    KToasty.error(requireContext(),"Not connected to Internet. Please connect to internet service to proceed further !").show()
+                    errorToast("Not connected to Internet. Please connect to internet service to proceed further !")
                 }
 
             }
 
+        //google login button
             binding.googleLogin.setOnClickListener {
 
                 if(checkForInternet(requireContext())){
-                    KToasty.success(requireContext(),"Connected to Internet !").show()
                     signInGoogle()
                     Timber.e(TAG,"Inside the onset listener of google auth")
                 }else{
-                    KToasty.error(requireContext(),"Not connected to Internet. Please connect to internet service to proceed further !").show()
+                    errorToast("Not connected to Internet. Please connect to internet service to proceed further !")
                 }
 
             }
@@ -189,7 +180,7 @@ class LoginFragment : Fragment() {
                 Timber.e(TAG,"in the handle activity result method")
             }
         }else{
-            requireContext().showErrorToast(task.exception.toString())
+            errorToast("${task.exception?.message}")
         }
     }
 
@@ -201,7 +192,7 @@ class LoginFragment : Fragment() {
 
             if (it.isSuccessful){
                 Timber.e(TAG,"in the Update Ui method and inside the it successful if block")
-                requireContext().showSuccessToast("Logged In Successfully!")
+                successToast("Logged In Successfully!")
                 lifecycleScope.launch(){
                     binding.progressBar.visibility = View.VISIBLE
                     disableAllViews()
@@ -216,7 +207,7 @@ class LoginFragment : Fragment() {
                     }
                 }
             }else{
-                requireContext().showErrorToast(it.exception.toString())
+                errorToast("${it.exception?.message}")
             }
         }
     }
@@ -225,44 +216,6 @@ class LoginFragment : Fragment() {
         binding.scrollView3.visibility = View.GONE
     }
 
-    private fun checkForInternet(context: Context): Boolean {
 
-        // register activity with the connectivity manager service
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-
-        // if the android version is equal to M
-        // or greater we need to use the
-        // NetworkCapabilities to check what type of
-        // network has the internet connection
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-            // Returns a Network object corresponding to
-            // the currently active default data network.
-            val network = connectivityManager.activeNetwork ?: return false
-
-            // Representation of the capabilities of an active network.
-            val activeNetwork = connectivityManager.getNetworkCapabilities(network) ?: return false
-
-            return when {
-                // Indicates this network uses a Wi-Fi transport,
-                // or WiFi has network connectivity
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
-
-                // Indicates this network uses a Cellular transport. or
-                // Cellular has network connectivity
-                activeNetwork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
-
-                // else return false
-                else -> false
-            }
-        } else {
-            // if the android version is below M
-            @Suppress("DEPRECATION") val networkInfo =
-                connectivityManager.activeNetworkInfo ?: return false
-            @Suppress("DEPRECATION")
-            return networkInfo.isConnected
-        }
-    }
 
 }

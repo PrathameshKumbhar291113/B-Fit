@@ -28,7 +28,7 @@
             android:name=".mainmodule.activity.ChangeWorkoutPlanActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".mainmodule.activity.ChangeDietPlanActivity"
             android:exported="false"
@@ -70,7 +70,7 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name="com.prathameshkumbhar.bfit.coremodule.SplashActivity"
+            android:name=".coremodule.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
