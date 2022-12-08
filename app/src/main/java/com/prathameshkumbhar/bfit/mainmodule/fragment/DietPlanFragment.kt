@@ -90,12 +90,18 @@ class DietPlanFragment : Fragment() {
 
                 finalDietListToPassInAdapter = DIET_PLAN_LOOSE_WT_VEG_LIST
 
+                binding.dietPlanIndicatorTv.text = "Loose Weight : Veg"
+
             }else if (isNonVegCardCheck){
 
                 finalDietListToPassInAdapter = DIET_PLAN_LOOSE_WT_NON_VEG_LIST
 
+                binding.dietPlanIndicatorTv.text = "Loose Weight : Non-Veg"
+
             }else if (isMixDietCardCheck){
                 finalDietListToPassInAdapter = DIET_PLAN_LOOSE_WT_MIXED_LIST
+
+                binding.dietPlanIndicatorTv.text = "Loose Weight : Mix"
             }
 
         }else if (isBuildMuscleCardCheck){
@@ -104,12 +110,19 @@ class DietPlanFragment : Fragment() {
 
                 finalDietListToPassInAdapter = DIET_PLAN_BUILD_MUSCLE_VEG_LIST
 
+                binding.dietPlanIndicatorTv.text = "Build Muscle : Veg"
+
             }else if (isNonVegCardCheck){
 
                 finalDietListToPassInAdapter = DIET_PLAN_BUILD_MUSCLE_NON_VEG_LIST
 
+                binding.dietPlanIndicatorTv.text = "Build Muscle : Non-Veg"
+
             }else if (isMixDietCardCheck){
+
                 finalDietListToPassInAdapter = DIET_PLAN_BUILD_MUSCLE_MIXED_LIST
+
+                binding.dietPlanIndicatorTv.text = "Build Muscle : Mix"
             }
 
         }else if (isBalanceCardCheck){
@@ -118,12 +131,20 @@ class DietPlanFragment : Fragment() {
 
                 finalDietListToPassInAdapter = DIET_PLAN_BALANCED_VEG_LIST
 
+                binding.dietPlanIndicatorTv.text = "Balance Diet : Veg"
+
             }else if (isNonVegCardCheck){
 
                 finalDietListToPassInAdapter = DIET_PLAN_BALANCED_NON_VEG_LIST
 
+
+                binding.dietPlanIndicatorTv.text = "Balance Diet : Non-Veg"
+
             }else if (isMixDietCardCheck){
+
                 finalDietListToPassInAdapter = DIET_PLAN_BALANCED_MIXED_LIST
+
+                binding.dietPlanIndicatorTv.text = "Balance Diet : Mix"
             }
 
         }

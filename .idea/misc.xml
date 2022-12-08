@@ -73,6 +73,7 @@
         <entry key="..\:/Users/Prathamesh/AndroidStudioProjects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.216" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/ic_age.xml" value="0.183" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/ic_bmi.xml" value="0.183" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/ic_check_icon.xml" value="0.1" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/ic_correct.xml" value="0.1" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/ic_diet.xml" value="0.183" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/drawable/ic_error.xml" value="0.1" />
@@ -100,7 +101,7 @@
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/font/arsenal_bold.xml" value="0.23557075673364686" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout-v31/activity_change_diet_plan.xml" value="0.2203125" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/activity_application.xml" value="0.17118055555555556" />
-        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/activity_change_diet_plan.xml" value="0.17118055555555556" />
+        <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/activity_change_diet_plan.xml" value="0.1" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/activity_change_workout_plan.xml" value="0.25677083333333334" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/activity_credit.xml" value="0.2" />
         <entry key="..\:/Users/Prathamesh/Pratham Projects/Android Studio Projects By Pratham/B-Fit/app/src/main/res/layout/activity_exercise_details.xml" value="0.21077383497221033" />
