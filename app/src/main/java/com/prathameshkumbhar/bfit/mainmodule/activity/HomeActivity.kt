@@ -1,6 +1,9 @@
 package com.prathameshkumbhar.bfit.mainmodule.activity
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -32,15 +35,22 @@ class HomeActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.showExerciseFragment ->{
                     binding.homeActivityToolBar.navigationIcon = null
+                    binding.bottomNavigationView.visibility = View.VISIBLE
                 }
                 R.id.dietPlanFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
+                    binding.bottomNavigationView.visibility = View.VISIBLE
                 }
 //                R.id.nutritionDetailsFragment -> {
 //                    binding.homeActivityToolBar.navigationIcon = null
 //                }
                 R.id.profileFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
+                    binding.bottomNavigationView.visibility = View.VISIBLE
+                }
+                R.id.changeDietPlanFragment ->{
+                    binding.homeActivityToolBar.navigationIcon = ColorDrawable(Color.WHITE)
+                    binding.bottomNavigationView.visibility = View.GONE
                 }
             }
         }

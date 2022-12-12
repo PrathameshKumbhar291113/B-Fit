@@ -27,7 +27,11 @@
         android:id="@+id/profileFragment"
         android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.ProfileFragment"
         android:label="PROFILE"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_changeDietPlanFragment"
+            app:destination="@id/changeDietPlanFragment" />
+    </fragment>
     <activity
         android:id="@+id/exerciseDetailsActivity"
         android:name="com.prathameshkumbhar.bfit.mainmodule.activity.ExerciseDetailsActivity"
@@ -37,4 +41,13 @@
             android:name="exerciseShowcase"
             app:argType="com.prathameshkumbhar.bfit.mainmodule.data.ExerciseShowCase" />
     </activity>
+    <fragment
+        android:id="@+id/changeDietPlanFragment"
+        android:name="com.prathameshkumbhar.bfit.mainmodule.fragment.ChangeDietPlanFragment"
+        android:label="Change Diet Plan"
+        tools:layout="@layout/fragment_change_diet_plan" >
+        <action
+            android:id="@+id/action_changeDietPlanFragment_to_dietPlanFragment"
+            app:destination="@id/dietPlanFragment" />
+    </fragment>
 </navigation>

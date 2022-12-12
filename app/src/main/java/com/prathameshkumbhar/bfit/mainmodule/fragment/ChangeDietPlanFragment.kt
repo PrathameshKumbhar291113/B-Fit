@@ -1,20 +1,31 @@
-package com.prathameshkumbhar.bfit.mainmodule.activity
+package com.prathameshkumbhar.bfit.mainmodule.fragment
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import com.prathameshkumbhar.bfit.coremodule.BaseActivity
-import com.prathameshkumbhar.bfit.databinding.ActivityChangeDietPlanBinding
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.prathameshkumbhar.bfit.coremodule.BaseFragment
+import com.prathameshkumbhar.bfit.databinding.FragmentChangeDietPlanBinding
 
-class ChangeDietPlanActivity : BaseActivity() {
-     lateinit var binding: ActivityChangeDietPlanBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
 
-        binding = ActivityChangeDietPlanBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+class ChangeDietPlanFragment : BaseFragment() {
+    private var _binding: FragmentChangeDietPlanBinding? = null
+    private val binding get() = _binding!!
+    private val navController by lazy {
+        findNavController()
+    }
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentChangeDietPlanBinding.inflate(inflater, container, false)
 
         //loose wt veg card click listener
         binding.cardLooseWtVeg.setOnClickListener {
@@ -331,12 +342,17 @@ class ChangeDietPlanActivity : BaseActivity() {
             }else if (binding.cardBalanceMix.isChecked){
                 balanceDietMixCardCheck()
             }
+            navController.apply {
+                navigate(
+                    ChangeDietPlanFragmentDirections.actionChangeDietPlanFragmentToDietPlanFragment()
+                )
+                currentDestination
+            }
 
-            //finish the activity
-            onBackPressed()
 
         }
 
+        return binding.root
     }
 
 
@@ -344,7 +360,7 @@ class ChangeDietPlanActivity : BaseActivity() {
     private fun looseWtVegCardCheck(){
 
         //LooseWt card check
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -353,7 +369,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.apply()
 
         //veg card check
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -362,7 +378,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.apply()
 
         //un-check cards diet type
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -371,7 +387,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         nonVegEditor.apply()
 
 
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -380,7 +396,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         mixedDietEditor.apply()
 
         //un check diet goal type
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -389,7 +405,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         buildMuscleEditor.apply()
 
 
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -402,7 +418,7 @@ class ChangeDietPlanActivity : BaseActivity() {
     private fun looseWtNonVegCardCheck(){
 
         //LooseWt card check
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -411,7 +427,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.apply()
 
         //Non veg card check
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -420,7 +436,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         nonVegEditor.apply()
 
         //un-check cards diet type
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -428,7 +444,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.clear()
         vegDietEditor.apply()
 
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -437,7 +453,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         mixedDietEditor.apply()
 
         //un check diet goal type
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -446,7 +462,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         buildMuscleEditor.apply()
 
 
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -458,7 +474,7 @@ class ChangeDietPlanActivity : BaseActivity() {
     private fun looseWtMixCardCheck(){
 
         //LooseWt card check
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -467,7 +483,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.apply()
 
         //mix diet type card check
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -476,7 +492,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         mixedDietEditor.apply()
 
         //un-check cards diet type
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -484,7 +500,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.clear()
         vegDietEditor.apply()
 
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -493,7 +509,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         nonVegEditor.apply()
 
         //un check diet goal type
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -502,7 +518,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         buildMuscleEditor.apply()
 
 
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -515,7 +531,7 @@ class ChangeDietPlanActivity : BaseActivity() {
     private fun buildWtVegCardCheck(){
 
         //buildWt card check
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -524,7 +540,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         buildMuscleEditor.apply()
 
         //veg card check
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -533,7 +549,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.apply()
 
         //un-check cards diet type
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -542,7 +558,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         nonVegEditor.apply()
 
 
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -552,7 +568,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un check diet goal type
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -560,7 +576,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.clear()
         looseWeightEditor.apply()
 
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -572,7 +588,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
     private fun buildWtNonVegCardCheck(){
         //buildWt card check
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -581,7 +597,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         buildMuscleEditor.apply()
 
         //Non veg card check
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -591,7 +607,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un-check cards diet type
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -599,7 +615,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.clear()
         vegDietEditor.apply()
 
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -609,7 +625,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un check diet goal type
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -617,7 +633,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.clear()
         looseWeightEditor.apply()
 
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -630,7 +646,7 @@ class ChangeDietPlanActivity : BaseActivity() {
     private fun buildWtMixCardCheck(){
 
         //buildWt card check
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -639,7 +655,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         buildMuscleEditor.apply()
 
         //mix diet type card check
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -649,7 +665,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un-check cards diet type
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -657,7 +673,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.clear()
         vegDietEditor.apply()
 
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -667,7 +683,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un check diet goal type
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -675,7 +691,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.clear()
         looseWeightEditor.apply()
 
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -688,7 +704,7 @@ class ChangeDietPlanActivity : BaseActivity() {
     private fun balanceDietVegCardCheck(){
 
         // balance diet card check
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -697,7 +713,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         balanceEditor.apply()
 
         //veg card check
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -707,7 +723,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un-check cards diet type
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -715,7 +731,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         nonVegEditor.clear()
         nonVegEditor.apply()
 
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -725,7 +741,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un check diet goal type
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -733,7 +749,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.clear()
         looseWeightEditor.apply()
 
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -745,7 +761,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
     private fun balanceDietNonVegCardCheck(){
         // balance diet card check
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -754,7 +770,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         balanceEditor.apply()
 
         //Non veg card check
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -764,7 +780,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un-check cards diet type
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -772,7 +788,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.clear()
         vegDietEditor.apply()
 
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -782,7 +798,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un check diet goal type
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -790,7 +806,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.clear()
         looseWeightEditor.apply()
 
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )
@@ -801,7 +817,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
     private fun balanceDietMixCardCheck(){
         // balance diet card check
-        val sharePrefBalance : SharedPreferences = getSharedPreferences(
+        val sharePrefBalance : SharedPreferences = requireContext().getSharedPreferences(
             "cardBalanceChecked",
             Context.MODE_PRIVATE
         )
@@ -810,7 +826,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         balanceEditor.apply()
 
         //mix diet type card check
-        val sharePrefMixedDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefMixedDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardMixedDietChecked",
             Context.MODE_PRIVATE
         )
@@ -820,7 +836,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un-check cards diet type
-        val sharePrefVegDiet : SharedPreferences = getSharedPreferences(
+        val sharePrefVegDiet : SharedPreferences = requireContext().getSharedPreferences(
             "cardVegChecked",
             Context.MODE_PRIVATE
         )
@@ -828,7 +844,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         vegDietEditor.clear()
         vegDietEditor.apply()
 
-        val sharePrefCardNonVeg : SharedPreferences = getSharedPreferences(
+        val sharePrefCardNonVeg : SharedPreferences = requireContext().getSharedPreferences(
             "cardNonVegChecked",
             Context.MODE_PRIVATE
         )
@@ -838,7 +854,7 @@ class ChangeDietPlanActivity : BaseActivity() {
 
 
         //un check diet goal type
-        val sharePrefLooseWeight : SharedPreferences = getSharedPreferences(
+        val sharePrefLooseWeight : SharedPreferences = requireContext().getSharedPreferences(
             "cardLooseWeightChecked",
             Context.MODE_PRIVATE
         )
@@ -846,7 +862,7 @@ class ChangeDietPlanActivity : BaseActivity() {
         looseWeightEditor.clear()
         looseWeightEditor.apply()
 
-        val sharePrefBuildMuscle : SharedPreferences = getSharedPreferences(
+        val sharePrefBuildMuscle : SharedPreferences = requireContext().getSharedPreferences(
             "cardBuildMuscleChecked",
             Context.MODE_PRIVATE
         )

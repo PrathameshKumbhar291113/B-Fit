@@ -10,20 +10,20 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        debug {
-            storeFile file('C:\\Users\\Prathamesh\\Documents\\bfitkey.jks')
-            storePassword 'Pratham@13'
-            keyAlias 'fit'
-            keyPassword 'Pratham@13'
-        }
-        release {
-            keyAlias 'fit'
-            keyPassword 'Pratham@13'
-            storePassword 'Pratham@13'
-            storeFile file('C:\\Users\\Prathamesh\\Documents\\bfitkey.jks')
-        }
-    }
+//    signingConfigs {
+//        debug {
+//            storeFile file('C:\\Users\\Prathamesh\\Documents\\bfitkey.jks')
+//            storePassword 'Pratham@13'
+//            keyAlias 'fit'
+//            keyPassword 'Pratham@13'
+//        }
+//        release {
+//            keyAlias 'fit'
+//            keyPassword 'Pratham@13'
+//            storePassword 'Pratham@13'
+//            storeFile file('C:\\Users\\Prathamesh\\Documents\\bfitkey.jks')
+//        }
+//    }
     compileSdk 32
     buildFeatures {
         dataBinding true

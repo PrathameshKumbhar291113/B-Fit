@@ -13,6 +13,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import coil.load
 import com.google.firebase.auth.FirebaseAuth
 import com.prathameshkumbhar.bfit.BuildConfig
@@ -21,7 +22,10 @@ import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
-import com.prathameshkumbhar.bfit.mainmodule.activity.*
+import com.prathameshkumbhar.bfit.mainmodule.activity.ChangeWorkoutPlanActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.CreditActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.PersonalGuidanceActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
@@ -32,6 +36,9 @@ class ProfileFragment : BaseFragment() {
     private var _binding : FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private lateinit var firebaseAuth : FirebaseAuth
+    private val navController by lazy {
+        findNavController()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -91,7 +98,12 @@ class ProfileFragment : BaseFragment() {
 
         //Navigating to ChangeDietPlanActivity
         binding.dietChange.setOnClickListener {
-            start<ChangeDietPlanActivity>()
+            navController.apply {
+                navigate(
+                    ProfileFragmentDirections.actionProfileFragmentToChangeDietPlanFragment()
+                )
+                currentDestination
+            }
         }
 
         //Navigating to ChangeWorkoutPlanActivity
