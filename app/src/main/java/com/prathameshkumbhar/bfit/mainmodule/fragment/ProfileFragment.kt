@@ -22,10 +22,7 @@ import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
-import com.prathameshkumbhar.bfit.mainmodule.activity.ChangeWorkoutPlanActivity
-import com.prathameshkumbhar.bfit.mainmodule.activity.CreditActivity
-import com.prathameshkumbhar.bfit.mainmodule.activity.PersonalGuidanceActivity
-import com.prathameshkumbhar.bfit.mainmodule.activity.PrivacyPolicyActivity
+import com.prathameshkumbhar.bfit.mainmodule.activity.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
@@ -98,12 +95,7 @@ class ProfileFragment : BaseFragment() {
 
         //Navigating to ChangeDietPlanActivity
         binding.dietChange.setOnClickListener {
-            navController.apply {
-                navigate(
-                    ProfileFragmentDirections.actionProfileFragmentToChangeDietPlanFragment()
-                )
-                currentDestination
-            }
+            start<ChangeDietPlanActivity>()
         }
 
         //Navigating to ChangeWorkoutPlanActivity

@@ -1,7 +1,5 @@
 package com.prathameshkumbhar.bfit.mainmodule.activity
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -47,10 +45,6 @@ class HomeActivity : AppCompatActivity() {
                 R.id.profileFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
                     binding.bottomNavigationView.visibility = View.VISIBLE
-                }
-                R.id.changeDietPlanFragment ->{
-                    binding.homeActivityToolBar.navigationIcon = ColorDrawable(Color.WHITE)
-                    binding.bottomNavigationView.visibility = View.GONE
                 }
             }
         }
