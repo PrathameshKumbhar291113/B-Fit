@@ -5,8 +5,11 @@ import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.prathameshkumbhar.bfit.coremodule.BaseActivity
 import com.prathameshkumbhar.bfit.databinding.ActivityChangeDietPlanBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class ChangeDietPlanActivity : BaseActivity() {
@@ -334,14 +337,14 @@ class ChangeDietPlanActivity : BaseActivity() {
             }else if (binding.cardBalanceMix.isChecked){
                 balanceDietMixCardCheck()
             }
-
+            lifecycleScope.launch {
+                delay(100)
+                finish()
+            }
 
 
         }
     }
-
-
-
     private fun looseWtVegCardCheck(){
 
         //LooseWt card check
