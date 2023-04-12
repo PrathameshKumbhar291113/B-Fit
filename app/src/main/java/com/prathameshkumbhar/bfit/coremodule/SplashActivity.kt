@@ -62,7 +62,5 @@ class SplashActivity : AppCompatActivity() {
                 }
             }
         }
-        // Atharv work
-
     }
 }
