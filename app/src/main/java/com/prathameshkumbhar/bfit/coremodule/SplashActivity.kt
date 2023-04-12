@@ -62,5 +62,6 @@ class SplashActivity : AppCompatActivity() {
                 }
             }
         }
+            /// NEW COMMIT
     }
 }
