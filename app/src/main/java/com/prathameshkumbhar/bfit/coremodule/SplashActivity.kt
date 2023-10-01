@@ -9,8 +9,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.messaging.FirebaseMessaging
 import com.prathameshkumbhar.bfit.databinding.ActivitySplashBinding
+import com.prathameshkumbhar.bfit.homemodule.activity.HomeActivity
 import com.prathameshkumbhar.bfit.loginmodule.activity.SignInAndSignUpActivity
-import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
 import com.prathameshkumbhar.bfit.onboardingmodule.activity.OnboardActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

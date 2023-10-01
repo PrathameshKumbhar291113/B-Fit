@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.data
+package com.prathameshkumbhar.bfit.homemodule.data
 
 import android.os.Parcelable
 import androidx.annotation.Keep

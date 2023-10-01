@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.activity
+package com.prathameshkumbhar.bfit.homemodule.activity
 
 import android.content.Context
 import android.content.Intent

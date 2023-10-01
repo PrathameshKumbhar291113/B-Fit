@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.activity
+package com.prathameshkumbhar.bfit.homemodule.activity
 
 import android.os.Bundle
 import android.view.View
@@ -9,10 +9,11 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.prathameshkumbhar.bfit.R
 import com.prathameshkumbhar.bfit.databinding.ActivityHomeBinding
+import splitties.activities.start
 
 
 class HomeActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityHomeBinding
+    private lateinit var binding: ActivityHomeBinding
     private lateinit var navController: NavController
     private lateinit var navHostFragment: NavHostFragment
 
@@ -31,22 +32,30 @@ class HomeActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.showExerciseFragment ->{
+                R.id.showExerciseFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
                     binding.bottomNavigationView.visibility = View.VISIBLE
                 }
+
                 R.id.dietPlanFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
                     binding.bottomNavigationView.visibility = View.VISIBLE
                 }
-//                R.id.nutritionDetailsFragment -> {
+
+//                R.id.stepCounterFragment -> {
 //                    binding.homeActivityToolBar.navigationIcon = null
+//                    binding.bottomNavigationView.visibility = View.VISIBLE
 //                }
+
                 R.id.profileFragment -> {
                     binding.homeActivityToolBar.navigationIcon = null
                     binding.bottomNavigationView.visibility = View.VISIBLE
                 }
             }
+        }
+
+        binding.stepsImage.setOnClickListener{
+            start<StepsCounterActivity>()
         }
     }
 }

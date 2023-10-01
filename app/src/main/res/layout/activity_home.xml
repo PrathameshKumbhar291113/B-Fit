@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainmodule.activity.HomeActivity">
+    tools:context=".homemodule.activity.HomeActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/homeActivity_ToolBar"
@@ -46,4 +46,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/homeActivity_fragmentContainer"
         app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/stepsImage"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/homeActivity_ToolBar"
+        app:layout_constraintTop_toTopOf="@+id/homeActivity_ToolBar"
+        app:layout_constraintBottom_toBottomOf="@id/homeActivity_ToolBar"
+        app:srcCompat="@drawable/ic_notification"
+        app:tint="@color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

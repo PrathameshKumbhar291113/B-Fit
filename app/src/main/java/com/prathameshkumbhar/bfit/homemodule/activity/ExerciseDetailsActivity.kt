@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.activity
+package com.prathameshkumbhar.bfit.homemodule.activity
 
 import android.app.Dialog
 import android.graphics.Color
@@ -9,9 +9,9 @@ import androidx.navigation.navArgs
 import com.bumptech.glide.Glide
 import com.prathameshkumbhar.bfit.databinding.ActivityExerciseDetailsBinding
 import com.prathameshkumbhar.bfit.databinding.DialogExerciseDetailsShowCardBinding
-import com.prathameshkumbhar.bfit.mainmodule.adapter.ExerciseStepsDetailAdapter
-import com.prathameshkumbhar.bfit.mainmodule.data.EXERCISE_SHOWCASE_LIST
-import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseDetails
+import com.prathameshkumbhar.bfit.homemodule.adapter.ExerciseStepsDetailAdapter
+import com.prathameshkumbhar.bfit.homemodule.data.EXERCISE_SHOWCASE_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.ExerciseDetails
 
 class ExerciseDetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityExerciseDetailsBinding

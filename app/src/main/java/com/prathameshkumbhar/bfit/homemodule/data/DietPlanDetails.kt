@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.data
+package com.prathameshkumbhar.bfit.homemodule.data
 
 data class DietPlanDetails(
     var id : Int,

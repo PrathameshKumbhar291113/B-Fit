@@ -4,6 +4,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="steps">Steps: %d</string>
 
 
     <string name="dietician_details">Confident and Optimistic are two words which suits best to our contributor Dt. Ritu.\nShe has completed Master\'s in Nutrition and Health.\nOver more than 3 - 4 years of experience, she has achieved several milestones in her journey by her hardwork and dedication.\n\nTo get an appointment tap on \'Personal Guidance\' section.  </string>

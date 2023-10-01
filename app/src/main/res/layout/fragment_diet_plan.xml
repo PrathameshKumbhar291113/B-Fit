@@ -7,7 +7,7 @@
     android:background="@color/palate_titan_white"
     android:orientation="vertical"
     android:scrollbars="none"
-    tools:context=".mainmodule.fragment.DietPlanFragment"
+    tools:context=".homemodule.fragment.DietPlanFragment"
     tools:ignore="SpeakableTextPresentCheck">
 
     <androidx.appcompat.widget.AppCompatTextView

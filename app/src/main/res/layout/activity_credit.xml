@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
-    tools:context=".mainmodule.activity.CreditActivity">
+    tools:context=".homemodule.activity.CreditActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/creditsToolBar"

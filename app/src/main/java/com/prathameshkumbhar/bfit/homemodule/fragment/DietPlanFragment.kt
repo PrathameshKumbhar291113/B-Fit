@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.fragment
+package com.prathameshkumbhar.bfit.homemodule.fragment
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -8,8 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.prathameshkumbhar.bfit.databinding.FragmentDietPlanBinding
-import com.prathameshkumbhar.bfit.mainmodule.adapter.DietPlanAdapter
-import com.prathameshkumbhar.bfit.mainmodule.data.*
+import com.prathameshkumbhar.bfit.homemodule.adapter.DietPlanAdapter
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_BALANCED_MIXED_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_BALANCED_NON_VEG_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_BALANCED_VEG_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_BUILD_MUSCLE_MIXED_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_BUILD_MUSCLE_NON_VEG_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_BUILD_MUSCLE_VEG_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_LOOSE_WT_MIXED_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_LOOSE_WT_NON_VEG_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DIET_PLAN_LOOSE_WT_VEG_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.DietPlanDetails
 
 
 class DietPlanFragment : Fragment() {

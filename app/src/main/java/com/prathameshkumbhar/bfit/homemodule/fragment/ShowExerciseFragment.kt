@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.fragment
+package com.prathameshkumbhar.bfit.homemodule.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.prathameshkumbhar.bfit.databinding.FragmentShowExerciseBinding
-import com.prathameshkumbhar.bfit.mainmodule.adapter.ExerciseAdapter
-import com.prathameshkumbhar.bfit.mainmodule.data.EXERCISE_SHOWCASE_LIST
-import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseShowCase
+import com.prathameshkumbhar.bfit.homemodule.adapter.ExerciseAdapter
+import com.prathameshkumbhar.bfit.homemodule.data.EXERCISE_SHOWCASE_LIST
+import com.prathameshkumbhar.bfit.homemodule.data.ExerciseShowCase
 
 
 class ShowExerciseFragment : Fragment() {

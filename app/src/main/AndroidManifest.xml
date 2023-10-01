@@ -4,6 +4,17 @@
     package="com.prathameshkumbhar.bfit">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+
+    <uses-feature android:name="android.hardware.sensor.stepcounter" />
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <uses-feature android:name="android.hardware.Sensor.STEP_COUNTER" />
+
     <uses-permission
         android:name="com.google.android.gms.permission.AD_ID"
         tools:node="remove" />
@@ -19,33 +30,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BFit"
         tools:targetApi="31">
+        <activity
+            android:name=".homemodule.activity.StepsCounterActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="firebase_performance_logcat_enabled"
             android:value="true" />
 
         <activity
-            android:name=".mainmodule.activity.ChangeWorkoutPlanActivity"
+            android:name=".homemodule.activity.ChangeWorkoutPlanActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".mainmodule.activity.ChangeDietPlanActivity"
+            android:name=".homemodule.activity.ChangeDietPlanActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".mainmodule.activity.PersonalGuidanceActivity"
+            android:name=".homemodule.activity.PersonalGuidanceActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".mainmodule.activity.CreditActivity"
+            android:name=".homemodule.activity.CreditActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".mainmodule.activity.PrivacyPolicyActivity"
+            android:name=".homemodule.activity.PrivacyPolicyActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -60,12 +74,12 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".mainmodule.activity.HomeActivity"
+            android:name=".homemodule.activity.HomeActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".mainmodule.activity.ExerciseDetailsActivity"
+            android:name=".homemodule.activity.ExerciseDetailsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

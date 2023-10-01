@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.adapter
+package com.prathameshkumbhar.bfit.homemodule.adapter
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.prathameshkumbhar.bfit.databinding.ItemShowExerciseStepsDetailBinding
-import com.prathameshkumbhar.bfit.mainmodule.data.ExerciseDetails
+import com.prathameshkumbhar.bfit.homemodule.data.ExerciseDetails
 
 class ExerciseStepsDetailAdapter(
     private val context: Context,

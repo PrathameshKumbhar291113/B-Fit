@@ -14,8 +14,8 @@
         tools:ignore="HardcodedText" />
 <!--    <item-->
 <!--        android:id="@+id/nutritionDetailsFragment"-->
-<!--        android:icon="@drawable/ic_nutrition"-->
-<!--        android:title="NUTRITION"-->
+<!--        android:icon="@drawable/ic_notification"-->
+<!--        android:title="Steps"-->
 <!--        tools:ignore="HardcodedText" />-->
     <item
         android:id="@+id/profileFragment"

@@ -6,7 +6,7 @@
     android:background="@color/palate_titan_white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainmodule.activity.ExerciseDetailsActivity">
+    tools:context=".homemodule.activity.ExerciseDetailsActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/activityExerciseDetailsToolBar"

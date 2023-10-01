@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.activity
+package com.prathameshkumbhar.bfit.homemodule.activity
 
 import android.os.Bundle
 import android.webkit.WebViewClient

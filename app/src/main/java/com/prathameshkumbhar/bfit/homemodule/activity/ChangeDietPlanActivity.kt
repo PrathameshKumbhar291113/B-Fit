@@ -1,12 +1,15 @@
-package com.prathameshkumbhar.bfit.mainmodule.activity
+package com.prathameshkumbhar.bfit.homemodule.activity
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.prathameshkumbhar.bfit.coremodule.BaseActivity
 import com.prathameshkumbhar.bfit.databinding.ActivityChangeDietPlanBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class ChangeDietPlanActivity : BaseActivity() {
@@ -335,6 +338,11 @@ class ChangeDietPlanActivity : BaseActivity() {
                 balanceDietMixCardCheck()
             }
 
+            lifecycleScope.launch {
+                successToast("Successfully changed the diet.")
+                delay(3000)
+                finish()
+            }
 
 
         }

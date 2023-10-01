@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.adapter
+package com.prathameshkumbhar.bfit.homemodule.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.prathameshkumbhar.bfit.databinding.ItemDietPlanDetailBinding
-import com.prathameshkumbhar.bfit.mainmodule.data.DietPlanDetails
+import com.prathameshkumbhar.bfit.homemodule.data.DietPlanDetails
 
 class DietPlanAdapter(
     private val context: Context,

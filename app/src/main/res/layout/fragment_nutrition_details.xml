@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/palate_titan_white"
-    tools:context=".mainmodule.fragment.NutritionDetailsFragment">
+    tools:context=".homemodule.fragment.StepCounterFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/stepsCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/palate_big_stone"
-        android:text="@string/hello_blank_fragment"
+        android:text="My Steps"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

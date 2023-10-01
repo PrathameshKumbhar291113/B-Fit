@@ -1,4 +1,4 @@
-package com.prathameshkumbhar.bfit.mainmodule.fragment
+package com.prathameshkumbhar.bfit.homemodule.fragment
 
 import android.app.Dialog
 import android.content.ActivityNotFoundException
@@ -22,7 +22,11 @@ import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.coremodule.SplashActivity
 import com.prathameshkumbhar.bfit.databinding.DialogUserRecordBinding
 import com.prathameshkumbhar.bfit.databinding.FragmentProfileBinding
-import com.prathameshkumbhar.bfit.mainmodule.activity.*
+import com.prathameshkumbhar.bfit.homemodule.activity.ChangeDietPlanActivity
+import com.prathameshkumbhar.bfit.homemodule.activity.ChangeWorkoutPlanActivity
+import com.prathameshkumbhar.bfit.homemodule.activity.CreditActivity
+import com.prathameshkumbhar.bfit.homemodule.activity.PersonalGuidanceActivity
+import com.prathameshkumbhar.bfit.homemodule.activity.PrivacyPolicyActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start

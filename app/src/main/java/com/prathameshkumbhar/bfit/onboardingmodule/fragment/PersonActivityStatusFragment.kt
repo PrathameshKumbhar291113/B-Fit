@@ -12,7 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import com.prathameshkumbhar.bfit.coremodule.BaseFragment
 import com.prathameshkumbhar.bfit.databinding.FragmentPersonActivityStatusBinding
-import com.prathameshkumbhar.bfit.mainmodule.activity.HomeActivity
+import com.prathameshkumbhar.bfit.homemodule.activity.HomeActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import splitties.fragments.start
