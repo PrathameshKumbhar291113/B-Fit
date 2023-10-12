@@ -30,26 +30,74 @@ class HomeActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.bottomNavigationView,navController)
         setupActionBarWithNavController(navController)
 
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.showExerciseFragment -> {
-                    binding.homeActivityToolBar.navigationIcon = null
-                    binding.bottomNavigationView.visibility = View.VISIBLE
-                }
-
-                R.id.dietPlanFragment -> {
-                    binding.homeActivityToolBar.navigationIcon = null
-                    binding.bottomNavigationView.visibility = View.VISIBLE
-                }
-
+//    Commented by Chinmay Wrong code
+//        navController.addOnDestinationChangedListener { _, destination, _ ->
+//            when (destination.id) {
+//                R.id.showExerciseFragment -> {
+//                    binding.homeActivityToolBar.navigationIcon = null
+//                    binding.bottomNavigationView.visibility = View.VISIBLE
+//                }
+//
+//                R.id.dietPlanFragment -> {
+//                    binding.homeActivityToolBar.navigationIcon = null
+//                    binding.bottomNavigationView.visibility = View.VISIBLE
+//                }
+//
 //                R.id.stepCounterFragment -> {
 //                    binding.homeActivityToolBar.navigationIcon = null
 //                    binding.bottomNavigationView.visibility = View.VISIBLE
 //                }
+//
+//                R.id.profileFragment -> {
+//                    binding.homeActivityToolBar.navigationIcon = null
+//                    binding.bottomNavigationView.visibility = View.VISIBLE
+//                }
+//            }
+//        }
+
+        //This is the correct code
+
+        binding.bottomNavigationView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+
+                R.id.showExerciseFragment -> {
+                    navController.navigate(R.id.showExerciseFragment)
+                    true
+                }
+
+                R.id.dietPlanFragment -> {
+                    navController.navigate(R.id.dietPlanFragment)
+                    true
+                }
 
                 R.id.profileFragment -> {
-                    binding.homeActivityToolBar.navigationIcon = null
-                    binding.bottomNavigationView.visibility = View.VISIBLE
+                    navController.navigate(R.id.profileFragment)
+                    true
+                }
+
+                else -> {
+                    false
+                }
+
+
+            }
+        }
+
+        binding.bottomNavigationView.setOnItemReselectedListener { item ->
+            when (item.itemId) {
+                R.id.showExerciseFragment -> {
+                    navController.navigate(R.id.showExerciseFragment)
+                }
+
+                R.id.dietPlanFragment -> {
+                    navController.navigate(R.id.dietPlanFragment)
+                }
+
+                R.id.profileFragment -> {
+                    navController.navigate(R.id.profileFragment)
+                }
+
+                else -> {
                 }
             }
         }
